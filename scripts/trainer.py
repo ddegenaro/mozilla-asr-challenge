@@ -5,6 +5,8 @@ from utils.whisper_data_collator import WhisperDataCollator
 import evaluate
 from datasets import Dataset
 from peft import LoraConfig, get_peft_model
+from scripts.get_data import LANGUAGES, get_data
+
 with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
@@ -54,9 +56,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
         return {"wer": wer}
     training_args = Seq2SeqTrainingArguments(
-        output_dir=f"{config['whisper_model']}_{language}",  # change to a repo name of your choice
+        output_dir=f"{config['whisper_model']}_{language}", 
         per_device_train_batch_size=16,
-        gradient_accumulation_steps=1,  # increase by 2x for every 2x decrease in batch size
+        gradient_accumulation_steps=1, 
         learning_rate=1e-5,
         warmup_steps=500,
         max_steps=5000,
@@ -88,4 +90,10 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     trainer.model.save_pretrained(f"{config['whisper_model']}_{language}/final")
 
 if __name__ == "__main__":
-    ...
+    # for language in LANGUAGES:
+    train = get_data(split='train', langs='all')
+    dev = get_data(split="dev", langs="all")
+    dataset = Dataset({
+        "train": train,
+        "validation": dev
+    })
