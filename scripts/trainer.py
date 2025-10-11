@@ -100,19 +100,23 @@ if __name__ == "__main__":
     # for language in LANGUAGES:
     lang = "all"
     train_data = get_data(split='train', langs= None if lang == "all" else [lang])
-    train_audios = train_data[:]["audios"]
+    train_audio_paths = train_data[:]["audios"]
     train_languages = train_data[:]["meta"]["language"].to_list()
     train_transcripts = train_data[:]["transcriptions"]
-    train = {"audio": [librosa.load(p)[0].resample(16000) for p in train_audios],
+    train_audios = [librosa.load(p) for p in train_audio_paths]
+    train_audios = [librosa.resample(a[0], orig_sr=a[1], target_sr=16000) for a in train_audios]
+    train = {"audio": train_audios,
              "transcription": train_transcripts,
              "language": train_languages
              }
 
     dev_data = get_data(split='train', langs=None if lang == "all" else [lang])
     dev_audios = dev_data[:]["audios"]
+    dev_audios = [librosa.load(p) for p in dev_audios]
+    dev_audios = [librosa.resample(a[0], orig_sr=a[1], target_sr=16000) for a in dev_audios]
     dev_languages = dev_data[:]["meta"]["language"].to_list()
     dev_transcripts = dev_data[:]["transcriptions"]
-    dev = {"audio": [librosa.load(p)[0].resample(16000) for p in dev_audios],
+    dev = {"audio": dev_audios,
             "transcription": dev_transcripts,
             "language": dev_languages
             }
