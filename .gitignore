@@ -1,3 +1,4 @@
 *.tar.gz
 mcv-sps-st-09-2025/
 __pycache__/
+.DS_Store
