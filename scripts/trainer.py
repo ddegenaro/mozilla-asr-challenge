@@ -99,7 +99,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 if __name__ == "__main__":
     # for language in LANGUAGES:
     lang = "all"
-    train_data = get_data(split='train', langs= None if lang == "all" else lang)
+    train_data = get_data(split='train', langs= None if lang == "all" else [lang])
     train_audios = train_data[:]["audios"]
     train_languages = train_data[:]["meta"]["language"].to_list()
     train_transcripts = train_data[:]["transcriptions"]
@@ -108,8 +108,7 @@ if __name__ == "__main__":
              "language": train_languages
              }
 
-    dev = get_data(split="dev", langs=lang)
-    dev_data = get_data(split='train', langs=lang)
+    dev_data = get_data(split='train', langs=None if lang == "all" else [lang])
     dev_audios = dev_data[:]["audios"]
     dev_languages = dev_data[:]["meta"]["language"].to_list()
     dev_transcripts = dev_data[:]["transcriptions"]
