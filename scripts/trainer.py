@@ -118,10 +118,10 @@ if __name__ == "__main__":
             }
     train = pd.DataFrame(train)
     train = Dataset.from_pandas(train)
-    train = train.cast_column("audio", Audio())
+    # train = train.cast_column("audio", Audio())
     dev = pd.DataFrame(dev)
     dev = Dataset.from_pandas(dev)
-    dev = dev.cast_column("audio", Audio())
+    # dev = dev.cast_column("audio", Audio())
     dataset = DatasetDict({
         "train": train,
         "validation": dev

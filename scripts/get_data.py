@@ -105,7 +105,7 @@ def get_data(
 
     for lang in langs:
         assert lang in LANGUAGES, f'No such lang: {lang}'
-        lang_dir = os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}')
+        lang_dir = os.path.join(ROOT, "audios", f'sps-corpus-1.0-2025-09-05-{lang}')
 
         lang_df = pd.read_csv(
             os.path.join(lang_dir, f'ss-corpus-{lang}.tsv'),
