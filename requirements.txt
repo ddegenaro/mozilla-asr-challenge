@@ -5,3 +5,5 @@ bitsandbytes
 evaluate
 datasets
 peft
+torchaudio
+torchcodec

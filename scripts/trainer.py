@@ -3,9 +3,10 @@ import json
 import torch
 from utils.whisper_data_collator import WhisperDataCollator
 import evaluate
-from datasets import Dataset
+from datasets import Dataset, DatasetDict, Audio
 from peft import LoraConfig, get_peft_model
 from scripts.get_data import LANGUAGES, get_data
+import torchaudio
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -23,7 +24,10 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
             # target_modules=[] # this is where we can freeze layers/not target them in the LoRA
         )       
         model = get_peft_model(model, lora_config)
-    processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=language)
+    if language == "all":
+        processor = WhisperProcessor.from_pretrained(config["whisper_model"])
+    else:
+        processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=language)
 
     def prepare_dataset(batch):
         # load and resample audio data from 48 to 16kHz
@@ -35,7 +39,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         # encode target text to label ids 
         batch["labels"] = processor.tokenizer(batch["transcription"]).input_ids
         return batch
-    dataset = ds.map(prepare_dataset, remove_columns=ds.column_names["train"], num_proc=4)
+    train_dataset = ds["train"].map(prepare_dataset, num_proc=4)
+    dev_dataset = ds["validation"].map(prepare_dataset, num_proc=4)
+
     data_collator = WhisperDataCollator(
         processor=processor,
         decoder_start_token_id=model.config.decoder_start_token_id,
@@ -80,8 +86,8 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,
-        train_dataset=dataset["train"],
-        eval_dataset=dataset["validation"],
+        train_dataset=train_dataset,
+        eval_dataset=dev_dataset,
         data_collator=data_collator,
         compute_metrics=compute_metrics,
         tokenizer=processor.feature_extractor,
@@ -91,9 +97,31 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
 if __name__ == "__main__":
     # for language in LANGUAGES:
-    train = get_data(split='train', langs='all')
-    dev = get_data(split="dev", langs="all")
-    dataset = Dataset({
+    lang = "all"
+    train_data = get_data(split='train', langs=lang)
+    train_audios = train_data[:]["audios"]
+    train_languages = train_data[:]["meta"]["language"].to_list()
+    train_transcripts = train_data[:]["transcriptions"]
+    train = {"audio": train_audios,
+             "transcription": train_transcripts,
+             "language": train_languages
+             }
+
+    dev = get_data(split="dev", langs=lang)
+    dev_data = get_data(split='train', langs=lang)
+    dev_audios = dev_data[:]["audios"]
+    dev_languages = dev_data[:]["meta"]["language"].to_list()
+    dev_transcripts = dev_data[:]["transcriptions"]
+    dev = {"audio": dev_audios,
+            "transcription": dev_transcripts,
+            "language": dev_languages
+            }
+    train = Dataset.from_pandas(train)
+    train = train.cast_column("audio", Audio())
+    dev = Dataset.from_pandas(dev)
+    dev = dev.cast_column("audio", Audio())
+    dataset = DatasetDict({
         "train": train,
         "validation": dev
     })
+    train_whisper("all", dataset, False)
