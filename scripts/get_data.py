@@ -64,10 +64,12 @@ class SpeechDataset(Dataset):
         rows = self.df.loc[index]
 
         audio_files = rows['audio_file']
-
-        langs = [
-            x.split('-')[2] for x in audio_files if x.split('-')[2] != "el" else "el-CY"
-        ]
+        langs = []
+        for x in audio_files:
+            if x.split('-')[2] == "el":
+                langs.append("el-CY")
+            else:
+                langs.append(x.split('-')[2])
 
         audios = [
             os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}', "audios", audio_file)
