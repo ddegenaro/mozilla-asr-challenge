@@ -6,7 +6,7 @@ import evaluate
 from datasets import Dataset, DatasetDict, Audio
 from peft import LoraConfig, get_peft_model
 from scripts.get_data import LANGUAGES, get_data
-import torchaudio
+import librosa
 import pandas as pd
 
 with open("config.json", "r") as f:
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     train_audios = train_data[:]["audios"]
     train_languages = train_data[:]["meta"]["language"].to_list()
     train_transcripts = train_data[:]["transcriptions"]
-    train = {"audio": train_audios,
+    train = {"audio": [librosa.load(p)[0].resample(16000) for p in train_audios],
              "transcription": train_transcripts,
              "language": train_languages
              }
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     dev_audios = dev_data[:]["audios"]
     dev_languages = dev_data[:]["meta"]["language"].to_list()
     dev_transcripts = dev_data[:]["transcriptions"]
-    dev = {"audio": dev_audios,
+    dev = {"audio": [librosa.load(p)[0].resample(16000) for p in dev_audios],
             "transcription": dev_transcripts,
             "language": dev_languages
             }
