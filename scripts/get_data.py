@@ -66,7 +66,7 @@ class SpeechDataset(Dataset):
         audio_files = rows['audio_file']
 
         langs = [
-            x.split('-')[2] for x in audio_files
+            x.split('-')[2] for x in audio_files if x.split('-')[2] != "el" else "el-CY"
         ]
 
         audios = [
