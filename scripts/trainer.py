@@ -103,17 +103,32 @@ if __name__ == "__main__":
     train_audio_paths = train_data[:]["audios"]
     train_languages = train_data[:]["meta"]["language"].to_list()
     train_transcripts = train_data[:]["transcriptions"]
-    train_audios = [librosa.load(p) for p in train_audio_paths]
-    train_audios = [librosa.resample(a[0], orig_sr=a[1], target_sr=16000) for a in train_audios]
+    train_audios = []
+    for p in train_audio_paths:
+        try: 
+            y, sr = librosa.load(p)
+            y = librosa.resample(y, orig_sr=sr, target_sr=16000)
+            train_audios.append(y)
+        except Exception as e:
+            print("could not load audio in file: ", p)
+            train_audios.append(None)
+
     train = {"audio": train_audios,
              "transcription": train_transcripts,
              "language": train_languages
              }
 
     dev_data = get_data(split='train', langs=None if lang == "all" else [lang])
-    dev_audios = dev_data[:]["audios"]
-    dev_audios = [librosa.load(p) for p in dev_audios]
-    dev_audios = [librosa.resample(a[0], orig_sr=a[1], target_sr=16000) for a in dev_audios]
+    dev_audio_paths = dev_data[:]["audios"]
+    dev_audios = []
+    for p in dev_audio_paths:
+        try: 
+            y, sr = librosa.load(p)
+            y = librosa.resample(y, orig_sr=sr, target_sr=16000)
+            dev_audios.append(y)
+        except Exception as e:
+            print("could not load audio in file: ", p)
+            dev_audios.append(None)
     dev_languages = dev_data[:]["meta"]["language"].to_list()
     dev_transcripts = dev_data[:]["transcriptions"]
     dev = {"audio": dev_audios,
@@ -121,10 +136,12 @@ if __name__ == "__main__":
             "language": dev_languages
             }
     train = pd.DataFrame(train)
+    train = train.dropna()
     train = Dataset.from_pandas(train)
     # train = train.cast_column("audio", Audio())
     dev = pd.DataFrame(dev)
     dev = Dataset.from_pandas(dev)
+    dev = dev.dropna()
     # dev = dev.cast_column("audio", Audio())
     dataset = DatasetDict({
         "train": train,
