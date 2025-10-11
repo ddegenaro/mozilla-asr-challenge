@@ -7,6 +7,7 @@ from datasets import Dataset, DatasetDict, Audio
 from peft import LoraConfig, get_peft_model
 from scripts.get_data import LANGUAGES, get_data
 import torchaudio
+import pandas as pd
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -98,7 +99,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 if __name__ == "__main__":
     # for language in LANGUAGES:
     lang = "all"
-    train_data = get_data(split='train', langs=lang)
+    train_data = get_data(split='train', langs= None if lang == "all" else lang)
     train_audios = train_data[:]["audios"]
     train_languages = train_data[:]["meta"]["language"].to_list()
     train_transcripts = train_data[:]["transcriptions"]
@@ -116,12 +117,14 @@ if __name__ == "__main__":
             "transcription": dev_transcripts,
             "language": dev_languages
             }
+    train = pd.DataFrame(train)
     train = Dataset.from_pandas(train)
     train = train.cast_column("audio", Audio())
+    dev = pd.DataFrame(dev)
     dev = Dataset.from_pandas(dev)
     dev = dev.cast_column("audio", Audio())
     dataset = DatasetDict({
         "train": train,
         "validation": dev
     })
-    train_whisper("all", dataset, False)
+    train_whisper(lang, dataset, False)
