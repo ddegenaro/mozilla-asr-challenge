@@ -2,7 +2,7 @@ import os
 from typing import Union, Iterable
 
 import pandas as pd
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader
 
 ROOT = os.path.join(
     '/home', 'drd92', 'mozilla-asr-challenge', 'mcv-sps-st-09-2025'
@@ -44,7 +44,7 @@ class SpeechDataset(Dataset):
         """Returns the length of the dataset in audio-text pairs.
 
         Returns:
-            `int`: The length.
+            int: _The length._
         """
         return len(self.df)
     
@@ -55,7 +55,7 @@ class SpeechDataset(Dataset):
             index: _The row(s) to select._
 
         Returns:
-            _dict_: _The keys are `meta`, `audios` (absolute paths to audio files) and `transcriptions`._
+            dict: _The keys are `meta`, `audios` (absolute paths to audio files) and `transcriptions`._
         """
 
         if type(index) == int:
@@ -82,7 +82,10 @@ class SpeechDataset(Dataset):
             'transcriptions': transcriptions
         }
 
-def get_data(split: str, langs: Union[str, Iterable[str]] = None) -> SpeechDataset:
+def get_data(
+    split: str,
+    langs: Union[str, Iterable[str]] = None
+) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
 
     Args:
@@ -90,7 +93,7 @@ def get_data(split: str, langs: Union[str, Iterable[str]] = None) -> SpeechDatas
         langs (_Union[str, Iterable[str]]_): _The languages to include. Defaults to `None`, which inludes all languages._
 
     Returns:
-        SpeechDataset: _A dataset that supports PyTorch `Dataset` functionality._
+        DataLoader: _A dataset that supports PyTorch `Dataset` functionality (or pre-wrapped in a `DataLoader`)._
     """
 
     if type(langs) == str:
