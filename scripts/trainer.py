@@ -129,7 +129,7 @@ if __name__ == "__main__":
     train_data = get_data(split='train', langs= None if lang == "all" else [lang])
     train = munge_data(train_data)
     print("train setup")
-    dev_data = get_data(split='train', langs=None if lang == "all" else [lang])
+    dev_data = get_data(split='dev', langs=None if lang == "all" else [lang])
     dev = munge_data(dev_data)
     print("dev setup")
 
