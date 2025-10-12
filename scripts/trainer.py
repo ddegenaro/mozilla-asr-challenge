@@ -32,10 +32,20 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
     def prepare_dataset(batch):
         # load and resample audio data from 48 to 16kHz
-        audio = batch["audio"]
+        audio_paths = batch["audio_path"]
+        audio = []
+        sampling_rate = 16000
+        for ap in audio_paths:
+            try: 
+                y, sr = librosa.load(ap)
+                y = librosa.resample(y, orig_sr=sr, target_sr=16000)
+                audio.append(y)
+            except Exception as e:
+                print("could not load audio in file: ", p)
+                audio.append(None)
         inputs = processor(
-            audio["array"],
-            sampling_rate=audio["sampling_rate"],
+            audio,
+            sampling_rate=sampling_rate,
             text=batch["transcription"],
             padding="longest",
             return_tensors="pt"
@@ -105,40 +115,22 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
 if __name__ == "__main__":
     # for language in LANGUAGES:
-    lang = "all"
+    lang = "aln"
     train_data = get_data(split='train', langs= None if lang == "all" else [lang])
     train_audio_paths = train_data[:]["audios"]
     train_languages = train_data[:]["meta"]["language"].to_list()
     train_transcripts = train_data[:]["transcriptions"]
-    train_audios = []
-    for p in train_audio_paths:
-        try: 
-            y, sr = librosa.load(p)
-            y = librosa.resample(y, orig_sr=sr, target_sr=16000)
-            train_audios.append(y)
-        except Exception as e:
-            print("could not load audio in file: ", p)
-            train_audios.append(None)
 
-    train = {"audio": train_audios,
+    train = {"audio_path": train_audio_paths,
              "transcription": train_transcripts,
              "language": train_languages
              }
 
     dev_data = get_data(split='train', langs=None if lang == "all" else [lang])
     dev_audio_paths = dev_data[:]["audios"]
-    dev_audios = []
-    for p in dev_audio_paths:
-        try: 
-            y, sr = librosa.load(p)
-            y = librosa.resample(y, orig_sr=sr, target_sr=16000)
-            dev_audios.append(y)
-        except Exception as e:
-            print("could not load audio in file: ", p)
-            dev_audios.append(None)
     dev_languages = dev_data[:]["meta"]["language"].to_list()
     dev_transcripts = dev_data[:]["transcriptions"]
-    dev = {"audio": dev_audios,
+    dev = {"audio_path": dev_audio_paths,
             "transcription": dev_transcripts,
             "language": dev_languages
             }
