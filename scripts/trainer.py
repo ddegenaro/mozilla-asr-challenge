@@ -55,9 +55,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
             "labels": inputs.labels[0]
         }
     print('preparing train')
-    train_dataset = ds["train"].map(prepare_dataset, remove_columns=["audio", "transcription"], num_proc=4)
+    train_dataset = ds["train"].map(prepare_dataset, remove_columns=["transcription", "__index_level_0__"], num_proc=4)
     print("prepared train, preparing dev")
-    dev_dataset = ds["validation"].map(prepare_dataset, remove_columns=["audio", "transcription"], num_proc=4)
+    dev_dataset = ds["validation"].map(prepare_dataset, remove_columns=["transcription", "__index_level_0__"], num_proc=4)
     print('collating')
     data_collator = WhisperDataCollator(
         processor=processor,
