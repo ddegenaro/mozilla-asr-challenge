@@ -4,11 +4,12 @@ import torch
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.clean_transcript import clean
 import evaluate
-from datasets import Dataset, DatasetDict, Audio
+from datasets import Dataset, DatasetDict, Array1D
 from peft import LoraConfig, get_peft_model
 from scripts.get_data import LANGUAGES, get_data
 import librosa
 import pandas as pd
+import soundfile as sf
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -48,11 +49,11 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         }
     print('preparing train')
     train_dataset = ds["train"]
-    train_dataset = train_dataset.cast_column("audio", Audio(sampling_rate=16000))
+    train_dataset = train_dataset.cast_column("audio", Array1D(dtype="float32", shape=(-1,)))
     train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "language", "duration"], num_proc=4)
     print("prepared train, preparing dev")
     dev_dataset = ds["validation"]
-    dev_dataset = dev_dataset.cast_column("audio", Audio(sampling_rate=16000))
+    dev_dataset = dev_dataset.cast_column("audio", Array1D(dtype="float32", shape=(-1,)))
     dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "language", "duration"], num_proc=4)
     print('collating')
     data_collator = WhisperDataCollator(
@@ -110,12 +111,16 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
 def munge_data(data):
     audio_paths = data[:]["audios"]
+    audio = []
+    for ap in audio_paths:
+        a, sr = sf.read(ap)
+        audio.append(a)
     languages = data[:]["meta"]["language"].to_list()
     duration = data[:]["meta"]["duration_ms"].to_list()
     transcripts = data[:]["transcriptions"]
     transcripts = [clean(t) for t in transcripts]
     return {
-        "audio": audio_paths,
+        "audio": audio,
         "duration": duration, 
         "transcription": transcripts,
         "language": languages

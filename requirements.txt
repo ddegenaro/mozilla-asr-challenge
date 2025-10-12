@@ -9,3 +9,4 @@ torchaudio
 torchcodec
 librosa
 jiwer
+soundfile
