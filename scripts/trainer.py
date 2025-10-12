@@ -33,16 +33,20 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     def prepare_dataset(batch):
         # load and resample audio data from 48 to 16kHz
         audio = batch["audio"]
+        inputs = processor(
+            audio["array"],
+            sampling_rate=audio["sampling_rate"],
+            text=batch["transcription"],
+            padding="longest",
+            return_tensors="pt"
+        )
+        return {
+            "input_features": inputs.input_features[0],
+            "labels": inputs.labels[0]
+        }
 
-        # compute log-Mel input features from input audio array 
-        batch["input_features"] = processor.feature_extractor(audio["array"], sampling_rate=audio["sampling_rate"]).input_features[0]
-
-        # encode target text to label ids 
-        batch["labels"] = processor.tokenizer(batch["transcription"]).input_ids
-        batch.drop("audio")
-        return batch
-    train_dataset = ds["train"].map(prepare_dataset, num_proc=4)
-    dev_dataset = ds["validation"].map(prepare_dataset, num_proc=4)
+    train_dataset = ds["train"].map(prepare_dataset, remove_columns=["audio", "transcription"], num_proc=4)
+    dev_dataset = ds["validation"].map(prepare_dataset, remove_columns=["audio", "transcription"], num_proc=4)
 
     data_collator = WhisperDataCollator(
         processor=processor,
