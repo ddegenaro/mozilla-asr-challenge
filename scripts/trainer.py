@@ -37,11 +37,13 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         sampling_rate = 16000
         for ap in audio_paths:
             try: 
-                y, sr = librosa.load(ap)
-                y = librosa.resample(y, orig_sr=sr, target_sr=16000)
-                audio.append(y)
+                with open(ap, "rb") as f:
+                    y, sr = librosa.load(f)
+                    y = librosa.resample(y, orig_sr=sr, target_sr=16000)
+                    audio.append(y)
+                    f.close()
             except Exception as e:
-                print("could not load audio in file: ", p)
+                print("could not load audio in file: ", ap)
                 audio.append(None)
         inputs = processor(
             audio,
