@@ -2,6 +2,7 @@ import json
 import torch
 import evaluate
 import pandas as pd
+import numpy as np
 import soundfile as sf
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments
 from datasets import Dataset, DatasetDict
@@ -38,12 +39,17 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
         # torch & torchcodec are throwing an error because of that.
         audio, sr = sf.read(audio_path)
+        if audio.ndim > 1:
+            # Average across the channel axis to convert to mono
+            audio = np.mean(audio, axis=1)
         sampling_rate = 16000
         inputs = processor(
             audio,
             sampling_rate=sampling_rate,
             text=batch["transcription"],
-            padding="longest",
+            padding="max_length",
+            max_length=448,
+            truncation=True,
             return_tensors="pt"
         )
         return {
@@ -84,7 +90,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         warmup_steps=200,
         max_steps=5000,
         gradient_checkpointing=True,
-        fp16=True,
+        fp16=torch.cuda.is_available(),
         eval_strategy="steps",
         per_device_eval_batch_size=8,
         predict_with_generate=True,
@@ -125,7 +131,7 @@ def munge_data(data):
 
 if __name__ == "__main__":
     # for language in LANGUAGES:
-    lang = "aln"
+    lang = config["language"]
     train_data = get_data(split='train', langs= None if lang == "all" else [lang])
     train = munge_data(train_data)
     print("train setup")
