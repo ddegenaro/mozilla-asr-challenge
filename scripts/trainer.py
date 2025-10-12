@@ -49,11 +49,11 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     print('preparing train')
     train_dataset = ds["train"]
     train_dataset = train_dataset.cast_column("audio", Audio(sampling_rate=16000))
-    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "__index_level_0__"], num_proc=4)
+    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "language", "duration"], num_proc=4)
     print("prepared train, preparing dev")
     dev_dataset = ds["validation"]
     dev_dataset = dev_dataset.cast_column("audio", Audio(sampling_rate=16000))
-    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "__index_level_0__"], num_proc=4)
+    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "language", "duration"], num_proc=4)
     print('collating')
     data_collator = WhisperDataCollator(
         processor=processor,
@@ -91,7 +91,6 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         save_steps=1000,
         eval_steps=1000,
         logging_steps=25,
-        report_to=["tensorboard"],
         load_best_model_at_end=True,
         metric_for_best_model="wer",
         greater_is_better=False,
@@ -135,11 +134,11 @@ if __name__ == "__main__":
 
     train = pd.DataFrame(train)
     train = train.dropna()
-    train = train[train['duration'] == 0]
+    train = train[train['duration'] > 0]
     train = Dataset.from_pandas(train)
     dev = pd.DataFrame(dev)
     dev = dev.dropna()
-    dev = dev[dev['duration'] == 0]
+    dev = dev[dev['duration'] > 0]
     dev = Dataset.from_pandas(dev)
     dataset = DatasetDict({
         "train": train,
