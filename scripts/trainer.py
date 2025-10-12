@@ -2,6 +2,7 @@ from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2
 import json
 import torch
 from utils.whisper_data_collator import WhisperDataCollator
+from utils.clean_transcript import clean
 import evaluate
 from datasets import Dataset, DatasetDict, Audio
 from peft import LoraConfig, get_peft_model
@@ -32,19 +33,8 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
     def prepare_dataset(batch):
         # load and resample audio data from 48 to 16kHz
-        audio_paths = batch["audio_path"]
-        audio = []
+        audio = batch["audio"]
         sampling_rate = 16000
-        for ap in audio_paths:
-            try: 
-                with open(ap, "rb") as f:
-                    y, sr = librosa.load(f)
-                    y = librosa.resample(y, orig_sr=sr, target_sr=16000)
-                    audio.append(y)
-                    f.close()
-            except Exception as e:
-                print("could not load audio in file: ", ap)
-                audio.append(None)
         inputs = processor(
             audio,
             sampling_rate=sampling_rate,
@@ -57,9 +47,13 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
             "labels": inputs.labels[0]
         }
     print('preparing train')
-    train_dataset = ds["train"].map(prepare_dataset, remove_columns=["transcription", "__index_level_0__"], num_proc=4)
+    train_dataset = ds["train"]
+    train_dataset = train_dataset.cast_column("audio", Audio(sampling_rate=16000))
+    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "__index_level_0__"], num_proc=4)
     print("prepared train, preparing dev")
-    dev_dataset = ds["validation"].map(prepare_dataset, remove_columns=["transcription", "__index_level_0__"], num_proc=4)
+    dev_dataset = ds["validation"]
+    dev_dataset = dev_dataset.cast_column("audio", Audio(sampling_rate=16000))
+    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "__index_level_0__"], num_proc=4)
     print('collating')
     data_collator = WhisperDataCollator(
         processor=processor,
@@ -86,11 +80,11 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         per_device_train_batch_size=16,
         gradient_accumulation_steps=1, 
         learning_rate=1e-5,
-        warmup_steps=500,
+        warmup_steps=200,
         max_steps=5000,
         gradient_checkpointing=True,
         fp16=True,
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         per_device_eval_batch_size=8,
         predict_with_generate=True,
         generation_max_length=225,
@@ -115,35 +109,38 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     trainer.train()
     trainer.model.save_pretrained(f"{config['whisper_model']}_{language}/final")
 
+def munge_data(data):
+    audio_paths = data[:]["audios"]
+    languages = data[:]["meta"]["language"].to_list()
+    duration = data[:]["meta"]["duration_ms"].to_list()
+    transcripts = data[:]["transcriptions"]
+    transcripts = [clean(t) for t in transcripts]
+    return {
+        "audio": audio_paths,
+        "duration": duration, 
+        "transcription": transcripts,
+        "language": languages
+    }
+
+
 if __name__ == "__main__":
     # for language in LANGUAGES:
     lang = "aln"
     train_data = get_data(split='train', langs= None if lang == "all" else [lang])
-    train_audio_paths = train_data[:]["audios"]
-    train_languages = train_data[:]["meta"]["language"].to_list()
-    train_transcripts = train_data[:]["transcriptions"]
-
-    train = {"audio_path": train_audio_paths,
-             "transcription": train_transcripts,
-             "language": train_languages
-             }
-
+    train = munge_data(train_data)
+    print("train setup")
     dev_data = get_data(split='train', langs=None if lang == "all" else [lang])
-    dev_audio_paths = dev_data[:]["audios"]
-    dev_languages = dev_data[:]["meta"]["language"].to_list()
-    dev_transcripts = dev_data[:]["transcriptions"]
-    dev = {"audio_path": dev_audio_paths,
-            "transcription": dev_transcripts,
-            "language": dev_languages
-            }
+    dev = munge_data(dev_data)
+    print("dev setup")
+
     train = pd.DataFrame(train)
     train = train.dropna()
+    train = train[train['duration'] == 0]
     train = Dataset.from_pandas(train)
-    # train = train.cast_column("audio", Audio())
     dev = pd.DataFrame(dev)
     dev = dev.dropna()
+    dev = dev[dev['duration'] == 0]
     dev = Dataset.from_pandas(dev)
-    # dev = dev.cast_column("audio", Audio())
     dataset = DatasetDict({
         "train": train,
         "validation": dev

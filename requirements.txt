@@ -7,3 +7,5 @@ datasets
 peft
 torchaudio
 torchcodec
+librosa
+jiwer
