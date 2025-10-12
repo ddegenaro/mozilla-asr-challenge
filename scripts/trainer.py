@@ -39,6 +39,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 
         # encode target text to label ids 
         batch["labels"] = processor.tokenizer(batch["transcription"]).input_ids
+        batch.drop("audio")
         return batch
     train_dataset = ds["train"].map(prepare_dataset, num_proc=4)
     dev_dataset = ds["validation"].map(prepare_dataset, num_proc=4)
