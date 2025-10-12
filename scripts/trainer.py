@@ -49,11 +49,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         }
     print('preparing train')
     train_dataset = ds["train"]
-    train_dataset = train_dataset.cast_column("audio", Array1D(dtype="float32", shape=(-1,)))
     train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "language", "duration"], num_proc=4)
     print("prepared train, preparing dev")
     dev_dataset = ds["validation"]
-    dev_dataset = dev_dataset.cast_column("audio", Array1D(dtype="float32", shape=(-1,)))
     dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio", "transcription", "language", "duration"], num_proc=4)
     print('collating')
     data_collator = WhisperDataCollator(
@@ -77,7 +75,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         return {"wer": wer}
     print('training')
     training_args = Seq2SeqTrainingArguments(
-        output_dir=f"{config['whisper_model']}_{language}", 
+        output_dir=f"whisper_{language}", 
         per_device_train_batch_size=16,
         gradient_accumulation_steps=1, 
         learning_rate=1e-5,
@@ -107,7 +105,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         tokenizer=processor.feature_extractor,
     )
     trainer.train()
-    trainer.model.save_pretrained(f"{config['whisper_model']}_{language}/final")
+    trainer.model.save_pretrained(f"whisper_{language}/final")
 
 def munge_data(data):
     audio_paths = data[:]["audios"]
