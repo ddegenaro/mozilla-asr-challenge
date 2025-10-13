@@ -29,9 +29,7 @@ class WhisperDataCollator:
         # truncate
         for i, l in enumerate(label_sequences):
            labels[i, :len(l)] = l 
-        # Determine device from model inputs
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         return {
-            "input_features": input_features.to(device),  
-            "labels": labels.to(device),
+            "input_features": input_features.requires_grad_(),  
+            "labels": labels,
         }
