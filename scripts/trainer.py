@@ -3,7 +3,7 @@ import torch
 import evaluate
 import pandas as pd
 import numpy as np
-import soundfile as sf
+import librosa
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments
 from datasets import Dataset, DatasetDict
 from peft import LoraConfig, get_peft_model
@@ -38,18 +38,20 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         audio_path = batch["audio_paths"]
         # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
         # torch & torchcodec are throwing an error because of that.
-        audio, sr = sf.read(audio_path)
-        if audio.ndim > 1:
-            # Average across the channel axis to convert to mono
-            audio = np.mean(audio, axis=1)
+        with open(audio_path, "rb") as f:
+            audio, sr = librosa.load(f)
+            audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
+            if audio.ndim > 1:
+                # Average across the channel axis to convert to mono
+                audio = np.mean(audio, axis=1)
+            f.close()
+        
         sampling_rate = 16000
         inputs = processor(
-            audio,
+            audio=audio,
             sampling_rate=sampling_rate,
             text=batch["transcription"],
-            padding="max_length",
-            max_length=448,
-            truncation=True,
+            padding="longest",
             return_tensors="pt"
         )
         return {
