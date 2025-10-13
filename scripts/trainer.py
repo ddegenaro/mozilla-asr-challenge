@@ -12,6 +12,8 @@ from scripts.get_data import LANGUAGES, get_data
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.clean_transcript import clean
 
+wer = evaluate.load("wer")
+
 with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
@@ -67,7 +69,6 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     data_collator = WhisperDataCollator(
         processor=processor,
     )
-    wer = evaluate.load("wer")
     def compute_metrics(pred):
         pred_ids = pred.predictions
         label_ids = pred.label_ids
