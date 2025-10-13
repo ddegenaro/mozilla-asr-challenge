@@ -106,7 +106,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     )
     trainer = Seq2SeqTrainer(
         args=training_args,
-        model=model,
+        model=model.to(device),
         train_dataset=train_dataset,
         eval_dataset=dev_dataset,
         data_collator=data_collator,
