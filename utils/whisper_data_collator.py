@@ -30,6 +30,6 @@ class WhisperDataCollator:
         for i, l in enumerate(label_sequences):
            labels[i, :len(l)] = l 
         return {
-            "input_features": input_features.requires_grad_(),  
+            "input_features": input_features,  
             "labels": labels,
         }
