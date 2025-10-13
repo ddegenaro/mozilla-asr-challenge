@@ -66,7 +66,6 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
     data_collator = WhisperDataCollator(
         processor=processor,
-        decoder_start_token_id=model.config.decoder_start_token_id,
     )
     wer = evaluate.load("wer")
     def compute_metrics(pred):
