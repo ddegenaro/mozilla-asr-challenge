@@ -1,42 +1,36 @@
-import torch
 from dataclasses import dataclass
-from typing import Any, Dict, List, Union
+from typing import List, Dict, Union
 from transformers import WhisperProcessor
+import numpy as np
+import torch.nn.functional as F
+import torch
 
 @dataclass
 class WhisperDataCollator:
-    """
-        Written with help from ChatGPT
-    """
     processor: WhisperProcessor
     return_tensors: str = "pt"
 
-    def __call__(self, features: List[Dict[str, Any]]) -> Dict[str, Any]:
-        # Extract raw audio and text from features
-        input_values = [f["input_features"] for f in features]
-        labels = [f["labels"] for f in features]
+    def __call__(self, features: List[Dict[str, Union[List[float], torch.Tensor]]]) -> Dict[str, torch.Tensor]:
+        """
+            a lot of hackiness here to ensure that the data is in the right format because otherwise a padding error is thrown. 
+            every time I try to pad using huggingface it throws an error
+        """
+        input = [torch.tensor(f["input_features"]) for f in features]
 
-        # Use processor to pad and convert inputs
-        batch_inputs = self.processor.feature_extractor.pad(
-            {"input_features": input_values},
-            return_tensors=self.return_tensors,
-            padding=True
-        )
+        labels = [torch.tensor(f["labels"]) for f in features]
 
-        # Tokenize and pad labels
-        batch_labels = self.processor.tokenizer.pad(
-            {"input_ids": labels},
-            padding=True,
-            return_tensors=self.return_tensors
-        )
+        # Pad the input features
+        padded_inputs=[F.pad(t, (0, 3000-t.shape[1]), value=0.0) for t in input] # padding along the time (last) dimension to a fixed length of 3000
+        input_features = torch.stack(padded_inputs)
 
-        # Replace padding token IDs with -100 to ignore in loss
-        batch_labels["input_ids"][batch_labels["input_ids"] == self.processor.tokenizer.pad_token_id] = -100
+        # Pad the labels
+        max_lbl = max(len(l) for l in labels)
+        padded_labels = torch.full((len(labels), max_lbl), fill_value=-100, dtype=torch.long)
+        # truncate
+        for i, l in enumerate(labels):
+            padded_labels[i:len(l)] = l
 
-        # Final batch
-        batch = {
-            "input_features": batch_inputs["input_features"],  # (batch_size, 80, time)
-            "labels": batch_labels["input_ids"]
+        return {
+            "input_features": input_features,  
+            "labels": padded_labels,
         }
-
-        return batch
