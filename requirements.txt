@@ -1,0 +1,12 @@
+transformers
+torch
+accelerate
+bitsandbytes
+evaluate
+datasets
+peft
+torchaudio
+torchcodec
+librosa
+jiwer
+soundfile

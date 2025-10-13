@@ -1,0 +1,4 @@
+{
+    "whisper_model": "openai/whisper-tiny",
+    "language": "aln"
+}
