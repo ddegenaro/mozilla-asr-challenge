@@ -62,6 +62,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     train_dataset = ds["train"]
     train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
     print("prepared train, preparing dev")
+    import pdb; pdb.set_trace()
     dev_dataset = ds["validation"]
     dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
     data_collator = WhisperDataCollator(
