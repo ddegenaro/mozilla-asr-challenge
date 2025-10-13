@@ -19,7 +19,8 @@ class WhisperDataCollator:
         # Use processor to pad and convert inputs
         batch_inputs = self.processor.feature_extractor.pad(
             {"input_features": input_values},
-            return_tensors=self.return_tensors
+            return_tensors=self.return_tensors,
+            padding=True
         )
 
         # Tokenize and pad labels
