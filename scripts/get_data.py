@@ -7,9 +7,6 @@ from torch.utils.data import Dataset, DataLoader
 ROOT = os.path.join(
     '/home', 'drd92', 'mozilla-asr-challenge', 'mcv-sps-st-09-2025'
 )
-ROOT = os.path.join(
-    '/Users', 'erafkin', 'Desktop', 'School', 'graduate', '2025-2026', 'mozilla-asr-challenge', 'mcv-sps-st-09-2025'
-)
 
 LANGUAGES = {
     'aln',
