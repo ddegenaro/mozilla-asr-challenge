@@ -106,7 +106,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     )
     trainer = Seq2SeqTrainer(
         args=training_args,
-        model=model.to(device),
+        model=model.to("cuda" if torch.cuda.is_available() else "cpu"),
         train_dataset=train_dataset,
         eval_dataset=dev_dataset,
         data_collator=data_collator,
