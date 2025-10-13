@@ -4,6 +4,7 @@ import evaluate
 import pandas as pd
 import numpy as np
 import librosa
+from typing import Optional
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments
 from datasets import Dataset, DatasetDict
 from peft import LoraConfig, get_peft_model
@@ -11,31 +12,30 @@ from jiwer import wer
 from scripts.get_data import LANGUAGES, get_data
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.clean_transcript import clean
-
-
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 
 with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
 
-def train_whisper(language:str, ds:Dataset, lora:bool=False):
+def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional[str]=None):
     model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"])
-    if lora:
-        # TODO: quantize? lets start with no?
+    if lora:        # TODO: quantize? lets start with no?
         lora_config = LoraConfig(
             r=config["lora_rank"],
             lora_alpha=32,
-            lora_dropout=0.1,
+            lora_dropout=0.05,
             bias="none",
-            target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]#, "down_proj", "up_proj"] # this is where we can freeze layers/not target them in the LoRA
+            target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], # this is where we can freeze layers/not target them in the LoRA
         )       
         model = get_peft_model(model, lora_config)
         model.print_trainable_parameters()
+    model.config.forced_decoder_ids = None 
     if language == "all":
         processor = WhisperProcessor.from_pretrained(config["whisper_model"])
     else:
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=language)
-
     def prepare_dataset(batch):
         # load and resample audio data from 48 to 16kHz
         audio_path = batch["audio_paths"]
@@ -44,9 +44,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         with open(audio_path, "rb") as f:
             audio, sr = librosa.load(f)
             audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
-            if audio.ndim > 1:
+            #if audio.ndim > 1:
                 # Average across the channel axis to convert to mono
-                audio = np.mean(audio, axis=1)
+                #audio = np.mean(audio, axis=1)
             f.close()
         
         sampling_rate = 16000
@@ -70,6 +70,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     data_collator = WhisperDataCollator(
         processor=processor,
     )
+
     def compute_metrics(pred):
         pred_ids = pred.predictions
         label_ids = pred.label_ids
@@ -81,38 +82,41 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         pred_str = processor.tokenizer.batch_decode(pred_ids, skip_special_tokens=True)
         label_str = processor.tokenizer.batch_decode(label_ids, skip_special_tokens=True)
 
-        wer = 100 * wer(predictions=pred_str, references=label_str)
+        wer_pred = 100 * wer(label_str,pred_str)
+        print("wer", wer_pred)
+        return {"wer": wer_pred}
 
-        return {"wer": wer}
+    proxy_lang_id = processor.tokenizer.get_decoder_prompt_ids(language=proxy_lang, task="transcribe")
+
+    # Force the chosen token globally:
+    model.config.forced_decoder_ids = [[1, proxy_lang_id]]
+    
     print('training')
     training_args = Seq2SeqTrainingArguments(
         output_dir=f"whisper_{language}", 
-        per_device_train_batch_size=16,
-        gradient_accumulation_steps=1, 
+        per_device_train_batch_size=8,
         learning_rate=1e-5,
-        warmup_steps=200,
-        max_steps=5000,
+        num_train_epochs=config["epochs"],
         gradient_checkpointing=False,
         fp16=torch.cuda.is_available(),
-        eval_strategy="steps",
+        eval_strategy="epoch",
         per_device_eval_batch_size=8,
         predict_with_generate=True,
         generation_max_length=225,
         save_strategy="no",
-        eval_steps=1000,
-        logging_steps=25,
-        load_best_model_at_end=True,
+        load_best_model_at_end=False,
         metric_for_best_model="wer",
         greater_is_better=False,
         push_to_hub=False,
     )
+
     trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,
+        compute_metrics=compute_metrics,
         train_dataset=train_dataset,
         eval_dataset=dev_dataset,
         data_collator=data_collator,
-        compute_metrics=compute_metrics,
         tokenizer=processor.feature_extractor,
     )
     trainer.train()
@@ -121,7 +125,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
 def munge_data(data):
     audio_paths = data[:]["audios"]
     languages = data[:]["meta"]["language"].to_list() # this will likely be helpful later
-    duration = data[:]["meta"]["duration_ms"].to_list() # will use this to 
+    duration = data[:]["meta"]["duration_ms"].to_list() # will use this to remove empty 
     transcripts = data[:]["transcriptions"]
     transcripts = [clean(t) for t in transcripts]
     return {
@@ -129,7 +133,8 @@ def munge_data(data):
         "duration": duration, 
         "transcription": transcripts,
         "language": languages
-    }
+   }
+
 
 
 if __name__ == "__main__":
@@ -154,4 +159,4 @@ if __name__ == "__main__":
         "train": train,
         "validation": dev
     })
-    train_whisper(lang, dataset, config["lora"])
+    train_whisper(lang, dataset, config["lora"], config["proxy_lang"])
