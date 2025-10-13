@@ -1,4 +1,7 @@
 {
     "whisper_model": "openai/whisper-tiny",
-    "language": "aln"
+    "language": "aln",
+    "lora": true,
+    "lora_rank": 8
+
 }

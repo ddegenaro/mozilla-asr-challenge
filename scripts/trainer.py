@@ -7,12 +7,12 @@ import librosa
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments
 from datasets import Dataset, DatasetDict
 from peft import LoraConfig, get_peft_model
-
+from jiwer import wer
 from scripts.get_data import LANGUAGES, get_data
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.clean_transcript import clean
 
-wer = evaluate.load("wer")
+
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -23,13 +23,14 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
     if lora:
         # TODO: quantize? lets start with no?
         lora_config = LoraConfig(
-            r=16,
+            r=config["lora_rank"],
             lora_alpha=32,
             lora_dropout=0.1,
             bias="none",
-            # target_modules=[] # this is where we can freeze layers/not target them in the LoRA
+            target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]#, "down_proj", "up_proj"] # this is where we can freeze layers/not target them in the LoRA
         )       
         model = get_peft_model(model, lora_config)
+        model.print_trainable_parameters()
     if language == "all":
         processor = WhisperProcessor.from_pretrained(config["whisper_model"])
     else:
@@ -80,7 +81,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         pred_str = processor.tokenizer.batch_decode(pred_ids, skip_special_tokens=True)
         label_str = processor.tokenizer.batch_decode(label_ids, skip_special_tokens=True)
 
-        wer = 100 * wer.compute(predictions=pred_str, references=label_str)
+        wer = 100 * wer(predictions=pred_str, references=label_str)
 
         return {"wer": wer}
     print('training')
@@ -97,7 +98,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False):
         per_device_eval_batch_size=8,
         predict_with_generate=True,
         generation_max_length=225,
-        save_steps=1000,
+        save_strategy="no",
         eval_steps=1000,
         logging_steps=25,
         load_best_model_at_end=True,
@@ -153,4 +154,4 @@ if __name__ == "__main__":
         "train": train,
         "validation": dev
     })
-    train_whisper(lang, dataset, False)
+    train_whisper(lang, dataset, config["lora"])
