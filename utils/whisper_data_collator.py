@@ -17,20 +17,20 @@ class WhisperDataCollator:
         """
         input = [torch.tensor(f["input_features"]) for f in features]
 
-        labels = [torch.tensor(f["labels"]) for f in features]
 
         # Pad the input features
         padded_inputs=[F.pad(t, (0, 3000-t.shape[1]), value=0.0) for t in input] # padding along the time (last) dimension to a fixed length of 3000
         input_features = torch.stack(padded_inputs)
 
         # Pad the labels
-        max_lbl = max(len(l) for l in labels)
-        padded_labels = torch.full((len(labels), max_lbl), fill_value=-100, dtype=torch.long)
+        label_sequences = [torch.tensor(f["labels"]) for f in features]
+        max_lbl = max(len(l) for l in label_sequences)
+        labels = torch.full((len(label_sequences), max_lbl), fill_value=-100, dtype=torch.long)
         # truncate
-        for i, l in enumerate(labels):
-            padded_labels[i:len(l)] = l
+        for i, l in enumerate(label_sequences):
+           labels[i, :len(l)] = l 
 
         return {
             "input_features": input_features,  
-            "labels": padded_labels,
+            "labels": labels,
         }
