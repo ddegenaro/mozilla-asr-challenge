@@ -85,18 +85,24 @@ class SpeechDataset(Dataset):
         }
 
 def get_data(
-    split: str,
-    langs: Union[str, Iterable[str]] = None
+    split: str = 'train',
+    langs: Union[str, Iterable[str]] = None,
+    clean: bool = True,
+    log: bool = False
 ) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
 
     Args:
         split (_str_): _The split to return (either `train` or `dev`)._
         langs (_Union[str, Iterable[str]]_): _The languages to include. Defaults to `None`, which inludes all languages._
+        clean (_bool_): _Whether to delete rows with empty transcriptions. Defaults to `True`._
+        log (_bool_): _Whether to produce log messages about row counts. Defaults to `False`._
 
     Returns:
         DataLoader: _A dataset that supports PyTorch `Dataset` functionality (or pre-wrapped in a `DataLoader`)._
     """
+
+    assert split in ('train', 'dev'), f'Unknown split: {split}, must be train or dev.'
 
     if type(langs) == str:
         langs = [langs]
@@ -114,8 +120,34 @@ def get_data(
             sep='\t'
         )
 
+        all_len = len(lang_df)
+        if log:
+            print(f'Found {all_len} rows for {lang}.')
+
+        lang_df = lang_df.loc[lang_df['split'] == split]
+        old_len = len(lang_df)
+        if log:
+            print(f'{old_len} rows are from split {split}.')
+
+        if clean:
+            lang_df = clean_df(lang_df)
+            new_len = len(lang_df)
+            if log and (old_len > new_len):
+                print(f'Purged {old_len - new_len} rows. New length: {new_len}\n')
+        elif log:
+            print('\n')
+
         dfs.append(lang_df[lang_df['split'] == split])
 
     df = pd.concat(dfs, ignore_index=True)
 
     return SpeechDataset(split, langs, df)
+
+
+
+def clean_df(lang_df: pd.DataFrame):
+
+    lang_df['transcription'] = lang_df['transcription'].fillna('')
+    lang_df = lang_df.loc[lang_df['transcription'].str.strip() != '']
+
+    return lang_df
