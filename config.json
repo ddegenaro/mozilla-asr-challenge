@@ -3,7 +3,7 @@
     "language": "aln",
     "lora": true,
     "lora_rank": 8,
-    "epochs": 2.0, 
+    "epochs": 5.0, 
     "proxy_langs": {
         "aln": "albanian",
         "bew": "malay",

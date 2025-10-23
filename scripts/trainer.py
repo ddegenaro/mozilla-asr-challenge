@@ -33,10 +33,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         model = get_peft_model(model, lora_config)
         model.print_trainable_parameters()
     model.config.forced_decoder_ids = None 
-    if language == "all":
-        processor = WhisperProcessor.from_pretrained(config["whisper_model"])
-    else:
-        processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=language)
+    processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
     def prepare_dataset(batch):
         # load and resample audio data from 48 to 16kHz
         audio_path = batch["audio_paths"]
@@ -91,7 +88,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     )
 
     training_args = Seq2SeqTrainingArguments(
-        output_dir=f"whisper_{language}", 
+        output_dir=f"output/whisper_{language}", 
         per_device_train_batch_size=8,
         learning_rate=1e-5,
         num_train_epochs=config["epochs"],
@@ -110,7 +107,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     print('training')
     for i in range(3):
         print('preparing train')
-        train_dataset = ds["train"]
+        train_dataset = ds["train"].copy()
         train_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
         train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
 
