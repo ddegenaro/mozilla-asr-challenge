@@ -89,7 +89,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     )
 
     training_args = Seq2SeqTrainingArguments(
-        output_dir=f"output_large/{language}", 
+        output_dir=f"output_{config['whisper_model'].split('/')[1]}/{lang}", 
         per_device_train_batch_size=8,
         learning_rate=1e-5,
         num_train_epochs=config["epochs"],
@@ -125,7 +125,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         )
         trainer.train()
         model = trainer.model
-    trainer.model.save_pretrained(f"output_large/{language}")
+    trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}")
 
 def munge_data(data):
     audio_paths = data[:]["audios"]
@@ -147,7 +147,7 @@ def munge_data(data):
 if __name__ == "__main__":
     lang = config["language"]
     for lang in LANGUAGES:
-        if not os.path.exists(f"output_large/{lang}"):
+        if not os.path.exists(f"output_{config['whisper_model'].split('/')[1]}/{lang}"):
             train_data = get_data(split='train', langs= None if lang == "all" else [lang])
             train = munge_data(train_data)
             print("train setup")

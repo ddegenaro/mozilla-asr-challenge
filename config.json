@@ -1,8 +1,8 @@
 {
-    "whisper_model": "openai/whisper-large-v3",
+    "whisper_model": "openai/whisper-tiny",
     "language": "aln",
     "lora": true,
-    "lora_rank": 64,
+    "lora_rank": 8,
     "epochs": 5.0, 
     "proxy_langs": {
         "aln": "albanian",
