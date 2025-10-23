@@ -107,8 +107,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     print('training')
     for i in range(3):
         print('preparing train')
-        train_dataset = ds["train"].copy()
+        train_dataset = ds["train"]
         train_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
+        print("len: ", len(train_dataset))
         train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
 
         trainer = Seq2SeqTrainer(
