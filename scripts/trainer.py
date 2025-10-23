@@ -89,7 +89,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     )
 
     training_args = Seq2SeqTrainingArguments(
-        output_dir=f"output/whisper_{language}", 
+        output_dir=f"output/{language}", 
         per_device_train_batch_size=8,
         learning_rate=1e-5,
         num_train_epochs=config["epochs"],
