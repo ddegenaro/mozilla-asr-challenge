@@ -62,16 +62,6 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             "input_features": inputs.input_features[0],
             "labels": inputs.labels[0]
         }
-    print('preparing train')
-    train_dataset = ds["train"]
-    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
-    print("prepared train, preparing dev")
-    dev_dataset = ds["validation"]
-    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
-    data_collator = WhisperDataCollator(
-        processor=processor,
-    )
-
     def compute_metrics(pred):
         pred_ids = pred.predictions
         label_ids = pred.label_ids
@@ -91,8 +81,13 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
 
     # Force the chosen token globally:
     model.config.forced_decoder_ids = [[1, proxy_lang_id]]
-    
-    print('training')
+    print("preparing dev")
+    dev_dataset = ds["validation"]
+    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
+    data_collator = WhisperDataCollator(
+        processor=processor,
+    )
+
     training_args = Seq2SeqTrainingArguments(
         output_dir=f"whisper_{language}", 
         per_device_train_batch_size=8,
@@ -110,15 +105,20 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         greater_is_better=False,
         push_to_hub=False,
     )
+    print('training')
     for i in range(3):
+        print('preparing train')
+        train_dataset = ds["train"]
         if i == 0:
             # votes are 0, 1, or 2
-            filtered_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
+            train_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
+            train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
+
         trainer = Seq2SeqTrainer(
             args=training_args,
             model=model,
             compute_metrics=compute_metrics,
-            train_dataset=filtered_dataset,
+            train_dataset=train_dataset,
             eval_dataset=dev_dataset,
             data_collator=data_collator,
             tokenizer=processor.feature_extractor,
