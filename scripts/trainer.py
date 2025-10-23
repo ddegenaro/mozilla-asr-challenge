@@ -83,7 +83,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     model.config.forced_decoder_ids = [[1, proxy_lang_id]]
     print("preparing dev")
     dev_dataset = ds["validation"]
-    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration"], num_proc=4)
+    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
     data_collator = WhisperDataCollator(
         processor=processor,
     )
