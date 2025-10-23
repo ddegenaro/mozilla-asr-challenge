@@ -15,6 +15,7 @@ from utils.whisper_data_collator import WhisperDataCollator
 from utils.clean_transcript import clean
 from torch.utils.data import DataLoader
 from tqdm import tqdm
+import math
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -104,11 +105,12 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         greater_is_better=False,
         push_to_hub=False,
     )
-    print('training')
+    print('training') 
     for i in range(3):
         print('preparing train')
         train_dataset = ds["train"]
-        train_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
+        train_dataset = train_dataset.sort("votes", reverse=True)
+        train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
         train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
 
