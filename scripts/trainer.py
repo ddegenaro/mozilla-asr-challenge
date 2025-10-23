@@ -57,6 +57,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             text=batch["transcription"],
             padding="longest",
             truncation=True,
+            max_length=448,
             return_tensors="pt"
         )
         return {
@@ -99,7 +100,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         eval_strategy="epoch",
         per_device_eval_batch_size=8,
         predict_with_generate=True,
-        generation_max_length=225,
+        generation_max_length=448,
         save_strategy="no",
         load_best_model_at_end=False,
         metric_for_best_model="wer",
