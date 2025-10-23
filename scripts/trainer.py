@@ -56,6 +56,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             sampling_rate=sampling_rate,
             text=batch["transcription"],
             padding="longest",
+            truncation=True,
             return_tensors="pt"
         )
         return {
