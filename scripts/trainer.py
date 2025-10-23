@@ -124,6 +124,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             tokenizer=processor.feature_extractor,
         )
         trainer.train()
+        model = trainer.model
     trainer.model.save_pretrained(f"output/{language}")
 
 def munge_data(data):
