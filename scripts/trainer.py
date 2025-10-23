@@ -111,10 +111,8 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     for i in range(3):
         print('preparing train')
         train_dataset = ds["train"]
-        if i == 0:
-            # votes are 0, 1, or 2
-            train_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
-            train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
+        train_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
 
         trainer = Seq2SeqTrainer(
             args=training_args,
@@ -168,6 +166,6 @@ if __name__ == "__main__":
                 "train": train,
                 "validation": dev
             })
-            train_whisper(lang, dataset, config["lora"], config["proxy_lang"])
+            train_whisper(lang, dataset, config["lora"], config["proxy_langs"][lang])
         else:
             print(f"skipping language {lang}, adapter already exists")
