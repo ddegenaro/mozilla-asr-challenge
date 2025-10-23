@@ -128,7 +128,7 @@ def munge_data(data):
     audio_paths = data[:]["audios"]
     languages = data[:]["meta"]["language"].to_list() # this will likely be helpful later
     duration = data[:]["meta"]["duration_ms"].to_list() # will use this to remove empty 
-    votes = data[:]["meta"]["duration_ms"].to_list() # will use this for curriculum learning
+    votes = data[:]["meta"]["votes"].to_list() # will use this for curriculum learning
     transcripts = data[:]["transcriptions"]
     transcripts = [clean(t) for t in transcripts]
     return {
