@@ -1,5 +1,6 @@
 import json
 import torch
+import os
 import evaluate
 import pandas as pd
 import numpy as np
@@ -109,54 +110,62 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         greater_is_better=False,
         push_to_hub=False,
     )
-
-    trainer = Seq2SeqTrainer(
-        args=training_args,
-        model=model,
-        compute_metrics=compute_metrics,
-        train_dataset=train_dataset,
-        eval_dataset=dev_dataset,
-        data_collator=data_collator,
-        tokenizer=processor.feature_extractor,
-    )
-    trainer.train()
-    trainer.model.save_pretrained(f"whisper_{language}/final")
+    for i in range(3):
+        if i == 0:
+            # votes are 0, 1, or 2
+            filtered_dataset = train_dataset.filter(lambda example: example["votes"] > 1-i)
+        trainer = Seq2SeqTrainer(
+            args=training_args,
+            model=model,
+            compute_metrics=compute_metrics,
+            train_dataset=filtered_dataset,
+            eval_dataset=dev_dataset,
+            data_collator=data_collator,
+            tokenizer=processor.feature_extractor,
+        )
+        trainer.train()
+    trainer.model.save_pretrained(f"output/{language}")
 
 def munge_data(data):
     audio_paths = data[:]["audios"]
     languages = data[:]["meta"]["language"].to_list() # this will likely be helpful later
     duration = data[:]["meta"]["duration_ms"].to_list() # will use this to remove empty 
+    votes = data[:]["meta"]["duration_ms"].to_list() # will use this for curriculum learning
     transcripts = data[:]["transcriptions"]
     transcripts = [clean(t) for t in transcripts]
     return {
         "audio_paths": audio_paths,
         "duration": duration, 
         "transcription": transcripts,
-        "language": languages
+        "language": languages,
+        "votes": votes
    }
 
 
 
 if __name__ == "__main__":
-    # for language in LANGUAGES:
     lang = config["language"]
-    train_data = get_data(split='train', langs= None if lang == "all" else [lang])
-    train = munge_data(train_data)
-    print("train setup")
-    dev_data = get_data(split='dev', langs=None if lang == "all" else [lang])
-    dev = munge_data(dev_data)
-    print("dev setup")
+    for lang in LANGUAGES:
+        if not os.path.exists(f"output/{lang}"):
+            train_data = get_data(split='train', langs= None if lang == "all" else [lang])
+            train = munge_data(train_data)
+            print("train setup")
+            dev_data = get_data(split='dev', langs=None if lang == "all" else [lang])
+            dev = munge_data(dev_data)
+            print("dev setup")
 
-    train = pd.DataFrame(train)
-    train = train.dropna()
-    train = train[train['duration'] > 0]
-    train = Dataset.from_pandas(train)
-    dev = pd.DataFrame(dev)
-    dev = dev.dropna()
-    dev = dev[dev['duration'] > 0]
-    dev = Dataset.from_pandas(dev)
-    dataset = DatasetDict({
-        "train": train,
-        "validation": dev
-    })
-    train_whisper(lang, dataset, config["lora"], config["proxy_lang"])
+            train = pd.DataFrame(train)
+            train = train.dropna()
+            train = train[train['duration'] > 0]
+            train = Dataset.from_pandas(train)
+            dev = pd.DataFrame(dev)
+            dev = dev.dropna()
+            dev = dev[dev['duration'] > 0]
+            dev = Dataset.from_pandas(dev)
+            dataset = DatasetDict({
+                "train": train,
+                "validation": dev
+            })
+            train_whisper(lang, dataset, config["lora"], config["proxy_lang"])
+        else:
+            print(f"skipping language {lang}, adapter already exists")

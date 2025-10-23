@@ -3,6 +3,6 @@
     "language": "aln",
     "lora": true,
     "lora_rank": 8,
-    "epochs": 10.0,
+    "epochs": 2.0, 
     "proxy_lang": "albanian"
 }
