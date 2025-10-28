@@ -145,6 +145,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     else:
         trainer.save_model(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
+    del trainer
+    del model
+    torch.cuda.empty_cache()
 
 def munge_data(data):
     audio_paths = data[:]["audios"]
