@@ -20,6 +20,15 @@ import math
 with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
+class WhisperTrainer(Seq2SeqTrainer):
+    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+        input_dtype = next(model.parameters()).dtype
+        outputs = model(
+            input_features=inputs["input_features"].to(dtype=input_dtype),
+            labels=inputs["labels"]
+        )
+        loss = outputs.loss
+        return (loss, outputs) if return_outputs else loss
 
 def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional[str]=None):
     model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"])
@@ -42,25 +51,26 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         # torch & torchcodec are throwing an error because of that.
         with open(audio_path, "rb") as f:
             audio, sr = librosa.load(f)
-            audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
+            if sr != 16000:
+                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
             #if audio.ndim > 1:
                 # Average across the channel axis to convert to mono
-                #audio = np.mean(audio, axis=1)
+            #    audio = np.mean(audio, axis=1)
             f.close()
-        
         sampling_rate = 16000
         inputs = processor(
             audio=audio,
             sampling_rate=sampling_rate,
-            text=batch["transcription"],
-            padding="longest",
-            truncation=True,
-            max_length=448,
             return_tensors="pt"
         )
+        labels = processor.tokenizer(
+            batch["transcription"],
+            max_length=448,
+            truncation=True
+            )
         return {
             "input_features": inputs.input_features[0],
-            "labels": inputs.labels[0]
+            "labels": labels["input_ids"]
         }
     def compute_metrics(pred):
         pred_ids = pred.predictions
@@ -74,7 +84,12 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         label_str = processor.tokenizer.batch_decode(label_ids, skip_special_tokens=True)
 
         wer_pred = 100 * wer(label_str,pred_str)
+        print("prediction:")
+        print(pred_str[0])
+        print("label:")
+        print(label_str[0])
         print("wer", wer_pred)
+        print("_________________________\n")
         return {"wer": wer_pred}
 
     proxy_lang_id = processor.tokenizer.get_decoder_prompt_ids(language=proxy_lang, task="transcribe")
@@ -90,13 +105,13 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
 
     training_args = Seq2SeqTrainingArguments(
         output_dir=f"output_{config['whisper_model'].split('/')[1]}/{lang}", 
-        per_device_train_batch_size=8,
-        learning_rate=1e-5,
+        per_device_train_batch_size=4,
+        learning_rate=5e-5,
         num_train_epochs=config["epochs"],
         gradient_checkpointing=False,
         fp16=torch.cuda.is_available(),
         eval_strategy="epoch",
-        per_device_eval_batch_size=8,
+        per_device_eval_batch_size=16,
         predict_with_generate=True,
         generation_max_length=448,
         save_strategy="no",
@@ -104,6 +119,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         metric_for_best_model="wer",
         greater_is_better=False,
         push_to_hub=False,
+        gradient_accumulation_steps=2
     )
     print('training') 
     for i in range(3):
@@ -114,7 +130,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         print("len: ", len(train_dataset))
         train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
 
-        trainer = Seq2SeqTrainer(
+        trainer = WhisperTrainer(
             args=training_args,
             model=model,
             compute_metrics=compute_metrics,
