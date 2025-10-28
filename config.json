@@ -1,7 +1,7 @@
 {
     "whisper_model": "openai/whisper-tiny",
     "language": "aln",
-    "lora": true,
+    "lora": false,
     "lora_rank": 8,
     "epochs": 5.0, 
     "proxy_langs": {

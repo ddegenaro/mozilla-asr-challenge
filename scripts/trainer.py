@@ -141,7 +141,10 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         )
         trainer.train()
         model = trainer.model
-    trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}")
+    if config["lora"]:
+        trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
+    else:
+        trainer.save_model(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
 
 def munge_data(data):
     audio_paths = data[:]["audios"]
@@ -163,7 +166,7 @@ def munge_data(data):
 if __name__ == "__main__":
     lang = config["language"]
     for lang in LANGUAGES:
-        if not os.path.exists(f"output_{config['whisper_model'].split('/')[1]}/{lang}"):
+        if not os.path.exists(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final"):
             train_data = get_data(split='train', langs= None if lang == "all" else [lang])
             train = munge_data(train_data)
             print("train setup")
