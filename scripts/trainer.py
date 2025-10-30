@@ -51,12 +51,10 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             audio_path = batch["audio_paths"]
             # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
-            audio, sr = librosa.load(audio_path, offset=0, duration=30)
+            audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
+            audio = audio.astype(np.float32)
             if sr != 16000:
-                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
-            if audio.ndim > 1:
-                # Average across the channel axis to convert to mono
-                audio = np.mean(audio, axis=1)
+                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
 
             # Trim to max length
             if audio.shape[0] > 30*16000:
@@ -72,12 +70,13 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
                 max_length=448,
                 truncation=True
                 )
-            del audio
-            gc.collect()
-            return {
+            return_obj = {
                 "input_features": inputs.input_features[0].tolist(),
                 "labels": labels["input_ids"]
             }
+            del audio, inputs, labels
+            gc.collect()
+            return return_obj
         except Exception as e:
             print(e)
             print("FILE: " , batch["audio_paths"])
@@ -138,7 +137,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         train_dataset = train_dataset.sort("votes", reverse=True)
         train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=2)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=1)
 
         trainer = WhisperTrainer(
             args=training_args,
