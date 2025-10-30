@@ -52,9 +52,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
             audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
-            audio = audio.astype(np.float16)
+            audio = audio.astype(np.float32)
             if sr != 16000:
-                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float16)
+                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
 
             # Trim to max length
             if audio.shape[0] > 30*16000:
@@ -137,7 +137,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         train_dataset = train_dataset.sort("votes", reverse=True)
         train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, oad_from_cache_file=False, keep_in_memory=False, num_proc=2)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, load_from_cache_file=False, keep_in_memory=False, num_proc=2)
         # td_list = [l]
         # for d in tqdm(train_dataset):
         #     td_list.append(prepare_dataset(d))

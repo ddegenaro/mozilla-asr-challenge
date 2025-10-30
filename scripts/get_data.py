@@ -120,12 +120,16 @@ def get_data(
             sep='\t'
         )
         if os.path.exists(os.path.join(lang_dir, f'ss-reported-audios-{lang}.tsv')):
-            reported_df = pd.read_csv(
-                os.path.join(lang_dir, f'ss-reported-audios-{lang}.tsv'),
-                sep='\t'
-            )
-            reported_audio_files = reported_df["audio_file"].to_list()
-            lang_df = lang_df[~lang_df['audio_file'].isin(reported_audio_files)]
+            try:
+                reported_df = pd.read_csv(
+                    os.path.join(lang_dir, f'ss-reported-audios-{lang}.tsv'),
+                    sep='\t'
+                )
+                reported_audio_files = reported_df["audio_file"].to_list()
+                lang_df = lang_df[~lang_df['audio_file'].isin(reported_audio_files)]
+            except Exception as e:
+                print(e)
+                print("couldn't read reported audio files for: ", lang)
 
         all_len = len(lang_df)
         if log:
