@@ -51,7 +51,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             audio_path = batch["audio_paths"]
             # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
-            audio, sr = librosa.load(audio_path)
+            audio, sr = librosa.load(audio_path, offset=0, duration=30)
             if sr != 16000:
                 audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
             if audio.ndim > 1:
