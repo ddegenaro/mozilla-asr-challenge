@@ -72,7 +72,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
                 )
             return_obj = {
                 "input_features": inputs.input_features[0].tolist(),
-                "labels": labels["input_ids"].tolist()
+                "labels": labels["input_ids"]
             }
             del audio, inputs, labels
             gc.collect()
