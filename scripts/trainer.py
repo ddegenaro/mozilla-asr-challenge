@@ -197,6 +197,7 @@ if __name__ == "__main__":
             train = pd.DataFrame(train)
             train = train.dropna()
             train = train[train['duration'] > 0]
+            train = train[train['duration'] < 45000]
             train = Dataset.from_pandas(train)
             dev = pd.DataFrame(dev)
             dev = dev.dropna()
