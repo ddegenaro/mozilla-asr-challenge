@@ -137,7 +137,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     # train_dataset = train_dataset.sort("votes", reverse=True)
     # train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
     print("len: ", len(train_dataset))
-    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, load_from_cache_file=False, keep_in_memory=False, num_proc=2)
+    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=8, keep_in_memory=False, num_proc=4)
     # td_list = [l]
     # for d in tqdm(train_dataset):
     #     td_list.append(prepare_dataset(d))
