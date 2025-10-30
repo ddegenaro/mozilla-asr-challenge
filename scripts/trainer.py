@@ -67,7 +67,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             )
             labels = processor.tokenizer(
                 batch["transcription"],
-                max_length=448,
+                max_length=200,
                 truncation=True
                 )
             return_obj = {
