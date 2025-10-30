@@ -53,23 +53,28 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             audio, sr = librosa.load(f)
             if sr != 16000:
                 audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
-            #if audio.ndim > 1:
+            if audio.ndim > 1:
                 # Average across the channel axis to convert to mono
-            #    audio = np.mean(audio, axis=1)
-            f.close()
+                audio = np.mean(audio, axis=1)
+
+            # Trim to max length
+            if audio.shape[0] > 30*16000:
+                audio = audio[:30*16000] 
+        f.close()
         sampling_rate = 16000
         inputs = processor(
             audio=audio,
             sampling_rate=sampling_rate,
-            return_tensors="pt"
+            return_tensors="np"
         )
         labels = processor.tokenizer(
             batch["transcription"],
             max_length=448,
             truncation=True
             )
+        del audio
         return {
-            "input_features": inputs.input_features[0],
+            "input_features": inputs.input_features[0].tolist(),
             "labels": labels["input_ids"]
         }
     def compute_metrics(pred):
@@ -98,7 +103,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     model.config.forced_decoder_ids = [[1, proxy_lang_id]]
     print("preparing dev")
     dev_dataset = ds["validation"]
-    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
+    dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=8, num_proc=4)
     data_collator = WhisperDataCollator(
         processor=processor,
     )
@@ -128,7 +133,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         train_dataset = train_dataset.sort("votes", reverse=True)
         train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], num_proc=4)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=2)
 
         trainer = WhisperTrainer(
             args=training_args,
@@ -141,13 +146,14 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         )
         trainer.train()
         model = trainer.model
+        del train_dataset
+        torch.cuda.empty_cache()
     if config["lora"]:
         trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     else:
         trainer.save_model(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     del trainer
     del model
-    del train_dataset
     del dev_dataset
     torch.cuda.empty_cache()
 
