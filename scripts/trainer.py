@@ -116,7 +116,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         output_dir=f"output_{config['whisper_model'].split('/')[1]}/{lang}", 
         per_device_train_batch_size=4,
         learning_rate=5e-5,
-        num_train_epochs=config["epochs"],
+        num_train_epochs=3*config["epochs"],
         gradient_checkpointing=False,
         fp16=torch.cuda.is_available(),
         eval_strategy="epoch",
@@ -131,32 +131,32 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         gradient_accumulation_steps=2
     )
     print(f'training {lang}') 
-    for i in range(3):
-        print('preparing train')
-        train_dataset = ds["train"]
-        train_dataset = train_dataset.sort("votes", reverse=True)
-        train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
-        print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, load_from_cache_file=False, keep_in_memory=False, num_proc=2)
-        # td_list = [l]
-        # for d in tqdm(train_dataset):
-        #     td_list.append(prepare_dataset(d))
-        # train_dataset = Dataset.from_list(td_list)
-        trainer = WhisperTrainer(
-            args=training_args,
-            model=model,
-            compute_metrics=compute_metrics,
-            train_dataset=train_dataset,
-            eval_dataset=dev_dataset,
-            data_collator=data_collator,
-            tokenizer=processor.feature_extractor,
-        )
-        trainer.train()
-        model = trainer.model
-        del train_dataset
-        del trainer
-        gc.collect()
-        torch.cuda.empty_cache()
+    # for i in range(3):
+    print('preparing train')
+    train_dataset = ds["train"]
+    # train_dataset = train_dataset.sort("votes", reverse=True)
+    # train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
+    print("len: ", len(train_dataset))
+    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, load_from_cache_file=False, keep_in_memory=False, num_proc=2)
+    # td_list = [l]
+    # for d in tqdm(train_dataset):
+    #     td_list.append(prepare_dataset(d))
+    # train_dataset = Dataset.from_list(td_list)
+    trainer = WhisperTrainer(
+        args=training_args,
+        model=model,
+        compute_metrics=compute_metrics,
+        train_dataset=train_dataset,
+        eval_dataset=dev_dataset,
+        data_collator=data_collator,
+        tokenizer=processor.feature_extractor,
+    )
+    trainer.train()
+    # model = trainer.model
+    del train_dataset
+    del trainer
+    # gc.collect()
+    # torch.cuda.empty_cache()
     if config["lora"]:
         model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     else:
