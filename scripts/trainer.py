@@ -1,3 +1,4 @@
+import gc
 import json
 import torch
 import os
@@ -72,6 +73,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
                 truncation=True
                 )
             del audio
+            gc.collect()
             return {
                 "input_features": inputs.input_features[0].tolist(),
                 "labels": labels["input_ids"]
@@ -136,7 +138,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         train_dataset = train_dataset.sort("votes", reverse=True)
         train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=1)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batched=False, keep_in_memory=False, num_proc=1)
 
         trainer = WhisperTrainer(
             args=training_args,
@@ -150,6 +152,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         trainer.train()
         model = trainer.model
         del train_dataset
+        gc.collect()
         torch.cuda.empty_cache()
     if config["lora"]:
         trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
@@ -158,6 +161,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     del trainer
     del model
     del dev_dataset
+    gc.collect()
     torch.cuda.empty_cache()
 
 def munge_data(data):
