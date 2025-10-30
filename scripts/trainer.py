@@ -45,12 +45,12 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     model.config.forced_decoder_ids = None 
     processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
     def prepare_dataset(batch):
-        # load and resample audio data from 48 to 16kHz
-        audio_path = batch["audio_paths"]
-        # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
-        # torch & torchcodec are throwing an error because of that.
-        with open(audio_path, "rb") as f:
-            audio, sr = librosa.load(f)
+        try:
+            # load and resample audio data from 48 to 16kHz
+            audio_path = batch["audio_paths"]
+            # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
+            # torch & torchcodec are throwing an error because of that.
+            audio, sr = librosa.load(audio_path)
             if sr != 16000:
                 audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
             if audio.ndim > 1:
@@ -60,23 +60,26 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             # Trim to max length
             if audio.shape[0] > 30*16000:
                 audio = audio[:30*16000] 
-        f.close()
-        sampling_rate = 16000
-        inputs = processor(
-            audio=audio,
-            sampling_rate=sampling_rate,
-            return_tensors="np"
-        )
-        labels = processor.tokenizer(
-            batch["transcription"],
-            max_length=448,
-            truncation=True
+            sampling_rate = 16000
+            inputs = processor(
+                audio=audio,
+                sampling_rate=sampling_rate,
+                return_tensors="np"
             )
-        del audio
-        return {
-            "input_features": inputs.input_features[0].tolist(),
-            "labels": labels["input_ids"]
-        }
+            labels = processor.tokenizer(
+                batch["transcription"],
+                max_length=448,
+                truncation=True
+                )
+            del audio
+            return {
+                "input_features": inputs.input_features[0].tolist(),
+                "labels": labels["input_ids"]
+            }
+        except Exception as e:
+            print(e)
+            print("FILE: " , batch["audio_paths"])
+            print("_" * 80)
     def compute_metrics(pred):
         pred_ids = pred.predictions
         label_ids = pred.label_ids
@@ -133,7 +136,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         train_dataset = train_dataset.sort("votes", reverse=True)
         train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=2)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=1)
 
         trainer = WhisperTrainer(
             args=training_args,
