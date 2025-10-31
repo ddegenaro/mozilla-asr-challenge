@@ -17,7 +17,7 @@ from utils.clean_transcript import clean
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import math
-
+import soundfile as sf
 with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
@@ -51,7 +51,16 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             audio_path = batch["audio_paths"]
             # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
-            audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
+            with sf.SoundFile(audio_path, 'r') as f:
+                sr = f.samplerate
+        
+                # Calculate the number of frames for 30 seconds
+                frames_to_read = int(30 * sr)
+        
+                # Read only the first 30 seconds of audio data
+                audio, sr = sf.read(audio_path, frames=frames_to_read)
+                f.close()
+            #audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
             audio = audio.astype(np.float32)
             if sr != 16000:
                 audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
@@ -137,7 +146,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     # train_dataset = train_dataset.sort("votes", reverse=True)
     # train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
     print("len: ", len(train_dataset))
-    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=8, keep_in_memory=False, num_proc=4)
+    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=8, keep_in_memory=False, num_proc=1)
     # td_list = [l]
     # for d in tqdm(train_dataset):
     #     td_list.append(prepare_dataset(d))
@@ -154,15 +163,15 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
     trainer.train()
     # model = trainer.model
     del train_dataset
-    del trainer
     # gc.collect()
     # torch.cuda.empty_cache()
     if config["lora"]:
-        model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
+        trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     else:
-        model.save_model(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
+        trainer.save_model(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     del model
     del dev_dataset
+    del trainer
     gc.collect()
     torch.cuda.empty_cache()
 
@@ -197,7 +206,6 @@ if __name__ == "__main__":
             train = pd.DataFrame(train)
             train = train.dropna()
             train = train[train['duration'] > 0]
-            train = train[train['duration'] < 45000]
             train = Dataset.from_pandas(train)
             dev = pd.DataFrame(dev)
             dev = dev.dropna()
