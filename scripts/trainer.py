@@ -49,23 +49,14 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         try:
             # load and resample audio data from 48 to 16kHz
             audio_path = batch["audio_paths"]
-            # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
+            # loading audio with librosa rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
-            with sf.SoundFile(audio_path, 'r') as f:
-                sr = f.samplerate
-        
-                # Calculate the number of frames for 30 seconds
-                frames_to_read = int(30 * sr)
-        
-                # Read only the first 30 seconds of audio data
-                audio, sr = sf.read(audio_path, frames=frames_to_read)
-                f.close()
-            #audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
+            audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
             audio = audio.astype(np.float32)
             if sr != 16000:
                 audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
 
-            # Trim to max length
+            # Trim to max length (shouldn't be necessary)
             if audio.shape[0] > 30*16000:
                 audio = audio[:30*16000] 
             sampling_rate = 16000
@@ -76,7 +67,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             )
             labels = processor.tokenizer(
                 batch["transcription"],
-                max_length=200,
+                max_length=200, # max length is 448 for whisper, but trying to cut down this should be enough.
                 truncation=True
                 )
             return_obj = {
@@ -140,31 +131,27 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         gradient_accumulation_steps=2
     )
     print(f'training {lang}') 
-    # for i in range(3):
-    print('preparing train')
-    train_dataset = ds["train"]
-    # train_dataset = train_dataset.sort("votes", reverse=True)
-    # train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
-    print("len: ", len(train_dataset))
-    train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=8, keep_in_memory=False, num_proc=1)
-    # td_list = [l]
-    # for d in tqdm(train_dataset):
-    #     td_list.append(prepare_dataset(d))
-    # train_dataset = Dataset.from_list(td_list)
-    trainer = WhisperTrainer(
-        args=training_args,
-        model=model,
-        compute_metrics=compute_metrics,
-        train_dataset=train_dataset,
-        eval_dataset=dev_dataset,
-        data_collator=data_collator,
-        tokenizer=processor.feature_extractor,
-    )
-    trainer.train()
-    # model = trainer.model
-    del train_dataset
-    # gc.collect()
-    # torch.cuda.empty_cache()
+    for i in range(3):
+        print('preparing train')
+        train_dataset = ds["train"]
+        train_dataset = train_dataset.sort("votes", reverse=True)
+        train_dataset = train_dataset.select(range(math.ceil(len(ds["train"]) * ((i + 1)/3))))
+        print("len: ", len(train_dataset))
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=2)
+        trainer = WhisperTrainer(
+            args=training_args,
+            model=model,
+            compute_metrics=compute_metrics,
+            train_dataset=train_dataset,
+            eval_dataset=dev_dataset,
+            data_collator=data_collator,
+            tokenizer=processor.feature_extractor,
+        )
+        trainer.train()
+        model = trainer.model
+        del train_dataset
+        gc.collect()
+        torch.cuda.empty_cache()
     if config["lora"]:
         trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
     else:
