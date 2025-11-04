@@ -10,6 +10,7 @@ from torch.utils.data import DataLoader
 from utils.whisper_data_collator import WhisperDataCollator
 import torch
 from jiwer import wer
+import numpy as np
 
 
 with open("config.json", "r") as f:
@@ -66,17 +67,17 @@ def evaluate(model, data, processor):
             transcriptions = processor.batch_decode(predicted_ids, skip_special_tokens=True)
             predictions += transcriptions
             labels += batch["transcription"]
-    lang_wer = wer(labels, predictions)
+    wers= [wer(l, p) for (l, p) in zip(labels, predictions)]
     model.to("cpu")
-    return lang_wer
+    return predictions, labels, wers
 
 
 
 
 if __name__ == "__main__":
-    model_dir = "output_whisper-tiny"
+    model_dir = f"output_{config['whisper_model'].split('/')[1]}"
     split = 'dev'
-    rows = []
+    overall_rows = []
     for lang in LANGUAGES:
         data = get_data(split=split, langs=None if lang == "all" else [lang])
         data = munge_data(data)
@@ -88,7 +89,13 @@ if __name__ == "__main__":
         model = WhisperForConditionalGeneration.from_pretrained(model_str)
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(model_str, language=proxy_lang, task="transcribe")
-        avg_wer = evaluate(model, data, processor)
-        rows.append([lang, avg_wer])
-    df = pd.DataFrame(rows, columns=["language", "wer"])
+        predictions, labels, wers = evaluate(model, data, processor)
+        overall_rows.append([lang, np.mean(wers)])
+        rows = []
+        for i, p in predictions:
+            rows.append([p, labels[i], wers[i]])
+        lang_df = pd.DataFrame(rows, columns=["prediction", "label", "wer"])
+        lang_df.to_csv(f"{model_dir}/{lang}/eval.csv", index=False)
+
+    df = pd.DataFrame(overall_rows, columns=["language", "wer"])
     df.to_csv(f"{model_dir}_summary.csv", index=False)
