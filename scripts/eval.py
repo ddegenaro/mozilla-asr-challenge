@@ -11,6 +11,7 @@ from utils.whisper_data_collator import WhisperDataCollator
 import torch
 from jiwer import wer
 import numpy as np
+from utils.clean_transcript import clean
 
 
 with open("config.json", "r") as f:
@@ -65,8 +66,10 @@ def evaluate(model, data, processor):
                 forced_decoder_ids=forced_decoder_ids
             )
             transcriptions = processor.batch_decode(predicted_ids, skip_special_tokens=True)
+            labs = [np.where(l != -100, l, processor.tokenizer.pad_token_id) for l in batch["labels"]] 
+            labs = processor.batch_decode(labs, skip_special_tokens=True)
             predictions += transcriptions
-            labels += batch["transcription"]
+            labels += labs
     wers= [wer(l, p) for (l, p) in zip(labels, predictions)]
     model.to("cpu")
     return predictions, labels, wers
@@ -86,16 +89,19 @@ if __name__ == "__main__":
         data = data[data['duration'] > 0]
         data = Dataset.from_pandas(data)
         model_str = f"{model_dir}/{lang}/final"
+        print(model_str)
         model = WhisperForConditionalGeneration.from_pretrained(model_str)
         proxy_lang = config["proxy_langs"][lang]
-        processor = WhisperProcessor.from_pretrained(model_str, language=proxy_lang, task="transcribe")
+        processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         predictions, labels, wers = evaluate(model, data, processor)
+        predictions = [clean(p) for p in predictions]
+        labels = [clean(l) for l in labels]
         overall_rows.append([lang, np.mean(wers)])
         rows = []
-        for i, p in predictions:
+        for i, p in enumerate(predictions):
             rows.append([p, labels[i], wers[i]])
         lang_df = pd.DataFrame(rows, columns=["prediction", "label", "wer"])
-        lang_df.to_csv(f"{model_dir}/{lang}/eval.csv", index=False)
+        lang_df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/{lang}_eval.csv", index=False)
 
     df = pd.DataFrame(overall_rows, columns=["language", "wer"])
-    df.to_csv(f"{model_dir}_summary.csv", index=False)
+    df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/summary.csv", index=False)
