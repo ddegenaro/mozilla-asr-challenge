@@ -91,20 +91,20 @@ if __name__ == "__main__":
         data = Dataset.from_pandas(data)
         model_str = f"{model_dir}/{lang}/final"
         print(model_str)
-        if config['lora']:        # TODO: quantize? lets start with no?
+        if config['lora']: 
             lora_config = LoraConfig(
                 r=config["lora_rank"],
                 lora_alpha=32,
                 lora_dropout=0.05,
                 bias="none",
-                target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], # this is where we can freeze layers/not target them in the LoRA
-            )       
+                target_modules=["q_proj", "k_proj", "v_proj", "out_proj", "embed_tokens"], 
+                )       
              # quantize    
             bnb_config = BitsAndBytesConfig(
                 load_in_4bit=True,
-                bnb_4bit_quant_type="fp4",  # or "fp4"
-                bnb_4bit_compute_dtype=torch.bfloat16, # or torch.float16
                 bnb_4bit_use_double_quant=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16
             )
             model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
             model = get_peft_model(model, lora_config)

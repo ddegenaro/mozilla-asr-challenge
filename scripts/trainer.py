@@ -38,14 +38,14 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             lora_alpha=32,
             lora_dropout=0.05,
             bias="none",
-            target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], # this is where we can freeze layers/not target them in the LoRA
+            target_modules=["q_proj", "k_proj", "v_proj", "out_proj", "embed_tokens"],
         )   
         # quantize    
         bnb_config = BitsAndBytesConfig(
             load_in_4bit=True,
-            bnb_4bit_quant_type="fp4",  # or "fp4"
-            bnb_4bit_compute_dtype=torch.bfloat16, # or torch.float16
             bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16
         )
         model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
         model = get_peft_model(model, lora_config)
@@ -62,9 +62,9 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             # loading audio with librosa rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
             audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
-            audio = audio.astype(np.float32)
+            
             if sr != 16000:
-                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
+                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
 
             # Trim to max length (shouldn't be necessary)
             if audio.shape[0] > 30*16000:
