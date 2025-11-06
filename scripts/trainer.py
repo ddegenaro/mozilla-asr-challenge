@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import librosa
 from typing import Optional
-from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments
+from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig
 from datasets import Dataset, DatasetDict
 from peft import LoraConfig, get_peft_model
 from jiwer import wer
@@ -32,17 +32,27 @@ class WhisperTrainer(Seq2SeqTrainer):
         return (loss, outputs) if return_outputs else loss
 
 def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional[str]=None):
-    model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"])
-    if lora:        # TODO: quantize? lets start with no?
+    if lora:
         lora_config = LoraConfig(
             r=config["lora_rank"],
             lora_alpha=32,
             lora_dropout=0.05,
             bias="none",
             target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], # this is where we can freeze layers/not target them in the LoRA
-        )       
+        )   
+        # quantize    
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="fp4",  # or "fp4"
+            bnb_4bit_compute_dtype=torch.bfloat16, # or torch.float16
+            bnb_4bit_use_double_quant=True,
+        )
+        model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
         model = get_peft_model(model, lora_config)
         model.print_trainable_parameters()
+    else:
+        model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"])
+
     model.config.forced_decoder_ids = None 
     processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
     def prepare_dataset(batch):

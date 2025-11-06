@@ -3,7 +3,7 @@ from scripts.trainer import munge_data
 import pandas as pd
 from datasets import Dataset
 import json
-from transformers import WhisperForConditionalGeneration, WhisperProcessor
+from transformers import WhisperForConditionalGeneration, WhisperProcessor, BitsAndBytesConfig
 import librosa
 from tqdm import tqdm
 from torch.utils.data import DataLoader
@@ -12,6 +12,7 @@ import torch
 from jiwer import wer
 import numpy as np
 from utils.clean_transcript import clean
+from peft import LoraConfig, get_peft_model
 
 
 with open("config.json", "r") as f:
@@ -90,7 +91,6 @@ if __name__ == "__main__":
         data = Dataset.from_pandas(data)
         model_str = f"{model_dir}/{lang}/final"
         print(model_str)
-        model = WhisperForConditionalGeneration.from_pretrained(model_str)
         if config['lora']:        # TODO: quantize? lets start with no?
             lora_config = LoraConfig(
                 r=config["lora_rank"],
@@ -99,8 +99,18 @@ if __name__ == "__main__":
                 bias="none",
                 target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], # this is where we can freeze layers/not target them in the LoRA
             )       
+             # quantize    
+            bnb_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="fp4",  # or "fp4"
+                bnb_4bit_compute_dtype=torch.bfloat16, # or torch.float16
+                bnb_4bit_use_double_quant=True,
+            )
+            model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
             model = get_peft_model(model, lora_config)
             model.print_trainable_parameters()
+        else:
+            model = WhisperForConditionalGeneration.from_pretrained(model_str)
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         predictions, labels, wers = evaluate(model, data, processor)
