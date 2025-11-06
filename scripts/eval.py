@@ -91,6 +91,16 @@ if __name__ == "__main__":
         model_str = f"{model_dir}/{lang}/final"
         print(model_str)
         model = WhisperForConditionalGeneration.from_pretrained(model_str)
+        if config['lora']:        # TODO: quantize? lets start with no?
+            lora_config = LoraConfig(
+                r=config["lora_rank"],
+                lora_alpha=32,
+                lora_dropout=0.05,
+                bias="none",
+                target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], # this is where we can freeze layers/not target them in the LoRA
+            )       
+            model = get_peft_model(model, lora_config)
+            model.print_trainable_parameters()
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         predictions, labels, wers = evaluate(model, data, processor)
