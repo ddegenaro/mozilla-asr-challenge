@@ -1,8 +1,30 @@
 {
     "whisper_model": "openai/whisper-tiny",
     "language": "aln",
-    "lora": true,
+    "lora": false,
     "lora_rank": 8,
-    "epochs": 10.0,
-    "proxy_lang": "albanian"
+    "epochs": 5.0, 
+    "proxy_langs": {
+        "aln": "albanian",
+        "bew": "malay",
+        "bxk": "swahili",
+        "el-CY": "greek",
+        "hch": "spanish",
+        "kcn": "maltese",
+        "koo": "swahili", 
+        "led": "somali",
+        "lke": "swahili",
+        "lth": "somali",
+        "meh": "spanish",
+        "mmc": "spanish",
+        "pne": "malay",
+        "ruc": "swahili",
+        "rwm": "swahili",
+        "sco": "english",
+        "tob": "spanish",
+        "top": "spanish",
+        "ttj": "swahili",
+        "ukv": "somali",
+        "cgg": "swahili"
+    }
 }
