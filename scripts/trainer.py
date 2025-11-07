@@ -15,6 +15,7 @@ from scripts.get_data import LANGUAGES, get_data
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.clean_transcript import clean
 from torch.utils.data import DataLoader
+
 from tqdm import tqdm
 import math
 import soundfile as sf
@@ -31,6 +32,10 @@ class WhisperTrainer(Seq2SeqTrainer):
         loss = outputs.loss
         return (loss, outputs) if return_outputs else loss
 
+    def prediction_step(self, model, inputs, prediction_loss_only, ignore_keys=None):
+        input_dtype = next(model.parameters()).dtype
+        inputs["input_features"] = inputs["input_features"].to(dtype=input_dtype)
+        return super().prediction_step(model, inputs, prediction_loss_only, ignore_keys)
 def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional[str]=None):
     if lora:
         lora_config = LoraConfig(
@@ -47,13 +52,13 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             bnb_4bit_quant_type="nf4",
             bnb_4bit_compute_dtype=torch.float16
         )
-        model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
+        model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config, dtype=torch.float16)
         model = get_peft_model(model, lora_config)
         model.print_trainable_parameters()
     else:
         model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"])
 
-    model.config.forced_decoder_ids = None 
+
     processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
     def prepare_dataset(batch):
         try:
@@ -62,10 +67,10 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
             # loading audio with librosa rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
             # torch & torchcodec are throwing an error because of that.
             audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
-            
-            if sr != 16000:
-                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
+            audio = audio.astype(np.float32)
 
+            if sr != 16000:
+                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
             # Trim to max length (shouldn't be necessary)
             if audio.shape[0] > 30*16000:
                 audio = audio[:30*16000] 
@@ -75,13 +80,15 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
                 sampling_rate=sampling_rate,
                 return_tensors="np"
             )
+            #inputs = inputs.to(dtype=model.dtype)
             labels = processor.tokenizer(
                 batch["transcription"],
                 max_length=200, # max length is 448 for whisper, but trying to cut down this should be enough.
                 truncation=True
                 )
+            
             return_obj = {
-                "input_features": inputs.input_features[0].tolist(),
+                "input_features": torch.from_numpy(inputs.input_features[0]).to(dtype=torch.float16 if config['lora'] else torch.float32),
                 "labels": labels["input_ids"]
             }
             del audio, inputs, labels
@@ -111,10 +118,14 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         print("_________________________\n")
         return {"wer": wer_pred}
 
-    proxy_lang_id = processor.tokenizer.get_decoder_prompt_ids(language=proxy_lang, task="transcribe")
-
     # Force the chosen token globally:
-    model.config.forced_decoder_ids = [[1, proxy_lang_id]]
+    model.config.forced_decoder_ids = processor.get_decoder_prompt_ids(
+        language=proxy_lang,
+        task="transcribe"
+    )
+    model.config.suppress_tokens = []
+    model.config.lang_detection_threshold = 0.0
+
     print("preparing dev")
     dev_dataset = ds["validation"]
     dev_dataset = dev_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=8, num_proc=4)
@@ -128,7 +139,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         learning_rate=5e-5,
         num_train_epochs=config["epochs"],
         gradient_checkpointing=False,
-        fp16=torch.cuda.is_available(),
+        fp16=True,
         eval_strategy="epoch",
         per_device_eval_batch_size=16,
         predict_with_generate=True,
@@ -147,7 +158,7 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
         train_dataset = train_dataset.sort("votes")
         train_dataset = train_dataset.select(range(math.floor(len(ds["train"]) * ((i)/3)), math.ceil(len(ds["train"]) * ((i + 1)/3))))
         print("len: ", len(train_dataset))
-        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=2)
+        train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=4)
         trainer = WhisperTrainer(
             args=training_args,
             model=model,
