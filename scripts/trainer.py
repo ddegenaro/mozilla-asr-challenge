@@ -135,12 +135,12 @@ def train_whisper(language:str, ds:Dataset, lora:bool=False, proxy_lang:Optional
 
     training_args = Seq2SeqTrainingArguments(
         output_dir=f"output_{config['whisper_model'].split('/')[1]}/{lang}", 
-        per_device_train_batch_size=4,
+        per_device_train_batch_size=config["batch_size"],
         learning_rate=5e-5,
         num_train_epochs=config["epochs"],
         gradient_checkpointing=False,
         fp16=True,
-        eval_strategy="epoch",
+        eval_strategy="no",
         per_device_eval_batch_size=16,
         predict_with_generate=True,
         generation_max_length=448,

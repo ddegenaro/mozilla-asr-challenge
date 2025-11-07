@@ -4,6 +4,7 @@
     "lora": true,
     "lora_rank": 8,
     "epochs": 5.0, 
+    "batch_size": 4,
     "proxy_langs": {
         "aln": "albanian",
         "bew": "malay",
