@@ -1,9 +1,13 @@
 from dataclasses import dataclass
 from typing import List, Dict, Union
+import warnings
+
 from transformers import WhisperProcessor
 import numpy as np
 import torch.nn.functional as F
 import torch
+
+warnings.filterwarnings('ignore')
 
 @dataclass
 class WhisperDataCollator:

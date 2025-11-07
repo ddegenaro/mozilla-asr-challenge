@@ -4,7 +4,6 @@ from typing import Union, Iterable, Iterator
 
 import torch
 import pandas as pd
-# from datasets import IterableDataset
 from torch.utils.data import Dataset, DataLoader, IterableDataset
 import librosa
 from transformers import WhisperProcessor
