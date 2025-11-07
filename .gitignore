@@ -1,5 +1,6 @@
 *.tar.gz
-mcv-sps-st-09-2025/
+mcv*/
+*corpus*/
 __pycache__/
 .DS_Store
 *venv*
