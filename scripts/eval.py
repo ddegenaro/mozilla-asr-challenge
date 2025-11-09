@@ -1,5 +1,4 @@
 from scripts.get_data import LANGUAGES, get_data
-from scripts.trainer import munge_data
 import pandas as pd
 from datasets import Dataset
 import json
@@ -81,6 +80,7 @@ if __name__ == "__main__":
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
         overall_rows.append([lang, np.mean(wers)])
+        print(np.mean(wers))
         rows = []
         for i, p in enumerate(predictions):
             rows.append([p, labels[i], wers[i]])
