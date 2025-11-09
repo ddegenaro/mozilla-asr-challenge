@@ -43,6 +43,8 @@ LANGUAGES: set[str] = {
 HIGH_RESOURCE: set[str] = {
     'lg',    # Luganda (Bantu, Zone J)
 
+    'mt',    # Maltese (AA, Latin script)
+
     'luo',   # Dholuo (NS, Eastern Sudanic)
     'kln',   # Kalenjin (NS, Eastern Sudanic)
 
@@ -57,8 +59,23 @@ HIGH_RESOURCE: set[str] = {
     'cux',   # Tepeuixila Cuicatec (Oto-Manguean, Mixtecan)
     'mau',   # Huautla Mazatec (Oto-Manguean, Popolocan)
 
+    'qup',   # Southern Pastaza Quechua
+    'quy',   # Quechua Chanka
+    'qxa',   # Quechua Chiquián
+    'qux',   # Quechua Yauyos
+    'qvl',   # Quechua Cajatambo
+    'qxu',   # Quechua Arequipa-La Unión
+    'qxw',   # Quechua Jauja Wanka
+    'qur',   # Quechua Yanahuanca
+    'qus',   # Quechua Santiago del Estero
+    'qva',   # Quechua Ambo-Pasco
+    'qwa',   # Quechua Corongo Ancash
+    'qws',   # Quechua Sihuas Ancash
+    'qxt',   # Quechua Pasco Santa Ana de Tusi
+
     'sq',    # Albanian (IE, Albanian)
     'el',    # Greek (IE, Greek)
+    'ur',    # Urdu (IE, Indo-Aryan, Arabic script)
 
     'ab',    # Abkhaz (NW Caucasian)
 
@@ -68,15 +85,17 @@ HIGH_RESOURCE: set[str] = {
 }
 
 TEST_ONLY: set[str] = {
-    'ady', # Adyghe (NW Caucasian)
-    'kbd', # Kabardian (NW Caucasian)
-
     'bas', # Basaa (Bantu, Zone A)
     
     'qxp', # Puno Quechua (Quechuan)
 
     'ush', # Ushojo (IE, Indo-Aryan)
+
+    'ady', # Adyghe (NW Caucasian)
+    'kbd', # Kabardian (NW Caucasian)
 }
+
+ALL_TARGETS = LANGUAGES.union(TEST_ONLY)
 
 HR_MAP: dict[str, list[str]] = {
     'bxk': ['lg'],          # Bukusu (Bantu, Zone J)
@@ -99,29 +118,35 @@ HR_MAP: dict[str, list[str]] = {
     'meh': ['cut', 'cux', 'mau'], # SW Tlaxiaco Mixtec (Oto-Manguean, Mixtecan)
     'mmc': ['cut', 'cux', 'mau'], # Michoacán Mazahua (Oto-Manguean, Otomian)
 
-    'top': [],                    # Papantla Totonac (Totonacan)
+    'top': [], # Papantla Totonac (Totonacan)
 
-    'qxp': [],                    # Puno Quechua (Quechuan)
+    'qxp': [ # Puno Quechua (Quechuan)
+        'qup', 'quy', 'qxa', 'qux', 'qvl', 'qxu', 'qxw', 'qur', 'qus', 'qva', 'qwa', 'qws', 'qxt'
+    ],
 
-    'tob': [],                    # Toba Qom (Guaicuruan)
+    'tob': [],       # Toba Qom (Guaicuruan)
 
-    'ady': ['ab'],                # Adyghe (NW Caucasian)
-    'kbd': ['ab'],                # Kabardian (NW Caucasian)
+    'aln': ['sq'],   # Gheg Albanian (IE, Albanian)
+    'el-CY': ['el'], # Cypriot Greek (IE, Greek)
+    'sco': [],       # Scots (IE, Germanic)
+    'ush': ['ur'],   # Ushoho (IE, Indo-Aryan, Arabic script)
 
-    'aln': ['sq'],                # Gheg Albanian (IE, Albanian)
-    'el-CY': ['el'],              # Cypriot Greek (IE, Greek)
-    'sco': [],                    # Scots (IE, Germanic)
-    'ush': ['ur'],                # Ushoho (IE, Indo-Aryan)
+    'ady': ['ab'],   # Adyghe (NW Caucasian)
+    'kbd': ['ab'],   # Kabardian (NW Caucasian)
 
-    'bew': ['id', 'ms'],   # Betawi (Austronesian, Malayo-Polynesian creole)
-    'pne': ['id', 'ms'],   # Western Penan (Austronesian, Malayo-Polynesian)
+    'bew': ['id', 'ms'], # Betawi (Austronesian, Malayo-Polynesian creole)
+    'pne': ['id', 'ms'], # Western Penan (Austronesian, Malayo-Polynesian)
 }
 
 def validate():
-    for key, value in HR_MAP.items():
+    for key, values in HR_MAP.items():
         if key not in LANGUAGES:
             assert key in TEST_ONLY
+            assert os.path.exists(os.path.join(HR_ROOT, key)), key
         if key not in TEST_ONLY:
             assert key in LANGUAGES
+            assert os.path.exists(os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{key}')), key
         
-        assert value in HIGH_RESOURCE
+        for value in values:
+            assert value in HIGH_RESOURCE, value
+            assert os.path.exists(os.path.join(HR_ROOT, value)), value
