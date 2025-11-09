@@ -1,5 +1,4 @@
 from scripts.get_data import LANGUAGES, get_data
-from scripts.trainer import munge_data
 import pandas as pd
 from datasets import Dataset
 import json
@@ -21,35 +20,6 @@ with open("config.json", "r") as f:
 
 def evaluate(model, data, processor):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    def prepare_dataset(batch):
-        # load and resample audio data from 48 to 16kHz
-        audio_path = batch["audio_paths"]
-        # loading audio with soundfile rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
-        # torch & torchcodec are throwing an error because of that.
-        with open(audio_path, "rb") as f:
-            audio, sr = librosa.load(f)
-            if sr != 16000:
-                audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
-            #if audio.ndim > 1:
-                # Average across the channel axis to convert to mono
-            #    audio = np.mean(audio, axis=1)
-            f.close()
-        sampling_rate = 16000
-        inputs = processor(
-            audio=audio,
-            sampling_rate=sampling_rate,
-            return_tensors="pt"
-        )
-        labels = processor.tokenizer(
-            batch["transcription"],
-            max_length=448,
-            truncation=True
-            )
-        return {
-            "input_features": inputs.input_features[0],
-            "labels": labels["input_ids"]
-        }
-    data = data.map(prepare_dataset, remove_columns=["audio_paths", "language", "duration", "votes"], num_proc=4)
     
     model.to("cuda").eval()
     collator = WhisperDataCollator(processor=processor)
@@ -84,13 +54,6 @@ if __name__ == "__main__":
     overall_rows = []
     for lang in LANGUAGES:
         data = get_data(split=split, langs=None if lang == "all" else [lang])
-        data = munge_data(data)
-        data = pd.DataFrame(data)
-        data = data.dropna()
-        data = data[data['duration'] > 0]
-        data = Dataset.from_pandas(data)
-        model_str = f"{model_dir}/{lang}/final"
-        print(model_str)
         if config['lora']: 
             lora_config = LoraConfig(
                 r=config["lora_rank"],
@@ -117,6 +80,7 @@ if __name__ == "__main__":
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
         overall_rows.append([lang, np.mean(wers)])
+        print(np.mean(wers))
         rows = []
         for i, p in enumerate(predictions):
             rows.append([p, labels[i], wers[i]])
