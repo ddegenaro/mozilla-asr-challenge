@@ -86,7 +86,8 @@ def get_data(
     split: str = 'train',
     langs: Union[str, Iterable[str]] = None,
     clean: bool = True,
-    log: bool = False
+    log: bool = False,
+    df_only: bool = False
 ) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
 
@@ -152,7 +153,10 @@ def get_data(
 
     df = pd.concat(dfs, ignore_index=True)
 
-    return SpeechDataset(split, langs, df)
+    if df_only:
+        return df
+    else:
+        return SpeechDataset(split, langs, df)
 
 
 
@@ -161,6 +165,7 @@ def get_data_high_resource(
     langs: Union[str, Iterable[str]] = None,
     clean: bool = True,
     log: bool = False,
+    df_only: bool = False,
     multilingual_drop_duplicates = True
 ) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
@@ -224,6 +229,9 @@ def get_data_high_resource(
                 hr_lang_df, durations
             )
             hr_lang_dfs.append(merged)
+
+        # if 'msi' in HR_MAP[lang]:
+        #     hr_lang_dfs.append()
         
         if hr_lang_dfs:
             lang_df = pd.concat(hr_lang_dfs)
@@ -256,7 +264,10 @@ def get_data_high_resource(
     if multilingual_drop_duplicates:
         df.drop_duplicates(subset=['path'], inplace=True)
 
-    return SpeechDataset(split, langs, df)
+    if df_only:
+        return df
+    else:
+        return SpeechDataset(split, langs, df)
 
 
 

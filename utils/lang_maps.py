@@ -113,8 +113,8 @@ HR_MAP: dict[str, list[str]] = {
     'sco': [],                    # Scots (IE, Germanic)
     'ush': ['ur'],                # Ushoho (IE, Indo-Aryan)
 
-    'bew': ['id', 'ms', 'msi'],   # Betawi (Austronesian, Malayo-Polynesian creole)
-    'pne': ['id', 'ms', 'msi'],   # Western Penan (Austronesian, Malayo-Polynesian)
+    'bew': ['id', 'ms'],   # Betawi (Austronesian, Malayo-Polynesian creole)
+    'pne': ['id', 'ms'],   # Western Penan (Austronesian, Malayo-Polynesian)
 }
 
 def validate():
