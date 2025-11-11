@@ -129,7 +129,7 @@ HR_MAP: dict[str, list[str]] = {
     'aln': ['sq'],   # Gheg Albanian (IE, Albanian)
     'el-CY': ['el'], # Cypriot Greek (IE, Greek)
     'sco': [],       # Scots (IE, Germanic)
-    'ush': ['ur'],   # Ushoho (IE, Indo-Aryan, Arabic script)
+    'ush': ['ur'],   # Ushojo (IE, Indo-Aryan, Arabic script)
 
     'ady': ['ab'],   # Adyghe (NW Caucasian)
     'kbd': ['ab'],   # Kabardian (NW Caucasian)

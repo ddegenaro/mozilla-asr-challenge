@@ -9,7 +9,7 @@ import librosa
 from transformers import WhisperProcessor
 
 from utils.clean_transcript import clean
-from utils.lang_maps import ROOT, LANGUAGES, HR_ROOT, HR_MAP
+from utils.lang_maps import ROOT, LANGUAGES, HR_ROOT, HR_MAP, ALL_TARGETS
 
 class SpeechDataset(Dataset):
 
@@ -47,10 +47,10 @@ class SpeechDataset(Dataset):
         
         langs = []
         for audio_file in audio_files:
-            if audio_file.split('-')[2] == "el":
+            if audio_file.replace('_', '-').split('-')[2] == "el":
                 lang = "el-CY"
             else:
-                lang = audio_file.split('-')[2]
+                lang = audio_file.replace('_', '-').split('-')[2]
             langs.append(lang)
 
         audio_paths = [
@@ -106,18 +106,51 @@ def get_data(
     if type(langs) == str:
         langs = [langs]
     elif langs is None:
-        langs = LANGUAGES
+        langs = ALL_TARGETS
 
     dfs = []
 
     for lang in langs:
-        assert lang in LANGUAGES, f'No such lang: {lang}'
-        lang_dir = os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}')
+        assert lang in ALL_TARGETS, f'No such lang: {lang}'
 
-        lang_df = pd.read_csv(
-            os.path.join(lang_dir, f'ss-corpus-{lang}.tsv'),
-            sep='\t', quoting=3
-        )
+        if lang in LANGUAGES:
+            lang_dir = os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}')
+
+            lang_df = pd.read_csv(
+                os.path.join(lang_dir, f'ss-corpus-{lang}.tsv'),
+                sep='\t', quoting=3
+            )
+        else:
+            lang_dir = os.path.join(HR_ROOT, lang)
+            if split == 'all':
+                lang_df = pd.concat([
+                    pd.read_csv(os.path.join(lang_dir, f'{split}.tsv'), sep='\t', quoting=3)
+                    for split in ('train', 'dev', 'test', 'other', 'validated')
+                ])
+            else:
+                loc = os.path.join(lang_dir, f'{split}.tsv')
+                lang_df = pd.read_csv(loc, sep='\t', quoting=3)
+            lang_df.drop_duplicates(subset=['path'], inplace=True)
+            lang_df.rename(
+                columns={
+                    'path': 'audio_file',
+                    'locale': 'language',
+                    'sentence': 'transcription'
+                }, inplace=True
+            )
+            lang_df['votes'] = lang_df['up_votes'] - lang_df['down_votes']
+            durations = pd.read_csv(
+                os.path.join(lang_dir, 'clip_durations.tsv'), sep='\t', quoting=3
+            )
+            durations.rename(
+                columns = {
+                    'clip': 'audio_file',
+                    'duration[ms]': 'duration_ms'
+                }, inplace=True
+            )
+            lang_df = pd.merge(
+                lang_df, durations
+            )
 
         # remove "reported" audios
         if os.path.exists(os.path.join(lang_dir, f'ss-reported-audios-{lang}.tsv')):
@@ -136,7 +169,8 @@ def get_data(
         if log:
             print(f'Found {all_len} rows for {lang}.')
 
-        lang_df = lang_df.loc[lang_df['split'] == split]
+        if lang in LANGUAGES:
+            lang_df = lang_df.loc[lang_df['split'] == split]
         old_len = len(lang_df)
         if log:
             print(f'{old_len} rows are from split {split}.')
@@ -149,7 +183,10 @@ def get_data(
         elif log:
             print('\n')
 
-        dfs.append(lang_df[lang_df['split'] == split])
+        if lang in LANGUAGES:
+            dfs.append(lang_df[lang_df['split'] == split])
+        else:
+            dfs.append(lang_df)
 
     df = pd.concat(dfs, ignore_index=True)
 
@@ -190,7 +227,7 @@ def get_data_high_resource(
     dfs = []
 
     for lang in sorted(langs):
-        assert lang in LANGUAGES, f'No such lang: {lang}'
+        assert lang in ALL_TARGETS, f'No such lang: {lang}'
         hr_lang_dirs = sorted([
             os.path.join(HR_ROOT, hr_lang) for hr_lang in HR_MAP[lang] if hr_lang != 'msi'
         ])
@@ -262,7 +299,7 @@ def get_data_high_resource(
         df = pd.DataFrame()
 
     if multilingual_drop_duplicates:
-        df.drop_duplicates(subset=['path'], inplace=True)
+        df.drop_duplicates(subset=['audio_file'], inplace=True)
 
     if df_only:
         return df
