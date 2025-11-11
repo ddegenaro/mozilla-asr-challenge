@@ -157,7 +157,7 @@ if __name__ == "__main__":
             hr_langs = HR_MAP[lang]
             if hr_langs not in trained_hr_adapters:
                 trained_hr_adapters.add(hr_langs)
-                output_dir = f"output_{config['whisper_model'].split('/')[1]}/{"_".join(hr_langs)}"
+                output_dir = f"output_{config['whisper_model'].split('/')[1]}/{'_'.join(hr_langs)}"
                 if not os.path.exists(f"{output_dir}/final"): #todo change
                     train = get_data_high_resource(split='train', langs=hr_langs)
                     dev = get_data_high_resource(split='dev', langs=hr_langs)
