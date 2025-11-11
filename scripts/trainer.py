@@ -52,7 +52,7 @@ def train_whisper(
             lora_alpha=32,
             lora_dropout=0.05,
             bias="none",
-            target_modules=["q_proj", "k_proj", "v_proj", "out_proj", "embed_tokens"],
+            target_modules=["q_proj", "k_proj", "v_proj", "out_proj"],
         )   
         # quantize    
         bnb_config = BitsAndBytesConfig(
@@ -150,17 +150,17 @@ def train_whisper(
 
 
 if __name__ == "__main__":
-    if config["high_resource"]:
+    if config["train_high_resource"]:
         # some of the languages will share HR adapters
-        trained_hr_adapters = {}
+        trained_hr_adapters = []
         for lang in LANGUAGES:
             hr_langs = HR_MAP[lang]
-            if hr_langs not in trained_hr_adapters:
-                trained_hr_adapters.add(hr_langs)
+            if "_".join(hr_langs) not in trained_hr_adapters:
+                trained_hr_adapters.append("_".join(hr_langs))
                 output_dir = f"output_{config['whisper_model'].split('/')[1]}/{'_'.join(hr_langs)}"
                 if not os.path.exists(f"{output_dir}/final"): #todo change
-                    train = get_data_high_resource(split='train', langs=hr_langs)
-                    dev = get_data_high_resource(split='dev', langs=hr_langs)
+                    train = get_data_high_resource(split='train', langs=lang, multilingual_drop_duplicates=False)
+                    dev = get_data_high_resource(split='dev', langs=lang, multilingual_drop_duplicates=False)
                     dataset = IterableDatasetDict({
                         "train": train,
                         "validation": dev
@@ -181,3 +181,4 @@ if __name__ == "__main__":
                 train_whisper(dataset, output_dir, config["lora"], config["proxy_langs"][lang])
             else:
                 print(f"skipping language {lang}, adapter already exists")
+

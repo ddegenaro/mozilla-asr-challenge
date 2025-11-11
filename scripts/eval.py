@@ -61,7 +61,7 @@ if __name__ == "__main__":
                 lora_alpha=32,
                 lora_dropout=0.05,
                 bias="none",
-                target_modules=["q_proj", "k_proj", "v_proj", "out_proj", "embed_tokens"], 
+                target_modules=["q_proj", "k_proj", "v_proj", "out_proj"], 
                 )       
              # quantize    
             bnb_config = BitsAndBytesConfig(
