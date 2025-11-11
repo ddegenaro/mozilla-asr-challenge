@@ -47,10 +47,10 @@ class SpeechDataset(Dataset):
         
         langs = []
         for audio_file in audio_files:
-            if audio_file.split('-')[2] == "el":
+            if audio_file.replace('_', '-').split('-')[2] == "el":
                 lang = "el-CY"
             else:
-                lang = audio_file.split('-')[2]
+                lang = audio_file.replace('_', '-').split('-')[2]
             langs.append(lang)
 
         audio_paths = [
