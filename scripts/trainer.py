@@ -11,7 +11,7 @@ from jiwer import wer
 
 from scripts.get_data import get_data, get_data_high_resource
 from utils.whisper_data_collator import WhisperDataCollator
-from utils.lang_maps import LANGUAGES, HR_MAP
+from utils.lang_maps import ALL_TARGETS, HR_MAP
 
 
 
@@ -153,14 +153,14 @@ if __name__ == "__main__":
     if config["train_high_resource"]:
         # some of the languages will share HR adapters
         trained_hr_adapters = []
-        for lang in LANGUAGES:
+        for lang in ALL_TARGETS:
             hr_langs = HR_MAP[lang]
             if "_".join(hr_langs) not in trained_hr_adapters:
                 trained_hr_adapters.append("_".join(hr_langs))
                 output_dir = f"output_{config['whisper_model'].split('/')[1]}/{'_'.join(hr_langs)}"
                 if not os.path.exists(f"{output_dir}/final"): #todo change
-                    train = get_data_high_resource(split='train', langs=lang, multilingual_drop_duplicates=False)
-                    dev = get_data_high_resource(split='dev', langs=lang, multilingual_drop_duplicates=False)
+                    train = get_data_high_resource(split='train', langs=[lang], multilingual_drop_duplicates=False)
+                    dev = get_data_high_resource(split='dev', langs=[lang], multilingual_drop_duplicates=False)
                     dataset = IterableDatasetDict({
                         "train": train,
                         "validation": dev
@@ -169,7 +169,7 @@ if __name__ == "__main__":
                     
 
     else:
-        for lang in LANGUAGES:
+        for lang in ALL_TARGETS:
             output_dir = f"output_{config['whisper_model'].split('/')[1]}/{lang}"
             if not os.path.exists(f"{output_dir}/final"):
                 train = get_data(split='train', langs= None if lang == "all" else [lang])
