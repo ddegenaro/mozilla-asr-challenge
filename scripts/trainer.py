@@ -2,24 +2,17 @@ import gc
 import json
 import torch
 import os
-import math
 from typing import Optional
 
-import evaluate
-from tqdm import tqdm
-import soundfile as sf
-import pandas as pd
-import numpy as np
-import librosa
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig
-from datasets import Dataset, DatasetDict, IterableDatasetDict
+from datasets import Dataset, IterableDatasetDict
 from peft import LoraConfig, get_peft_model
 from jiwer import wer
 
-from scripts.get_data import LANGUAGES, get_data
+from scripts.get_data import get_data, get_data_high_resource
 from utils.whisper_data_collator import WhisperDataCollator
-from utils.clean_transcript import clean
-from torch.utils.data import DataLoader
+from utils.lang_maps import LANGUAGES, HR_MAP
+
 
 
 
@@ -47,10 +40,10 @@ class WhisperTrainer(Seq2SeqTrainer):
 
 
 def train_whisper(
-    language: str,
     ds: Dataset,
+    output_dir: str,
     lora: bool = False,
-    proxy_lang: Optional[str] = None
+    proxy_lang: Optional[str] = None,
 ):
     
     if lora:
@@ -79,53 +72,6 @@ def train_whisper(
         model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"])
 
     processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
-
-    # def prepare_dataset(batch):
-    #     try:
-    #         # load and resample audio data from 48 to 16kHz
-    #         audio_path = batch["audio_paths"]
-    #         # loading audio with librosa rather than Datasets.cast_column because Google HPC doesnt have ffmpeg loaded as a module and 
-    #         # torch & torchcodec are throwing an error because of that.
-    #         audio, sr = librosa.load(audio_path, offset=0, duration=30, mono=True)
-    #         audio = audio.astype(np.float32)
-
-    #         if sr != 16000:
-    #             audio = librosa.resample(audio, orig_sr=sr, target_sr=16000).astype(np.float32)
-    #         # Trim to max length (shouldn't be necessary)
-    #         if audio.shape[0] > 30*16000:
-    #             audio = audio[:30*16000] 
-    #         sampling_rate = 16000
-    #         inputs = processor(
-    #             audio=audio,
-    #             sampling_rate=sampling_rate,
-    #             return_tensors="np"
-    #         )
-    #         #inputs = inputs.to(dtype=model.dtype)
-    #         labels = processor.tokenizer(
-    #             batch["transcription"],
-    #             max_length=200, # max length is 448 for whisper, but trying to cut down this should be enough.
-    #             truncation=True
-    #             )
-            
-    #         return_obj = {
-    #             "input_features": torch.from_numpy(
-    #                 inputs.input_features[0]
-    #             ).to(
-    #                 dtype=torch.float16 if config['lora'] else torch.float32
-    #             ),
-    #             "labels": labels["input_ids"]
-    #         }
-
-    #         del audio, inputs, labels
-
-    #         gc.collect()
-
-    #         return return_obj
-        
-    #     except Exception as e:
-    #         print(e)
-    #         print("FILE: " , batch["audio_paths"])
-    #         print("_" * 80)
     
     def compute_metrics(pred):
         pred_ids = pred.predictions
@@ -156,17 +102,10 @@ def train_whisper(
     model.config.lang_detection_threshold = 0.0
 
     print("preparing dev")
-    # dev_dataset = ds["validation"]
-    # dev_dataset = dev_dataset.map(
-    #     prepare_dataset,
-    #     remove_columns=["audio_paths", "transcription", "language", "duration", "votes"],
-    #     batch_size=8,
-    #     num_proc=4
-    # )
     data_collator = WhisperDataCollator(processor=processor)
 
     training_args = Seq2SeqTrainingArguments(
-        output_dir=f"output_{config['whisper_model'].split('/')[1]}/{lang}", 
+        output_dir=output_dir, 
         per_device_train_batch_size=config["batch_size"],
         learning_rate=5e-5,
         num_train_epochs=config["epochs"],
@@ -186,13 +125,6 @@ def train_whisper(
 
     print(f'training {lang}')
 
-    # for i in range(3):
-    #     print('preparing train')
-    #     train_dataset = ds["train"]
-    #     train_dataset = train_dataset.sort("votes")
-    #     train_dataset = train_dataset.select(range(math.floor(len(ds["train"]) * ((i)/3)), math.ceil(len(ds["train"]) * ((i + 1)/3))))
-    #     print("len: ", len(train_dataset))
-        # train_dataset = train_dataset.map(prepare_dataset, remove_columns=["audio_paths", "transcription", "language", "duration", "votes"], batch_size=4, keep_in_memory=False, num_proc=4)
     trainer = WhisperTrainer(
         args=training_args,
         model=model,
@@ -203,14 +135,11 @@ def train_whisper(
         tokenizer=processor.feature_extractor,
     )
     trainer.train()
-    # model = trainer.model
-    # gc.collect()
-    # torch.cuda.empty_cache()
     
     if config["lora"]:
-        trainer.model.save_pretrained(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
+        trainer.model.save_pretrained(f"{output_dir}/final")
     else:
-        trainer.save_model(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final")
+        trainer.save_model(f"{output_dir}/final")
     
     del model
     del ds
@@ -220,47 +149,35 @@ def train_whisper(
     torch.cuda.empty_cache()
 
 
-
-# def munge_data(data):
-#     audio_paths = data[:]["audios"]
-#     languages = data[:]["meta"]["language"].to_list() # this will likely be helpful later
-#     duration = data[:]["meta"]["duration_ms"].to_list() # will use this to remove empty 
-#     votes = data[:]["meta"]["votes"].to_list() # will use this for curriculum learning
-#     transcripts = data[:]["transcriptions"]
-#     transcripts = [clean(t) for t in transcripts]
-#     return {
-#         "audio_paths": audio_paths,
-#         "duration": duration, 
-#         "transcription": transcripts,
-#         "language": languages,
-#         "votes": votes
-#    }
-
-
-
 if __name__ == "__main__":
-    lang = config["language"]
-    for lang in LANGUAGES:
-        if not os.path.exists(f"output_{config['whisper_model'].split('/')[1]}/{lang}/final"):
-            train = get_data(split='train', langs= None if lang == "all" else [lang])
-            # train = munge_data(train)
-            print("train setup")
-            dev = get_data(split='dev', langs=None if lang == "all" else [lang])
-            # dev = munge_data(dev)
-            print("dev setup")
+    if config["high_resource"]:
+        # some of the languages will share HR adapters
+        trained_hr_adapters = {}
+        for lang in LANGUAGES:
+            hr_langs = HR_MAP[lang]
+            if hr_langs not in trained_hr_adapters:
+                trained_hr_adapters.add(hr_langs)
+                output_dir = f"output_{config['whisper_model'].split('/')[1]}/{"_".join(hr_langs)}"
+                if not os.path.exists(f"{output_dir}/final"): #todo change
+                    train = get_data_high_resource(split='train', langs=hr_langs)
+                    dev = get_data_high_resource(split='dev', langs=hr_langs)
+                    dataset = IterableDatasetDict({
+                        "train": train,
+                        "validation": dev
+                    })
+                    train_whisper(dataset, output_dir, config["lora"], config["proxy_langs"][lang])
+                    
 
-            # train = pd.DataFrame(train)
-            # train = train.dropna()
-            # train = train[train['duration'] > 0]
-            # train = Dataset.from_pandas(train)
-            # dev = pd.DataFrame(dev)
-            # dev = dev.dropna()
-            # dev = dev[dev['duration'] > 0]
-            # dev = Dataset.from_pandas(dev)
-            dataset = IterableDatasetDict({
-                "train": train,
-                "validation": dev
-            })
-            train_whisper(lang, dataset, config["lora"], config["proxy_langs"][lang])
-        else:
-            print(f"skipping language {lang}, adapter already exists")
+    else:
+        for lang in LANGUAGES:
+            output_dir = f"output_{config['whisper_model'].split('/')[1]}/{lang}"
+            if not os.path.exists(f"{output_dir}/final"):
+                train = get_data(split='train', langs= None if lang == "all" else [lang])
+                dev = get_data(split='dev', langs=None if lang == "all" else [lang])
+                dataset = IterableDatasetDict({
+                    "train": train,
+                    "validation": dev
+                })
+                train_whisper(dataset, output_dir, config["lora"], config["proxy_langs"][lang])
+            else:
+                print(f"skipping language {lang}, adapter already exists")

@@ -1,4 +1,4 @@
-from scripts.get_data import LANGUAGES, get_data
+from scripts.get_data import  get_data
 import pandas as pd
 from datasets import Dataset
 import json
@@ -7,6 +7,7 @@ import librosa
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 from utils.whisper_data_collator import WhisperDataCollator
+from utils.lang_maps import LANGUAGES
 import torch
 from jiwer import wer
 import numpy as np
