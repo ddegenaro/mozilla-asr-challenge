@@ -13,7 +13,12 @@ from utils.lang_maps import ROOT, LANGUAGES, HR_ROOT, HR_MAP, ALL_TARGETS
 
 class SpeechDataset(Dataset):
 
-    def __init__(self, split: str, langs: Iterable[str], df: pd.DataFrame):
+    def __init__(
+        self,
+        split: str,
+        langs: Iterable[str],
+        df: pd.DataFrame
+    ):
         super().__init__()
         self.split = split
         self.langs = langs
@@ -53,10 +58,7 @@ class SpeechDataset(Dataset):
                 lang = audio_file.replace('_', '-').split('-')[2]
             langs.append(lang)
 
-        audio_paths = [
-            os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}', "audios", audio_file)
-            for lang, audio_file in zip(langs, audio_files)
-        ]
+        audio_paths = self.make_paths(langs, audio_files)
         audios = [
             librosa.load(audio_path, offset=0, duration=30, mono=True, sr=16_000)[0]
             for audio_path in audio_paths
@@ -79,6 +81,23 @@ class SpeechDataset(Dataset):
             'labels': labels,
             'transcriptions': transcriptions
         }
+
+    def make_paths(
+        self,
+        langs: list[str],
+        audio_files: list[str]
+    ) -> list[str]:
+        audio_paths = []
+        for lang, audio_file in zip(langs, audio_files):
+            if lang in LANGUAGES:
+                audio_paths.append(
+                    os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}', "audios", audio_file)
+                )
+            else:
+                audio_paths.append(
+                    os.path.join(HR_ROOT, lang, "clips", audio_file)
+                )
+        return audio_paths
 
 
 
