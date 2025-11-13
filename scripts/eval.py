@@ -1,19 +1,17 @@
 from scripts.get_data import  get_data
 import pandas as pd
-from datasets import Dataset
 import json
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, BitsAndBytesConfig
-import librosa
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 from utils.whisper_data_collator import WhisperDataCollator
-from utils.lang_maps import LANGUAGES, ALL_TARGETS
+from utils.lang_maps import LANGUAGES, ALL_TARGETS, HR_MAP
 import torch
 from jiwer import wer
 import numpy as np
 from utils.clean_transcript import clean
-from peft import LoraConfig, get_peft_model, PeftModel
-
+from peft import PeftModel
+from utils.task_vectors import TaskVector
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -49,7 +47,21 @@ def evaluate(model, data, processor):
     return predictions, labels, wers
 
 
-
+def get_model(model_dir, lang):
+    if config['lora']:  
+        # quantize
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16
+        )
+        model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
+        model = PeftModel.from_pretrained(model, f"{model_dir}/{lang}/final")
+        model.print_trainable_parameters()
+    else:
+        model = WhisperForConditionalGeneration.from_pretrained(f"{model_dir}/{lang}/final")
+    return model 
 
 if __name__ == "__main__":
     model_dir = f"output_{config['whisper_model'].split('/')[1]}"
@@ -57,31 +69,45 @@ if __name__ == "__main__":
     overall_rows = []
     for lang in ALL_TARGETS:
         data = get_data(split=split, langs=None if lang == "all" else [lang])
-        if config['lora']:  
-             # quantize
-            bnb_config = BitsAndBytesConfig(
-                load_in_4bit=True,
-                bnb_4bit_use_double_quant=True,
-                bnb_4bit_quant_type="nf4",
-                bnb_4bit_compute_dtype=torch.float16
-            )
-            model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
-            model = PeftModel.from_pretrained(model, f"{model_dir}/{lang}/final")
-            model.print_trainable_parameters()
-        else:
-            model = WhisperForConditionalGeneration.from_pretrained(f"{model_dir}/{lang}/final")
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
+        # apply adapter or tv and get scaling coefficient
+        # TODO -- right now this is just working for tvs
+        hyperparameter_results = {}
+        hr_model_dir = f"{model_dir}/{"_".join(HR_MAP[lang])}/final"
+        tv = TaskVector(
+                    pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
+                    finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
+                )
+        for coef in config["scaling_coefs"]:
+            model = get_model(model_dir, lang)
+            if config["lora"]:
+                continue
+            else:
+                model = tv.apply_to(model, scaling_coef=coef)
+                _, _, wers = evaluate(model, data, processor)
+                avg_wer = np.mean(wers)
+                hyperparameter_results[coef] = avg_wer
+        if config["lora"]:
+            continue
+        else:
+            best_lambda = max(hyperparameter_results, key=hyperparameter_results.get)
+            model = get_model(model_dir, lang)
+            model = tv.apply_to(model, scaling_coef=best_lambda)
+
         predictions, labels, wers = evaluate(model, data, processor)
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
         overall_rows.append([lang, np.mean(wers)])
-        print(np.mean(wers))
+        print(lang, np.mean(wers))
         rows = []
         for i, p in enumerate(predictions):
             rows.append([p, labels[i], wers[i]])
         lang_df = pd.DataFrame(rows, columns=["prediction", "label", "wer"])
         lang_df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/{lang}_eval.csv", index=False)
+        with open(f"results/{config['whisper_model'].split('/')[1]}/hyperparameters/{lang}.csv", "w") as f:
+            json.dump(hyperparameter_results, f, indent=4)
+            f.close()
 
     df = pd.DataFrame(overall_rows, columns=["language", "wer"])
     df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/summary.csv", index=False)
