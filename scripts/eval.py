@@ -21,7 +21,7 @@ with open("config.json", "r") as f:
 
 def evaluate(model, data, processor):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    
+    input_dtype = next(model.parameters()).dtype
     model.to("cuda").eval()
     collator = WhisperDataCollator(processor=processor)
     test_dataloader = DataLoader(data, batch_size=16, collate_fn=collator)
@@ -30,7 +30,8 @@ def evaluate(model, data, processor):
     labels = []
     with torch.no_grad():
         for batch in tqdm(test_dataloader):
-            inputs = batch["input_features"].to(device)
+            
+            inputs = batch["input_features"].to(dtype=input_dtype).to(device)
 
             # Generate output token IDs
             predicted_ids = model.generate(
