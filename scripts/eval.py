@@ -74,7 +74,7 @@ if __name__ == "__main__":
         # apply adapter or tv and get scaling coefficient
         # TODO -- right now this is just working for tvs
         hyperparameter_results = {}
-        hr_model_dir = f"{model_dir}/{"_".join(HR_MAP[lang])}/final"
+        hr_model_dir = f"{model_dir}/{'_'.join(HR_MAP[lang])}/final"
         tv = TaskVector(
                     pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
                     finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         if config["lora"]:
             continue
         else:
-            best_lambda = max(hyperparameter_results, key=hyperparameter_results.get)
+            best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
             model = get_model(model_dir, lang)
             model = tv.apply_to(model, scaling_coef=best_lambda)
 
