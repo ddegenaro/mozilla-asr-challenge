@@ -1,0 +1,1325 @@
+prediction,label,wer
+Hon njam ,Hon jam ,0.5
+U kenel liwanda ni mut u hañ biñ kaat ,U kenek liwanda ni mut u nhañ bé ñkaa ,0.4444444444444444
+Man a nnyundi ,Man a nnyôndi ,0.3333333333333333
+Nyandôm i ni nyandôm tada ,Nyandôm ini nyandôm tata ,0.75
+Di biyôñha mbot yés yaktela ,Di biyôñha mbot yés yak téla ,0.3333333333333333
+Di nseñga mbele di nseñga mbele ,Di nseñga mbege di nseeñga mbege ,0.5
+Kaaat i mbambap gwéé ,Kaat i mbambap gwégwéé ,0.5
+A ntjés me kembe yéé me binol ,A ntjés me kembe yéé me binol ,0.0
+A nhyôhôl miñkôô i kédé tuñ ,A nhyôhôl miñkôô i kédé tuñ ,0.0
+Totoga jam ,Totoga jañ ,0.5
+Nha tôm a mpôdna miñket u bitômb ni nlôha ,Nhatôm a mpôdna miñkek mi tôm ni nlôha ,0.625
+Bañga légél le mboo likondo ,Bañga légél le mboo likondo ,0.0
+Hibee hi ngañ we len we weyé hee ,Hibee hi ñañ we len we u yé hee ,0.3333333333333333
+Hukii dibe bañ me ,U kidbe bañ me ,0.5
+Bek me i kaat i ñkwééha ,Bek me kaat i u gwéé ha ,0.5714285714285714
+Bohônd bi nteba mi mal bôtôl ,Bihônd bi nteba bi mmal bôdôl ,0.6666666666666666
+Mapuna matabe jam li mut binam ,Mapuna ma ta bé jam li mut binam ,0.375
+Nyañ a nsugle man bijek ,Nyañ a nsugle man bijek ,0.0
+Bapôdôl ba bitee ni pot bi ndéé ,Bapôdôl ba bé tehe ni pot bindéé ,0.5714285714285714
+Wen u nhumbha me ño ,Wen u nhômbha me ño ,0.2
+Di nnuni tjo mede ,Dinuni tjomede ,2.0
+Me ñélé mbot i ba biina ,Me ñédés mbot i babiina ,0.6
+Sut mañ i nlélél i bikayi ,Sudman i nlélél i bikay ,0.6
+Mut a nlamabe a dal jañañ li biy ,Mut a nlama bé adal jañan libii ,0.8571428571428571
+Mbaam tôdô ,Mbaam tôdô ,0.0
+Adlene yem mapep i nnimil ,Adlene yem mapep i nnimil ,0.0
+Liñgosi li ntibañga bañga bañ ,Liñgosi li nti bañga bibam ,0.4
+Me gwéé ñgandak lisañgô ,Me gwé ñgandak lisañgô ,0.25
+Bôy maok malén ,Bôy maok ma lién ,0.5
+Di ntéé we ñgandelha jés ,Di ntéé we ñane lihaa jés ,0.3333333333333333
+Ba mpaglana biloo ,Ba mpañglana bilôo ,0.6666666666666666
+Mbahal tii ,Mbahal tjéé ,0.5
+Libôk li ntjél li yé tjuk ,Libôk li njék li yé juut ,0.3333333333333333
+Ba nnôô wana nye inyuu yañga tjam ,Ba nnôômana nye inyuu yañga jam ,0.5
+Mpaak u njel ,Mpaak u njel ,0.0
+Kal me ñgende i jam ñkal me ,Kal me ñgende i jam u ñkal me ,0.125
+Ñgwawéy le muu ,Ñgwa wé lem u ,1.0
+Ndi mbaglana ,Di mbaglana ,0.5
+Biñee ma mañba bipiga ,Béñge nye mamañ ma dipiga ,1.0
+Bogdene me mbiñ ,Bogdene me mbiñ ,0.0
+Nsañbay nunu a nyala ,Nsañ mbay nunu a nyahla ,0.6
+Nunu mut a nlôk me ñgaba moni ,Nunu mut a nlôk me i ñgaba moni ,0.125
+Sok yoñ i mbôô ,Sogo yoñ i mbôô ,0.25
+Bigwélél kwoñ biyébbe ,Bigwélél gwoñ bi yé bibe ,0.8
+Pulne me inyuñga ,Pulne me i nyuñga ,0.5
+Boñge ba nyogi ba mpuhlha i ñgé ma lép ,Bonge ba nyogi ba mpuhlaha i ñgii malép ,0.625
+Gwel nson ,Gwel nson ,0.0
+Ñgôlô u yéñnya i tu ,Ñgôlô u yéñi nye i tuu ,0.5
+Noodle me unu nlamb ,Noodene me unu nlamb ,0.25
+Kidil me bisok bi mbômb ,Kidil me bisok bi mbôñ ,0.2
+Ñgô me me ñke ,Ñgo me me ñke ,0.25
+Hee u nsôône kôbi yoñ ,Hee u nsôône kôp yoñ ,0.2
+Kamitôñ ,Kañ tôñ ,1.0
+A yé nti yé le mut ,A yé ntihege mut ,0.75
+Me nluñul mél mu hindama ,Me nlôñôl mél mu hindama ,0.2
+A gwéé gwaa gwaa gwañen ,A gwéé gwaa gwañen ,0.25
+Libulbege jéé li mpôna nsule i ñke hilo ,Libulbege jéé li mpôna sô le i ñke hilo ,0.2222222222222222
+Ba nyaglana bo nd bo ,Ba nyaglana bo ni bo ,0.2
+We hyoune hini u yé liwbép me ,We hyone hini u yé le u bép me ,0.4444444444444444
+Mutunu nyen a njôyé hana ,Mut nunu nyen a njôye hana ,0.5
+Huude ñgond i ñgok ,Hugde ñgond i ñgok ,0.25
+Liyédé li ñgoo ini lihélé més ,Liyédék li ñgok ini li nhélés bés ,0.7142857142857143
+Nyañ a nyaambene man bijek ,Nyañ a nnyaambe man bijek ,0.2
+Me mpot male ,Me mpot mbale ,0.3333333333333333
+A nsômbôl bésba bés we ,A nsômbôl bébha bés we ,0.2
+A be ndi nson ,A béndi nson ,0.6666666666666666
+Nsonu u ñgwela ,Nson u ñgwéla ,0.6666666666666666
+Nunu ñkokon a yé gwetga gwé ,Nunu ñkokon a yé gwedgagwe ,0.4
+Malép ma ñôdba ,Malép ma ñôdba ,0.0
+Bôdaa ba nhe hikok ni ñgwaa ,Bôdaa ba nhee hikok ni ñgwaa ,0.16666666666666666
+Baañlene gwéé bi ,Biañlene gwéé bi ,0.3333333333333333
+Hinoodene hi nnuga nyaga ,Hinoodene hi nuga nyaga ,0.25
+Ba nhôgôô hôbôônde hyosôsôya ,Ba nhôgôô hiônde hyosô sôya ,0.6
+Mpôñ mudaa mpôñ munlôm ,Mpôm mudaa mpôm munlôm ,0.5
+Ba mpañgana gwalak ,Ba mpañgna gwalak ,0.3333333333333333
+Lañal mis ,Lañal mis ,0.0
+A nnunda me ñkoñ wéé ,A nnunda me ñkoñ wéé ,0.0
+Ñwemel u ñkwéhba ,Ñwemel u ñkwéhba ,0.0
+A nyabdana masiñ ,A nyabdana masiñ ,0.0
+Ba nkuus nye ni mao homaléén ,Ba nhyuus nye ni maok ma lién ,0.5714285714285714
+Ha mut miñkôm kena mut miñkôm ,Ha mut miñkôm kena mut miñkôm ,0.0
+Me gabep ni ñ yem inyuu yéé ,Me gabep niñ yem inyuu yéé ,0.3333333333333333
+Mñgii mibe hi mint boñge ni bôdaa ,Miñgé mi bé himil boñge ni bôdaa ,0.5714285714285714
+Hee tje ki u ñkwo ,Heetje ki u ñkwo ,0.5
+Libelek tjoñ li maén li yé lilam ,Libelek joñ li maén li yé lilam ,0.14285714285714285
+Lihuuha galinyotne ebot ndi likogaga ,Lihuhuga li nnyodne i bot ndi li kogaga ,0.875
+Kwade ma yé kwade tjap ,Kwade maé kwade tjap ,0.5
+I ndéé mbee ba niñél nye ,I ndéé imbee ba néñél nye ,0.3333333333333333
+Me ñkal le nligil hop u loñ yoñ ,Me ñkal le nigil hop u loñ yoñ ,0.125
+Likogok joñ lihônde liyé lilam ,Likogok joñ li hiônde li yé lilam ,0.5714285714285714
+Hôô mut maok ,Hôô mut maok ,0.0
+Pôgul me mbôndô ,Pôhôl me mbôndô ,0.3333333333333333
+A mbam mañge ,A mbam mañge ,0.0
+Nyambe a nnok mi yemhe wés ,Nyambe a nnok minyemhe ñwés ,0.6
+A mbémha me mut wem ,A mbémha me mut wem ,0.0
+Basôgôl bonba yéglep bih matéñ maniñ ,Basôgôl bon ba yigle bés matiñ ma niñ ,0.875
+A nnyilép pise ,A nyi lép pése ,0.75
+Mut a mbédél me yééne ndap ntuk ,Mut a mbénél me yééne i ndap mintuk ,0.375
+U mal kipôdô u mal kitô ,U mal kipôdô u mal kitô ,0.0
+A nhimha me likôga lihi mbap biwinda ,A nhimbha me likôga di nhimbha biwinda ,0.42857142857142855
+Kinje pékbus boñba héél me ,Kinje pék bôt boñ ba nhégél me ,0.7142857142857143
+Samble me lañga ,Samble me lañgat ,0.3333333333333333
+Bikôda bi yé munu lépunu ,Bikôda bi yé munu lép unu ,0.3333333333333333
+Me nlôhlene pañ miñgok ,Me nlôhlene pan ni ñgok ,0.6
+Ñgii i yé haa ni hisi ,Ñgii i yé haa ni hisi ,0.0
+Boñge ba ñômna ñgok ,Boñge ba ñômna ñgok ,0.0
+A ntjap liwo ,A ntjap liwo ,0.0
+Mibee mut ,Mbimbe mut ,0.5
+Mut nuñge a nluga ,Mut nyuñga a nluga ,0.25
+Nyen a yé i njukii a ntilil me bijek ,Nyen a nyi inyukii a ntjilil me bijek ,0.5
+Me bañ hom ,Me bak nhyôm ,0.6666666666666666
+Béñge kii a ntômdene lloñ wonsô ,Béñge kii a ntômde ni nloñ wonsô ,0.42857142857142855
+Binuga bi njet bala ,Binuga bi nje dibala ,0.5
+Lééhe ñgand i nléha me pé ,Lééhe ñgand i nlélha me péé ,0.3333333333333333
+Ba kii makôô matutga ,Baa kii makôô ma judga ,0.6
+Bon bôlô mbôl bibumbô ,Bon bôlôm bôô bibum bôô ,0.8
+U ñwéé bôlô i ñgeñyaañen ,U ñwéé bôlô i ñgeñ yañen ,0.3333333333333333
+Mbégnañga a ñke lijo ,Mbék nnañga a ñke lijo ,0.4
+Me mbahle kii ni ñkuleñ ,Me mbahle tjéé ni ñkuleñ ,0.2
+I ta biloñge i pambebe ni nyañ lom ,I ta bé loñge i pam bebee ni nyañ lom ,0.4
+U nsébne me ño ,U nsédne me ño ,0.25
+Tjay di bik di mmélé bikéi ,Tjay di bék di mmélés bikéy ,0.5
+Hikut kéñ hi nje me mbas ,Hikutkéñ hi nje me mbas ,0.4
+Nsolbe mut ,Nsolbe mut ,0.0
+Bitmbe a nje me ñgimpe su wom ,Binbe a nje me ñgim pes wom ,0.42857142857142855
+Mut nunu a nyiédé maña ,Mut nunu a nyi ma dimaña ,0.5
+Liyabak jéé li lom i nyogi lihélés bés ,Liyabak jéé li lom i nyogi li nhélés bés ,0.2222222222222222
+Mawanda ma map maa ,Mawanda map maa ,0.3333333333333333
+Munu mudaa a ntép gwala ,Nyus mudaa a ntip gwal ,0.6
+Lona me ntoñgi yem nson ,Lona me ndoñgi yem nson ,0.2
+Lôñge biloo ,Lôñge biloo ,0.0
+Me ñémbél bi me ñkon woñ ,Me ñémbél bé me ñkoñ woñ ,0.3333333333333333
+Boñge ba mbôblana miño ,Boñge ba mbôblana miño ,0.0
+Kwo li mbot ,Kwo limbot ,1.0
+Mabadô ma nnene ma ñgoñ mona ñgwés ,Mabadô ma nnene mañgoñ mon a ñgwés ,0.42857142857142855
+Me ñkon i tjak ,Me ñkon i jak ,0.25
+Me ñke i péé ndap ,Me ñke i pén ndap ,0.2
+Kombat hi yé loñge i ke ,Hikômbat hi yé loñge i je ,0.3333333333333333
+Ba ndi nye ni hitjak yañhéé ,Baa ndi nye ni hitjagyañ hyéé ,0.5
+Ta nyen a biyébha me lom ,Ta nyen a biyébha me lom ,0.0
+Tôñ lilañ i mbéna ne ñgandak ,Tôñ lilañ i mbéna ne ñgandak ,0.0
+A nlégla me ntandi di nlégla mahas ,A nlélha me ndandi di nlélha mahas ,0.42857142857142855
+Tutup wéé a nlém ,Tutup wéé a nlém ,0.0
+Sô u ñkiyinda nye ,Su u ñkiinda nye ,0.5
+Nop a ntoy hana ,Nop a ntoy hana ,0.0
+Nin i yé ndô ,Niñ i yé ndudu ,0.5
+Ba nlamb ñkônô séñgé ,Ba nlamb ñkônô séñgén ,0.25
+Tja liñab we ,Jas li ñap we ,0.75
+Njéé i mpañga gwalak ,Njéé i mpañga gwalak ,0.0
+Manyuñ ma nnugôs bibebela ,Manyuñ ma nnugus bibebela ,0.25
+A ñañ kaatma wa ,A ñañ kaat maua ,0.5
+Me nhôbna bikaat gwem ,Me nhyômna bikaat gwem ,0.25
+A ñkôple makondo i kiiisin ,A ñkôble makondo i kiisin ,0.4
+Me yé ñwaak ,Me yé ñwaak ,0.0
+Man libii ñgom libii ,Man libii ñgond libii ,0.25
+Hisii hi nsémba ñadak ,Hiséé hi nsemba ñgandak ,0.75
+Ba nje bé ñkéñge tôdô ndi ba mbel wô ,Ba nje bé ñkéñgé tôdô ndi ba mbel wo ,0.2222222222222222
+Lop béndél mapep moñ hana ,Lo béndél mapep moñ hana ,0.2
+Nye nunu a nlehebe i njel ,Nye nunu a nlehbe i njel ,0.16666666666666666
+Nnôyha bés i ndap yo ,Nôyha bés i ndap yoñ di binôyha liké ,0.625
+Bôô mbôñ i ñkôga wee édiga bana bobla ,Bôô mbôñ i ñkôga wee di gabana bobla ,0.25
+Mut a ñkalana hiun ,Mut a ñkala ni hiun ,0.4
+Kii u ntulul likoda ,Kii u ntulul likoda ,0.0
+Noñna me mapep makat ,Noñna me mapep ma kaat ,0.4
+Me mmal bébé ken yoñ makondo ,Me mmal bébés tén yoñ makondo ,0.3333333333333333
+Likay li ñkôgô li nlet i wahal ,Likay li ñkôgô li nlet i wahal ,0.0
+Man nunu a nnyénél kiba gwal béé ,Man nunu a nyénél ki bagwal béé ,0.42857142857142855
+Lééhe i mayagal i yé le ,Lélhe i mayagal i yé len ,0.3333333333333333
+Ibanda hi mut ,Hibande hi mut ,0.3333333333333333
+Bôdaa bon ba mbéna nomol ,Bôdaa bon ba mbéna nomol ,0.0
+Ba ñke nanya séñga señga ,Ba ñkéna nye señgaseñga ,1.0
+Me nje bé bikond ,Me nje bé bikond ,0.0
+Pôtul mut ñgaa ,Pôdôl mut ñgagaa ,0.6666666666666666
+A ñkal mu njék ,A ñkat mut njék ,0.5
+Konison a yé maé mbégdéosô ,Konison a yé me ni mbédgé yosô ,0.5714285714285714
+Ñgwéha yon i niñés bôt ,Ñgwéha yon i nniñis bôt ,0.2
+Boñ kigiitel ,Boñ kikii tel ,0.6666666666666666
+Hilôba hi nyoñye i nlam ,Hilôba hi nnyoñye i nlamb ,0.4
+Ba u gaha manyuñ boni ba nlôñe ,Baa u gaha manyuñ moni Balôñe ,0.6666666666666666
+Mulôm i kuni ,Munlôm hikuni ,1.5
+Likoda li mbok ,Likoda li mbok ,0.0
+Boñ yem i mal u nlemasomb ipe ,Boñ yem i mmal un me nlama somb ipe ,0.5555555555555556
+A nnoñ me baabas ,A nnoñ me bahbas ,0.25
+Kuduk libalô ,Kuduk libadô ,0.5
+Mut a ntôp tume ,Mut a ntôp jume ,0.25
+Liseñ li ndap ,Liséñ li ndap ,0.3333333333333333
+Mañgeñge ma yé ñkoñ woñ ñgandak ,Mañgeñges ma yé ñkoñ woñ ñgandak ,0.16666666666666666
+Mut a ntééda a ta biuñwet gwoñ ,Mut a ntééda a ta bé ñwet gwom ,0.375
+A tehe ba nye a ube ñgwéé ,A tehe bañ nye a ube ñgwéé ,0.14285714285714285
+I bihégél bi mbok bihégél bi mbok ,I bihégél bi mbok - bihégél bi mbok ,0.125
+Njee a téé i pañ yem ,Njee a téé i pañ yem ,0.0
+Sulu i bibôhda me njel ini ,Suluk i bibôdha me njel ini ,0.3333333333333333
+Libél lihañgwe i mbok ,Libél li nhañ bé i mbok ,0.5
+A nlimha me lambe ,A nlimha me lambe di nlimha bilambe ,0.42857142857142855
+tagbana me sagala woñ ,Tagbana me sagla woñ ,0.5
+Ba bitiiha mañkee minsôndo miñgé ,Ba bitiiha mankéé minsôndô mi ñgé ,0.6666666666666666
+I mutunu a yé li muge ,I mut nunu a yé limuge ,0.6666666666666666
+Bôt ba nnok i je ,Bôt ba lok i je ,0.2
+Me ñke nleñ ,Me ñke nleñ ,0.0
+Bana boñge ba mbôñ mandale ,Bana boñge ba mboñ mandaa le ,0.5
+A nto ntoo ,A nto ntook ,0.3333333333333333
+Mudaa a nteesôñ ,Mudaa a ntehe sôñ ,0.5
+U yé wom ,Kuye wom ,1.0
+Ñgii ñgiba a gwéé béba ñem ,Ñgiñgiba a gwéé béba ñem ,0.4
+Mut a nnyamba ndôñ ,Mut a nnyambaa ndôñ ,0.25
+U nhunjôl ,Nhum jôl ,1.0
+Mpugulép mpugul bôp ,Mpuñgul lép mpuñgul bôt ,1.0
+M bon matôa ,Mbon matôa ,1.0
+Be wéé u yé kon ,Be wéé u yé kon ,0.0
+Libigdaa litjam li li nlona mahañol mape ,Libigdaga li jam li li nlona mahoñol mape ,0.5
+Budaa ba libambe ,Bôdaa ba libambe ,0.3333333333333333
+A nnyohbkay i kédé mpék ,A nnyos bikay i kédé mpék ,0.3333333333333333
+U sébél bés kat i tu nyom ,U sébél bés kat i tun yoñ ,0.2857142857142857
+Mapep ma bindi ,Mapep ma béndi ,0.3333333333333333
+Ndap yem i uñi haa ,Ndap yem i ôñi haa ,0.2
+A nnyem pot ,A nnye mpot ,0.6666666666666666
+Kuwa nsel ,Kua sel ,1.0
+Boda péa yé lam ni bobla ,Boda piya i yé lam ni bobla ,0.2857142857142857
+Kii i mpidbaa we bijek ,Kii i mpidbaha we bijek ,0.2
+Boñge ba bibumna ,Boñge ba bibumna ,0.0
+Kii uu yabda hala ,Kii u nyabda hala ,0.5
+Juule mut ,Jugle mut ,0.5
+Litelbene jem lini i béñga mintuka ,Litelbene jem lini i béñge mintuk ,0.3333333333333333
+A mpindba yéé ,A mpénd mbay yéé ,0.5
+Ntugndam a ñkogwe gwéé ,Ntuk ndamb a ñkwo gwégwéé ,0.8
+Ke bala nnyetisô a nlôôha ndok ,Ke balañ nye disôô a nlôôha ndok ,0.42857142857142855
+Kabô liñgwel nye a wopôdô ,Kagô i ñgwel nye a wo pôdô ,0.7142857142857143
+Mbahal i nyôôbe hela ,Mbahal inyuu bihela ,1.0
+A nnyoñg me le me pot bañ ,A nnyoñg me le me pot bañ ,0.0
+Matughe ma yésu ,Matuge ma Yésu ,0.6666666666666666
+Hini a memleñgéñe man ,Ini a mmemle ñkéñéé man ,0.6
+U nnok mahiñha mañgo me ,U nnok mahéñha ma ñgomén i ñkuu mahop e ,0.7777777777777778
+A ntuñha i poo ,A ntuñha i poo ,0.0
+Hisei ñgwiya nsum hi pot ,Hiséé hi ñgwiya nsum hi pat ,0.5
+Mil nsôt ,Mil nsôt ,0.0
+A nnubes man mubge ,A ñube man ñubge ,0.5
+Nyodna me womôlha ,Nyodna me wômôl ha ,0.5
+A ñket hi yéñ ,A ñket hiyeñ ,0.6666666666666666
+Hisañ hi nnyam me ,Hisañ hi nyam me ,0.25
+Me mbôñlene we nam ,Me mbôñglene we nañ ,0.5
+Man a ñwéhél me yañan mbot ,Man a ñwéhél me yañan mbot ,0.0
+A ñkoñgha i bôm nye tama ,A ñkoñg ha i bum nyetama ,0.8333333333333334
+Yéé gis ,Yii jis ,1.0
+Litol bisiñli ,Litol bisiñli ,0.0
+Mañge nunu a gwéé yi ,Mañge nunu a gwéé yi ,0.0
+A mpéha me woo i ñgii ,A mpéha me woo i ñgii ,0.0
+A mbélél me pilwéé moni hana nlôm njel ,A mbédél me pil wéé moni hana nlôm njel ,0.3333333333333333
+Lôha bañ su le kembe ñkôô i joo ,U lôôha bañ sude kembee ñkôô i joo ,0.625
+Nyuu yosô i ñambe mañ muti unu ,Nyuu yosô i ñambe mañ mut unu ,0.14285714285714285
+Libége li njék ,Libék li njék ,0.3333333333333333
+Bilombbe bee ntônbaha we ,Bilôñ bibe bi ntônbaha we ,0.6
+Mwandim yé béa ,Ñwandi mi yé béya ,0.75
+A hébla kôy ñôgbene iheñ ,Nhéblak kôy u ñôhbene i hyeñ ,1.0
+Puput bikay ,Puput bikay ,0.0
+Mbambat i nséembe ,Mbambat i nsés me ,0.5
+Mañge a nnéé ño mbe wee ,Mañge a néyés ño mbe wé ,0.3333333333333333
+Hôô i jek gwañ ,Hô bijek gwoñ ,1.3333333333333333
+Tén hi mmaya hi yé i mbéiga yem ,Tén himaya i yé i mbééga yem ,0.5714285714285714
+A mboñ bitas ,A mboñ bitas ,0.0
+Mudaa a gwéé ñgandak tjôñ ,Mudaa a gwéé ñgandak tjôñ ,0.0
+Lihôlôs loñ li mbéñge bôt bobasô ,Lihôlôs loñ li mbéñge bôt bobasô ,0.0
+Boñge ba ntuk ,Boñge ba ntuk ,0.0
+Bôdaa ba nteolene me ndap ,Bôdaa ba nteblene me ndap ,0.2
+ ini a mbaa nsubi ,Ini a mbaa nsugi ,0.5
+Mudaa ndunu a yé hikwehkey ,Mudaa nunu a yé hikwehkey ,0.2
+A nhyéndikék i wemel ,A nhéndi kék i ñwemel ,0.6
+Homle ini me mbii ne we ,Hoñle ini me mbiine we ,0.6
+Nunu mut a nyuuba ,Nunu mut a nyuuba ,0.0
+Njee a nteglene me hibee i juu ,Njee a nteglene me hibee i juu ,0.0
+U u nsude ,U u nsude ,0.0
+Péé i sôbi i mbem kôsi ,Péé i sômi i mbem kôsi ,0.16666666666666666
+Me mbala kômbôl i wom ,Me mbada kômôl i wom ,0.4
+Lipôô li mpume li ñôm hyôômb hyômb ,Lipôô li mpume li ñôm hôôm ,0.3333333333333333
+Tébna liñwek joñ ,Témbna liñwek joñ ,0.3333333333333333
+A yé bibôlô ,A nyi bibôlô ,0.3333333333333333
+Ba n a nnolôs me ,Man a nnôlôs me ,0.75
+U kédél bañ me ha ,U kéndél bañ me ha ,0.2
+Linoñ joñ lini i ke ñgwéé ,Linoñ joñ lini i ke ñgwéé ,0.0
+Yile mut a ntjañbene bi me ,Yi le mut a ntjañgbene bé me ,0.5714285714285714
+Kônde me nlañ me kuhle makabô ,Kônde me nlamb me kuhle makabô ,0.16666666666666666
+Ñgañk kôy ,Ñgoñg kôy ,0.5
+Liwumbak jéé lilubum ,Liumbak jéé li libum ,0.75
+Ba nhôla we ni jem libim libôôñôl ,Me nhôla we ni jem libim li biôñôl ,0.375
+Kii u nyôl me miñkok ,Kii u nyôl me miñkok ,0.0
+Me bilelna kembe likil lom ,Me bilelna kembe likil lom ,0.0
+Gwaa gwaa me nla saa we hala ,Gwagwa me nla saa we hala ,0.3333333333333333
+A nyi mgweege ,A nyi ñgweege ,0.3333333333333333
+A nyoñôl sagi libom ,A nyôñôl sagi liboñ ,0.5
+Mudaa lunu a ñgwé mbôa mbôa ,Mudaa nunu a ñgwés mboamboa ,0.8
+Me nhéd ñkuu wem inyuu yé bugwo ,Me nhit ñkuu wem inyuu yip wo ,0.42857142857142855
+Milop ñwés mi mpéñgbaha ,Minlop ñwés mi mpéñgbaha ,0.25
+A ntoñ me juu liñway ,A ntoñ me juu ni ñway ,0.3333333333333333
+Liyé ni kjoñ li yé libe ,Liyénék joñ li yé libe ,0.6
+Hiket hyem hi nuga ,Hikét hyem hi nuga ,0.25
+Mut a ñkit i nnoñ yésu Kristo ,Mut a ñkit i noñ Yésu Kristô ,0.42857142857142855
+Hiwonde hi mbemba ,Hiônde hi mbémba ,0.6666666666666666
+Bahal i gwéé me liôm ñgim sonde ,Bahal i gwéé me liôm ñgim sonde ,0.0
+Lébél yoñ makondo i ñun ,Bébél yoñ makondo i ñun ,0.2
+Kagdha mut ,Kagda mut ,0.5
+kon gwon biñtéñgla ha me ,Kon won ntéñglaha we ,1.25
+A nyidemanyañ gwalak ,A nyide manyañ gwalak ,0.5
+Bañge mudaa a ntik mañge munlôm ,Mañge mudaa a ntjik mañge munlôm ,0.3333333333333333
+Yoñ i bal ,Yoñ ibal ,1.0
+Ñkôô u ñkidi ,Ñkôô u ñkidi ,0.0
+Iloga hisos hiñgonda ma mañ ,Hiloga hi nsos hiñgonda mamañ ,1.0
+A mpôdôl nsañg janda béba jam kila ,A mpôdôl nsañ i janda béba jam kila ,0.25
+Mut a ñkon a nlagle ,Mut a ñkon a nlagle ,0.0
+Koo nuga ,Koo nuga ,0.0
+Wééha bañ nunu man nyañ a yéé i woñ ,U ééha bañ nunu man nyañ a yé i wom ,0.4
+Me mbaa we keñga ni bisu ,Me mbaa we kenga ni bisu ,0.16666666666666666
+Magwela ma yé ñgandak dilotini ,Magwela ma yé ñgandak dilo tini ,0.3333333333333333
+Hihéga hibeeegene yada u pôs buwet ,Hihéga hi beegene yada puhpus bruwet ,0.8333333333333334
+Ba mbôgôl mbaage i hyôp ñkok ,Ba mbogol mbahge i hôk ñkok ,0.5
+U bigwééne hee ,U bigwééne hee ,0.0
+Linikbana jem le yésu ,Linigbene jem le Yésu ,0.5
+A ntééha me bilim di ntééha bilim ,A ntééha me bilim di ntééha bilim ,0.0
+Mudaa a nlegdana hiun ,Mudaa a nlegda ni hiun ,0.4
+Kinje limala li ,Kinje limala li ,0.0
+A nhyélha me i biñgesa ,A nhélha me i béñge sañ ,0.5
+Batiba ba nlak mbamba ,Bati ba bahlak mbamba ,0.5
+Tone a ntômbla u tômbla bañ me ,Tone a ntômla u tômla bañ me ,0.2857142857142857
+Lendiga a nblendam ni nhumôk ,Lilendga a bilenda minhyômôk ,1.0
+A nyoñga mañge mudaa ,A nyoña mañge mudaa ,0.25
+Pép kembe i nlôôha je ñwañan ñwom ,Bébkembe i nlôôha je ñwañan ñwom ,0.3333333333333333
+Hee bôgôl yem i yé ,Hee bôgôl yem i yé ,0.0
+Bégha me mañga suglu ñô gwéé bijek ,Bégha me mañge suglu nunu gwéé bijek ,0.2857142857142857
+Bisoñge minimilet ,Minsoñgi mini mi nlet ,1.0
+Kuye tuñgeñ ,Kwiye tuñgeñ ,0.5
+Banda i si ,Banda isi ,1.0
+Mut nunu a yé kom ,Mut nunu a yé kom ,0.0
+A ñkak môô ,A ñkak môô ,0.0
+Jigi i nlo ,Jiji i nlo ,0.3333333333333333
+Bésna we bi nje homogada ,Béhna we di nje homa wada ,0.6666666666666666
+Mudaa a nhyuulha ,Mudaa a nhula ,0.3333333333333333
+Me ntimbis mambege inyule kagañ pak ,Me ntimbis mambegee inyuule kak i mpak ,0.7142857142857143
+Ba nnibil nye ba ñga limbiik ,Ba nnibil nye bañga linibik ,0.6
+Masee malén ma ndeñgél mbebi ,Masee ma lién ma ndéñgél mbebi ,0.5
+A soñ nop liagal jem ,A Soñ nok liyagal jem ,0.6
+Kii u mpot ma yel hala ,Kii u mpot mayel hala ,0.4
+Me nol hitôn tubom wem ni ñgaa ,Me nnol hitôn i wom wem ni ñgaa ,0.375
+Wip u mbom nye a yéglenso ,Wip u mbôm nye a yégle nso ,0.42857142857142855
+Wak u kembe ,Ñwak u kembe ,0.3333333333333333
+Wen u nhôlha malép ma jogop ,Wen u nhôlha malép ma jogop ,0.0
+Hiônde hi nhiéña ,Hiônde hi nhéña ,0.3333333333333333
+Jek i ñgalômlana mandugi ,Bijek bigalôñlana mandugi ,1.0
+Yom yem i ,Yom yem i ,0.0
+Njee nu a sék mu witu ,Nje nu a nsik mu i tun ,0.5714285714285714
+Ta a ntjal me matay inyuu sa yap me ,Ta a ntjal me matay inyuu sayap me ,0.25
+Bôk i ñkaaa ,Mbôgi ñkaa ,1.5
+Nyambe a nsaybene we mu maliga ,Nyambe a nsaybene we mu maliga ,0.0
+Lipomok joñ li nsôndô lini ,Lipomok joñ li nsôndô lini ,0.0
+Me nno kiñ i nsébél ,Me nnok kiñ i nsébél ,0.2
+Ditin i likonda ,Titin i likondo ,0.6666666666666666
+Bikay bi nañ me nnambay ,Bikay bi nnañ me ni mbay ,0.5
+Nyolyo a nyen béé i loñ yéé ,Nyoyo a nyén bé i loñ yéé ,0.42857142857142855
+Hee nyôy i nhuhul ,Hee nyôy i nhumul ,0.25
+Ñgéda kwañ nsaa a béé bé mut liyanda ,Ñgéda kwañ nsaa a bé bé mut liyanda ,0.125
+Liyodle mbep gwel nye ,Liyot li mbep gwel nye ,0.4
+Hyéé hi nyoo hi ñkoogana ,Hiéé hi nyoo hi ñkoogana ,0.2
+Malook makôôsi ,Malok ma kôôsi ,1.0
+Mudaa a nha mba lebok liman ,Mudaa a nhambal libok li man ,0.6666666666666666
+A nsehla we mbôba ,A nsehla wee mbôba ,0.25
+Buune ba nje mje i nsébla le jay ,Buune banjemje i nsébla le jay ,0.5
+Me nsoohe le u bémbne me bana boñge ,Me nsoohe le u bémbne me bana boñge ,0.0
+Bajanga njoo bambot ,Batjañtjoôt ba u mpot ,1.0
+Man a ñkon me dikola a bôdôl ñgimsonde ,Man a ñkon me dikola ibôdôl ñgim sonde ,0.375
+Téblé yem i gwéé bikôda bina ,Téblé yem i gwéé bikônda bina ,0.16666666666666666
+Kaô i ntagbe yé kel hana makap ,Kagô i ntagbe hi kel hana Makak ,0.42857142857142855
+Tinem me malép likop ,Tine me malép likop ,0.25
+Nsiñ mi nyoo me mbédaa hyom ma ,Minsiñ mi nyoo mi mbéna hyôm ima ,0.7142857142857143
+Balép mai ,Malép may ,1.0
+Liôgôk li man i kédé libum li nyañ ,Liôñgôk li man i kédé libum li nyañ ,0.125
+Bisabe gwéé biñke loñge ,Bisabe gwéé bi ñke loñge ,0.4
+A nlel gwes ,A nlel kwes ,0.3333333333333333
+Libômôk joñ likôp li ñkona ñgom ,Libômôk joñ li kôp li ñkona ñgôñ ,0.42857142857142855
+Hikéñ hi séepene makabô ,Hikéñ hi seebene makabô ,0.25
+Batam ma kak ma ntibla masuluk ,Matam ma kak ma ntibla masuluk ,0.16666666666666666
+Me gwéé ndigi badola dola ,Me gwéé ndigi badoladola ,0.5
+Yé i yé hana isi jañgolo ,Yiye i yé hana isi jañgôlô ,0.3333333333333333
+Malét a ñéñha boñge kaat ,Malét a ñéñha boñge kaat ,0.0
+Libomga li matuba munloñ nan li mbébél me ,Libomga li matôa mu nloñ nan li mbébél me ,0.3333333333333333
+Basak ndiñ ba ntôlha bé ,Basak ndiñ ba ntôl ha béé ,0.5
+Ka i nhôa nyoo i nhôa ,Ka i nhôa nyoo i nhôa ,0.0
+Kel i biyél me yani i lom ,Kel i biyél me yani i lom ,0.0
+konjal kon ñgoo kon woñi kon ñgôñ ,Kon njal kon ñgoo kon woñi kon ñgôñ ,0.25
+Môñô ñkôp bôt bapey nyemb ,Môñgô u ñkôp bôt ba pey nyemb ,0.5714285714285714
+Mudaa a nnyuñhene me man ,Mudaa a nnyuñhene me man ,0.0
+Wee u nhôñol yaga kii ,We u nhoñol yaga kii ,0.4
+Me mbegee ñkuu bikaat ,Me mbegee ñkuu bikaat ,0.0
+Kwet mut pem ni sup ,Kwet mut pem ni su ,0.2
+A nhañge me béba yéé kôdi hana i njel ,A nhañge me béba yé kôdi hana i njel ,0.1111111111111111
+Potin i ndémil me ,Botin i nnimil me ,0.5
+Malét a mbédip kaat gwéé i ñgii téblé ,Malét a mbédi bikaat gwéé i ñgii téblé ,0.25
+A bikemayo i loñ yés ,A bike mayo i loñ yés ,0.3333333333333333
+Soso jembe e li mut ,Soso jembee li mut ,0.5
+Ndinyé a mbooñga ké hana ,Ndi nye a mbooñga ki hana ,0.5
+Ti me litama ok ,Ti me lita maok ,0.5
+Litôa li ntjaba bikaye ,Litôa li ntjaba bikay ,0.25
+A ñke juwee ,A ñke jwee ,0.3333333333333333
+Kôt i mbéñ i nnum jañgolo li nnum ,Kôdi mbéñ i nnum jañgôlô li nnum ,0.42857142857142855
+Di ñgwaa bana ,Di ññwahbana ,1.0
+Mison wéé mi nlémél hi mut ,Minson ñwéé mi nlémél hi mut ,0.3333333333333333
+Di njalép nuga di njalépôt ,Jinda li binuga jinda li bôt ,1.0
+Tidil me kwem ,Tidil me kwem ,0.0
+Me nsômbol man wem bikaat bisuglu ,Me nsômbôl man wem bikaat bi suglu ,0.42857142857142855
+Mudaa nunu a ñke ki mintam ,Mudaa nunu a ñke ki mintañ ,0.16666666666666666
+Me nsayap we ñgwii yé yondollam ,Me nsayap we ñwii yondo nlam ,0.5
+Libuuha gaje li nson li ntééñga bé nye ,Libuuhaga jéé li nson li ntéñga bé nye ,0.375
+Mayiba u nyon nyoo mon manjuñbaha we ,Maéba u nyoñ nyoo mon ma njuñbaha we ,0.5
+A nlaa ñamudaa i yaña nnañ ,A nlaana mudaa i yañan nañ ,0.6666666666666666
+A yé nye ta ma ,A yé nyetama ,1.0
+A nnibil me i yañan mbot ,A nnibil me i yañan mbot ,0.0
+Me mede me njel i kondop me bibel ,Memede me nje likondo me bibel ,0.8333333333333334
+Bômbômb mut ,Bôñbôñ mut ,0.5
+Kel i mbep ,Kel i mbep ,0.0
+A nsindamel bay ,A nsinda me libay ,0.75
+Bini bijek biñél me ,Bini bijek binnél me ,0.25
+Me yé ni mbom lam ,Me yé ni mbom lam ,0.0
+Nhyuu mut ,Nhuu mut ,0.5
+Mañge nunu a nholôl hana ,Mañge nunu a nhôlôl hana ,0.2
+Nyañgô a ñgwéñél me misôa ,Nyañgô a ñwéñél me minsôa ,0.4
+Tén kaga ,Tén kaga ,0.0
+Kii i nnyo mbus nye ,Kii i nnyômôs nye ,0.5
+A nnol kwek kwek ,A nnol kwekwek ,0.6666666666666666
+Likôga li bibôha yani ,Likôga li bibôha yani ,0.0
+A ntamhe jam ,A nta me jam ,0.5
+Tee kigéé a mboyop ,Tehe kii a mboyop ,0.5
+Be hyéé mbok i gwéé bihet man bisamala ,Pes yés mbok i gwéé bihédman bisamal ,0.7142857142857143
+Hikéñél hyéé hi ñkeñep i nyuu bôlô ,Hikéñél hyéé hi ñkeñep inyuu bôlô ,0.3333333333333333
+Nuga ini i nlamam buma ndiya jéba loñge ,Nuga ini i nlama buma ndi ya jéba loñge ,0.3333333333333333
+Kôgôp ñgii ,Kôkôp ñgii ,0.5
+Kii i mbuuhaha nye ,Kii i mbuuhaha nye ,0.0
+Kii u nsôgôl bijek ,Kii u nsôbôl bijek ,0.25
+Bisôna bi ñkéna mbay mut mam mabe ,Bisônda bi ñkéña mbay mut mam mabe ,0.2857142857142857
+A yé nle mek mut ,A yé nlemek mut ,0.5
+Mut nunu a yé nsanda kiyaba ,Mut nunu a yé nsanda kiiyaga ,0.16666666666666666
+Mimbôgôk mi bitamb mi nnumb béba njiñ ,Mimbôbôk mi bitamb mi nnumb béba njiñ ,0.14285714285714285
+Mbebi i séébaha likondo ,Mbebi i nséébaha likondo ,0.25
+Bôt ba ñkumna ,Bôt ba ñkumna ,0.0
+Di ñuubaha inyuu bada moni ,Di ñuubaha inyuu bada moni ,0.0
+Mut nunu a ñkalba ,Mut nunu a ñkadba ,0.25
+A yé mumbôbôla ,A yé mut bôbôla ,0.5
+Tééne me hibee i juu tééne me kilok ,Tééne me hibee i juu tééne me kilok ,0.0
+Unu mpiga u gwéé ndibi ,Unu mpiñga u gwéé mbibi ,0.4
+Sôgô nye mbôl lom ,Sugus nye i mbus nlôñ ,0.8
+Pada a gwéé ôñgba i yésu ,Pada a gwéé ôñgba i Yésu ,0.16666666666666666
+Ndôy i ñke i belep ñgii e haa ,Ndôy i ñke i bedep ñgii e haa ,0.125
+Tjodot di mbay eñgeñg ,Tjôdôt di mbay eñgeñg ,0.25
+Bihuhu bi mpan ntogon nunu inyo ,Bihus bi mpam ñkokon nunu i nyo ,0.7142857142857143
+Maok maléén ma nlegi ,Maok ma lién ma nlegi ,0.4
+Ñgand i ñkahal hot ,Ñgand i ñkahal hot ,0.0
+Bééahba ñañge nuhapkay ,U bééaha bañ mañge nu ha bikay ,1.0
+Ñkôm u nhuuwa ,Ñkôm u nhuua ,0.3333333333333333
+U béñga kôs mam u sôp kôl lihéli ,U bénga kôs mam u sôk kôs lihele ,0.5
+Nembemb ñgémbhe yoñ ,Me mbemb ñgémhe yoñ ,0.75
+Lamal i nje me ñgim kobot u kaat ,Lamal i nje me ñgim kobot bikaat ,0.2857142857142857
+Nya yak wéé u nloo u isam ,Nyayak wéé u nloo u isañ ,0.5
+Lôk sañgô ,Lôk Sañgô ,0.5
+Kembe ñgii i nhyok i lép ,Kembe ñgii i nhok i lép ,0.16666666666666666
+A ñke a nyiiga hiiga hiiga ,A ñke a nhiga higa higa ,0.5
+Ki hyandi hi hinuñgup hi mapabé ,Ki hyandi hi hi nnuñgup hi ma pa béé ,0.5555555555555556
+Bihôn bi tabé ñkoñ wem ,Bihôn bi ta bé ñkoñ wem ,0.3333333333333333
+Woñe won u ntéé mbahanya ,Woñi won u ntéémbaha nye ,0.6
+Bibép bi nyogwéé bi nsulba ,Bibép bi nyo gwéé bi nsudba ,0.5
+Me ni nye di mbembbaha mbot yés ,Me ni nye di mbémbbaha mbot yés ,0.14285714285714285
+A biéga kum njok ,A bééga kumnjok ,1.0
+Ñgom mut binam a nje hikene ,Ñgo mut binam a nje hikéni ,0.3333333333333333
+Me mañge bôt mimbéna ok boñga balipamal ,Mimañ mi bôt mi mbéna ok boñge ba lipamal ,0.7777777777777778
+Me nkon i jôl ,Me ñkon i jôl ,0.25
+Litjé bi njés li tjéé lini ,Litjébél jés li tjéé lini ,0.6
+Me mpot me ,Me mpot mee ,0.3333333333333333
+Njal di gwéé me ,Njal i gwéé me ,0.25
+Bot njaañgumba ,Bot njañgumba ,0.5
+Mut mok a nnip babatap i mis ,Mut mok a nnibba batat i mis ,0.2857142857142857
+Kudi lién ,Kudi lién ,0.0
+Di ñéga béé ,Di nyéga bé ,0.6666666666666666
+Me nilwanda jem di mbéhha dinoo ,Me ni liwanda jem di mbéhha dinoo ,0.2857142857142857
+Ntol u nhañgwala kiyé diguu môbô mu ,Ntol u nhañ wada kii di ñômôk ñwo ,0.75
+Mut wip a njubul i winda ,Mut wip a njubul i winda ,0.0
+Ntén libot ba galé nhooblini limlé nlañ ,Ntén libodbaga li nhoop lini li mélés lañ ,0.875
+Hiônde hyosôna ,Hiônde hyosôna ,0.0
+U nhyôgda ñgandak i na ,U nhôgda ñgandak i nañ ,0.4
+A nhyondol hibee hyosôna ,A nhondol hibee hyosôna ,0.25
+Boñge bañ we ñama lép ,Boñge ba ññwehna malép ,1.0
+Kis bijek ,Kiis bijek ,0.5
+Liduba li yé loñga i kédé njaa ñgwo ,Liduba li yé loñge i kédé njaañgô ,0.42857142857142855
+Sipse me biwañga bihop u basaa ,Sibse me bibañga bi hop u basaa ,0.5714285714285714
+Mut nu a ñagde ,Mut nu a ñagre ,0.25
+Kuñul yo uu mu liôô ,Kuñul yôô kuñul yôô ,1.0
+Legbe i bee ,Legbe i bee ,0.0
+Nyañgô yem ini ,Nyañgô yem ini ,0.0
+Litam lini li mbe yéé me ,Litam lini li mbéyéy me ,0.4
+Niigaa man woñ balét ba nniigaa ,Niigaha man woñ balét ba nniigaha ,0.3333333333333333
+Lus hiônde ,Lus hiônde ,0.0
+Mut maoñ a mmal sôgle miñkond ni si me t,Mut maoñ a mmal sôble miñkond mi simet ,0.625
+Me ñkis baskô ,Me ñkis baskô ,0.0
+Libéñék a mbéñ kembe wom wéé ,Libeñek a mbeñ kembe i wom wéé ,0.42857142857142855
+Manyjoñgén ma hikôa ,Manjoñgén ma hikôa ,0.3333333333333333
+Unu lép u gwéé libôbôl lipe ,Unu lép u gwéé lilôbôl lipe ,0.16666666666666666
+Bôt boñ ba mpidbana kiyaga ,Bôt boñ ba mpidbana kiyaga ,0.0
+A mbéna ba mal bôt béé ,A mbéna bamal bôt béé ,0.4
+Ñwak e ntjôp ya u bé kil i ñgii ba mbany ,Ñwak Étiôpya u bé kil ñgii bamban ,0.8571428571428571
+Mañwés a ñkon libimbe ,Man wés a ñkon libimbe ,0.4
+Mut sé ,Mut sé ,0.0
+A kôli ni ndômb ,A kôli ni ndôm ,0.25
+A njés man ñwemp ,A njés man ñwemb ,0.25
+Kéndemut isi ,Kénde mut isi ,0.6666666666666666
+So bi yem i gwéé malép ,Sop yem i gwéé malép ,0.4
+Mut kon a ñke teñge teñge ,Mut kon a ñke teñge teñge ,0.0
+Ti mahañol ,Ti mahoñol ,0.5
+Yokel yaga nyen u bike mok ,Yokel yaga nyen u bike i mok ,0.14285714285714285
+Ñgôy i nsandana mbégdé ,Ñgôy i nsanda ni mbédgé ,0.6
+Tôñ i ñkôyôp ,Tôñ i ñkôyôp ,0.0
+Hika i yé le ,I ka i yé le ,0.4
+Me nleñél li i bôm ,Me nleñel i bôm ,0.5
+Mañ mintula ,Mañ mi ntula ,0.6666666666666666
+Ibagaa hi mut ,Hibagaa hi mut ,0.3333333333333333
+We u mpot ndigi biwôô ,We u mpot ndigi biwôgô ,0.2
+Mut nunu a mbem bikii ,Mut nunu a mbém ni ki ,0.5
+A nniñil ñgandak i gôbôl ,A nniñil ñgandak i gwôbôl ,0.2
+Nson boleñ ,Nson mbolan ,0.5
+Me gwéé nlañga tinti ,Me gwéé nlañga tinti ,0.0
+Lôômba ñkaa ,Lôômba ñkaa ,0.0
+A mut nunu a yé yomôp ñgandak ,Mut nunu a yé nhyômôk ñgandak ,0.5
+Minlami kembe mi yé biloñge bi bijek ,Minla mi kembe mi yé bilonge bi bijek ,0.375
+Tuba nyôl i ntôyôs malép ,Tuba nyôl i ntôyôs malép ,0.0
+I kédé mambot mana me nsaba yada ,I kédé mambot mana me nsaba yada ,0.0
+Mañge a mpomb ba me i moo ,Mañge a mpombba me i moo ,0.3333333333333333
+Ñgond i nnum bisumbôô mi matam ,Ñgond i nnum minsumbuu mi matam ,0.16666666666666666
+Makemem ma biséña bee hee ,Maké mem ma biséña behee ,0.8
+Kee i kwéñi ,Key i kwéñi ,0.3333333333333333
+Tibak i tuk bol man kéé a ntjok me bilin ,Di bak i tuk bol mankéé a tjok me bilim ,0.6
+Me nme nlegbababuk buk bijomol jéé len ,Men me nlegba bibuk bi jomol jéé len ,0.75
+A mbôdlaha me ndobo ni moo ,A mbôdlaha me ndobo ni moo ,0.0
+A lôdôl ñgas wem a nnôlôl me jôga li nyik ,Alôdñgas wem a nnôlôl me jôga li nyik ,0.375
+Sôgol a ntjôpe n likoñ ,Sôgôl a ntjo pen likoñ ,0.6
+A ñkabde ki gwoña ñgwom ,A ñkabde ki i gwañan gwom ,0.5
+Ñgok likas li ndap ,Ñgok likas li ndap ,0.0
+A nnédé hiñgandak hiônde ,A nnédés ñgandak hiônde ,0.5
+Man a ñgwééhaña len a yé mudaa ,Man a ñgwéé hana len a yé mudaa ,0.25
+Hiyeñ hi yé hikeni ,Hiyéñ hi yé nye hikeñi ,0.6
+A nhuwebanyañ bo makabô ,A nhue banyañ ba makabô ,0.6
+A nleñ likoñ piñ ,A nleñ likoñ piñ ,0.0
+Ñwemel womene u ñkwéhba ,Ñwemel womede u ñkwihba ,0.5
+Hana yaga nyen a ôñi tih tis ,Hana yaga nyen a ôñi tistis ,0.3333333333333333
+Me mbon won mi nlémés nye ,Mimbon ñwon mi nlémés nye ,0.6
+Nsombok yom u ta bé baud bat ,Nsombok yom u ta bé badbat ,0.3333333333333333
+Hilo hi nnél nye ,Hilo hi nnél nye ,0.0
+Man a ñke kwañ kôy ,Man a ñke kwañkôi ,0.5
+Mbôgôl yada mbôgôl juem ,Mbôgôl yada mbôgôl jwem ,0.25
+Ñem a ñgwés bé loñge jam ,Ñem a ñgwés bé loñge jam ,0.0
+A lôk tada i gwéa ,A lôgtata i gwéha ,0.75
+Mut a mbéñés mabe méé ,Mut a mbéñés mabe méé ,0.0
+Ntôlôô u nsubla ,Ntôdôô u nsuula ,0.6666666666666666
+Kul i ñke tega tega ,Kul i ñke tegatega ,0.5
+Mudaa a ñadbe nlôm ,Mudaa a ñadbe nlôm ,0.0
+Me mbude bijek i lole me pamak i ndap ,Me mbude bijek ilole me pamak i ndap ,0.25
+Kel kunda loñ mbégdana hi ñwii ,Kel kunde loñ i mbigdana hi ñwii ,0.42857142857142855
+A nsoñ me hiii homa ,A nsok me hii homa ,0.4
+Me ñke dup ntôdô ni hikoba ,Me ñket bitôdô ni hikoba ,0.6
+U nlôôha mañgañga ,U nlôôha mañgañga ,0.0
+Mut misusuba a ñgwéha a ñkihle bôt ,Mut minsusua a ñgwés a ñkihle bôt ,0.2857142857142857
+A nniii me biim ,A nnii me bim ,0.5
+Ba mbihil nyee môlundu ,Ba mbihil nye Môlundu ,0.5
+U yé bañga mut ,U yé bañga mut ,0.0
+Toppe i kaba me hi gwéé ,To pes i kaba me hi gwéé ,0.2857142857142857
+U suu bañ me ,U suu bañ me ,0.0
+Me mpôdôs liwanda jem ,Me mpôdôs liwanda jem ,0.0
+A gwéé hiband ba nd hi nyuu ,A gwéé hibandband hi nyuu ,0.6
+A nleñ lién mpan ,A nleñ ley ni mpan ,0.4
+Me ñis ñwom mi maén ,Me ñis ñwom mi maén ,0.0
+Ponba bijek ,Ponba bijek ,0.0
+Kumblene i mañga ,Kumblene i mañga ,0.0
+Ba yé ntôñ bôt u u nséélana ,Ba yé ntôñ bôt u u nséélana ,0.0
+Lijek li kôñgô li ñôbôs bijek ,Lijek li kôñgô li ñôbôs bijek ,0.0
+U yuglaha bañ me yañan koga ,U yuglaha bañ me yañan koga ,0.0
+Liñgañga li su luk ,Liñgañgas li suluk ,1.0
+Baa me boñ laa ,Baa me boñ laa ,0.0
+Siñgi i ñgwel tôle ,Siñgi i ñgwel tôle ,0.0
+Kéndéñ mut ,Kéndéñ mut ,0.0
+Likomb masup likomb tjôs ,Likomb masu likomb tjôs ,0.25
+Me nhimbil nyoo kék ,Me nhimbil nyoo kék ,0.0
+Ba ñkohol me ñwo ,Ba ñkohol me ñño ,0.25
+Kii u nyañgal masoñ nyañgal masoñ ,Kii u nnyañgal masoñ nyañgal masoñ ,0.16666666666666666
+A mbép me miñkôndge mi yégle ,A mbép me miñkôndge mi yégle ,0.0
+Ti nnyandômb makol ,Ti nyandôm makol ,0.3333333333333333
+Sôgôl wem a ba nnyot njok misôwaa ,Sôgôl wem a ba nyot njok minsôa ,0.2857142857142857
+Linyumbi liye ,Liyumbi li e ,1.0
+Me nnyooñga i kôô ,Me nnyooñga i kôô ,0.0
+Ñgoñgoñ goñ up ,Ñgoñgoñ u ,1.0
+Mañ mut u ñôl ntoñ ,Mañ mut u ññôt ntoñ ,0.2
+Mañ wem wada a bo gwééne hikañ ,Man wem wada a bigwééne hikañ ,0.5
+Kôôl libadô ,Kôôt libadô ,0.5
+U kôli béé pii mut numpe ,U kôli bé pii mut numpe ,0.16666666666666666
+Likogla li ñkôm ,Likoglak li ñkôm ,0.3333333333333333
+Me nhip nye ,Me nhit nye ,0.3333333333333333
+Gwomb bi nluñus mpék kôn ,Gwômb bi nluñus mpék kôn ,0.2
+Idi sulôk i yé bañgañgaa ,Ini suluk i yé bañgañgaa ,0.4
+Hipuma mbele i mbéyéé malép ,Hipuma mbene hi mbéyés malép ,0.6
+Hee ke ndôdôs kila ,Heeke ndudu ki la ,1.0
+Me nlôñôl ñgombi ,Me nlôñôl ñgombi ,0.0
+Mapam ma suglu ,Mapam ma suglu ,0.0
+Pélha mbot ,Pédha mbot ,0.5
+Libam lini li mbômbla loñga ,Libam lini li mbômla loñge ,0.4
+Me nyeñ homa le me boñop ,Me nyéñ homa le me boñop ,0.16666666666666666
+Mimbogok membayñ ,Mimbogok mi mbaéñ ,0.6666666666666666
+Mañga ma ntañla ,Mañga ma tañla ,0.3333333333333333
+Ba mbélés libôñg li bijek ,Ba mbédés libômb li bijek ,0.4
+Kañga a yé hyobi hilam ,Kañga a yé hyobi hilam ,0.0
+Bas mbômble ni bôñ ,Bas i mbômb len i bôm ,0.8333333333333334
+Likaaa li nnol bon ,Likaa li nnol bon ,0.25
+Inyuu kii ni nnohbene hyéé ,Inyuu kii ni nnohbene hyéé ,0.0
+Nyuu mboñ yaga ndigi me jonde jonde ,Nyuu i mboñ yaga ndigi me jondejonde ,0.42857142857142855
+Hia ñkum u téé we eke liwom ,Héya ñkum u téé we i kédé wom ,0.5
+Liyéége li tabôwe hana ,Liyééne li ta bé we hana ,0.6666666666666666
+Wen u nsôñglaha me sañ i boñge bana ,Wen u nsôñglaha me sañ i boñge bana ,0.0
+Hihoma nlep nunu a nyoñe ,I homa lép nunu a nyoña ,0.6666666666666666
+Nunu mañge a nyama ,Nunu mañge a nyama ,0.0
+Boñge ba ntindep bômbômbôndô ,Boñge ba ntinde bômbô mbôndô ,0.6
+Ñgwo i nnyo malép laglak ,Ñgwo i nnyo malép laglak ,0.0
+Libom li nsumbi li kaisa ,Liboñ li nsumbi li kaysa ,0.4
+Me bikendel len me pam e ,Me gi kenek len me pam e ,0.2857142857142857
+Mbida i togoo ,Mbida bitogoo ,1.0
+Bana bôt ba nyugogana béé ,Bana bôt ba nyuugana bé ,0.4
+Siñba ñgal ñgwel bon bakôs ,Siñmbañga i ñgwel bon ba kôp ,0.6666666666666666
+Uuñga ñgô ,Huu ñgaañgô ,1.0
+Sék bikay ,Sék bikay ,0.0
+Buubne bi mbot bi nyon ,Biubne bi mbot bi nyon ,0.2
+Likubel i nyoooga loñge nyo ,Likubé li nnyoda loñge i nyo ,0.6666666666666666
+A yé sañsañ yéé ñgwa ,A yé sañsañ yé ñgwa ,0.2
+Lona me hi yé i bikay ,Lona me héyéy i bikay ,0.4
+Manjas a bule we u ñkon kep kiñ ,Man jas a buule we u ñkon ñkép kiñ ,0.4444444444444444
+Ba mut binam a nla u ñgus numbee ,Baa mut binam a nla uñgus numpe ,0.5714285714285714
+Mañga mbahal tjéé i nnyuuma juu mi ,Mañge a mbahal tjéé inyuu majô méé ,0.8571428571428571
+Pagô i yé nsitya muñgô ,Pagô i yé sitia môñgô ,0.4
+Kal nye le me ñke ,Kal nye le me ñke ,0.0
+Di ñgwés nno a nle bibapôdôl ,Di ñgwés nok biañle bi bapôdôl ,0.6666666666666666
+Pee mut i ñkil i ñgii kempék biyébe ,Pek mut a ñkil i ñgii key pek biibe ,0.5555555555555556
+Nyuu nkil nye gak tômblô yoñ i nlégi ,Nunki liegak tômblô yoñ i ñégi ,0.8333333333333334
+Leege me pôndi ,Légél me pôndi ,0.3333333333333333
+Ntjaba gwéé tilaén ,Ntjobo u gwéé tidil ,0.75
+Me ntupsa we njañlo ,Me ntubsa we njee a nlo ,0.6666666666666666
+Sôp yoñ i nsôy ,Sup yoñ i nsôi ,0.5
+Mbondonjee i ñkôs na woñi ,Mbondo njéé i ñkônha woñi ,0.8
+Hison hi gwéé nye ,Hison hi gwéé nye ,0.0
+Péna i yé bie miñem ,Pééna i yé béé miñem ,0.4
+Loñkop a mpot le kwobok kwoko ,Nlôm kôp a mpot le kwogokwogo ,0.6666666666666666
+Ba ntim hana bé loñge i kélé ni ñkwéluñap ,Ba ntimbhana bé loñge i kédé miñkwel ñwap ,0.625
+Unu wom u gwéé ñgada oma ñgada ,Unu wom u gwéé ñgata homa ñgata ,0.42857142857142855
+Sôñologola me soho ke bañ gwéé hala ,Soho lo hôla me soho u ke bañ ñgwéé hala ,0.5
+Ti me bômbôl pa ni tégi hyam béé ,Ti me bômbôl pan i tégi ha i mbédgé ,0.5555555555555556
+Som hi noga i hyoñ bi nyiglene bikape nda ,Somb hiloga hyoñ biniglene bi kapénda ,1.3333333333333333
+A nsugde nye ,A nsugde nye ,0.0
+Ba ñkada nye ñwaa ,Ba ñkadal nye ñwaa ,0.25
+Kopda ñwañ we me ndap ,Kobda me ñwemel ndap ,1.0
+Kukôa ini di nnyutlenee yak mbombok mis ,Kôkôa ini di nnuhlene yak mbombok wés ,0.42857142857142855
+Ñwemel wem u kwésba ,Ñwemel wem u ñkwéhba ,0.25
+wañal môô ,Wañal môô ,0.5
+A mpuhal wanda tjéé ni tjom ,A mpuhe liwanda jéé ni jomb ,0.6666666666666666
+Mut nunu a mwoñ miba nson ,Mut nunu a mboñ béba nson ,0.3333333333333333
+Me nséé ñkok ,Me nsee ñkok ,0.3333333333333333
+Mañ mut u mut hikoda ,Mañ u mut u ñôt hikoda ,0.3333333333333333
+Lép u ñoñ buga i ndéda i mbep hôl ,Lép u ñoñ hyôwa ñgéda u mbep hôl ,0.5
+Hiyatep i yé we ntis ,Héya tep i yé we i jis ,0.5714285714285714
+Mbagda diteende diba ,Mbagda diteende dibaa ,0.3333333333333333
+Liwanda joñ li ñañal we ñgandak ,Liwanda joñ li ñañal we ñgandak ,0.0
+U yol ki mi miñpok ,U nyôl ki me miñkok ,0.6
+Lo nsiya i ta i mbugi ,Loñsia i ta i mbugi ,0.4
+Hyô bi mwo meege hi ,Hyobi hyomede hi ,1.3333333333333333
+Me mbéé nsonu wel wom ,Me mbéé nson i ññwel wom ,0.5
+Ñgaa mbip ,Ñgaa i mbép ,0.6666666666666666
+Dokta a ntimé bé bi miso ,Dokta a nti me bee bi minsoñ ,0.5714285714285714
+A ñkuñha me lép u ndi tjobi ,A ñkumha me lép u ñgi tjobi ,0.2857142857142857
+Mbot yéé i ñe bés nye ,Mbot yéé i ñébés nye ,0.4
+Sendel yé ni yoñ ,Sedel yééne yoñ ,1.0
+Me mbas malét wem ,Me mbas malét wem ,0.0
+Tiñél nuwai hyandi ,Tiñil nuga i hyandi ,0.75
+A nloñhe nye yéé i ndap yoñgo ,A nloñhene hyéé i ndap yondo ,0.6666666666666666
+Kii i mbôbôl ,Kéé i mbôbôl ,0.3333333333333333
+Letek mut u nniiga bii ,Nledek mut u nnééga bé ,0.6
+A ñéndél li ñkônô ,A nlendel ñkônô ,0.6666666666666666
+Kuut i njôp i lom ,Kuur i njôp i lom ,0.2
+A yé mut mim ,A yé mut bim ,0.25
+Libadô li nyamb i tiñbli ,Libadô li nyamb i téblé ,0.2
+Mbôda bijek ,Mbuda bijek ,0.5
+Mbat tuye i yé loñga ni hômul ,Mbaa tuye i yé loñge i lihyumul ,0.5714285714285714
+Bitin bi ñkwes nye bôk kindi yéé ,Bitind bi ñkwés nye bôk tind hyéé ,0.5714285714285714
+U ñitha bés mintomba ,U ñédha bés mintonba ,0.5
+Soñlulu a gwésosoo jéli ,Soñ lulu a gwéé soso jegi ,0.8333333333333334
+I ñgwai ba nsômbô nnol mpisa ,I ñgôy ba nsômbôl nol i mpigha ,0.7142857142857143
+Lôla mbôñ ,Lôla mbôñ ,0.0
+A nnuna ñgandak mjék ,A nhuuna ñgandak bijek ,0.5
+A mbéha me kwade ,A mbéhha me kwade ,0.25
+Di nsolbaha mintonba ,Di nsôlbaha mitonba ,0.6666666666666666
+Nono mut a mbuma béke ki kel ,Nunu mut a mbuma bé kel kii kel ,0.5
+Mut nyi ndi ,Mut nhindi ,1.0
+Mut a gwéé kuna ,Mut a gwéé kuna ,0.0
+Inyubhônba nna nnii kato hyol nom nan ,Inyuu hônba nan ni gatohol nom nan ,0.7142857142857143
+Man a nnyuñ loñge a ñgwo ,Man a nnyuñ loñge a ñgwô ,0.16666666666666666
+Bug yoñ i mbabaa me ,Buk yoñ i mbabaa me ,0.2
+Man a ñkway ,Man a ñkwaae ,0.3333333333333333
+Me bééya ni biñge miñkô ,Me bé yani i béñge mintuk ,0.8333333333333334
+Nuba ñgond to hiônde binu miñkeñgbe ,Nuga ñgond to hiônde bi nnum keñgle ,0.5714285714285714
+Masoo we tô ,Baso we to ,0.6666666666666666
+Mbôp u bi nyen a yégañ ,Mbu mpubi nyen a ñéga me ,0.8333333333333334
+U mbôdha nsuglu kee ki ,U mbôdôl suglu kel kii ,0.8
+A ntéñip ni bôlô ,A ntéñép ni bôlô ,0.25
+Dikwo bi ñkaa ,Bikwo bi ñkaa ,0.3333333333333333
+Édne me mbôndi iniyha libap li ndap ,Édne me mbônji ini ha libap li ndap ,0.375
+Kii u ñgañgbe nnene ,Kii u ñgañgbene me ,0.5
+A nlôl makanba ,A nlôl makanba ,0.0
+I inyukii u nlimil nlamb e ,Inyuu kii u nlimil lambe ,0.8
+Libaba li ño u ñkénye man li ntomb ,Libabat li ño u ñkéñéé man li ntomb ,0.25
+Mut mi bikini bumoo wee a yemhege ,Mut ni bikidik bi moo wee a yemhege ,0.5
+Me ñgweske i mmitin i kel sônde ,Me ñgwés ke i mitin hi kel sonde ,0.625
+Nyuu man nyuu bon ,Nyuu man nyuu bon ,0.0
+U ñgwes mi njôha le ,U ñgwés minjôha le ,0.75
+A ñuda mi ma nsiba libuuhu la dikoda ,A ñudha me man siba di biudha dikoda ,0.75
+Tjolop i mañge ,Tjolôp i mañge ,0.3333333333333333
+Kii u ntoo hala ,Kii u ntoo hala ,0.0
+A mbuñga me bisu bi ndéda ,A mbugha me bisu bi ndéda ,0.16666666666666666
+Likala likôp ,Likala li kôp ,0.6666666666666666
+Likol bitôñ li yé nson moni ,Likol bitôñ li yé nson moni ,0.0
+Holos ni ubôlôs nyemb ,Hôlôs nyuu hôlôs ñem ,1.0
+Sôlôp i ntéda nibene isi ,Suluk i ñkéda ni belesin ,0.8
+Hikuu hi tén ,Hikuu hi tén ,0.0
+Wagha wagha nman ni wañi ,Wagha wagha nan me ñwaa nye ,0.6666666666666666
+A mbômbana i kégé ndap yéé ,A mbôômbana i kédé ndap yéé ,0.3333333333333333
+Me nni nni man ,Me nniñi man ,0.6666666666666666
+Ntjep e u nsémél hikwoñgô ñgaa ,Ntjep e u nsémbés hikoñgo ñgaa ,0.3333333333333333
+Kwond i njem njee ,Tômb i njemje ,1.0
+Mba yem a nnénél me nnem ,Ñgwa yem a nlélél me len ,0.5
+Me nsom bi lôlô môm ,Me nsomb bilôlô i bôm ,0.8
+Iyet me i a yi loñge ,I het me yé a yé loñge ,0.5714285714285714
+Nyôl u ndap yem u yé ni makale ,Nyôl u ndap yem u yé ni bakalô ,0.125
+Banyus nye maôk ma yé lisiye niñgwa ,Ba nnyus nye maok ma yilis nye nuga ,0.75
+Klawa i nhôl i ñgéda bañha i simu ,Flawa i nhôl i ñgéda ba nha is mu ,0.5555555555555556
+Jun li mpala bibel ,Jun li mpala bé bel ,0.4
+Malét nunu a mbibil boñge ma bay ma moo ,Malét nunu a mbibil boñge mabay ma moo ,0.25
+Me bikénés ñwaa wem i dokta yin bitét ,Me bikénés ñwaa wem i dokta li Métét ,0.25
+Ndihimbéna be nyoo ,Hisénd hi mbéna be nyoo ,0.6
+Bikoopi bi e biyé matibla ,Bikoo bi bi e bi yé matibla ,0.5714285714285714
+Tjéé di ntjéba ,Tjéé di ntjéba ,0.0
+Man a ntjaba liwok ya ntehe ntiñu ,Man a ntjaba liwo kii a ntehe ñkén mut ,0.5555555555555556
+Me nhanle we bitambe bikolaô ,Me nhandle we bitamb le bikola we ,0.7142857142857143
+Inyoo u ntulul ba biñgô ,Tik yôô i ntulul babimbi ,1.0
+Loñga ni kélé a yé ñgimpés mbok ,Loñge ni Kélé a yé ñgim pes mbok ,0.5
+Gwii bi mis ,Gwii bi mis ,0.0
+Saglene boñge bitômbu bii ,Saglene boñge bitôdô bii ,0.25
+Mimbañ tjobi ,Me mbamb tjobi ,0.6666666666666666
+Likap man ,Likap man ,0.0
+Huu buñga yoñ u nnañal ,Huu buñga yoñ u nañal ,0.2
+Bo mma piya ,Bomba pia ,1.5
+A ñôñôl ndap i ñgii ñgok ,A ñôñôl ndap i ñgii ñgok ,0.0
+Dibôda di ñwo i mbééga yés ,Dibôda di ño i mbééga yés ,0.16666666666666666
+A mbida bé mahi ndi ,A mbida bé mahindi ,0.5
+Nono mut a yipot jaman ,Nunu mut a nyi pot jaman ,0.5
+Kii u mbindil mbom ,Kii u mbindil mbom ,0.0
+Me gwéébana ntjeek u njaañguni ,Me gwéébana ntjep u jañgôlô ,0.4
+ñke n likabô ñke ntôdô ,Ñkénd likabô ñkénd u tôdô ,1.0
+Mut a ñke jéé jéé jéé ,Mut a ñke jeejee ,0.75
+Mayél ma kel ,Mayél ma kel ,0.0
+Me ñkwas ntén ,Me ñkôs ñkén ,0.6666666666666666
+Ntohol wisañ gwéé ,Ntohol wes a ñgwéé ,0.75
+Di ntjémha mapep i mbégdi ,Di ntjémha mapep i mbédgé ,0.2
+Bijek bi mal leba ñbas ,Bijek bi mmal le bahbas ,0.6
+Li nsiya mbot ,Me nsiya mbot ,0.3333333333333333
+Lintumba libaghana a mbada ño ,Mintumba mi bak hana a mbada ñwo ,0.7142857142857143
+Me mbôdô le u gayoñ me i bôlô ,Me mbôdôl le u gayoñ me i bôlô ,0.125
+Inyuu kii u ñwélél me ,Inyukii u ññwéhél me ,0.75
+Boñge ba nhyimha malét wap ,Boñge ba nhimha malét wap ,0.2
+Himut a gwéé nje len ,Hi mut a gwéé njelel ,0.8
+Lini likale i mbôñgô ,Lini lika li yé mbôñgô ,0.6
+A nhyoo subi ,A nhôô nsugi ,0.6666666666666666
+Hikéñ hi mbéha i ñgwo i nhoo loñge ,Hikéñ hi mbéha i ñgok hi nhoo loñge ,0.25
+Mañge a mbam matôa ni lububu ,Mañge a mbañ matôa ni bibubuñ ,0.3333333333333333
+Nkuñge mut gwéé bimaap ,Ñkuñge mut u gwéé bé maap ,0.6666666666666666
+A yé yomma ndam ndam mudaa ,A yé yoma ndamda mudaa ,0.6
+Gwom gwem gwekama gwon ba mpogol ,Gwom gwem gwotama gwon ba mpohol ,0.3333333333333333
+Hilén me mambot meñ ,Hyélél me mambot mem ,0.5
+Mut a mbép man ,Mut a mbép man ,0.0
+I ni a mbédél me mmem masôô ,Ini a mbégél me mem masôô ,0.6666666666666666
+A nhyendep ñwemee ,A nhembep i ñwemel ,0.75
+Linoñuga bikay ,Linoñ nuga bikay ,0.6666666666666666
+A nloga ,A lôga ,0.5
+Mut hiba ñal ,Mut hibañal ,1.0
+Me bañgi tehe lini litébla ,Me bak ñgi tehe lini liteblak ,0.5
+Nsoha li ukop ,Nsohol u kôp ,1.0
+Milee mi mpañgbaña i kédé liyaa ,Minleem mi mpañgbana i kédé liaa ,0.5
+Inyuukii u nsugul i suhyuu ,Inyuukii u nsugul i suglu ,0.2
+A nhyelel mapep ,A nhyelel mapep ,0.0
+Tañde yem i ñôô ,Tande yem i mbôô ,0.5
+O tuo ,Hôt woo ,1.0
+Bôô mut ,Bôô mut ,0.0
+U nnigbe bañ me ,U nnigbe bañ me ,0.0
+Me n u yinna ntônba ,Men u nyilna ntonba ,1.0
+Kuuha mut i mbay yéé ,Huuha mut i mbay yéé ,0.2
+I bôt bo mba ba nsana béé ,I bôt boñ ba ba nsaana béé ,0.42857142857142855
+A ntetba i ñgok ,A ntédba i ñgok ,0.25
+Lemhe hi nnim ,Lemhe hilémb ,1.0
+Kii we u nnyima hala ,Kii we u nlima hala ,0.2
+Man kembe a nnyany mbégdi ,Man kembe a nya ni mbédgé ,0.5
+Kenea ha u gateheñe ,Kenek ha u gatehe nye ,0.6
+Hitam hi ñuuye ,Hitam hi mbôô nye ,0.5
+Masay ma nnimiba njiñ ,Masay ma nnumb béba njiñ ,0.4
+A binondiye his mut i njel ,A binond nye hés mut i njel ,0.42857142857142855
+Litam likômôô li tamb likaga ,Litam li kômôl litam li kaga ,0.8333333333333334
+Lihelek mut a nhel i ñgéda ndudu ,Lihelek mut a nhel i ñgéda ndudu ,0.0
+Mañut u nsola ,Mañ mut u nsola ,0.5
+Njiñgonda di ñgwés hôoba lini ,Diñgonda di ñgwés hooba lélé ,0.6
+Dipuma digeñi tjodisô di ntôla ,Dipuma dikeñi tjodisô di ntôla ,0.2
+Bale i sôl ,Mbale i sôli ,0.6666666666666666
+Wot me fut u me nsoo hi we ,ôt me fôtô me nsoohe we ,0.8333333333333334
+Ñwo mudaa u mbéna béga ,Ño mudaa u mbéna béga ,0.2
+A yé nle his ,A nyén le his ,0.5
+Mudaa a mba nbe nson ,Mudaa a mbandbe nson ,0.5
+Inyuuyen ,Inyuu yen ,1.0
+Bôt ba bibaa nyee nanu ,Bôt ba wip ba nyeelana ,0.6
+Ba bilep man ba yoñgwale ,Ba bilep man ba yoñ gwale ,0.3333333333333333
+Kôba le nnimunu ,Kôba len ni mune ,0.75
+Mañge nuna gwéé ni séña ,Mañge nunu a gwéé liséha ,0.8
+Kii u yilimil me ,Kii u nlimil me ,0.25
+U mbañ bé mut milisolok ntjoñ ,U mbañ bé mut ni lisolok joñ ,0.42857142857142855
+Kôlôl wom ,Kôlôl wom ,0.0
+Kéé hi kaat i ñgii kobot ,Kéhi kaat i ñgii kobot ,0.4
+Hibeegene joñ libas kuli yé ni nlam a nnyiim ,Libeegene joñ li baskô li yé lilam ,1.1428571428571428
+Nje nu a nteñgelha yéñe ,Nje nu a nteñgel hay i yeene ,0.5714285714285714
+Matam ma ñkahay yo yi ,Matam ma ñkahal yoyi ,0.75
+Hibam njok hi mmal me kô ,Hibamnjôk hi mmal me kôp ,0.6
+Ñgaa i mpotômb ,Ñgaa i mpot tôôm ,0.5
+Mañge a nluñul me ni ñgandak hop ,Mañge a nlumul me ni ñgandak hop ,0.14285714285714285
+Me nnol hi lôni ndam ,Me nnol hilô ni ndamb ,0.6
+Nol tjobi a gwiiga ñwas ,Nnol tjobi a bééga ñgwas ,0.6
+Saatan a yé ni mbog yosu ,Saatan a yé ni mbok yosô ,0.3333333333333333
+Kaa d yem i yé nyoo i bôn ,Kaat yem i yé nyoo i boni ,0.42857142857142855
+Paa i ntôba i mintjép ,Paa i ntôba i mintjep ,0.2
+Kindil hibee ,Kindil hibee ,0.0
+Kii we u nhii ba hala ,Kii we u nhiiba hala ,0.4
+Kuye lambe u u nsude ,Kuye lambe u u nsude ,0.0
+Njee u mmal ,Je u mmal ,0.3333333333333333
+Me ñke i hyes mbéé ,Me ñke i hes bibee ,0.4
+U nnyuñgul me ,U nnyuñgul me ,0.0
+Iun hi gwéémi ,Hiun hi gwéé me ,0.75
+Yôplene me ndi gwéé mu ,Yoblene me ndék wéy mu ,0.6
+Lakii u nmal ntjélok i môyô ,Lakii u mmal je lok i bôlô ,0.5714285714285714
+Sôga i nsañ ,Suga i nsañ ,0.3333333333333333
+Mut ba mbut ba ,Bôt ba mbudba ,1.0
+Kinje bitunba bi ,Kinje bitunba bi ,0.0
+Bikélél gwéé a nlama témlén kôkôa ,Bikélél gwéé a nlama témb len kôkôa ,0.2857142857142857
+Me bikwéé bana i sôñji pos ,Me bikweebana i sôñ dipos ,0.8
+U sôñga bañ yemi hiô môp ,U sôñga bañ nye minhyômôk ,0.6
+Bikaat biba ,Bikaat bibaa ,0.5
+Heee hida hi ntuik ,Hee hida hi ntul ,0.5
+Bikaat bini bi mbôga ,Bikaat bini bi mbôga ,0.0
+A nsôha me hikôa ñgwii di nsôha hikôa ,A nsuhha me hikôa ñgwéé di nsuhha hikôa ,0.375
+Kon makôô u ntji mbahha nye ,Kon makôô u ntindbaha nye ,0.4
+A nyen a nligip ,A nyén a nnigip ,0.5
+Me mmal nson wem ,Me mmal nson wem ,0.0
+Matôa a nhigi i kuu u mbus ,Matôa a higi i kôô u mbus ,0.2857142857142857
+Kapinda i mbañna ,Kapinda i mbañ nañ ,0.5
+Pôbôs me a ñwet yésu ,Pubus me a Ñwet Yésu ,0.6
+Nunu mut a gwéé ni hibé ,Nunu mut a gwéé nihbe ,0.4
+Ñgôñ i yé me i tehe we ,Ñgôñ i yé me i tehe we ,0.0
+Me nsomb ka tuis masis ,Mé nsomb katus masis ,0.75
+Liboli njéé ,Libo li njé ,1.0
+Dilañga yaa hap ni séé ,Di lamga yaa hak ni séé...,0.6666666666666666
+Ba ntañle mañga ni hiñgwende ,Ba ntañle mañga ni hiñgwende ,0.0
+Kwihlena yem i likôga i nnimil ,Kwihlene yem i likôga i nnimil ,0.16666666666666666
+Mbom hisoo hini a kuli ni bibimom ,Mbom hisoo hini a kôli ni bibom ,0.2857142857142857
+Ñgalba inyo i nhôla bé jam ,Ñgadba i nyo i nhôla bé jam ,0.42857142857142855
+Mut liyep a nsañ ,Mut liyep a nsamb ,0.25
+Mbabi siñga ,Mbabi sibñgañ ,0.5
+Boma i balét i mmal ,Boma i balét i mmal ,0.0
+Kop i ntehe ndon i kahal kway ,Kôp i ntehe ndon i kahal kway ,0.14285714285714285
+Ñem u môô me matjil ,Ñem u mbôô me matjél ,0.4
+Ôk ndap ,Pôk ndap ,0.5
+A ñha me tone diuñha hinu lihi ,A ñumha me tone di ñumha hinuni hi ,0.625
+Kii u nsis me juu i ,Kii u nsis me jôy ,0.4
+A ntjibil bôni yañhañ jék ,A ntibil bôt ni hyañhanjék ,0.8
+A ñoñda bité a jôp ,A ñoñ ndap biték a jôp ,0.5
+Too me matam ma kakaô ,Tôô me matam ma kakaô ,0.2
+Mañge nunu a ñkind bé len ,Mañge nunu a ñkénd bé len ,0.16666666666666666
+Mut a nnihibe nyen a ñkôlôl masôda ,Mut a nnihbe nyen a ñkôdôl masoda ,0.42857142857142855
+Ba bijéle bisañ ,Ba bijéle bés sañ ,0.5
+Di nyoñgoa ,Di nyoñ ñgoa ,0.6666666666666666
+Mañge a ñke i lép ,Mañge a ñke i lép ,0.0
+Oguu i yé béba kôñ ,Poo hu i yé béba kon ,0.5
+Likaat ntjoñ liñéba le u yé bitembe ,Likaak joñ li ñéba le u yé bitembee ,0.625
+Me nyuuye hilôl lômb ma me moma sô ,Me nyugye Hilôlômb mam mem momasô ,1.1666666666666667
+Mut wem u nnay nye ,Mut wim wim u nnay nye ,0.3333333333333333
+Kii me ta gwbege a a ñal mésañ ,Kii me tagbege a añal me sañ ,0.7142857142857143
+Di mbañbene nson ,Di mbandbene nson ,0.3333333333333333
+A nniñis man wéé ni mudaa mpe ,A nnéñés man wéé ni mudaa mpe ,0.14285714285714285
+A mutbene gwom gwéé ,A mbôdbene gwom gwéé ,0.25
+Me bak i nnoy ,Me bak i noy ,0.25
+Me gwéé pombe litôo ,Me gwéé mpombe litôa ,0.5
+Malañ ma mpél i muu le tjañ ,Malañ ma mpél i môô le tjaam ,0.2857142857142857
+Bé ntôñgus kaat yem li gwii ,Me ntôñôs kaat yem ligwéé ,0.8
+Mpanjee ,Mpaa njel ,1.0
+Ñgandak bibond i mboñ le baya na kôy ,Ñgandak bibomb i mboñ le ba yanak we ,0.5
+Yole i yé me bégél i bon ba gwomba ma hindi ,Hyole i yé me bégél i bon ba gwom ba mahindi ,0.36363636363636365
+U mpihle ki me ndaa ,U mpihle ki me ndamb ,0.2
+Hee u mpéñne likoñ ,Hee u mpéñgne likoñ ,0.25
+A yi i koma i pañ juu ,A yii i kôma i pañ juu ,0.2857142857142857
+Ñgoñol i ntjiñha liké ,Ñgoñol i ntiñha liké ,0.25
+Lona me bilaas i nnyuubakén ,Lona me bilas inyuu bakén ,0.6
+Fim i wip i maljôp munu i liwñ yés ,Fim i wip i mmal jôp munu i loñ yés ,0.3
+Hyéé hini hi mpam njee njat ,Hyéé hini hi mpam njanjat ,0.4
+Malét a mbiii ñgaha miñkop ñwa misu ,Malét a mbiiñgaha miñkok ñwomisô ,1.0
+Kii ñgéda matiñga lô ,Kiiñgéda matiñ ma nlôñ ,1.0
+Mut nunu a mbédél me jôm li dikôô difrha ,Mut nunu a mbédél me jôm li dikôô di frank ,0.2
+Mbom be ni nnuñni ,Mbom be i nnoñ me ,0.6
+Ba nhyilil me nlooo hi nno hi kôô ,Ba nhilil me loo hinoo hi kôô ,0.5714285714285714
+Mut a ñkon hilô ,Mut a ñkon hilôñ ,0.25
+Lila mbak joñ li nti me ñgum njé ,Lilambak joñ li nti me ñgôñ je ,0.5714285714285714
+Liyéñid joñ li jam likô libé ,Liyéñék joñ li jam li kôli bé ,0.5714285714285714
+U yé mbôô jon u mpok ,U yé mbôô jon u mpop ,0.16666666666666666
+Ti me malip me nsukbene ,Ti me malép me nsôgbene ,0.4
+Gwee gwee u bana ndék i lôô le u bana biyés ,Gwegwe u bana ndék iloole u bana bé hyes ,0.7777777777777778
+Me mpombe kôô matôa u nlet yaga keñkeñ ,Me mpombe kôô matôa u let yaga kéññ kéññ ,0.3333333333333333
+Mañge a mba nma nyañ isi ,Mañge a mband manyañ isi ,0.6
+Njel i ñkotbene i téén njum ,Njel i ñkodbene i tén jôm ,0.5
+Nlôñga a nyônôl i ndéda i mbéé ,Nlôñga a nyônôl i ndéda imbee ,0.3333333333333333
+Ntoñ wembénél u mbubi ,Ntoñ wem bélél u mbugi ,0.6
+Ba ñkega nye ni mut matjañ ,Ba ñkéda nye ni mut matjañg ,0.3333333333333333
+Matjél ma mambna me i ñu ,Matjél ma mabna me i ño ,0.3333333333333333
+Ñgogômbu nja ,Ñgok mbunja ,1.0
+Me gwéé njébha ni bôt mem ,Me gwéé njébha ni bôt bem ,0.16666666666666666
+A nlimis matua ,A nlimis matôa ,0.3333333333333333
+Bibébha a gwemgwo bisô bi nhyulul liñge ,Bibébha gwem gwobisô bi nhôlôl longe ,0.8333333333333334
+Mudaa a ñgwal man nulôm ,Mudaa a ñgwal man munlôm ,0.2
+A ñkoba me me njee ,A ñkoba me me nje ,0.2
+Mudaa a ntét kwem ,Mudaa a ntét kwem ,0.0
+Malét a mbéhlaha me tjii ,Malét a mbéhlaha me tjéé ,0.2
+Kwéy gési man ,Kwégés man ,1.0
+Mañge a nsél me libam makabô hyoomi ,Mañge a nsél me libam makabô hiomi ,0.14285714285714285
+Kwade ni séé a ñgwoñga ndap ,Kwade lisee a nhoo ñgandak ,0.8
+Ñwo yés i yé ni yés ,Ñgwo yés yééne yés ,1.0
+Njok yaa ,Njok iaa ,0.5
+Kuñga i nnyén malép ,Kuñga i nyin malép ,0.25
+Liñwee li nyôôs mi ,Liñwee li nyôôs me ,0.25
+Tubha tuuha njee me ntehi ,Tubha tubha njee me ntehe ,0.4
+A binôla i ndéé a biyoñ hop ,A binôla i ñgéda a biyoñ hop ,0.14285714285714285
+Mpit a ñkahal nnogop ,Mpit a ñkahal nogop ,0.25
+Kinje nya jam ,Kinje nya jam ,0.0
+Nunu ñut a yé nsude ,Nunu mut a yé nsude ,0.2
+Kinje hi pôha hi ,Kinje hipôha hi ,0.6666666666666666
+Mbôdi pô i ntagbe hana me yil yo i nti ,Mbudi pô i ntagbe hana me nyil yo i njiñ ,0.3
+Ntel u keene nugwene kii ,Ntel u kee len u gwelek kii ,0.5714285714285714
+Tjay di mbéna hôda ni sép ,Tjay di mbéna hôda ni sép ,0.0
+Kag masiñ i ñkwo ,Kak masin i ñkwo ,0.5
+Kii u ntédés me mintômba ,Kii u ntédés me mintômba ,0.0
+U ma mkoña nsem hana tis ,Puma ñkoñ a nsamhana i jis ,1.0
+Yuuugana me malét we ,Yuugana me malét wem ,0.5
+I ñkaa kôdi u nhañ bé i loñ ,Ñkaa kôdi u nhañ bé i loñ ,0.2857142857142857
+Mabadô ma mmal yaga fedfeet ,Mabadô ma mmal yaga fetfet ,0.2
+Hilôba hi ñkana hi nsemhe pô ,Hilôba hi ñkana hi nsamhe i poo ,0.42857142857142855
+Liyén me bibel li ño ,Lién me bibel li ño ,0.2
+Kii we u nnyañga hala ,Kii we u nhyañga hala ,0.2
+Nunu mut a gwéé ñgandak maku ,Nunu mut a gwéé ñgandak mahuu ,0.16666666666666666
+Moo muñ me nsuni ,Moo moñ ma nsune ,0.75
+Mut ma mut a ñkôhna ñgoo ,Mut mamok a ñkônha ñgoo ,0.6
+Liwanda jem a ntégba soso hikut maok ,Liwanda jem a ntegba soso hikut maok ,0.14285714285714285
+Kon u nsoo mul inyuu a kahalp u mi nnyemb ,Kon u nsoo mut inyuu a kahal pumb ni nyemb ,0.5
+Kindle i yé hee ,Kindle i yé hee ,0.0
+Lilogop li yé ñgim yigi ,Lilogop li yé ñgim yigil ,0.2
+Ñgo we kwesle me tjo ,Ñgo wek kwes le me jo ,0.6666666666666666
+A nhoo yinson ,A nhoy nson ,0.6666666666666666
+Libogog lihyop li litabé liñgô ,Libôgôk li hop li li ta bé loñge ,0.875
+Ti nye juwa jada mu gwom gwés ,Ti nye jôga jada mu gwom gwés ,0.14285714285714285
+Kwayak mut ,Kwayak mut ,0.0
+A biyéñha manyañuga yé ,A biéñgha manyañ nuga yéé ,0.8
+Mut ñuñu a mbambé ñgandko ,Mut nunu a mbambe ñgandak ,0.6
+Wéha i libadô ,Wéha i libadô ,0.0
+Bibôlôl di mmañ ,Bibôlôl bi mañ ,0.6666666666666666
+Kop i nnuu i yom ,Kôp i nnuup i yogi ,0.6
+Bolo yéé i nteegés bôt ,Bôlô yéé i ntégés bôt ,0.4
+Me biyoga i suglu ,Me biyôña i suglu ,0.25
+Atmaabadô a ntoñ homu ,At mabadô at mahoñol ,1.0
+Ñgok lisebi ,Ñgok lisébi ,0.5
+Ntoñ woñ u yé yé kikii gwéébana ,Ntoñ won u yé nye kikii gweebana ,0.42857142857142855
+Mañge a nyiñgis liwanda jéé li nsôñ ,Mañge a nnyiñgis liwanda jéé lisoñ ,0.5
+Hibam yôgôl hi nnoñ kômba ,Hibamnyôgôl hi nnoñ kuumba ,0.75
+Ubuuha bañ gwo yé ,U buhha bañ ñgwo yem ,0.8
+Biga minsañgaa yon i yé len i jekose ,Biga minsañgaa yon i yé len i je kose ,0.2222222222222222
+Nuñki biñge kiñ biñge le ,Nun ki béñge ki béñge le ,0.8333333333333334
+Ñgôñ i gwéé me nnol ñgô ,Ñgôñ i gwéé me nol ñgôñ ,0.3333333333333333
+Ade mbu ,Ade mbôñ ,0.5
+A nsééha me loo ki nsééha miñkok ñas ,A nsééaha me loo di nsééaha miñkok ñwés ,0.5
+Kwalep jam ,Kwayap jam ,0.5
+Mut nunu a nhe mtom ,Mut nunu a nhem toñ ,0.4
+Nunu mañge a gwéé boño ,Nunu mañge a gwéé boña ,0.2
+U ñgwel kii ,U ñgwel kii ,0.0
+Aga n bisop a nlumble ni pada i mmum ,Bisop a nlômblene pada i Môm ,1.0
+Matuga môñ ma ñkôô miñgandap ,Matôa moñ ma nhôô me ñgandak ,0.8333333333333334
+Masôphe u bé i tji nyo ,Masôbhe u béé i ti yoñ ,0.6666666666666666
+Kep libabu ,Kép libadô ,1.0
+Liyék li mut maok li nlôô hi hihéba ,Lieek li mut maok li nloo hihéga ,0.5714285714285714
+Hini hi nno ,Hini hinoo ,1.0
+Lembu bôs ndegee nye ,Me mbugus mbegee yem ,1.0
+U ni giléé soñ joñ ,U nnigil lésoñ joñ e ,0.8
+Nla baskô u ntubi ,Nla baskô u ntubi ,0.0
+A nsôndul me minsiñga mi bitam ,A nsundul me minsiñga mi bitamb ,0.3333333333333333
+I mañge nunu a nnôhla ba nnôhla ,I mañge nunu a nnôlha ba nôlha ,0.2857142857142857
+Hee u ntii me ,Hee u ntéé me ,0.25
+U kwo mbañ me mbus ,U kôm bañ me mbus ,0.4
+Manyuñ ma kao ,Manoñ ma kaat ,0.6666666666666666
+A ntelebene i ñgii nnañ ,A ntelbene i ñgii nañ ,0.4
+Sôt man i nleñgaa ,Sudman i nleñ ñgaa ,1.0
+Ti me nhoo ba yéñ ,Ti me hooba yem ,0.75
+Ba nsuu ,Baa nsugi ,1.0
+Tamba woñ a ñkwéyô ,Tamba woñ a ñkôyôp ,0.25
+Ti ntégha bañgwo me nbus ,Di ntégha bañgomén bés ,1.0
+Boñge ba yé ñgeñge ,Boñge ba yé i ndeñgee ,0.4
+Lisa hi liñgôn ,Lisas li ñgond ,1.0
+Mut a nlogop mbude ,Mut a nlogop ñguda ,0.25
+AAAAA we siñgii ,Tada wés nu ñgii ,1.0
+Dale siu ,Telep sim ,1.0
+Me mbaagene i nnule me kenet u ñgwii ,Me mbaagene inyule me kenek ñgwéé ,0.8333333333333334
+Mañge a ñkomol kise ,Mañge a ñkomol kégse ,0.25
+Mudaa nunu a yé ndam ,Mudaa nunu a yé nlam ,0.2
+Yomb li nhoo nsla ,Jomb li nhohla ,1.0
+Mañ mut u mbabba yañgaa ,Mañ mut u mbabba hyañgaa ,0.2
+Kél i nlôm njee ,Kil i nlôm njel ,0.5
+Me bitehe nuga i kôyba tjôô ,Me bitehe nuga i kôybak tjô ,0.3333333333333333
+Ba nsona dinoo maô ,Ba nsomna dinoo i maô ,0.4
+Hulul me mak ,Hulul me bak ,0.3333333333333333
+Liyap li lom ,Liyap li lom ,0.0
+Ñgand yoñ i nhooñ lélim ti mbay yoñ ,Ñgand yoñ i nhoñ nlémlém kii mbay yoñ ,0.375
+A gwééne me ni bip ,A gwééne me libit ,0.5
+Kôôna me kaat nyono isi ,Kuuna me kaat nyono isi ,0.2
+Be i nlamatima hana ,Bee i nlama tima hana ,0.6
+U mbondol ,U mbondol ,0.0
+Biyéñg bu mondô matôa ma mondô ,Bieñg bi mondo matôa ma mondo ,0.6666666666666666
+Kogol likondo ,Kogo likondo ,0.5
+ison juuhe lison jono ,Lison njôghe lison njonok ,0.75
+Sihesay ,Sihe say ,1.0
+Likubel ni nne ñgandap ,Likubé li nne ñgandak ,0.75
+A nnyandle me masoñ ,A nnyandle me masoñ ,0.0
+A nhyoini nyeñg i nlôm ,A nhoy ni nyemb nlôm ,0.6
+Dopta a nhoo me faya i poo ,Dokta a nhoo me faya i poo ,0.14285714285714285
+Waa i gwéé mi ,Waa i gwéé me ,0.25
+Bihila bi mut binamb ,Bihela bi mut binam ,0.5
+A ntôlha kô muu bisel bi boñge ,A ntôlha kômôl bisel bi boñge ,0.3333333333333333
+Batule ba mbogna ññ ,Batôle ba mbogna ñwii ,0.5
+Me ñke i nje mbe ,Me ñke i njembe ,0.5
+U yéé u mbom kiñ ,U yé u mboñ kii ,0.6
+Pas to a nsôp leñé mut mmip ,Pastô a nsôblene bôt i lép ,1.0
+Ba ñomna ma nnyu ,Ba ñomna mañwin ,0.6666666666666666
+Mañ we mmel ma ,Mañwemel ma ,1.5
+Litôa li nsôôbe i ndobo ,Litôa li nsôôbe i ndobo ,0.0
+Liyek bak liimuni ,Liegbak li mut wip ,1.0
+Libegek tjoñ liôlô li nnyunda le u mbina jé ,Libegek joñ li ôlô li nnunda le u mbéna je ,0.6
+Mut matiblana a nseehlanyu ,Mut matibla nu a nsehlana ,0.6
+Makele ma yé kon u boñge ,Makele ma yé kon u boñge ,0.0
+Mañge a nhyemel ñwemel nihep hikaal juu ,Mañge a nhemel ñwemel lihep li kahal jôp ,0.625
+Lôk i nsañ i ntjôôy ,Lôgisañ i ntjôô nye ,1.0
+Sôgul me pôs ni malép ,Sugul me pôs ni malép ,0.2
+Pôñga me lNyen a yé munu i ndap yo ,Puñgamel nyen a yé munu i ndap yoñ ,0.5
+Nyeñ u nsôñgol y mu ,Ñem u nsôñgôl me ,1.0
+Man sônda a ñikbaha matwaa i makanga ,Man sônda a ntégbaha matôa i makanda ,0.42857142857142855
+Me nlama bat batoo me ñgwés ntohol we ,Me nlama badba too me ñgwés ntohol wem ,0.375
+Me mbémdla ha liwanda tjem ma li ,Me mbémblaha liwanda jem malép ,1.0
+A nyagbene me ,A nnyagbene me ,0.3333333333333333
+Me nnôñôk nye me aat ,Me nnoñok nye me at ,0.4
+Ñgohop yem i ntubi ,Ñgohop yem i ntubi ,0.0
+Me ta ma me ñke i wom ,Metama me ñke i wom ,0.6
+Ntéak mi mbas ,Mintéak mi mbas ,0.3333333333333333
+Ñgôy i nwoñop ñgandha ,Ñgôy i nhoñop ñgandak ,0.5
+Handbene yemle yé ñôôha ,Handbene yem le Yéhôva ,0.75
+Ba tjayi mi makoñgo ,Bap tjay di makondo ,1.0
+Nlamb u ñkwoba isi ,Nlamb u ñkôba isi ,0.25
+Me ke hi i ñgii minaga ,Me kéhi i ñgii minaga ,0.4
+Hibañgi tje ,Hibañ bijek ,1.0
+Mamala mmima bé ma ntunu i tison ,Mam malam ni mabe ma ntulul i tison ,0.625
+U fala bañ ni hala ,U fala bañ me hala ,0.2
+Bikaat bi mañge sugulubi ,Bikaat bi mañge suglu bi ,0.4
+A nsiñél bés biloñge bi mam ,A nséñél bés biloñge bi mam ,0.16666666666666666
+Ntoñ wem u nliini he we ,Ntoñ wem u mbiine hee wo ,0.5
+A nsoga di kaat gwobisô ,A nsagal bikaat gwobisô ,0.75
+Kot i hyéé ,Kot hyéé ,0.5
+Nla le nla ndandi le ndandi ,Nlal le nlal ndandi le ndandi ,0.3333333333333333
+A megel miñu ,A mmégél me ñño ,0.75
+Ntos u mudaa ,Ntos u mudaa ,0.0
+Malép ma ntoy kene kene ,Malép ma ntoy kelekele ,0.5
+U nsôglenek miñ mis ,U nsôglene ki me mis ,0.6
+Kola u yé me lém ,Kola u yé me len ,0.2
+Ñgombi nnyoni ñgombi moo ,Ñgombi nyo ni ñgombi moo ,0.4
+Litiñak li nloo i yom ba ntji ,Litinak li nloo i yom ba nti ,0.2857142857142857
+Nseñ u ta bé i pééyé ma mom masô ,Nseñ u ta bé i péyéé mam momasô ,0.5
+ipuma hi mbene hi yé matibla ,Hipuma hi mbene hi yé matibla ,0.16666666666666666
+Dini jam di ta béle di tiño ,Lini jam li ta bé le li téña ,0.75
+Kôs bitay ,Kôs bikay ,0.5
+A séya i salbôlô ba ntinye ,A gwéa i sal bôlô ba nti nye ,0.625
+Majo a ñke bélne ñkono ñgond ,Majô a ñkébél me ñkônô ñgond ,0.6666666666666666
+Ba mbôômba ni toñ moni ni ñgap yosu ,Ba mbôômba ni toñ moni ni ndap yosô ,0.25
+Ikuube hi mut ,Hikuube hi mut ,0.3333333333333333
+Sombol me liida kala ,Sômbôl me lira kala ,0.5
+Mamoo masiha ño ,Mam moñ ma nsiiha ño ,0.8
+Bibénél bi wom bini ,Bibénél bi wom bini ,0.0
+Tômblô i ntohla me moo i moo ,Tômblô i ntohla me mmoo i bôô ,0.2857142857142857
+Sabe i nsôdôl nye ,Sabe i nsôdôl nye ,0.0
+Hitéege téege hi mut ,Hitéégétéégé hi mut ,0.6666666666666666
+Nunu mudaa a mpubul i suu ,Nunu mudaa a mpubul i su ,0.16666666666666666
+Nañ u ntéga loñge ,Nañ i ntéga loñge ,0.25
+Ñgand i bé mi ,Ñgand i bémi ,0.6666666666666666
+Kena mut i nlôs ,Kena mut i lôs ,0.25
+Nyôñga i ntôlôl bé i bô ,Nyuñga i ntôlôl me i bôm ,0.5
+Mañ mi pobwo mi ntibu jôga li mi nsoñ ,Mañ mi popo mi ntibil jôga li minsoñ ,0.5
+Tom i téé we mbégdi ,Tôm i téé we mbédgé ,0.4
+Hee lom a nnumul ,Hee lom a ñumul ,0.25
+Hee u nsémél moni ñwo ,Hee u nsémél moni ñwoñ ,0.2
+Man a nlamatibla kunda yada ni manyañ ,Man a nlama tibla kunda yada ni manyañ ,0.25
+A mbu mbañgwéé ,A mbuumba ñgwéé ,0.6666666666666666
+Me ntjimba tôp i nleneñ u nhyembi ,Me ntiimba tôp nlélém u hyémbi ,0.6666666666666666
+Mudaa nunu a mapos balum mbana ,Mudaa nunu a ma bos balôm bana ,0.5714285714285714
+Me nhôgô liñwel ni ,Me nhôgôl ñwel lép ,0.75
+Ibale u nleñ pôs i nhyéé i ntom ,Ibale u nleñ pôs i hyéé i ntôm ,0.25
+A mbémis ñgo ,A mbémés ñgwo ,0.6666666666666666
+A mbaalene me mis ,A mbaalene me mis ,0.0
+Me ñkal we nekop ,Me ñkal we le kop ,0.4
+Magél a nhyémbuñ we me u ndap ,Malét a nhémb ñwemel u ndap ,0.6666666666666666
+Séñet bés nuga ,Séñél béss nuga ,0.6666666666666666
+Yoñgô i ñke mbeñeg ,Yôñgôô i ñke mbeñel ,0.5
+Malét a nye bis boñge niñp ,Malét a nyébés boñge lép ,0.6
+Njel i nsañl ,Njel i nsañla ,0.3333333333333333
+Kal i ñoma i ñkuu mahop ,Kaat i ñôma i ñkuu mahop ,0.3333333333333333
+Di héné di mpam me ñgandaa munu i jot ,Dihéné di mpam me ñgandak munu i jot ,0.375
+Me yé u yé a yé dinis ni hiñi ba yé ,Me yé u yé a yé di yé ni yé ba yé ,0.25
+Kombe nye mede ,Kombe nyemede ,1.0
+Ndap i ñoña ,Ndap i ñôña ,0.3333333333333333
+I mok yé mgep ,Libok li mbep ,1.3333333333333333
+Malép ma nsôple ,Malép ma nsôble ,0.3333333333333333
+Ti me ñgwo bi me béñ basu ,Ti me ñgobi me béñgba su ,0.6666666666666666
+Boñge ba nnit mbaha me ndéé mapondo ,Boñge ba ñédbaha me ndey makondo ,0.6666666666666666
+Nsétha man bon bés ba nsétha ,U nsédha man bon bés ba nsédha ,0.42857142857142855
+Biniegana bitén biniegana inyuu wanda ,Biniigana bi tén biniigana inyuu wanda ,0.6666666666666666
+Di ñkwélél mu i jam joñ ,Di ñkwélél mu i jam joñ ,0.0
+Kak libut i téé me i kédé wom ,Kaglibut i téé me i kédé wom ,0.2857142857142857
+Me mboñ ndugi hana ni ñkwene wem ,Me mboñ ndugi hana ni ñkwel wem ,0.14285714285714285
+Kiñee yés mi nnya i nnyemb hiñ ,Kiñe yés i biéya i nyemb yéé ,0.7142857142857143
+Me mbatle u nyihee ,Me mbat le u yé hee ,0.6666666666666666
+Ndés ni môbôl ,Ndes libôbôl ,1.5
+Bési i nhee ñgandak mdamba ,Besi i nhee ñgandak ndamba ,0.4
+Lihaa juuy ,Yiha jôy ,1.0
+Kigdé mut ,Kigdi mut ,0.5
+Baa saa ba sison dibumo ,Ba nsaa bés nson di biboñ ,1.0
+I kel libuy jina lihañ liñ ,I kel libii dina li nhañ béé ,0.7142857142857143
+Bahemle ba ntjibégés yap hiñuu ,Bahémle ba nti bégés yap hi ñwii ,0.7142857142857143
+Maloño masuma ntehe ni bak joñ ,Maloñ momasô ma ntehe libak joñ ,0.8333333333333334
+A mpag bitôñ yom nyek len tu ,A mpak bitôñ yom i nyégle ntu ,0.5714285714285714
+Lana me malép ma jogô ,Lana me malép ma jogop ,0.2
+Makabuma ntulha bihi isi basaa ,Makabô ma ntôl ha bé hisi basaa ,0.8571428571428571
+Inyukii u nnib i nson muy ,Inyukii u nnip isoñ moni ,0.8
+Mut nuana a ta bé bun ,Mut nunu a ta bé bun ,0.16666666666666666
+Linusle jés li gwéé gwom li mintô ,Linuhle jés li gwéé gwom bi mintuk ,0.42857142857142855
+Wii tole ,Ñwii tôle ,1.0
+U yéé u nsok sai u yé nmanyuñbi kegi ,U yé u sôk say u yén manyun i kegi ,0.6
+Lilok jés nyono lihyélés bañ lié ,Lilok jés nyono li hélés bañ béé ,0.42857142857142855
+Ba nségne me mañge nsigniege ,Ba nségne me mañge nunu nségnege ,0.3333333333333333
+Basaa ba yana ñgandap ,Basaa ba nyanna ñgandak ,0.5
+A ñkwo mpokolo ,A ñkon koglo ,0.6666666666666666
+Mut buga woo munu a yisa ni woo wii u mbe ,Mut buga woo nunu a nyi sal ni woo wéé umpe ,0.5454545454545454
+A nséhga me mbot yé ni ndiñgôl ,A nségha me mbot yem i ñgii nyôl ,0.625
+Kwoñi man ,Kôñi man ,0.5
+U yébe kel u ndup bitémék ,U nyi bé kel u njôp bitémék ,0.42857142857142855
+Tule a ñkebel ñkônô ,Tôle a ñkebel ñkônô ,0.25
+Lambe i ñkuu mba ,Lambe i ñkwiyba ,0.6666666666666666
+A nligale a ñkule bi me munu ,A nliga le a ñkôle bé me moni ,0.625
+Kitna ñkoñ ,Kidna ñkoñ ,0.5
+Liteé li soñ li nlôôha ba juu ,Litéé li sôñ li nlôôha ba juu ,0.2857142857142857
+Maliga ma nnyiba mnulok nyés ,Maliga ma nyéba munu loñ yés ,0.6666666666666666
+Ñgoño i ntjiñha liké ,Ñgoñoo i ntiñha liké ,0.5
+Lini libanga li yé ntolo ,Lini libañga li yé ntolok ,0.4
+Likondo li ñkoyop minsôa gôô likondo ,Likondô li ñkôyôp minsôa ñôô likondo ,0.5
+Me mmélél ya bôlôñge ntan ,Me mmélél nye bôlô i ñgeñ tan ,0.7142857142857143
+A njal bañi ,A njalba ni ,0.6666666666666666
+Lihéé li ñgoy ,Lihéé li ñgôy ,0.3333333333333333
+Bôt ba masiñba ñkahal ni a bilanga ,Bôt ba masiñ ba ñkahal ni ablana ,0.5714285714285714
+U nnyeñel hini hyay u unu lisiis ,U nnéñél hini hyay u unul hi ,0.42857142857142855
+Libénde bôt nson ,Libénde bôt nson ,0.0
+Ti me tôp me nsuu ni e sup ,Ti me tôk me nsôôene sup ,0.6666666666666666
+Elel me tôndô i i juu ,Helel me tôdô i i juu ,0.3333333333333333
+Mbigda nnyemb mut ,Mbigda nyemb mut ,0.3333333333333333
+A mpubul i ñgii malép ,A mpuhul i ñgii malép ,0.2
+Biniigana gwañ bi nsuu bés ,Biniigana gwoñ bi nsôô bés ,0.4
+Me mbéñen nye i nyuu le a mpot mba le ,Me mbéñél nye inyule a mpot mbale ,0.8571428571428571
+Lilélal yé soso bôlô ,Liléla li yé soso bôlô ,0.4
+Hini hiñgonda hi nsiip ñganda ,Hini hiñgonda hi nsiip ñgandak ,0.2
+Bak ba me ha ,Bagba me ha ,0.6666666666666666
+Sañaa nje ,Sañal njel ,1.0
+Bés we dii bikwé higañ we mwés ,Bés we di bikwégha ñwom ñwés ,0.8333333333333334
+Sôñ konda ,Sôñ kondoñ ,0.5
+Ti mut bibégés ,Ti mut bibégés ,0.0
+Ba mboglana bo ni mbô ,Ba mboglana bo ni bo ,0.2
+Bilem bi ñkal mal i mbaayem ,Bilém bi ñkahal mal i mbay yem ,0.5714285714285714
+Nkada u njel ,ñkadak u njel ,0.3333333333333333
+Hyobi hi ñkuma hi ñke bisési ni ,Hyobi hi ñkôma hi ñke biséséni ,0.5
+Matabô me ma mpañ minto ,Makabô mém ma mpam minto ,0.6
+Mintonba mintumb nye i tjison ,Mintonba mi ntumb nye i tison ,0.5
+Bañha lisié bi nlam tjômbi ,Ba nha lisébi nlamb tjobi ,1.0
+Me nleaga bé me hop wee ,Me nleege bé me hop wéé ,0.3333333333333333
+Pwondo u nbôs ,Pôdôs ñgôs ,1.5
+U nlôga ñgandak añ ,U nlôga ñgandak añ ,0.0
+Me nhele i nyuundi yi wem ,Me nhélél inyuu ñgi yi wem ,0.5
+Mbomin a mbôk ñgan ,Ñgomin a mbôk ñgand ,0.5
+Matam mañkahay yo yé ,Matam ma ñkahal yoi ,0.75
+Me bigwal bon basambo ,Me bigwal bon basambok ,0.25
+Oyôs me mbegee ,Hôyôs me mbegee ,0.3333333333333333
+Nyuu môgli tuye ,Liômôk li tuye ,0.6666666666666666
+Kogle a nlo me gamente mni mbus ,Kogle a nlo mek me ntémb ni mbus ,0.375
+Motel a ñwo ,Bo tel a ñwo ,0.5
+Lok di mugla mbôndô mao ,Lok di bugla mbôndô maok ,0.4
+Kwade woñ a nhoo ,Kwade woñ a nhoo ,0.0
+Mudaa a nhyôôda ni nson ,Mudaa a nhyôônda ni nson ,0.2
+Mut nsômbi a ntakbe hana ,Mut nsômbi a ntagbe hana ,0.2
+Mut ba mbegee is hilôl lôñ hik kel ,Bôt ba mbégés Hilôlômb hii kel ,1.0
+Sôgwo li a nsiii me mbom ,Sôgôl a nsii me mbom ,0.6
+Lisoba li matôs ,Lisoba li matôs ,0.0
+A mbôp bana kii ,A mbôômbana kii ,0.6666666666666666
+Nôôdaha me koga yoñ ba nnôôda ha kwoga ,Nôôdaha me koga yoñ ba nnôôdaha koga ,0.42857142857142855
+A nsogha ,A nsôgha ,0.5
+Moni ba nni basôl nye bikay ,Moni ba nnip a sôlne i bikay ,0.5714285714285714
+Tamble ni mañga ,Table me mañga ,0.6666666666666666
+Kii a nnun me ,Kii a nnun me ,0.0
+Me ñgwel kôn i lop ,Me ñgwel kun i lop ,0.2
+Bijek bi nléba bañ ,Bijek bi léba bañ ,0.25
+Majo a ntop mbiéé ,Majô a ntôp mbéé ,0.75
+Hiñgonda hi nsebee makabô ,Hiñgonda hi nsebee makabô ,0.0
+Wen u nlihoga me ñom ñwap minlihuba ,Wen u nligha me ñwom ñwap mi nligha ,0.5
+A bioñ a nnyondi ndiaga ndikilene njuu ,Avioñ a nnyodi yaga ndigi len juu ,1.0
+Me njôs bôt ba wip ,Me njôs bôt ba wip ,0.0
+Bilim bi ñkwel me len ,Bilim bi ñkwél me len ,0.2
+Ta a nnol mkwaha ,Ta a nnol ñkwaha ,0.25
+Ñge ñgea ya a ñwék juu ,Ñgeñgeya a ñwek juu ,1.0
+Me nnyon mkuu u nyon ,Me nyon ñkuu u nyon ,0.4
+Masi bi ma ntibil libimbe ,Masébi ma ntibil libimbe ,0.5
+Lina kogok joñ li téé bié ,Linogok joñ li téé béé ,0.6
+Lisendne jem lini ,Lisendne jem lini ,0.0
+Nunu mut a gwéé mmaya ,Nunu mut a gwéé maya ,0.2
+Malét a nhyôt ñgôy ,Malét a nhot ñgôy ,0.25
+Nyañgô a ñwañ hiônde ini a ñwañ kôp ,Nyañgô a ñwañ hiônde ini a ñwañ kôp ,0.0
+U nloñ me maô ,U nloñ me maôô ,0.25
+Mut hibañ ,Mut hibañ ,0.0
+Ñgwen u ñgañgô u mbugi ,Ñgwén u ñgañgô u mbugi ,0.2
+Mboñga mbi a nla sugde mi ndañ ,Mbo ñgambi a nla sugde mindañ ,0.6666666666666666
+A mbab me jot ,A mbap me jot ,0.25
+Lila li nnolol tjop ,Lila li nôlôl tjôbi ,0.5
+Téa kii a mbuumba ni matôm ma ndap ,Tehe kii a mbuumba ni matôm ma ndap ,0.125
+Yono nipôndôl ,Yônôs lipôdôl ,1.0
+Péda mbot ,Péda mbot ,0.0
+Me nje ñgwaa u kôsi ,Me nje ñgwok u kôsi ,0.2
+Ne bitee nyea bihumul gwéé ,Me bitehe nye bihumul gwéé ,0.6
+Njel i ta bé poo moni ,Njel i ta bé i poo moni ,0.14285714285714285
+Nitodde li bisu ,Litode li bisu ,0.3333333333333333
+Lisubul minsaa miiba gwene nson ,Lisuhul minsaa mi bagwelnson ,1.0
+I su nyen a mbot bana moo ,I su nyen a mbodbana môô ,0.5
+Manne e a yé man basaa ,Man mee a yé man basaa ,0.3333333333333333
+Me nyehel nson we mmipan ,Me nyehel nson wem lipan ,0.4
+Ba nniñi man i nlokka ,Ba nniñi man i lokta ,0.2
+Tiine hikôô hisi lini ,Ti me hikôô hi siliñ ,0.8
+Linjenjat hi mañge ,Hinjedjet hi mañge ,0.3333333333333333
+U mpôôbe ki me ,U mpôôbe ki me ,0.0
+Mudaa a nsôñ nlôm ,Mudaa a nsôñ nlôm ,0.0
+Ñwin woñ u nleglwa ,Ñwin woñ u nlegla ,0.25
+Boñge ba nsolbany ,Boñge ba nsolbana ,0.3333333333333333
+Balala a yé nloñge i nhyobi ,Balala a yé loñge i hyobi ,0.3333333333333333
+Kop i ntjôô bemee ,Kôp i ntjoobe me ,0.75
+Di mpédhene hi nlôl nôm i ndap yéñ ,Di mbéghene Hilôlômb i ndap yéé ,0.8333333333333334
+Litina li bijek li ni ,Litine li bijek lini ,0.75
+Mudaa a ñkebél nlôm ,Mudaa a ñkébél nlôm ,0.25
+Biyumul gwéé bitabé bi nlam ,Bihyumul gwéé bi tabé bilam ,0.8
+Fele ndap ,Pele ndap ,0.5
+Bôt baahok i bañ u mbene i nyuu ni nhan ,Bôt bahogi ba ñômbbene inyuu lihat ,1.5
+A mpumha mi ,A mpumha me ,0.3333333333333333
+Me nnuñul kôp di poo diaa ,Me nnuñul kôp dikôô diaa ,0.4
+Nya mpaa u ñwoñgaa ,Nyam paa u ñwo ñgaa ,0.8
+Me gaa nélél we mman tjôs ,Me galélél we man tjôs ,0.6
+Biloñge bi bijek bi nyidés man ,Biloñge bi bijek bi nnyédés man ,0.16666666666666666
+Me mbeege nye nye nye ni sege hisômb ,Me mbeegene nye lisege hi sôñ ,1.0
+Me ñé wom makwondo ,Me ññé wom makondo ,0.5
+Ñgwoi i mbéñba liboo ,Ñgôy i mbéñba liboo ,0.25
+Di mpaaglana diun tjés ,Di mpahlana diun tjés ,0.25
+A nnyuwem maok ,A nnyue maok ,0.3333333333333333
+Di gwéé bija kon binna i mbaa yés ,Di gwéé bidiakon bina i mbay yés ,0.5714285714285714
+Ñgandak yé biték i ñét baha nye ,Ñgandak yéé biték i nhédbaha nye ,0.5
+Bañ bihôô ,Boñ bihôô ,0.5
+Boñge ba ñkal mañ le tééé ,Boñge ba ñkal man le tetee ,0.3333333333333333
+Kii mut nunu a nnyegek hala ,Kii mut nunu a nnyegep hala ,0.16666666666666666
+Nundle me bitôdôs njal i tué ni ,Nundle me bitôdô njal i gwéé me ,0.42857142857142855
+Miñkôñ miñhyôô nda ni likaay ,Miñkôñ mi nhônda ni bikay ,0.6
+Man a ñkon hikoo,Man a ñkon hikoa ,0.25
+Bijoñ gwéé bi mpubla ha nye ,Bijôñ gwéé bi mpublaha nye ,0.6
+Nlôô woñ a nlôô hanyi ni nya yak ,Nlô woñ a nlôôha ni minyayak ,0.8333333333333334
+Koidi bikéñ ,Kôdi bikey ,1.0
+Mut a nloa ,Mut a nloa ,0.0
+Kamna a jala ,Kañaa jala ,1.0
+Mut a mband hi nnoo yada ,Mut a mband hinoo hyada ,0.6
+Me hihe nye woo ,Me nhihe nye woo ,0.25
+Ñgéda mbi njañga li ta bé loñge i kwam ,Ñgéda mbéñ jañga li ta bé loñge i kil ,0.3333333333333333
+Bila mbe bi mbay tjuu ,Bilambe bi mbay juu ,0.75
+Gwom bi nlôôha jiyemun ,Gwom bi nlôôha die munu ,0.4
+Mpôs lioo ,Mpôs loo ,0.5
+Bibéba bibi tjek bi ñkogoo nye libu ,Bibéba bi bijek bi ñkogoo nye libum ,0.42857142857142855
+Nop a mbémha bés hana liñkébla ,Nop a mbémha bés hana len kegla ,0.2857142857142857
+Litiplak njéé li makele ,Litiblak jéé li makele ,0.5
+A bak a nnyuileñ ni ,A bak a nnui len i nañ ,0.5714285714285714
+Handamb lién ,Ha ndamb lién ,0.6666666666666666
+Lisege li ñkôba ,Lisege li ñkôga ,0.3333333333333333
+Mbusônda bi ñkep u ñkoñ wonsô ,Bisônda bi ñkép ñkoñ wosô ,0.8
+Nsômbôl béé baha om yem ntômba ,Me nsômbôl béébaha pom yem ntômba ,0.6666666666666666
+Njee a gwéé njom munu i hop unu ,Njee a gwéé njom munu i hop unu ,0.0
+Bambaabana udéda ba jôk ,Ba mbaabana ñgéda ba jok ,0.8
+Baa bés ba mbémlana ma mbot ,Baa bés ba mbémblana mambot ,0.6
+Hyay hi e ,Hyay hi e ,0.0
+Hee a nlemna i tuñ ,Hee a nlemna i tun ,0.2
+Mbabi e yoñ mpôha bii ,Mbabi e yoñ i mpôha bé ,0.3333333333333333
+Kwop i ntjogol me ,Kôp i ntjobol me ,0.5
+Loga i nye i pôla bôt ,Loa i yé i pôla bôt ,0.3333333333333333
+Ba kwem a mmal me bobla môô i ndap ,Bakweñ a mmal me bobla môô i ndap ,0.25
+Nyol wañ u nsoo nop ,Nyôl woñ u nsoo nop ,0.4
+Hee u binôyôy ,Hee u binôyôy ,0.0
+Kénee ñgén ,Kéne ñgén ,0.5
+Lakop me nyana ,Lo kop me nyono ,0.75
