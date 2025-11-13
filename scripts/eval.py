@@ -74,26 +74,30 @@ if __name__ == "__main__":
         # apply adapter or tv and get scaling coefficient
         # TODO -- right now this is just working for tvs
         hyperparameter_results = {}
-        hr_model_dir = f"{model_dir}/{'_'.join(HR_MAP[lang])}/final"
-        tv = TaskVector(
-                    pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
-                    finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
-                )
-        for coef in config["scaling_coefs"]:
-            model = get_model(model_dir, lang)
+        if len(HR_MAP[lang])> 0:
+            hr_model_dir = f"{model_dir}/{'_'.join(HR_MAP[lang])}/final"
+            tv = TaskVector(
+                        pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
+                        finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
+                    )
+            
+            for coef in config["scaling_coefs"]:
+                model = get_model(model_dir, lang)
+                if config["lora"]:
+                    continue
+                else:
+                    model = tv.apply_to(model, scaling_coef=coef)
+                    _, _, wers = evaluate(model, data, processor)
+                    avg_wer = np.mean(wers)
+                    hyperparameter_results[coef] = avg_wer
             if config["lora"]:
                 continue
             else:
-                model = tv.apply_to(model, scaling_coef=coef)
-                _, _, wers = evaluate(model, data, processor)
-                avg_wer = np.mean(wers)
-                hyperparameter_results[coef] = avg_wer
-        if config["lora"]:
-            continue
+                best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
+                model = get_model(model_dir, lang)
+                model = tv.apply_to(model, scaling_coef=best_lambda)
         else:
-            best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
-            model = get_model(model_dir, lang)
-            model = tv.apply_to(model, scaling_coef=best_lambda)
+            model = model = get_model(model_dir, lang)
 
         predictions, labels, wers = evaluate(model, data, processor)
         predictions = [clean(p) for p in predictions]
