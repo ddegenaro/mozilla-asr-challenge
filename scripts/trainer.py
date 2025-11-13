@@ -155,6 +155,8 @@ if __name__ == "__main__":
         trained_hr_adapters = []
         for lang in ALL_TARGETS:
             hr_langs = HR_MAP[lang]
+            if len(hr_langs) == 0:
+                continue
             if "_".join(hr_langs) not in trained_hr_adapters:
                 trained_hr_adapters.append("_".join(hr_langs))
                 output_dir = f"output_{config['whisper_model'].split('/')[1]}/{'_'.join(hr_langs)}"

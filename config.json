@@ -1,6 +1,6 @@
 {
     "whisper_model": "openai/whisper-tiny",
-    "train_high_resource": true,
+    "train_high_resource": false,
     "language": "aln",
     "lora": false,
     "lora_rank": 8,
@@ -27,6 +27,11 @@
         "top": "spanish",
         "ttj": "swahili",
         "ukv": "somali",
-        "cgg": "swahili"
+        "cgg": "swahili",
+        "ush": "punjabi",
+        "ady": "georgian",
+        "kbd": "georgian",
+        "bas": "swahili",
+        "qxp": "spanish"
     }
 }
