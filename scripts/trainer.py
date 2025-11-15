@@ -4,7 +4,7 @@ import torch
 import os
 from typing import Optional
 
-from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig
+from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig,EarlyStoppingCallback
 from datasets import Dataset, IterableDatasetDict
 from peft import LoraConfig, get_peft_model
 from jiwer import wer
@@ -111,16 +111,18 @@ def train_whisper(
         num_train_epochs=config["epochs"],
         gradient_checkpointing=False,
         fp16=True,
-        eval_strategy="no",
+        eval_strategy="epoch",
         per_device_eval_batch_size=16,
         predict_with_generate=True,
         generation_max_length=448,
-        save_strategy="no",
-        load_best_model_at_end=False,
-        metric_for_best_model="wer",
+        save_strategy="epoch",
+        load_best_model_at_end=True,
+        metric_for_best_model="eval_loss",
         greater_is_better=False,
         push_to_hub=False,
-        gradient_accumulation_steps=2
+        gradient_accumulation_steps=2,
+        report_to='wandb',
+        run_name='mozilla-asr-challenge',
     )
 
     print(f'training {lang}')
@@ -128,11 +130,12 @@ def train_whisper(
     trainer = WhisperTrainer(
         args=training_args,
         model=model,
-        compute_metrics=compute_metrics,
+        compute_metrics=None,
         train_dataset=ds['train'],
         eval_dataset=ds['validation'],
         data_collator=data_collator,
         tokenizer=processor.feature_extractor,
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=1, early_stopping_threshold=0.0)]
     )
     trainer.train()
     
