@@ -1,5 +1,6 @@
-from scripts.get_data import  get_data
+from scripts.get_data import get_data
 import pandas as pd
+import os
 import json
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, BitsAndBytesConfig
 from tqdm import tqdm
@@ -58,6 +59,14 @@ def get_model(model_dir, lang):
         )
         model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
         model = PeftModel.from_pretrained(model, f"{model_dir}/{lang}/final")
+        
+        if config['unfreeze_token_embeddings']:
+            model.base_model.model.model.decoder.embed_tokens.weight = torch.load(
+                os.path.join(model_dir, lang, 'final', 'embeddings.pt'),
+                map_location=next(model.parameters()).device,
+                weights_only=True
+            )
+        
         model.print_trainable_parameters()
     else:
         model = WhisperForConditionalGeneration.from_pretrained(f"{model_dir}/{lang}/final")
@@ -68,7 +77,11 @@ if __name__ == "__main__":
     split = 'dev'
     overall_rows = []
     for lang in ALL_TARGETS:
-        data = get_data(split=split, langs=None if lang == "all" else [lang])
+        data = get_data(
+            split=split,
+            langs=None if lang == "all" else [lang],
+            vote_upsampling=False
+        )
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         # apply adapter or tv and get scaling coefficient
