@@ -84,29 +84,51 @@ if __name__ == "__main__":
         )
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
+
         # apply adapter or tv and get scaling coefficient
-        # TODO -- right now this is just working for tvs
         hyperparameter_results = {}
-        if len(HR_MAP[lang])> 0:
+        if config["run_merge_high_resource"] and len(HR_MAP[lang]) > 0:
+            # get the task vector for the fully finetuned HR model, apply to LR model. Do a hyperparameter sweep for
+            # scaling coefficient.
             hr_model_dir = f"{model_dir}/{'_'.join(HR_MAP[lang])}/final"
-            tv = TaskVector(
-                        pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
-                        finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
-                    )
+            
+            if not config["lora"]:
+                tv = TaskVector(
+                            pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
+                            finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
+                        )
             
             for coef in config["scaling_coefs"]:
                 model = get_model(model_dir, lang)
                 if config["lora"]:
-                    continue
+                    hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
+                    lr_adapter =  model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
+                    weighted_adapter = model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
+                                                                  [1, coef], 
+                                                                  adapter_name="merged", 
+                                                                  combination_type="linear" # do we want to change this?
+                                                                  )
+                    model.set_adapter("merged")
+                    _, _, wers = evaluate(model, data, processor)
+                    avg_wer = np.mean(wers)
+                    hyperparameter_results[coef] = avg_wer
                 else:
                     model = tv.apply_to(model, scaling_coef=coef)
                     _, _, wers = evaluate(model, data, processor)
                     avg_wer = np.mean(wers)
                     hyperparameter_results[coef] = avg_wer
+            best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
             if config["lora"]:
-                continue
+                model = get_model(model_dir, lang)
+                hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
+                lr_adapter =  model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
+                weighted_adapter = model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
+                                                                [1, best_lambda], 
+                                                                adapter_name="merged", 
+                                                                combination_type="linear" # do we want to change this?
+                                                                )
+                model.set_adapter("merged")
             else:
-                best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
                 model = get_model(model_dir, lang)
                 model = tv.apply_to(model, scaling_coef=best_lambda)
         else:
