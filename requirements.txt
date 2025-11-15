@@ -10,3 +10,4 @@ torchcodec
 librosa
 jiwer
 soundfile
+wandb

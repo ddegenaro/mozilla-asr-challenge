@@ -3,6 +3,8 @@ import json
 import torch
 import os
 from typing import Optional
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig,EarlyStoppingCallback
 from datasets import Dataset, IterableDatasetDict
@@ -122,7 +124,8 @@ def train_whisper(
         push_to_hub=False,
         gradient_accumulation_steps=2,
         report_to='wandb',
-        run_name='mozilla-asr-challenge',
+        run_name=str(output_dir.split('/')[-1]),
+        project = 'mozilla-asr-challenge'
     )
 
     print(f'training {lang}')
