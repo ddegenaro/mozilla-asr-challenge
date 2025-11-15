@@ -36,7 +36,7 @@
         "qxp": "spanish"
     },
     "scaling_coefs": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-    "unfreeze_token_embeddings": false,
+    "unfreeze_token_embeddings": true,
     "vote_upsampling": false,
     "hyperparameter_search_length": 10
 }
