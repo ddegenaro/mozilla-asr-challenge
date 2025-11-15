@@ -13,6 +13,7 @@ import numpy as np
 from utils.clean_transcript import clean
 from peft import PeftModel
 from utils.task_vectors import TaskVector
+from ax.service.ax_client import AxClient, ObjectiveProperties
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -75,6 +76,7 @@ def get_model(model_dir, lang):
 if __name__ == "__main__":
     model_dir = f"output_{config['whisper_model'].split('/')[1]}"
     split = 'dev'
+
     overall_rows = []
     for lang in ALL_TARGETS:
         data = get_data(
@@ -88,6 +90,21 @@ if __name__ == "__main__":
         # apply adapter or tv and get scaling coefficient
         hyperparameter_results = {}
         if config["run_merge_high_resource"] and len(HR_MAP[lang]) > 0:
+            # set up hyperparameter search client
+            ax_client = AxClient()
+            ax_client.create_experiment(
+                name="hyperparameter_search",
+                parameters=[
+                    {
+                        "name": "scaling_coef",
+                        "type": "range",
+                        "bounds": [0.0, 1.0],  # Lower and upper bounds
+                        "value_type": "float",
+                        "log_scale": True,  # Sample on a log scale
+                    },
+                ],
+                objectives={"wer": ObjectiveProperties(minimize=True)}
+            )
             # get the task vector for the fully finetuned HR model, apply to LR model. Do a hyperparameter sweep for
             # scaling coefficient.
             hr_model_dir = f"{model_dir}/{'_'.join(HR_MAP[lang])}/final"
@@ -98,7 +115,9 @@ if __name__ == "__main__":
                             finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
                         )
             
-            for coef in config["scaling_coefs"]:
+            for i in range(config["hyperparameter_search_length"]): # set to 10
+                parameters, trial_index = ax_client.get_next_trial()
+                coef = parameters["scaling_coef"]
                 model = get_model(model_dir, lang)
                 if config["lora"]:
                     hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
@@ -117,6 +136,7 @@ if __name__ == "__main__":
                     _, _, wers = evaluate(model, data, processor)
                     avg_wer = np.mean(wers)
                     hyperparameter_results[coef] = avg_wer
+                ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
             best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
             if config["lora"]:
                 model = get_model(model_dir, lang)

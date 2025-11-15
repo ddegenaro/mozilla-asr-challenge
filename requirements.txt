@@ -11,3 +11,4 @@ librosa
 jiwer
 soundfile
 wandb
+ax-platform
