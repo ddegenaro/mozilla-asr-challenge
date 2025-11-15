@@ -106,7 +106,8 @@ def get_data(
     langs: Union[str, Iterable[str]] = None,
     clean: bool = True,
     log: bool = False,
-    df_only: bool = False
+    df_only: bool = False,
+    vote_upsampling: bool = False
 ) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
 
@@ -208,11 +209,21 @@ def get_data(
             dfs.append(lang_df)
 
     df = pd.concat(dfs, ignore_index=True)
+    
+    if vote_upsampling:
+        addl_dfs = []
+        for vote_count in df['votes'].unique():
+            addl_df = df[df['votes'] == vote_count]
+            for _ in range(vote_count):
+                addl_dfs.append(addl_df)
+        final_df = pd.concat([df] + addl_dfs)
+    else:
+        final_df = df
 
     if df_only:
-        return df
+        return final_df
     else:
-        return SpeechDataset(split, langs, df)
+        return SpeechDataset(split, langs, final_df)
 
 
 
@@ -222,7 +233,8 @@ def get_data_high_resource(
     clean: bool = True,
     log: bool = False,
     df_only: bool = False,
-    multilingual_drop_duplicates = True
+    multilingual_drop_duplicates = True,
+    vote_upsampling: bool = False
 ) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
 
@@ -319,11 +331,21 @@ def get_data_high_resource(
 
     if multilingual_drop_duplicates:
         df.drop_duplicates(subset=['audio_file'], inplace=True)
+    
+    if vote_upsampling:
+        addl_dfs = []
+        for vote_count in df['votes'].unique():
+            addl_df = df[df['votes'] == vote_count]
+            for _ in range(vote_count):
+                addl_dfs.append(addl_df)
+        final_df = pd.concat([df] + addl_dfs)
+    else:
+        final_df = df
 
     if df_only:
-        return df
+        return final_df
     else:
-        return SpeechDataset(split, langs, df)
+        return SpeechDataset(split, langs, final_df)
 
 
 

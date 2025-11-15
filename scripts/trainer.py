@@ -148,8 +148,6 @@ def train_whisper(
         callbacks=[EarlyStoppingCallback(early_stopping_patience=1, early_stopping_threshold=0.0)]
     )
     
-    breakpoint()
-    
     trainer.train()
     
     if config["lora"]:
@@ -182,8 +180,18 @@ if __name__ == "__main__":
                 trained_hr_adapters.append("_".join(hr_langs))
                 output_dir = f"output_{config['whisper_model'].split('/')[1]}/{'_'.join(hr_langs)}"
                 if not os.path.exists(f"{output_dir}/final"): #todo change
-                    train = get_data_high_resource(split='train', langs=[lang], multilingual_drop_duplicates=False)
-                    dev = get_data_high_resource(split='dev', langs=[lang], multilingual_drop_duplicates=False)
+                    train = get_data_high_resource(
+                        split='train',
+                        langs=[lang],
+                        multilingual_drop_duplicates=False,
+                        vote_upsampling=config['vote_upsampling']
+                    )
+                    dev = get_data_high_resource(
+                        split='dev',
+                        langs=[lang],
+                        multilingual_drop_duplicates=False,
+                        vote_upsampling=False
+                    )
                     dataset = IterableDatasetDict({
                         "train": train,
                         "validation": dev
@@ -195,8 +203,16 @@ if __name__ == "__main__":
         for lang in ALL_TARGETS:
             output_dir = f"output_{config['whisper_model'].split('/')[1]}/{lang}"
             if not os.path.exists(f"{output_dir}/final"):
-                train = get_data(split='train', langs= None if lang == "all" else [lang])
-                dev = get_data(split='dev', langs=None if lang == "all" else [lang])
+                train = get_data(
+                    split='train',
+                    langs=None if lang == "all" else [lang],
+                    vote_upsampling=config['vote_upsampling']
+                )
+                dev = get_data(
+                    split='dev',
+                    langs=None if lang == "all" else [lang],
+                    vote_upsampling=False
+                )
                 dataset = IterableDatasetDict({
                     "train": train,
                     "validation": dev

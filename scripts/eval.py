@@ -77,7 +77,11 @@ if __name__ == "__main__":
     split = 'dev'
     overall_rows = []
     for lang in ALL_TARGETS:
-        data = get_data(split=split, langs=None if lang == "all" else [lang])
+        data = get_data(
+            split=split,
+            langs=None if lang == "all" else [lang],
+            vote_upsampling=False
+        )
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         # apply adapter or tv and get scaling coefficient
