@@ -8,7 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig,EarlyStoppingCallback
 from datasets import Dataset, IterableDatasetDict
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model,prepare_model_for_fp16_training
 from jiwer import wer
 
 from scripts.get_data import get_data, get_data_high_resource
@@ -68,8 +68,9 @@ def train_whisper(
             quantization_config=bnb_config,
             dtype=torch.float16
         )
+        model = prepare_model_for_fp16_training(model)
         model = get_peft_model(model, lora_config)
-        
+
         if config['unfreeze_token_embeddings']:
             for name, param in model.named_parameters():
                 if 'tokens' in name:
