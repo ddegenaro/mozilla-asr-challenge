@@ -216,7 +216,7 @@ def get_data(
             addl_df = df[df['votes'] == vote_count]
             for _ in range(vote_count):
                 addl_dfs.append(addl_df)
-        final_df = pd.concat([df] + addl_dfs)
+        final_df = pd.concat([df] + addl_dfs).reset_index(drop=True)
     else:
         final_df = df
 
@@ -338,7 +338,7 @@ def get_data_high_resource(
             addl_df = df[df['votes'] == vote_count]
             for _ in range(vote_count):
                 addl_dfs.append(addl_df)
-        final_df = pd.concat([df] + addl_dfs)
+        final_df = pd.concat([df] + addl_dfs).reset_index(drop=True)
     else:
         final_df = df
 
