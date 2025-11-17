@@ -15,7 +15,7 @@ from peft import PeftModel
 from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
 
-with open("config.json", "r") as f:
+with open("config_eval.json", "r") as f:
     config = json.load(f)
     f.close()
 
@@ -23,16 +23,14 @@ def evaluate(model, data, processor):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_dtype = next(model.parameters()).dtype
     model.to("cuda").eval()
-    collator = WhisperDataCollator(processor=processor)
+    collator = WhisperDataCollator(processor=processor, decoder_start_token_id=model.config.decoder_start_token_id)
     test_dataloader = DataLoader(data, batch_size=16, collate_fn=collator)
     forced_decoder_ids = processor.get_decoder_prompt_ids(language=proxy_lang, task="transcribe")
     predictions = []
     labels = []
     with torch.no_grad():
-        for batch in tqdm(test_dataloader):
-            
+        for batch in tqdm(test_dataloader):            
             inputs = batch["input_features"].to(dtype=input_dtype).to(device)
-
             # Generate output token IDs
             predicted_ids = model.generate(
                 inputs,
@@ -76,7 +74,7 @@ def get_model(model_dir, lang):
 if __name__ == "__main__":
     model_dir = f"output_{config['whisper_model'].split('/')[1]}"
     split = 'dev'
-
+    print("lora:", config["lora"])
     overall_rows = []
     for lang in ALL_TARGETS:
         data = get_data(
@@ -100,7 +98,7 @@ if __name__ == "__main__":
                         "type": "range",
                         "bounds": [0.0, 1.0],  # Lower and upper bounds
                         "value_type": "float",
-                        "log_scale": True,  # Sample on a log scale
+                        "log_scale": False,  # Sample on a log scale
                     },
                 ],
                 objectives={"wer": ObjectiveProperties(minimize=True)}
@@ -164,7 +162,7 @@ if __name__ == "__main__":
             rows.append([p, labels[i], wers[i]])
         lang_df = pd.DataFrame(rows, columns=["prediction", "label", "wer"])
         lang_df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/{lang}_eval.csv", index=False)
-        with open(f"results/{config['whisper_model'].split('/')[1]}/hyperparameters/{lang}.csv", "w") as f:
+        with open(f"results/{config['whisper_model'].split('/')[1]}/hyperparameters/{lang}.json", "w") as f:
             json.dump(hyperparameter_results, f, indent=4)
             f.close()
 
