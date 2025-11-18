@@ -108,7 +108,7 @@ def train_whisper(
         generation_max_length=448,
         save_strategy="epoch",
         load_best_model_at_end=True,
-        metric_for_best_model="eval_loss",
+        metric_for_best_model="eval_wer",
         greater_is_better=False,
         push_to_hub=False,
         gradient_accumulation_steps=1,
@@ -122,7 +122,7 @@ def train_whisper(
     trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,
-        compute_metrics=None,
+        compute_metrics=compute_metrics,
         train_dataset=ds['train'],
         eval_dataset=ds['validation'],
         data_collator=data_collator,

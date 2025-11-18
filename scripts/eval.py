@@ -15,11 +15,7 @@ from peft import PeftModel
 from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
 
-with open("config.json", "r") as f:
-    config = json.load(f)
-    f.close()
-
-def evaluate(model, data, processor):
+def evaluate(model, data, processor, proxy_lang):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_dtype = next(model.parameters()).dtype
     model.to("cuda").eval()
@@ -47,7 +43,7 @@ def evaluate(model, data, processor):
     return predictions, labels, wers
 
 
-def get_model(model_dir, lang):
+def get_model(config, model_dir, lang):
     if config['lora']:  
         # quantize
         bnb_config = BitsAndBytesConfig(
@@ -73,7 +69,7 @@ def get_model(model_dir, lang):
         model = WhisperForConditionalGeneration.from_pretrained(f"{model_dir}/{lang}/final")
     return model 
 
-if __name__ == "__main__":
+def main(config):
     model_dir = f"output_{config['whisper_model'].split('/')[1]}"
     split = 'dev'
     print("lora:", config["lora"])
@@ -115,10 +111,13 @@ if __name__ == "__main__":
                             finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
                         )
             
-            for i in range(config["hyperparameter_search_length"]): # set to 10
-                parameters, trial_index = ax_client.get_next_trial()
-                coef = parameters["scaling_coef"]
-                model = get_model(model_dir, lang)
+            for i in range(config["hyperparameter_search_length"]+1): # set to 10
+                if i == 0:
+                    coef = 0.0
+                else:
+                    parameters, trial_index = ax_client.get_next_trial()
+                    coef = parameters["scaling_coef"]
+                model = get_model(config,model_dir, lang)
                 if config["lora"]:
                     hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
                     lr_adapter =  model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
@@ -128,18 +127,19 @@ if __name__ == "__main__":
                                                                   combination_type="linear" # do we want to change this?
                                                                   )
                     model.set_adapter("merged")
-                    _, _, wers = evaluate(model, data, processor)
+                    _, _, wers = evaluate(model, data, processor, proxy_lang)
                     avg_wer = np.mean(wers)
                     hyperparameter_results[coef] = avg_wer
                 else:
                     model = tv.apply_to(model, scaling_coef=coef)
-                    _, _, wers = evaluate(model, data, processor)
+                    _, _, wers = evaluate(model, data, processor, proxy_lang)
                     avg_wer = np.mean(wers)
                     hyperparameter_results[coef] = avg_wer
-                ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
+                if i > 0:
+                    ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
             best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
             if config["lora"]:
-                model = get_model(model_dir, lang)
+                model = get_model(config,model_dir, lang)
                 hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
                 lr_adapter =  model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
                 weighted_adapter = model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
@@ -149,12 +149,12 @@ if __name__ == "__main__":
                                                                 )
                 model.set_adapter("merged")
             else:
-                model = get_model(model_dir, lang)
+                model = get_model(config, model_dir, lang)
                 model = tv.apply_to(model, scaling_coef=best_lambda)
         else:
-            model = model = get_model(model_dir, lang)
+            model = model = get_model(config, model_dir, lang)
 
-        predictions, labels, wers = evaluate(model, data, processor)
+        predictions, labels, wers = evaluate(model, data, processor, proxy_lang)
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
         overall_rows.append([lang, np.mean(wers)])
@@ -170,3 +170,10 @@ if __name__ == "__main__":
 
     df = pd.DataFrame(overall_rows, columns=["language", "wer"])
     df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/summary.csv", index=False)
+
+
+if __name__ == "__main__":
+    with open("config.json", "r") as f:
+        config = json.load(f)
+        f.close()
+    main(config)
