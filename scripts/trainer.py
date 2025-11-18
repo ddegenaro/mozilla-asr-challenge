@@ -15,14 +15,8 @@ from scripts.get_data import get_data, get_data_high_resource
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.lang_maps import ALL_TARGETS, HR_MAP
 
-
-
-
-with open("config.json", "r") as f:
-    config = json.load(f)
-    f.close()
-
 def train_whisper(
+    config,
     ds: Dataset,
     output_dir: str,
     lora: bool = False,
@@ -116,8 +110,6 @@ def train_whisper(
         run_name=str(output_dir.split('/')[-1]),
         project = 'mozilla-asr-challenge'
     )
-
-    print(f'training {lang}')
     patience = 1 if config["lora"] else 3
     trainer = Seq2SeqTrainer(
         args=training_args,
@@ -149,8 +141,7 @@ def train_whisper(
     gc.collect()
     torch.cuda.empty_cache()
 
-
-if __name__ == "__main__":
+def main(config):
     if config["train_high_resource"]:
         # some of the languages will share HR adapters
         trained_hr_adapters = []
@@ -178,7 +169,8 @@ if __name__ == "__main__":
                         "train": train,
                         "validation": dev
                     })
-                    train_whisper(dataset, output_dir, config["lora"], config["proxy_langs"][lang])
+                    print(f'training {lang}')
+                    train_whisper(config, dataset, output_dir, config["lora"], config["proxy_langs"][lang])
                     
 
     else:
@@ -199,7 +191,17 @@ if __name__ == "__main__":
                     "train": train,
                     "validation": dev
                 })
-                train_whisper(dataset, output_dir, config["lora"], config["proxy_langs"][lang])
+                print(f'training {lang}')
+                train_whisper(config, dataset, output_dir, config["lora"], config["proxy_langs"][lang])
             else:
                 print(f"skipping language {lang}, adapter already exists")
 
+
+
+if __name__ == "__main__":
+    with open("config.json", "r") as f:
+        config = json.load(f)
+        f.close()
+    main(config)
+
+    
