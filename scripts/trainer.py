@@ -118,7 +118,7 @@ def train_whisper(
     )
 
     print(f'training {lang}')
-
+    patience = 1 if config["lora"] else 2
     trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,
@@ -127,7 +127,7 @@ def train_whisper(
         eval_dataset=ds['validation'],
         data_collator=data_collator,
         tokenizer=processor.feature_extractor,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=2, early_stopping_threshold=0.0)]
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=patience, early_stopping_threshold=0.0)]
     )
     
     trainer.train()
