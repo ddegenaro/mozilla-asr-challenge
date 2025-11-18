@@ -35,7 +35,7 @@ def train_whisper(
             lora_alpha=32,
             lora_dropout=0.05,
             bias="none",
-            target_modules=["q_proj", "k_proj", "v_proj", "out_proj", "fc1", "fc2"],
+            target_modules=["q_proj","v_proj"],
         )   
         # quantize    
         bnb_config = BitsAndBytesConfig(
@@ -111,14 +111,14 @@ def train_whisper(
         metric_for_best_model="eval_loss",
         greater_is_better=False,
         push_to_hub=False,
-        gradient_accumulation_steps=2,
+        gradient_accumulation_steps=1,
         report_to='wandb',
         run_name=str(output_dir.split('/')[-1]),
         project = 'mozilla-asr-challenge'
     )
 
     print(f'training {lang}')
-    patience = 1 if config["lora"] else 2
+    patience = 1 if config["lora"] else 5
     trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,

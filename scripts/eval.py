@@ -58,7 +58,6 @@ def get_model(model_dir, lang):
         )
         model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
         model = PeftModel.from_pretrained(model, f"{model_dir}/{lang}/final")
-        breakpoint()
         if config['unfreeze_token_embeddings']:
             assert config['whisper_model'] == 'openai/whisper-large-v3', f'Should be using openai/whisper-large-v3 but using {config["whisper_model"]}'
             model.base_model.model.model.decoder.embed_tokens.weight = torch.load(
