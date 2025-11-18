@@ -32,9 +32,6 @@ def evaluate(model, data, processor):
         for batch in tqdm(test_dataloader):            
             inputs = batch["input_features"].to(dtype=input_dtype).to(device)
             # Generate output token IDs
-            
-            breakpoint()
-            
             predicted_ids = model.generate(
                 inputs,
                 forced_decoder_ids=forced_decoder_ids,
@@ -68,7 +65,7 @@ def get_model(model_dir, lang):
                 os.path.join(model_dir, lang, 'final', 'embeddings.pt'),
                 map_location=next(model.parameters()).device,
                 weights_only=True
-            )
+            ).to(dtype=next(model.parameters()).dtype)
         
         model.print_trainable_parameters()
     else:
