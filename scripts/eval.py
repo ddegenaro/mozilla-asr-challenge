@@ -65,7 +65,11 @@ def get_model(model_dir, lang):
                 os.path.join(model_dir, lang, 'final', 'embeddings.pt'),
                 map_location=next(model.parameters()).device,
                 weights_only=True
-            ).to(dtype=next(model.parameters()).dtype)
+            )
+            
+            model.base_model.model.model.decoder.embed_tokens.weight.to(
+                dtype=next(model.parameters()).dtype
+            )
         
         model.print_trainable_parameters()
     else:
