@@ -1,39 +1,33 @@
-from dataclasses import dataclass
-from typing import List, Dict, Union
-import warnings
-
-from transformers import WhisperProcessor
-import numpy as np
-import torch.nn.functional as F
 import torch
 
-warnings.filterwarnings('ignore')
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union
 
+# https://huggingface.co/blog/fine-tune-whisper
 @dataclass
 class WhisperDataCollator:
-    processor: WhisperProcessor
-    return_tensors: str = "pt"
+    processor: Any
+    decoder_start_token_id: int
 
-    def __call__(self, features: List[Dict[str, Union[List[float], torch.Tensor]]]) -> Dict[str, torch.Tensor]:
-        """
-            a lot of hackiness here to ensure that the data is in the right format because otherwise a padding error is thrown. 
-            every time I try to pad using huggingface it throws an error
-        """
+    def __call__(self, features: List[Dict[str, Union[List[int], torch.Tensor]]]) -> Dict[str, torch.Tensor]:
+        # split inputs and labels since they have to be of different lengths and need different padding methods
+        # first treat the audio inputs by simply returning torch tensors
+        input_features = [{"input_features": feature["input_features"]} for feature in features]
+        batch = self.processor.feature_extractor.pad(input_features, return_tensors="pt")
 
-        input = [torch.tensor(f["input_features"]) for f in features]
+        # get the tokenized label sequences
+        label_features = [{"input_ids": feature["labels"]["input_ids"]} for feature in features]
+        # pad the labels to max length
+        labels_batch = self.processor.tokenizer.pad(label_features, return_tensors="pt")
 
-        # Pad the input features
-        padded_inputs=[F.pad(t, (0, 3000-t.shape[1]), value=0.0) for t in input] # padding along the time (last) dimension to a fixed length of 3000
-        input_features = torch.stack(padded_inputs)
+        # replace padding with -100 to ignore loss correctly
+        labels = labels_batch["input_ids"].masked_fill(labels_batch.attention_mask.ne(1), -100)
 
-        # Pad the labels
-        label_sequences = [torch.tensor(f["labels"]["input_ids"]) for f in features]
-        max_lbl = max(len(l) for l in label_sequences)
-        labels = torch.full((len(label_sequences), max_lbl), fill_value=-100, dtype=torch.long)
-        # truncate
-        for i, l in enumerate(label_sequences):
-           labels[i, :len(l)] = l 
-        return {
-            "input_features": input_features,  
-            "labels": labels,
-        }
+        # if bos token is appended in previous tokenization step,
+        # cut bos token here as it's append later anyways
+        if (labels[:, 0] == self.decoder_start_token_id).all().cpu().item():
+            labels = labels[:, 1:]
+
+        batch["labels"] = labels
+
+        return batch

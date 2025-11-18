@@ -8,7 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from transformers import WhisperProcessor, WhisperForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments, BitsAndBytesConfig,EarlyStoppingCallback
 from datasets import Dataset, IterableDatasetDict
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model,  prepare_model_for_kbit_training
 from jiwer import wer
 
 from scripts.get_data import get_data, get_data_high_resource
@@ -21,25 +21,6 @@ from utils.lang_maps import ALL_TARGETS, HR_MAP
 with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
-
-
-
-class WhisperTrainer(Seq2SeqTrainer):
-    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
-        input_dtype = next(model.parameters()).dtype
-        outputs = model(
-            input_features=inputs["input_features"].to(dtype=input_dtype),
-            labels=inputs["labels"]
-        )
-        loss = outputs.loss
-        return (loss, outputs) if return_outputs else loss
-
-    def prediction_step(self, model, inputs, prediction_loss_only, ignore_keys=None):
-        input_dtype = next(model.parameters()).dtype
-        inputs["input_features"] = inputs["input_features"].to(dtype=input_dtype)
-        return super().prediction_step(model, inputs, prediction_loss_only, ignore_keys)
-
-
 
 def train_whisper(
     ds: Dataset,
@@ -68,8 +49,9 @@ def train_whisper(
             quantization_config=bnb_config,
             dtype=torch.float16
         )
+        model = prepare_model_for_kbit_training(model)
         model = get_peft_model(model, lora_config)
-        
+
         if config['unfreeze_token_embeddings']:
             for name, param in model.named_parameters():
                 if 'tokens' in name:
@@ -111,7 +93,7 @@ def train_whisper(
     model.config.lang_detection_threshold = 0.0
 
     print("preparing dev")
-    data_collator = WhisperDataCollator(processor=processor)
+    data_collator = WhisperDataCollator(processor=processor, decoder_start_token_id=model.config.decoder_start_token_id)
 
     training_args = Seq2SeqTrainingArguments(
         output_dir=output_dir, 
@@ -137,7 +119,7 @@ def train_whisper(
 
     print(f'training {lang}')
 
-    trainer = WhisperTrainer(
+    trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,
         compute_metrics=None,
@@ -145,7 +127,7 @@ def train_whisper(
         eval_dataset=ds['validation'],
         data_collator=data_collator,
         tokenizer=processor.feature_extractor,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=1, early_stopping_threshold=0.0)]
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=2, early_stopping_threshold=0.0)]
     )
     
     trainer.train()
