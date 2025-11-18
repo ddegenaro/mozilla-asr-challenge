@@ -35,7 +35,7 @@ def train_whisper(
             lora_alpha=32,
             lora_dropout=0.05,
             bias="none",
-            target_modules=["q_proj", "k_proj", "v_proj", "out_proj"],
+            target_modules=["q_proj", "k_proj", "v_proj", "out_proj", "fc1", "fc2"],
         )   
         # quantize    
         bnb_config = BitsAndBytesConfig(
