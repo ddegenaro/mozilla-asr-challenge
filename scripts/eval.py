@@ -15,7 +15,7 @@ from peft import PeftModel
 from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
 
-with open("config_eval.json", "r") as f:
+with open("config.json", "r") as f:
     config = json.load(f)
     f.close()
 
@@ -32,6 +32,9 @@ def evaluate(model, data, processor):
         for batch in tqdm(test_dataloader):            
             inputs = batch["input_features"].to(dtype=input_dtype).to(device)
             # Generate output token IDs
+            
+            breakpoint()
+            
             predicted_ids = model.generate(
                 inputs,
                 forced_decoder_ids=forced_decoder_ids,

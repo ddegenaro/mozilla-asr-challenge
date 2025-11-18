@@ -6,7 +6,7 @@
     "lora_rank": 8,
     "epochs": 100.0,
     "batch_size": 4,
-    "run_merge_high_resource": true, 
+    "run_merge_high_resource": false, 
     "proxy_langs": {
         "aln": "albanian",
         "bew": "malay",
