@@ -60,6 +60,7 @@ def get_model(model_dir, lang):
         model = PeftModel.from_pretrained(model, f"{model_dir}/{lang}/final")
         
         if config['unfreeze_token_embeddings']:
+            assert config['whisper_model'] == 'openai/whisper-large-v3', f'Should be using openai/whisper-large-v3 but using {config["whisper_model"]}'
             model.base_model.model.model.decoder.embed_tokens.weight = torch.load(
                 os.path.join(model_dir, lang, 'final', 'embeddings.pt'),
                 map_location=next(model.parameters()).device,
