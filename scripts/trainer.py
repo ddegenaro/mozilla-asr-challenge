@@ -105,7 +105,7 @@ def train_whisper(
         eval_strategy="epoch",
         per_device_eval_batch_size=16,
         predict_with_generate=True,
-        generation_max_length=448,
+        generation_max_length=200,
         save_strategy="epoch",
         load_best_model_at_end=True,
         metric_for_best_model="eval_wer",
@@ -118,7 +118,7 @@ def train_whisper(
     )
 
     print(f'training {lang}')
-    patience = 1 if config["lora"] else 5
+    patience = 1 if config["lora"] else 3
     trainer = Seq2SeqTrainer(
         args=training_args,
         model=model,
