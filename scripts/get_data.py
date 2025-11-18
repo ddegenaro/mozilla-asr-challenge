@@ -234,7 +234,8 @@ def get_data_high_resource(
     log: bool = False,
     df_only: bool = False,
     multilingual_drop_duplicates = True,
-    vote_upsampling: bool = False
+    vote_upsampling: bool = False,
+    limit_rows: int = 100_000
 ) -> Union[SpeechDataset, DataLoader]:
     """Indexing operations.
 
@@ -341,6 +342,13 @@ def get_data_high_resource(
         final_df = pd.concat([df] + addl_dfs).reset_index(drop=True)
     else:
         final_df = df
+        
+    if limit_rows is not None:
+        
+        # Source - https://stackoverflow.com/a
+        # Posted by Kris, modified by community. See post 'Timeline' for change history
+        # Retrieved 2025-11-18, License - CC BY-SA 4.0
+        final_df = final_df.sample(frac=1).reset_index(drop=True)[:limit_rows]
 
     if df_only:
         return final_df
