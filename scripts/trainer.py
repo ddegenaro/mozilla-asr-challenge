@@ -15,6 +15,13 @@ from scripts.get_data import get_data, get_data_high_resource
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.lang_maps import ALL_TARGETS, HR_MAP
 
+class WhisperTrainer(Seq2SeqTrainer):
+    def prediction_step(self, model, inputs, prediction_loss_only, ignore_keys=None):
+        input_dtype = next(model.parameters()).dtype
+        inputs["input_features"] = inputs["input_features"].to(dtype=input_dtype)
+        return super().prediction_step(model, inputs, prediction_loss_only, ignore_keys)
+
+
 def train_whisper(
     config,
     ds: Dataset,
@@ -111,7 +118,7 @@ def train_whisper(
         project = 'mozilla-asr-challenge'
     )
     patience = 1 if config["lora"] else 3
-    trainer = Seq2SeqTrainer(
+    trainer = WhisperTrainer(
         args=training_args,
         model=model,
         compute_metrics=compute_metrics,
