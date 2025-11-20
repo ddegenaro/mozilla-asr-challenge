@@ -193,6 +193,11 @@ def main(config):
             json.dump(hyperparameter_results, f, indent=4)
             f.close()
 
+        # save best model off in case they ask for it
+        if not os.path.exists(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}"):
+            os.makedirs(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}", exist_ok=True)
+        torch.save(model, f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}")
+
     df = pd.DataFrame(overall_rows, columns=["language", "wer"])
     df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/summary.csv", index=False)
 
