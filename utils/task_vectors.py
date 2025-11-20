@@ -64,7 +64,7 @@ class TaskVector():
 
     def tv_to_vector(self):
         """
-        turns task bector into a vector
+            turns task vector into a flattened vector
         """
         # Extract all parameter tensors and flatten each one
         flattened_tensors = [torch.flatten(param) for param in self.vector.values()]

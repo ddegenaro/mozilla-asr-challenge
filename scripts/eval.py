@@ -110,6 +110,24 @@ def main(config):
                             pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
                             finetuned_model=WhisperForConditionalGeneration.from_pretrained(hr_model_dir)
                         )
+            else:
+                if config["unfreeze_token_embeddings"]:
+                    hr_peft_model = get_model(config,hr_model_dir, lang)
+                    assert config['whisper_model'] == 'openai/whisper-large-v3', f'Should be using openai/whisper-large-v3 but using {config["whisper_model"]}'
+                    hr_peft_model.base_model.model.model.decoder.embed_tokens.weight = torch.load(
+                        os.path.join(hr_model_dir, lang, 'final', 'embeddings.pt'),
+                        map_location=next(hr_peft_model.parameters()).device,
+                        weights_only=True
+                    )
+                    
+                    hr_peft_model.to(dtype=hr_peft_model.dtype)
+                    # We are taking the original model and subtracting off the HR peft model which is the same model
+                    # but with a different decoder embedding layer. 
+                    # this is kind of an annoying way to do it but its really fast and means we dont have to duplicate code
+                    peft_tv = TaskVector(
+                            pretrained_model=WhisperForConditionalGeneration.from_pretrained(config["whisper_model"]), 
+                            finetuned_model=hr_peft_model
+                        )
             
             for i in range(config["hyperparameter_search_length"]+1): # set to 10
                 if i == 0:
@@ -119,9 +137,13 @@ def main(config):
                     coef = parameters["scaling_coef"]
                 model = get_model(config,model_dir, lang)
                 if config["lora"]:
-                    hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
-                    lr_adapter =  model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
-                    weighted_adapter = model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
+                    if config["unfreeze_token_embeddings"]:
+                        if peft_tv is not None: # should be true if we are here but just in case
+                            # scale the decoder embedding weights for the hr model and add them onto the lr model 
+                            model = peft_tv.apply_to(model, scaling_coef=coef)
+                    model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
+                    model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
+                    model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
                                                                   [1, coef], 
                                                                   adapter_name="merged", 
                                                                   combination_type="linear" # do we want to change this?
@@ -138,18 +160,21 @@ def main(config):
                 if i > 0:
                     ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
             best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
+            model = get_model(config, model_dir, lang)
             if config["lora"]:
-                model = get_model(config,model_dir, lang)
-                hr_adapter = model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
-                lr_adapter =  model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
-                weighted_adapter = model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
+                if config["unfreeze_token_embeddings"]:
+                    if peft_tv is not None: # should be true if we are here but just in case
+                        # scale the decoder embedding weights for the hr model and add them onto the lr model 
+                        model = peft_tv.apply_to(model, scaling_coef=best_lambda)
+                model.load_adapter(hr_model_dir, adapter_name="hr_adapter")
+                model.load_adapter(f"{model_dir}/final", adapter_name="lr_adapter")
+                model.add_weighted_adapter(["lr_adapter", "hr_adapter"], 
                                                                 [1, best_lambda], 
                                                                 adapter_name="merged", 
                                                                 combination_type="linear" # do we want to change this?
                                                                 )
                 model.set_adapter("merged")
             else:
-                model = get_model(config, model_dir, lang)
                 model = tv.apply_to(model, scaling_coef=best_lambda)
         else:
             model = model = get_model(config, model_dir, lang)
