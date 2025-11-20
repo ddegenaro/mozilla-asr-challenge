@@ -104,7 +104,7 @@ def train_whisper(
         gradient_checkpointing=False,
         fp16=True,
         eval_strategy="epoch",
-        per_device_eval_batch_size=16,
+        per_device_eval_batch_size=32,
         predict_with_generate=True,
         generation_max_length=200,
         save_strategy="epoch",
@@ -112,12 +112,12 @@ def train_whisper(
         metric_for_best_model="eval_wer",
         greater_is_better=False,
         push_to_hub=False,
-        gradient_accumulation_steps=1,
+        gradient_accumulation_steps=2,
         report_to='wandb',
         run_name=str(output_dir.split('/')[-1]),
         project = 'mozilla-asr-challenge'
     )
-    patience = 1 if config["lora"] else 3
+    patience = 3
     trainer = WhisperTrainer(
         args=training_args,
         model=model,
@@ -164,11 +164,13 @@ def main(config):
                         split='train',
                         langs=[lang],
                         multilingual_drop_duplicates=False,
+                        limit_rows=25_000,
                         vote_upsampling=config['vote_upsampling']
                     )
                     dev = get_data_high_resource(
                         split='dev',
                         langs=[lang],
+                        limit_rows=1000,
                         multilingual_drop_duplicates=False,
                         vote_upsampling=False
                     )

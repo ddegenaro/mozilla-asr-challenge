@@ -1,11 +1,11 @@
 {
     "whisper_model": "openai/whisper-large-v3",
-    "train_high_resource": false,
+    "train_high_resource": true,
     "language": "aln",
     "lora": true,
     "lora_rank": 8,
     "epochs": 100.0,
-    "batch_size": 4,
+    "batch_size": 32,
     "run_merge_high_resource": false, 
     "proxy_langs": {
         "aln": "albanian",
@@ -35,8 +35,7 @@
         "bas": "swahili",
         "qxp": "spanish"
     },
-    "scaling_coefs": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-    "unfreeze_token_embeddings": true,
-    "vote_upsampling": false,
+    "unfreeze_token_embeddings": false,
+    "vote_upsampling": true,
     "hyperparameter_search_length": 10
 }
