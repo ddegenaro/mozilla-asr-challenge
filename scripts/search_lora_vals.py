@@ -42,7 +42,6 @@ def train_whisper(
     config,
     ds: Dataset,
     output_dir: str,
-    lora: bool = False,
     proxy_lang: Optional[str] = None,
 ):
     
@@ -150,7 +149,7 @@ def train_whisper(
     return eval_results
 
 def main(config):
-    lang = "sco"
+    lang = "ukv"
     train = get_data(
         split='train',
         langs=[lang],
@@ -165,7 +164,7 @@ def main(config):
         "train": train,
         "validation": dev
     })
-    lora_ranks = [8, 32, 64]
+    lora_ranks = [8, 64, 128]
     unfreeze_token_embeddings = [True, False]
     target_modules = [["q_proj", "v_proj"], ["q_proj", "v_proj", "k_proj", "out_proj"],  ["q_proj", "v_proj", "k_proj", "out_proj", "fc_1", "fc_2"]]
     
@@ -175,11 +174,11 @@ def main(config):
     for rank in lora_ranks:
         for ufe in unfreeze_token_embeddings:
             for target_module in target_modules:
-                output_dir = f"lora_search_sco/_{i}"
+                output_dir = f"lora_search_{lang}/_{i}"
                 config["lora_rank"] = rank
                 config["modules"] = target_module
                 config["unfreeze_token_embeddings"] = ufe
-                eval_results = train_whisper(config, dataset, output_dir, True, config["proxy_langs"][lang])
+                eval_results = train_whisper(config, dataset, output_dir, config["proxy_langs"][lang])
                 r = {
                     "lora_rank": rank,
                     "unfreeze_token_embeddings": ufe,

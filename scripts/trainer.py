@@ -32,8 +32,8 @@ def train_whisper(
     
     if lora:
         lora_config = LoraConfig(
-            r=config["lora_rank"],
-            lora_alpha=32,
+            r=8,
+            lora_alpha=16,
             lora_dropout=0.05,
             bias="none",
             target_modules=["q_proj","v_proj"],
@@ -164,7 +164,7 @@ def main(config):
                         split='train',
                         langs=[lang],
                         multilingual_drop_duplicates=False,
-                        limit_rows=25_000,
+                        limit_rows=100_000,
                         vote_upsampling=config['vote_upsampling']
                     )
                     dev = get_data_high_resource(
