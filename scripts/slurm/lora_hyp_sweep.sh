@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="mozilla_asr"
+#SBATCH --job-name="lora_sweep"
 #SBATCH --nodes=1
 #SBATCH --partition=base
 #SBATCH --output=logs/"%x.o%j"               
@@ -18,5 +18,5 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 python3.11 --version
 export WANDB_API_KEY='7eb373ebc11ddf9cefc6b415e3c9b40a4c9768b3'
-export WANDB_PROJECT="lora_sweep"
+export WANDB_PROJECT="mozilla_asr"
 python3.11 ./scripts/search_lora_vals.py

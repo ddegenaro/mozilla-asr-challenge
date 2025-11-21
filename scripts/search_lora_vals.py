@@ -118,7 +118,7 @@ def train_whisper(
         gradient_checkpointing=False,
         fp16=True,
         eval_strategy="epoch",
-        per_device_eval_batch_size=32,
+        per_device_eval_batch_size=16,
         predict_with_generate=True,
         generation_max_length=200,
         save_strategy="epoch",
@@ -126,7 +126,7 @@ def train_whisper(
         metric_for_best_model="eval_wer",
         greater_is_better=False,
         push_to_hub=False,
-        gradient_accumulation_steps=2,
+        gradient_accumulation_steps=1,
         report_to='wandb',
         run_name=str(output_dir.split('/')[-1]),
         project = 'mozilla-asr-challenge'
@@ -144,10 +144,9 @@ def train_whisper(
     )
     
     trainer.train()
+    eval_results = trainer.evaluate()
     del model
     del trainer
-    
-    eval_results = trainer.evaluate()
     return eval_results
 
 def main(config):
