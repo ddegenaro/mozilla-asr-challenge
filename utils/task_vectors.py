@@ -66,6 +66,7 @@ class TaskVector():
         """
             turns task vector into a flattened vector
         """
+        
         # Extract all parameter tensors and flatten each one
         flattened_tensors = [torch.flatten(param) for param in self.vector.values()]
 
@@ -73,3 +74,41 @@ class TaskVector():
         single_vector = torch.cat(flattened_tensors)
 
         return single_vector
+    
+    def tv_to_layer_wise(self):
+        """
+            returns matrix of weights grouped layer-wise
+        """
+        layer_groupings = []
+        curr_layer_str = ""
+        curr_layer = []
+        for key in self.vector.keys():
+            split_key = key.split(".")
+            if split_key[0] == "model":
+                if split_key[1] == "encoder" or split_key[1] == "decoder":
+                    if split_key[2] != "layers":
+                        if split_key[2] == curr_layer_str:
+                            curr_layer.extend(self.vector[key])
+                        else:
+                            if len(curr_layer) > 0:
+                                layer_groupings.append(curr_layer)
+                            curr_layer = []
+                            curr_layer_str = split_key[2] 
+                            curr_layer.extend(self.vector[key])
+                    else:
+                        if split_key[3] == curr_layer_str:
+                            curr_layer.extend(self.vector[key])
+                        else:
+                            if len(curr_layer) > 0:
+                                layer_groupings.append(curr_layer)
+                            curr_layer = []
+                            curr_layer_str = split_key[3] 
+                            curr_layer.extend(self.vector[key])
+                
+            else:
+                if len(curr_layer) > 0:
+                    layer_groupings.append(curr_layer)
+                curr_layer.extend(torch.flatten(self.vector[key]))
+        layer_groupings.append(curr_layer)
+        return layer_groupings
+        
