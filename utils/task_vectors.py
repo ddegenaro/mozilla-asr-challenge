@@ -80,35 +80,44 @@ class TaskVector():
             returns matrix of weights grouped layer-wise
         """
         layer_groupings = []
+        layer_strings = []
         curr_layer_str = ""
         curr_layer = []
         for key in self.vector.keys():
-            split_key = key.split(".")
-            if split_key[0] == "model":
-                if split_key[1] == "encoder" or split_key[1] == "decoder":
-                    if split_key[2] != "layers":
-                        if split_key[2] == curr_layer_str:
-                            curr_layer.extend(self.vector[key])
+            if len(self.vector[key]) > 0:
+                split_key = key.split(".")
+                if split_key[0] == "model":
+                    if split_key[1] == "encoder" or split_key[1] == "decoder":
+                        if split_key[2] != "layers":
+                            if split_key[2] == curr_layer_str:
+                                curr_layer.append(torch.flatten(self.vector[key]))
+                            else:
+                                if len(curr_layer) > 0:
+                                    layer_groupings.append(torch.cat(curr_layer))
+                                    layer_strings.append(curr_layer_str)
+                                curr_layer = []
+                                curr_layer_str = split_key[2] 
+                                curr_layer.append(torch.flatten(self.vector[key]))
                         else:
-                            if len(curr_layer) > 0:
-                                layer_groupings.append(curr_layer)
-                            curr_layer = []
-                            curr_layer_str = split_key[2] 
-                            curr_layer.extend(self.vector[key])
-                    else:
-                        if split_key[3] == curr_layer_str:
-                            curr_layer.extend(self.vector[key])
-                        else:
-                            if len(curr_layer) > 0:
-                                layer_groupings.append(curr_layer)
-                            curr_layer = []
-                            curr_layer_str = split_key[3] 
-                            curr_layer.extend(self.vector[key])
-                
-            else:
-                if len(curr_layer) > 0:
-                    layer_groupings.append(curr_layer)
-                curr_layer.extend(torch.flatten(self.vector[key]))
-        layer_groupings.append(curr_layer)
-        return layer_groupings
+                            if split_key[3] == curr_layer_str:
+                                curr_layer.append(torch.flatten(self.vector[key]))
+                            else:
+                                if len(curr_layer) > 0:
+                                    layer_groupings.append(torch.cat(curr_layer))
+                                    layer_strings.append(curr_layer_str)
+
+                                curr_layer = []
+                                curr_layer_str = split_key[3] 
+                                curr_layer.append(torch.flatten(self.vector[key]))
+                    
+                else:
+                    if len(curr_layer) > 0:
+                        layer_groupings.append(torch.cat(curr_layer))
+                        layer_strings.append(curr_layer_str)
+                    curr_layer = []
+                    curr_layer_str =  key    
+                    curr_layer.append(torch.flatten(self.vector[key]))
+        layer_groupings.append(torch.cat(curr_layer))
+        layer_strings.append(curr_layer_str)
+        return layer_groupings, layer_strings
         

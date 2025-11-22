@@ -74,7 +74,14 @@ def main(config):
     split = 'dev'
     print("lora:", config["lora"])
     overall_rows = []
-    for lang in ALL_TARGETS:
+    final_model_output = f"results/{config['whisper_model'].split('/')[1]}/final_models"
+    hyperparameter_output =  f"results/{config['whisper_model'].split('/')[1]}/hyperparamters"
+    if not os.path.exists(final_model_output):
+        os.makedirs(final_model_output, exist_ok=True)
+    if not os.path.exists(hyperparameter_output):
+        os.makedirs(hyperparameter_output, exist_ok=True)
+
+    for lang in ALL_TARGETS:        
         data = get_data(
             split=split,
             langs=None if lang == "all" else [lang],
