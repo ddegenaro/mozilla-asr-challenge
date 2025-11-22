@@ -92,7 +92,7 @@ def main(config):
 
         # apply adapter or tv and get scaling coefficient
         hyperparameter_results = {}
-        if config["run_merge_high_resource"] and len(HR_MAP[lang]) > 0:
+        if len(HR_MAP[lang]) > 0:
             # set up hyperparameter search client
             ax_client = AxClient()
             ax_client.create_experiment(
