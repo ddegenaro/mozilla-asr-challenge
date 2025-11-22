@@ -32,8 +32,8 @@ def train_whisper(
     
     if lora:
         lora_config = LoraConfig(
-            r=8,
-            lora_alpha=16,
+            r=config["lora_rank"],
+            lora_alpha=2*config["lora_rank"],
             lora_dropout=0.05,
             bias="none",
             target_modules=["q_proj","v_proj"],
