@@ -203,6 +203,9 @@ def main(config):
         # save best model off in case they ask for it
         if not os.path.exists(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}"):
             os.makedirs(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}", exist_ok=True)
+        if config["lora"]:
+            model = model.merge_and_unload() #merge chosen adapter weights onto the model
+
         model.save_pretrained(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}")
 
     df = pd.DataFrame(overall_rows, columns=["language", "wer"])
