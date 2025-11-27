@@ -75,7 +75,7 @@ def main(config):
     print("lora:", config["lora"])
     overall_rows = []
     final_model_output = f"results/{config['whisper_model'].split('/')[1]}/final_models"
-    hyperparameter_output =  f"results/{config['whisper_model'].split('/')[1]}/hyperparamters"
+    hyperparameter_output =  f"results/{config['whisper_model'].split('/')[1]}/hyperparameters"
     if not os.path.exists(final_model_output):
         os.makedirs(final_model_output, exist_ok=True)
     if not os.path.exists(hyperparameter_output):
