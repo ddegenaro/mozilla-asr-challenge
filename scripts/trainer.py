@@ -117,7 +117,7 @@ def train_whisper(
         run_name=str(output_dir.split('/')[-1]),
         project = 'mozilla-asr-challenge'
     )
-    patience = 3
+    patience = 5
     trainer = WhisperTrainer(
         args=training_args,
         model=model,
@@ -159,7 +159,7 @@ def main(config):
             if "_".join(hr_langs) not in trained_hr_adapters:
                 trained_hr_adapters.append("_".join(hr_langs))
                 output_dir = f"output_{config['whisper_model'].split('/')[1]}/{'_'.join(hr_langs)}"
-                if not os.path.exists(f"{output_dir}/final"): #todo change
+                if not os.path.exists(f"{output_dir}"): #todo change
                     train = get_data_high_resource(
                         split='train',
                         langs=[lang],
@@ -185,7 +185,7 @@ def main(config):
     else:
         for lang in ALL_TARGETS:
             output_dir = f"output_{config['whisper_model'].split('/')[1]}/{lang}"
-            if not os.path.exists(f"{output_dir}/final"):
+            if not os.path.exists(f"{output_dir}"):
                 train = get_data(
                     split='train',
                     langs=None if lang == "all" else [lang],
