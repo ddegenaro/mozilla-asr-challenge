@@ -1,0 +1,1325 @@
+prediction,label,wer
+ Hon jam ,Hon jam ,0.5
+ Uke ngelelo wanda numutu uhañbe nkaa ,U kenek liwanda ni mut u nhañ bé ñkaa ,1.0
+ Man a nnundi ,Man a nnyôndi ,0.3333333333333333
+ Nyandom ini nyandom tara ,Nyandôm ini nyandôm tata ,1.0
+ Dibi yuñha mbo rye siyak tela ,Di biyôñha mbot yés yak téla ,1.0
+ Dinsen gambele dinsen gambele ,Di nseñga mbege di nseeñga mbege ,1.0
+ Kar i mba mbab gwegwee ,Kaat i mbambap gwégwéé ,1.0
+ Anchehme ke mbe yé me bnol ,A ntjés me kembe yéé me binol ,0.8571428571428571
+ A nheo hol mkoo i kede tun ,A nhyôhôl miñkôô i kédé tuñ ,0.8333333333333334
+ Totoa jam ,Totoga jañ ,1.0
+ Nha tom a mpôrna mngege me tom ni nloha ,Nhatôm a mpôdna miñkek mi tôm ni nlôha ,0.875
+ Bañga liegil le mbo le kondo ,Bañga légél le mboo likondo ,0.8
+ Hibe hi ña ñgañwe len we u yi hee,Hibee hi ñañ we len we u yé hee ,0.4444444444444444
+ Ukirebe bañme ,U kidbe bañ me ,1.0
+ Bege me i kaat i u gwéha ,Bek me kaat i u gwéé ha ,0.5714285714285714
+ Buhondu binteba mmalbuul ,Bihônd bi nteba bi mmal bôdôl ,1.0
+ Mmapuna mata we jam li mwôr binam ,Mapuna ma ta bé jam li mut binam ,0.75
+ Nyañ a nsugule man widyek ,Nyañ a nsugle man bijek ,0.4
+ Mbapudul babitee ni pôrwindee ,Bapôdôl ba bé tehe ni pot bindéé ,0.8571428571428571
+ Wen u nhumbha me nwo ,Wen u nhômbha me ño ,0.4
+ Djinuni tjo mele ,Dinuni tjomede ,1.5
+ Mbe nge li mbol i ba bina ,Me ñédés mbot i babiina ,1.2
+ Sulman nlelel i wikaayi ,Sudman i nlélél i bikay ,0.8
+ Mwur a nlama be aral jangan lebi ,Mut a nlama bé adal jañan libii ,0.7142857142857143
+ Mbaam toro ,Mbaam tôdô ,0.5
+ Adle ne yem mbep inimil ,Adlene yem mapep i nnimil ,1.0
+ Lingosi li ntibanga babamu ,Liñgosi li nti bañga bibam ,0.8
+ Megwe ñganda li sangu ,Me gwé ñgandak lisañgô ,1.0
+ Boy maho malin ,Bôy maok ma lién ,1.0
+ Dinte we ñganele hajes ,Di ntéé we ñane lihaa jés ,0.8333333333333334
+ Ba mpa ngalana blo ,Ba mpañglana bilôo ,1.0
+ Mbahal dii ,Mbahal tjéé ,0.5
+ Likbo gulinje liye jut ,Libôk li njék li yé juut ,1.0
+ Bano mananyee inyu ya ngajam ,Ba nnôômana nye inyuu yañga jam ,1.0
+ Mbaak u njel ,Mpaak u njel ,0.6666666666666666
+ Kalme ndende i jamu nkalme ,Kal me ñgende i jam u ñkal me ,0.875
+ Mgwa wele mwu ,Ñgwa wé lem u ,1.0
+ Dimbaglana ,Di mbaglana ,1.0
+ Mi ngeema mañma li piga ,Béñge nye mamañ ma dipiga ,1.0
+ Bogrene mambiñ ,Bogdene me mbiñ ,1.0
+ Nsa mbay nunu a nyalah ,Nsañ mbay nunu a nyahla ,0.4
+ Nunumutu anlugu me nga ba mmoni ,Nunu mut a nlôk me i ñgaba moni ,0.875
+ Saka yong i mbôo ,Sogo yoñ i mbôô ,0.75
+ Be gwelil gwombi yabe ,Bigwélél gwoñ bi yé bibe ,1.0
+ Hulne meen yunga,Pulne me i nyuñga ,1.0
+ Boonge ba nyoge ba mpuhla a nji malip ,Bonge ba nyogi ba mpuhlaha i ñgii malép ,0.75
+ Wel nson ,Gwel nson ,1.0
+ Ngolo uye ngeyaytu ,Ñgôlô u yéñi nye i tuu ,1.0
+ Noo rene me unu nla mbe ,Noodene me unu nlamb ,1.0
+ Kililme beso wabambu ,Kidil me bisok bi mbôñ ,1.0
+ Mbombe menke ,Ñgo me me ñke ,1.0
+ Hee u nsuu ne kubyom ,Hee u nsôône kôp yoñ ,0.6
+ Kangi ktomu ,Kañ tôñ ,1.0
+ Ayenti hewe mutu ,A yé ntihege mut ,1.0
+ Menlumul mil muhinda maha ,Me nlôñôl mél mu hindama ,1.0
+ Agwe gwaa wangan ,A gwéé gwaa gwañen ,0.75
+ Lebulbe geje li mpuna sole inke hilo ,Libulbege jéé li mpôna sô le i ñke hilo ,0.8888888888888888
+ Panyak lana bonbo ,Ba nyaglana bo ni bo ,1.0
+ Uweheo nahini u yile ubeb me ,We hyone hini u yé le u bép me ,0.8888888888888888
+ Mutunu nyen njôye hana ,Mut nunu nyen a njôye hana ,0.6666666666666666
+ Huu reñgonde ñgok ,Hugde ñgond i ñgok ,1.0
+ Liye diklingo ini li ngele mbés ,Liyédék li ñgok ini li nhélés bés ,0.7142857142857143
+ Nyañ a nya mbene man bijek ,Nyañ a nnyaambe man bijek ,0.6
+ Mempot mbale ,Me mpot mbale ,1.0
+ A nsombol biheba bihewe ,A nsômbôl bébha bés we ,0.8
+ Abbe ndi ndi nson ,A béndi nson ,1.3333333333333333
+ Nsonu uñgwela ,Nson u ñgwéla ,1.0
+ Nunu nko kon a ye gwelga we ,Nunu ñkokon a yé gwedgagwe ,1.0
+ Malip mañubah ,Malép ma ñôdba ,1.0
+ Mbuda ba hehe koo ni ñgwaa ,Bôdaa ba nhee hikok ni ñgwaa ,0.6666666666666666
+ Baa nle ne gwébi ,Biañlene gwéé bi ,1.3333333333333333
+ Hinoo lene hinu ganyaga ,Hinoodene hi nuga nyaga ,1.0
+ Ma nhohohoho nde hoso suya ,Ba nhôgôô hiônde hyosô sôya ,1.0
+ Mpombura mpombulum ,Mpôm mudaa mpôm munlôm ,1.0
+ Ba mpanga nagwalak ,Ba mpañgna gwalak ,0.6666666666666666
+ Lanal misi ,Lañal mis ,1.0
+ Anunda me ñgomwee ,A nnunda me ñkoñ wéé ,0.8
+ Mwemel u mkweba ,Ñwemel u ñkwéhba ,0.6666666666666666
+ Aiyabra namasin ,A nyabdana masiñ ,1.0
+ Bañhus nye nemao malin ,Ba nhyuus nye ni maok ma lién ,0.8571428571428571
+ Hamut mnkum kena mut mnkum ,Ha mut miñkôm kena mut miñkôm ,0.6666666666666666
+ Mbe gapbe mni nye nye mme nyuyee ,Me gabep niñ yem inyuu yéé ,1.1666666666666667
+ Mñge mbihimil boñge ni bôdaa,Miñgé mi bé himil boñge ni bôdaa ,0.5714285714285714
+ Hece ki u ñkwo ,Heetje ki u ñkwo ,0.5
+ Libele kjoñ li maen liye lilam ,Libelek joñ li maén li yé lilam ,0.8571428571428571
+ Li huu haga li nyorne e borndi likooga ,Lihuhuga li nnyodne i bot ndi li kogaga ,1.0
+ Kwa remayi kwa rechapa ,Kwade maé kwade tjap ,1.0
+ Hindi mbee ba ni ngelne ,I ndéé imbee ba néñél nye ,0.8333333333333334
+ Menka le nikilhop uloñyoñ ,Me ñkal le nigil hop u loñ yoñ ,0.875
+ Likogok joñ li hoonde liye lilam ,Likogok joñ li hiônde li yé lilam ,0.5714285714285714
+ Ho mwulmao ,Hôô mut maok ,1.0
+ Pôhol me mbondo ,Pôhôl me mbôndô ,0.6666666666666666
+ Ambambange ,A mbam mañge ,1.0
+ Nyambe a nogmi yemhe wisi ,Nyambe a nnok minyemhe ñwés ,0.6
+ Hambemha me muhwe ,A mbémha me mut wem ,0.8
+ Basugul bonba yigle bihema tinmaning ,Basôgôl bon ba yigle bés matiñ ma niñ ,0.875
+ Anyi liepese ,A nyi lép pése ,1.0
+ Mmur a mbinilme yene nda mnduk ,Mut a mbénél me yééne i ndap mintuk ,0.875
+ Umal kipuru umal kido ,U mal kipôdô u mal kitô ,1.0
+ A nhimbha me likuga di nhimbha bibinda ,A nhimbha me likôga di nhimbha biwinda ,0.2857142857142857
+ Kinjepik bujbo mbo mba hegelme ,Kinje pék bôt boñ ba nhégél me ,1.0
+ Samble me langar ,Samble me lañgat ,0.3333333333333333
+ Bikorabiye munu liepunu ,Bikôda bi yé munu lép unu ,0.8333333333333334
+ Menluhle ne pan ni ngoch ,Me nlôhlene pan ni ñgok ,0.6
+ Nji i yeha ni hisi ,Ñgii i yé haa ni hisi ,0.6666666666666666
+ Boonga ba ñomna ñgok ,Boñge ba ñômna ñgok ,0.75
+ Antabluo ,A ntjap liwo ,1.0
+ Ni be mut ,Mbimbe mut ,1.5
+ Mutnuga aluga ,Mut nyuñga a nluga ,1.0
+ Nyen a nyi inyuki anchilil me wjeck ,Nyen a nyi inyukii a ntjilil me bijek ,0.5
+ Mebaa homu ,Me bak nhyôm ,1.0
+ Biñge kii antumde ni nloñ wonsu ,Béñge kii a ntômde ni nloñ wonsô ,0.5714285714285714
+ Binua pendea rebala ,Binuga bi nje dibala ,1.0
+ Liye henga ndi inli hilame bi ,Lééhe ñgand i nlélha me péé ,1.0
+ Ba gii makooma julga ,Baa kii makôô ma judga ,1.0
+ Bon bolombô pbumbô ,Bon bôlôm bôô bibum bôô ,0.8
+ Uñwe bolo i ñganyañen ,U ñwéé bôlô i ñgeñ yañen ,0.8333333333333334
+ Mbege nna nga a ñke li joo ,Mbék nnañga a ñke lijo ,1.0
+ Memba hle tjee ni mkulen ,Me mbahle tjéé ni ñkuleñ ,0.8
+ Ita bilo nge i pambebe ni nyanyalom ,I ta bé loñge i pam bebee ni nyañ lom ,0.8
+ Unseerne me nga ,U nsédne me ño ,0.75
+ Chae di mbik di mmelea bikii ,Tjay di bék di mmélés bikéy ,0.6666666666666666
+ Hi kudgeñ hi nje mmbas ,Hikutkéñ hi nje me mbas ,0.8
+ Nsolo be mmut ,Nsolbe mut ,1.5
+ Biitnbe a nje me ñgimpes wom ,Binbe a nje me ñgim pes wom ,0.5714285714285714
+ Murnunu a hii rinma na ,Mut nunu a nyi ma dimaña ,0.8333333333333334
+ Li yabakdjé li lom i nnyohe li hile hibés ,Liyabak jéé li lom i nyogi li nhélés bés ,0.5555555555555556
+ Mawanda mabma ,Mawanda map maa ,0.6666666666666666
+ Nuhumura a ntip gwal ,Nyus mudaa a ntip gwal ,0.6
+ Lo name ndoñgi yem son ,Lona me ndoñgi yem nson ,0.6
+ Longe blo ,Lôñge biloo ,1.0
+ Mne ngebilbemeko mwoñ ,Me ñémbél bé me ñkoñ woñ ,1.0
+ Bo nge bambu la nama ngo ,Boñge ba mbôblana miño ,1.5
+ Kwalembot ,Kwo limbot ,1.0
+ Mbabadu ma nene mañgong mon añgwis ,Mabadô ma nnene mañgoñ mon a ñgwés ,0.7142857142857143
+ Menkon i jak ,Me ñkon i jak ,0.75
+ Menke i penda ,Me ñke i pén ndap ,0.8
+ Kumbar hii yi loñge ije ,Hikômbat hi yé loñge i je ,0.8333333333333334
+ Baan di nye ni hichak ya ñhe ,Baa ndi nye ni hitjagyañ hyéé ,0.8333333333333334
+ Ta ngen a bi yébha me lom ,Ta nyen a biyébha me lom ,0.6666666666666666
+ Tung li lang i mbena nenga ndak ,Tôñ lilañ i mbéna ne ñgandak ,1.0
+ Anlehe lamentandi dinlehe lamahas ,A nlélha me ndandi di nlélha mahas ,1.0
+ Tutuwe a leem ,Tutup wéé a nlém ,0.75
+ Su uñki i ndañe ,Su u ñkiinda nye ,0.75
+ Nop a nto yhana ,Nop a ntoy hana ,0.5
+ Ni nyi yendu ,Niñ i yé ndudu ,1.0
+ Ba nla mkono sengen ,Ba nlamb ñkônô séñgén ,0.75
+ Ja li ña boy ,Jas li ñap we ,0.75
+ Njii i mpanga gwalaka ,Njéé i mpañga gwalak ,0.75
+ Ma nyungu ma nnuguhu bibebela ,Manyuñ ma nnugus bibebela ,1.0
+ Añnam kaar mawah ,A ñañ kaat maua ,1.0
+ Hukna wakaad gwem ,Me nhyômna bikaat gwem ,1.0
+ A ñkôble makondo i kii sinde ,A ñkôble makondo i kiisin ,0.4
+ Me yi waag ,Me yé ñwaak ,0.6666666666666666
+ Man libi ngon libi ,Man libii ñgond libii ,0.75
+ Hiisee hi nse mba ngandak ,Hiséé hi nsemba ñgandak ,1.0
+ Banjebe nkiñgitutu njibambe lwo ,Ba nje bé ñkéñgé tôdô ndi ba mbel wo ,1.0
+ Lobe ndil mape mmo nhana ,Lo béndél mapep moñ hana ,1.0
+ Nye nunu a nlehbe injele ,Nye nunu a nlehbe i njel ,0.3333333333333333
+ Nnuiha bihi ndabyoñ di binnui haliki ,Nôyha bés i ndap yoñ di binôyha liké ,0.875
+ Bumbuñ iñkuga we dega bana bobla ,Bôô mbôñ i ñkôga wee di gabana bobla ,1.0
+ Mur a ñkalane un ,Mut a ñkala ni hiun ,0.8
+ Ki i undululikora ,Kii u ntulul likoda ,1.0
+ Nnoñna me mapep makaa ,Noñna me mapep ma kaat ,0.6
+ Me malbibiti nyoñ ma kondo ,Me mmal bébés tén yoñ makondo ,0.8333333333333334
+ Likai li ñkôô li nlel i wahaal ,Likay li ñkôgô li nlet i wahal ,0.5714285714285714
+ Ma nnunu a nye nilkiba gwalbee ,Man nunu a nyénél ki bagwal béé ,0.8571428571428571
+ Lihe imayagal i yilen ,Lélhe i mayagal i yé len ,0.8333333333333334
+ Hiba nde hi mutu ,Hibande hi mut ,1.0
+ Bura bon mambena nomod ,Bôdaa bon ba mbéna nomol ,0.8
+ Bañke na nye senga senga ,Ba ñkéna nye señgaseñga ,1.0
+ Mne nje bibikond ,Me nje bé bikond ,0.75
+ Porul muulndaga ,Pôdôl mut ñgagaa ,1.0
+ Amkar mundjik ,A ñkat mut njék ,1.0
+ Koni son a yema mbe greo su ,Konison a yé me ni mbédgé yosô ,1.0
+ Mgweha yon i ni nini hibut ,Ñgwéha yon i nniñis bôt ,0.8
+ Bomkikitel ,Boñ kikii tel ,1.0
+ Hii luba hi nyongye i nlañd ,Hilôba hi nnyoñye i nlamb ,0.8
+ Ba uga hama nyugumboni ba aluñe ,Baa u gaha manyuñ moni Balôñe ,1.0
+ Mulom hikuni ,Munlôm hikuni ,1.0
+ Likora lembok ,Likoda li mbok ,1.0
+ Boñyem i maluun menlama sombe ipe ,Boñ yem i mmal un me nlama somb ipe ,0.8888888888888888
+ Anoome ba basi ,A nnoñ me bahbas ,1.0
+ Kuduk li balu,Kuduk libadô ,1.0
+ Mulanto wjume ,Mut a ntôp jume ,1.0
+ Lisi nglinda ,Liséñ li ndap ,1.0
+ Mañge nge hema iye nkongwo ñanda kaa ,Mañgeñges ma yé ñkoñ woñ ñgandak ,1.1666666666666667
+ Mmur a ntéera a dapbe mwerbom ,Mut a ntééda a ta bé ñwet gwom ,0.75
+ Atehe bañye a ubeñwee ,A tehe bañ nye a ube ñgwéé ,0.8571428571428571
+ Ibehege elben bok behege elben bok ,I bihégél bi mbok - bihégél bi mbok ,1.0
+ Nje a di i pañyem ,Njee a téé i pañ yem ,0.6666666666666666
+ Suluk iwe bôhora me nje li ni,Suluk i bibôdha me njel ini ,0.8333333333333334
+ Libele lihañwe i mbok ,Libél li nhañ bé i mbok ,0.8333333333333334
+ An li mha me lambe di li mha me lambe ,A nlimha me lambe di nlimha bilambe ,1.1428571428571428
+ Taakba name sakalawo ,Tagbana me sagla woñ ,1.0
+ Babeti hama nke menso ndo me nge ,Ba bitiiha mankéé minsôndô mi ñgé ,1.1666666666666667
+ Kimu nunu a yelmube ,I mut nunu a yé limuge ,0.6666666666666666
+ Burbalo ije ,Bôt ba lok i je ,1.0
+ Menke nleñ ,Me ñke nleñ ,1.0
+ Bana boñge ba mboñ mandale ,Bana boñge ba mboñ mandaa le ,0.3333333333333333
+ Ando ndoog ,A nto ntook ,1.0
+ Mura a ndehesu ,Mudaa a ntehe sôñ ,0.75
+ Kuuye wom ,Kuye wom ,1.0
+ Ngiñgi ba a gwé bibange m ,Ñgiñgiba a gwéé béba ñem ,1.0
+ Mwud a ñyamba ndung ,Mut a nnyambaa ndôñ ,0.75
+ Uhuunjul,Nhum jôl ,1.0
+ Mpungu lip mpungu lbof ,Mpuñgul lép mpuñgul bôt ,1.0
+ Mbon matua ,Mbon matôa ,0.5
+ Bewe u ye kon ,Be wéé u yé kon ,0.8
+ Li biigda li jam li li nlo nama a ñol mape ,Libigdaga li jam li li nlona mahoñol mape ,0.875
+ Mbura bali bambe ,Bôdaa ba libambe ,1.0
+ A nyohwe kai i kidhédi mpeghe ,A nnyos bikay i kédé mpék ,0.6666666666666666
+ Usebilbe skat i tunyom ,U sébél bés kat i tun yoñ ,0.8571428571428571
+ Mapep mabindi ,Mapep ma béndi ,0.6666666666666666
+ Ndabi yem i uñi haa ,Ndap yem i ôñi haa ,0.6
+ A ñembot ,A nnye mpot ,0.6666666666666666
+ Kua sel ,Kua sel ,0.5
+ Mboda pia iye lam ni bobla ,Boda piya i yé lam ni bobla ,0.7142857142857143
+ Ki i mpilbaha webejek ,Kii i mpidbaha we bijek ,0.8
+ Boñge ba bebumna ,Boñge ba bibumna ,0.3333333333333333
+ Ki uu ya brahala ,Kii u nyabda hala ,1.0
+ Jôole mut ,Jugle mut ,1.0
+ Li telbe na jemlini i benga mintuko ,Litelbene jem lini i béñge mintuk ,1.0
+ Ampende mbayi,A mpénd mbay yéé ,1.0
+ Ntu ndamu a ñkogwe gwee,Ntuk ndamb a ñkwo gwégwéé ,0.8
+ Ke bala ñye nye riso a nlo handok,Ke balañ nye disôô a nlôôha ndok ,0.7142857142857143
+ Kabo ngwedi nye awo pohlo ,Kagô i ñgwel nye a wo pôdô ,0.8571428571428571
+ Mbahal nyo behela ,Mbahal inyuu bihela ,0.6666666666666666
+ A ño ñko mele me porbañ ,A nnyoñg me le me pot bañ ,0.7142857142857143
+ Maduwe ma yesu ,Matuge ma Yésu ,0.6666666666666666
+ Ini a mme mleñge nge man ,Ini a mmemle ñkéñéé man ,0.8
+ Unnok ma hiñha ma ñgomen i ñkuu ma hobe ,U nnok mahéñha ma ñgomén i ñkuu mahop e ,0.6666666666666666
+ Antuñha i poo,A ntuñha i poo ,0.5
+ Hi see i ñgwia nsum hi pat,Hiséé hi ñgwiya nsum hi pat ,0.6666666666666666
+ Mil nsut,Mil nsôt ,0.5
+ A ñube man ñu buge ,A ñube man ñubge ,0.5
+ Nyotna me womulha ,Nyodna me wômôl ha ,0.75
+ Amget hiyen ,A ñket hiyeñ ,1.0
+ Hisan hi ñyamme ,Hisañ hi nyam me ,0.75
+ Membongle ni wena ,Me mbôñglene we nañ ,1.0
+ Man a nwehelme ya nganbot ,Man a ñwéhél me yañan mbot ,0.6666666666666666
+ A ñko ñgha i bumb nye tama ,A ñkoñg ha i bum nyetama ,0.8333333333333334
+ Yii diis ,Yii jis ,0.5
+ Litol bi singli,Litol bisiñli ,1.0
+ Ma nge nunu a gwé yi ,Mañge nunu a gwéé yi ,0.8
+ Ambeha me woo i ñgi ,A mpéha me woo i ñgii ,0.5
+ Ambelel me pilwee moni hana nlomjel ,A mbédél me pil wéé moni hana nlôm njel ,0.6666666666666666
+ Uloha bañs ule kembe nkoo i joo ,U lôôha bañ sude kembee ñkôô i joo ,0.875
+ Nyuyo so inambe mañmôl unu ,Nyuu yosô i ñambe mañ mut unu ,1.0
+ Libeg li njik ,Libék li njék ,0.6666666666666666
+ Biloom bibe pintun baha weh ,Bilôñ bibe bi ntônbaha we ,1.0
+ Mwa ndimi yebea ,Ñwandi mi yé béya ,1.0
+ Hebla koi ñu nguwene e jen ,Nhéblak kôy u ñôhbene i hyeñ ,1.0
+ Puput bikayi ,Puput bikay ,0.5
+ Mbambat nseme ,Mbambat i nsés me ,0.75
+ Mañge a nnéye ñombe we ,Mañge a néyés ño mbe wé ,0.6666666666666666
+ Ho bijek gwam ,Hô bijek gwoñ ,0.6666666666666666
+ Tin hi maja hi i mbege yem ,Tén himaya i yé i mbééga yem ,0.8571428571428571
+ Ambom bitas ,A mboñ bitas ,1.0
+ Muda a gwé ñganda chung ,Mudaa a gwéé ñgandak tjôñ ,0.8
+ Li holo sloñ li mbe ngebot bo baso ,Lihôlôs loñ li mbéñge bôt bobasô ,1.1666666666666667
+ Boonde ba ntuk ,Boñge ba ntuk ,0.6666666666666666
+ Guna ba ndewle neme ndap ,Bôdaa ba nteblene me ndap ,0.8
+ Ini amba ansuwi ,Ini a mbaa nsugi ,0.75
+ Mula nunu a yihikwe kei ,Mudaa nunu a yé hikwehkey ,0.6
+ A hendi keek u me mel ,A nhéndi kék i ñwemel ,1.0
+ Homle inii mbii ni wehe ,Hoñle ini me mbiine we ,1.0
+ Nunumutu a nyuuba ,Nunu mut a nyuuba ,0.75
+ Nje a ntegele neme hibe i juu ,Njee a nteglene me hibee i juu ,0.7142857142857143
+ U unsure ,U u nsude ,0.6666666666666666
+ Fee isomi i mbe mkosi ,Péé i sômi i mbem kôsi ,0.8333333333333334
+ Membada komol i wom ,Me mbada kômôl i wom ,0.8
+ Lipo li mpume li ngomhoom ,Lipôô li mpume li ñôm hôôm ,0.5
+ Tibna li mwede joñ ,Témbna liñwek joñ ,1.3333333333333333
+ A nye bibolo ,A nyi bibôlô ,0.6666666666666666
+ Man a nnolo sme ,Man a nnôlôs me ,0.5
+ Wukende ilbañu meha ,U kéndél bañ me ha ,1.0
+ Lino njoñlini i ke mwee ,Linoñ joñ lini i ke ñgwéé ,0.6666666666666666
+ Yile mutj a ntjañbe nebe me ,Yi le mut a ntjañgbene bé me ,0.8571428571428571
+ Konde menlaam me kuhle makabo ,Kônde me nlamb me kuhle makabô ,0.6666666666666666
+ Ndoñk kôy ,Ñgoñg kôy ,1.0
+ Liwumbaga jee li lubum ,Liumbak jéé li libum ,0.75
+ Me nhula we ni jem li bim li bo o ñol ,Me nhôla we ni jem libim li biôñôl ,0.75
+ Kii u nyulme mnkok ,Kii u nyôl me miñkok ,0.6
+ Mebilelna kembe likilom ,Me bilelna kembe likil lom ,0.8
+ Kwa gwamenla sawe hala ,Gwagwa me nla saa we hala ,1.0
+ A nyi mwede ,A nyi ñgweege ,0.3333333333333333
+ A nyomu lsaki li bong ,A nyôñôl sagi liboñ ,1.0
+ Mula nunu a ñgwe mboa mboa ,Mudaa nunu a ñgwés mboamboa ,0.8
+ Mehien kuwe m inyuu i buwo ,Me nhit ñkuu wem inyuu yip wo ,0.8571428571428571
+ Minlobu mwes mimpik baha ,Minlop ñwés mi mpéñgbaha ,1.0
+ Antoñ me juu ni mwaye ,A ntoñ me juu ni ñway ,0.5
+ Liye ni kjoñ liye libe ,Liyénék joñ li yé libe ,1.0
+ Hi két hyem hi nnuga ,Hikét hyem hi nuga ,0.75
+ Mwur añkir ino nyesu kristo ,Mut a ñkit i noñ Yésu Kristô ,1.0
+ Hiyo nde himbimba ,Hiônde hi mbémba ,1.0
+ Bahal i gwéme leo mgim sonde ,Bahal i gwéé me liôm ñgim sonde ,0.7142857142857143
+ Ibilion ma kondo i ñuñi ,Bébél yoñ makondo i ñun ,0.8
+ Kage namu ,Kagda mut ,1.0
+ Konwo nndi ndiñgla hame ,Kon won ntéñglaha we ,1.0
+ A njile ma nya ñgwalak ,A nyide manyañ gwalak ,1.0
+ Mañge mura anchik mañge munu ,Mañge mudaa a ntjik mañge munlôm ,0.6666666666666666
+ yom i bal,Yoñ ibal ,1.5
+ Unkoo u nkiri ,Ñkôô u ñkidi ,0.6666666666666666
+ Hiloga hisos hi ñgonda mamañ ,Hiloga hi nsos hiñgonda mamañ ,0.8
+ Ampudul nsañi janda Biba jam kila,A mpôdôl nsañ i janda béba jam kila ,0.625
+ Muu a ñkon a nlagle ,Mut a ñkon a nlagle ,0.4
+ Koo nuga ,Koo nuga ,0.5
+ Wehe habañnunu man ñyañ a yé i wom ,U ééha bañ nunu man nyañ a yé i wom ,0.5
+ Memba weke ndani bisu ,Me mbaa we kenga ni bisu ,1.0
+ Magwela ma yé ñgandak di lotini ,Magwela ma yé ñgandak dilo tini ,0.3333333333333333
+ Kihigahibege ne yada uhpus mglwet ,Hihéga hi beegene yada puhpus bruwet ,0.8333333333333334
+ Pambu kôl mbahage i hôk mkok ,Ba mbogol mbahge i hôk ñkok ,0.6666666666666666
+ ubi gwene hee,U bigwééne hee ,0.6666666666666666
+ Li ndikbana jem la yesu,Linigbene jem le Yésu ,1.0
+ Anteha me bilim dinteha bilim ,A ntééha me bilim di ntééha bilim ,0.8571428571428571
+ Mbuna a nlege rani hiuun ,Mudaa a nlegda ni hiun ,0.8
+ Kinjeli malali ,Kinje limala li ,1.0
+ Ahele hame i bingesam ,A nhélha me i béñge sañ ,0.8333333333333334
+ Bajiba mba hla kembamba ,Bati ba bahlak mbamba ,1.0
+ To ne a ndomla Udomla bañme,Tone a ntômla u tômla bañ me ,1.0
+ Lilenda ga aplenda me homo kuu ,Lilendga a bilenda minhyômôk ,1.5
+ A nyônga maa ñge mwura ,A nyoña mañge mudaa ,1.0
+ Pipike mbe inloo haje mwa nga nguom ,Bébkembe i nlôôha je ñwañan ñwom ,1.1666666666666667
+ He bogol yem iye ,Hee bôgôl yem i yé ,0.8
+ Begha me mañga suglu nunu gwé bijek ,Bégha me mañge suglu nunu gwéé bijek ,0.5714285714285714
+ Minsoñge minimilet ,Minsoñgi mini mi nlet ,1.0
+ Kwiye tuu ndenje ,Kwiye tuñgeñ ,1.0
+ Banda isi ,Banda isi ,0.5
+ Mutnunu a yikom ,Mut nunu a yé kom ,0.8
+ Angkak mo ,A ñkak môô ,1.0
+ Jiji ilo ,Jiji i nlo ,0.6666666666666666
+ Bihna we linje homo wada ,Béhna we di nje homa wada ,1.0
+ Mura a nhula ,Mudaa a nhula ,0.6666666666666666
+ Menchimbih mambege enyule kaa mpak ,Me ntimbis mambegee inyuule kak i mpak ,1.0
+ Pan nibilnya bañgal i nibik ,Ba nnibil nye bañga linibik ,1.0
+ Ma semalen mandengil mbebi ,Masee ma lién ma ndéñgél mbebi ,1.0
+ A song nogle ya galjem ,A Soñ nok liyagal jem ,0.8
+ Ki u mpor mayelhala ,Kii u mpot mayel hala ,0.8
+ Menol hitun uwo mwem ni ngaa ,Me nnol hitôn i wom wem ni ñgaa ,0.875
+ Wibu mbom nye a yege lenso ,Wip u mbôm nye a yégle nso ,0.7142857142857143
+ Mwak uke mbe ,Ñwak u kembe ,1.0
+ Wen uhulha malip majagop ,Wen u nhôlha malép ma jogop ,0.8333333333333334
+ Hiuonde hii hii nga ,Hiônde hi nhéña ,1.3333333333333333
+ Wejek wega loñlana mandukish ,Bijek bigalôñlana mandugi ,1.3333333333333333
+ Yom yem ihi ,Yom yem i ,0.3333333333333333
+ Njenu asik muwitu ,Nje nu a nsik mu i tun ,1.0
+ Ta a ncal me matayi inyuu sayab me ,Ta a ntjal me matay inyuu sayap me ,0.5
+ Bogenka,Mbôgi ñkaa ,1.0
+ Nyambe a nsaye bene we mumaliga ,Nyambe a nsaybene we mu maliga ,0.6666666666666666
+ Lipomo joñ li nsonolini ,Lipomok joñ li nsôndô lini ,0.6
+ Menokin isibil ,Me nnok kiñ i nsébél ,1.0
+ Titin ilikonda ,Titin i likondo ,0.6666666666666666
+ Wekayi winang me nambayi ,Bikay bi nnañ me ni mbay ,0.8333333333333334
+ Nyoyo a yinbe ilo nyee ,Nyoyo a nyén bé i loñ yéé ,0.7142857142857143
+ He nyoi i humul ,Hee nyôy i nhumul ,0.75
+ Nge lakwañ nsa a bebe mut li yanda ,Ñgéda kwañ nsaa a bé bé mut liyanda ,0.875
+ Li yor li mbe wgwel nye ,Liyot li mbep gwel nye ,1.0
+ Hiye hi nyo hi nko gana ,Hiéé hi nyoo hi ñkoogana ,0.8
+ Malogma kosi ,Malok ma kôôsi ,1.0
+ Mura a hambal lebok leman ,Mudaa a nhambal libok li man ,0.8333333333333334
+ A nse hela we mboba ,A nsehla wee mbôba ,1.0
+ Bune ba nje mje inisivlale jayi ,Buune banjemje i nsébla le jay ,1.0
+ Mbenso nhele ube mbne me mbana boñge ,Me nsoohe le u bémbne me bana boñge ,0.875
+ Ba njangcho ba umpor ,Batjañtjoôt ba u mpot ,1.0
+ Man a ñkoo nmede kola mbudu ngimson de ,Man a ñkon me dikola ibôdôl ñgim sonde ,0.75
+ Teple yem i gwéye wikunda bitna ,Téblé yem i gwéé bikônda bina ,0.6666666666666666
+ Karu inta harbe yike lhana makak ,Kagô i ntagbe hi kel hana Makak ,1.0
+ Tine me malip likop ,Tine me malép likop ,0.5
+ Nisik mi nyo mbenda hôm ma ,Minsiñ mi nyoo mi mbéna hyôm ima ,0.8571428571428571
+ Malip mai ,Malép may ,1.0
+ Leo mgok le man pikire le bum le nyañ ,Liôñgôk li man i kédé libum li nyañ ,1.0
+ Bisabe wee bi nke loñge ,Bisabe gwéé bi ñke loñge ,0.6
+ Anlel kwezi ,A nlel kwes ,1.0
+ Li bomo joñ li kôp li nkona ñgôm ,Libômôk joñ li kôp li ñkona ñgôñ ,0.5714285714285714
+ Hike ngise e bene makabu ,Hikéñ hi seebene makabô ,1.25
+ Madame mkak mantipi la mazuluk ,Matam ma kak ma ntibla masuluk ,1.0
+ Mbe gwéñ diki ba dola dola ,Me gwéé ndigi badoladola ,1.5
+ Ye ye hana isi jañgolo ,Yiye i yé hana isi jañgôlô ,0.6666666666666666
+ Malir a nnénha boñge kar ,Malét a ñéñha boñge kaat ,0.6
+ Li bomga li matu wa munu loñna ni mbebe lme ,Libomga li matôa mu nloñ nan li mbébél me ,1.0
+ Basa mding bantol habe ,Basak ndiñ ba ntôl ha béé ,1.0
+ Ka i nhoa nyo i nhoa ,Ka i nhôa nyoo i nhôa ,0.5
+ Kel i biyel me yane ilom ,Kel i biyél me yani i lom ,0.5714285714285714
+ Kon nyal kon go kon wongi kon ngung ,Kon njal kon ñgoo kon woñi kon ñgôñ ,0.5
+ Mongo u ñkôp bôr ba pe enyembe ,Môñgô u ñkôp bôt ba pey nyemb ,0.5714285714285714
+ Mura a nyunghe ne me man ,Mudaa a nnyuñhene me man ,0.8
+ Uwe u ñho ñol yaga ki ,We u nhoñol yaga kii ,0.8
+ Membege mkubika ,Me mbegee ñkuu bikaat ,1.0
+ Kwer mulpem ni suf ,Kwet mut pem ni su ,0.8
+ A hañge me biwaye kôri hana injel ,A nhañge me béba yé kôdi hana i njel ,0.6666666666666666
+ Po tin inimilme ,Botin i nnimil me ,1.0
+ Malet a mbedip kaadwe ingi tible ,Malét a mbédi bikaat gwéé i ñgii téblé ,0.875
+ Habike mayo ilo nyesa ,A bike mayo i loñ yés ,0.8333333333333334
+ Soso jembe li mut ,Soso jembee li mut ,0.5
+ Ndi nye ambo o ñgaki hana ,Ndi nye a mbooñga ki hana ,0.6666666666666666
+ Jime lidama ok ,Ti me lita maok ,1.0
+ Litoa linjaba bikayi ,Litôa li ntjaba bikay ,1.0
+ Anke jwee ,A ñke jwee ,1.0
+ Kôri mbing innum jañgolo linum ,Kôdi mbéñ i nnum jañgôlô li nnum ,1.0
+ Di mwaa bana ,Di ññwahbana ,1.0
+ Minsonwe minlemel himut ,Minson ñwéé mi nlémél hi mut ,1.0
+ Jinda libi nuga jinda li botu ,Jinda li binuga jinda li bôt ,0.5
+ Chidil me kwem ,Tidil me kwem ,0.6666666666666666
+ Men sombol man wembeka ari bizuglu ,Me nsômbôl man wem bikaat bi suglu ,0.8571428571428571
+ Mura nunu a ñke kimi ndamu ,Mudaa nunu a ñke ki mintañ ,0.5
+ Mensaya we mu nyi yondo nlam ,Me nsayap we ñwii yondo nlam ,0.8333333333333334
+ Libuha ga jé li nson li ntéi nda be nye ,Libuuhaga jéé li nson li ntéñga bé nye ,0.875
+ Maeba u nyong nyo monman juu mbaha we ,Maéba u nyoñ nyoo mon ma njuñbaha we ,0.875
+ Anlaa namura ya nga nnañ ,A nlaana mudaa i yañan nañ ,1.0
+ A yenye tama,A yé nyetama ,0.6666666666666666
+ Annibilme ya ñganbot ,A nnibil me i yañan mbot ,1.0
+ Memede me njele kondo me bibele ,Memede me nje likondo me bibel ,0.5
+ Bumbu mmutu ,Bôñbôñ mut ,1.0
+ Kel imbep ,Kel i mbep ,0.6666666666666666
+ A nsindamel bayi ,A nsinda me libay ,0.75
+ Bini bijek binilme ,Bini bijek binnél me ,0.5
+ Me yenimbom lam ,Me yé ni mbom lam ,0.8
+ Mhuu mut ,Nhuu mut ,1.0
+ Mañgenunu a holol hana ,Mañge nunu a nhôlôl hana ,0.8
+ Nyango a ñwe ngeelme misoa ,Nyañgô a ñwéñél me minsôa ,0.8
+ Din gada ,Tén kaga ,1.0
+ Ki inyomu nye ,Kii i nnyômôs nye ,1.0
+ Anol kwek kwek ,A nnol kwekwek ,1.0
+ Likuga libe buha yani ,Likôga li bibôha yani ,1.0
+ Antame jam ,A nta me jam ,1.0
+ Tee kigi amboyop ,Tehe kii a mboyop ,1.0
+ Pehiyembok i gwébe herman besamada ,Pes yés mbok i gwéé bihédman bisamal ,0.8571428571428571
+ Hi keñel hi hi nkeñep inyuu bolo ,Hikéñél hyéé hi ñkeñep inyuu bôlô ,0.8333333333333334
+ Nnuga ini inlama buma ndia jeba loñge ,Nuga ini i nlama buma ndi ya jéba loñge ,0.7777777777777778
+ Kukopñgi,Kôkôp ñgii ,1.0
+ Ki imbuha nye ,Kii i mbuuhaha nye ,1.0
+ Ki u nso bol bijek ,Kii u nsôbôl bijek ,1.0
+ Bisonda bi nge ñge ñambaye mwulma mma beh ,Bisônda bi ñkéña mbay mut mam mabe ,1.0
+ A ye le me mgmut ,A yé nlemek mut ,1.0
+ Munu nu a yinsanda ki yaga ,Mut nunu a yé nsanda kiiyaga ,0.8333333333333334
+ Mbimbobo mbibitamb mnumbbe ba njiñ ,Mimbôbôk mi bitamb mi nnumb béba njiñ ,1.0
+ Mbebe i nsée ba hale kondo ,Mbebi i nséébaha likondo ,1.25
+ Burbang kumna ,Bôt ba ñkumna ,1.0
+ Di ñu baha inyuu bara mwne ,Di ñuubaha inyuu bada moni ,0.8
+ Mudnunu a ñkarba ,Mut nunu a ñkadba ,0.75
+ Aye mwul bo mbola ,A yé mut bôbôla ,1.0
+ Tee ne me hibee i juu Tee ne me kilok,Tééne me hibee i juu tééne me kilok ,0.5
+ Unu mpinga u gwéi mbibi ,Unu mpiñga u gwéé mbibi ,0.6
+ Sugunye mbuhunlum ,Sugus nye i mbus nlôñ ,1.0
+ Para a gwé o mguba i yesu ,Pada a gwéé ôñgba i Yésu ,0.8333333333333334
+ Ndoyi i ñke i bere bñi hi ehaa ,Ndôy i ñke i bedep ñgii e haa ,0.625
+ Jo rotu dimbay e ngeñk ,Tjôdôt di mbay eñgeñg ,1.25
+ Pehuhu bi mpam mkoko nunu inyo ,Bihus bi mpam ñkokon nunu i nyo ,0.5714285714285714
+ Maok malen manlegi ,Maok ma lién ma nlegi ,0.8
+ Ngande ngehal hot ,Ñgand i ñkahal hot ,1.0
+ Ubea bañma nge nnuha pe kai ,U bééaha bañ mañge nu ha bikay ,1.0
+ Mkôm u mhuuwa ,Ñkôm u nhuua ,0.6666666666666666
+ Ubeñga kohmam u soko lihele ,U bénga kôs mam u sôk kôs lihele ,0.875
+ Membe mbi ñgé mhe yom ,Me mbemb ñgémhe yoñ ,1.25
+ Lamal inje me ñgimkobo lukaa ,Lamal i nje me ñgim kobot bikaat ,0.7142857142857143
+ Nyea ya we u nlo u isang ,Nyayak wéé u nloo u isañ ,0.8333333333333334
+ Loksango ,Lôk Sañgô ,1.0
+ Kembe ngi i nhok ilip ,Kembe ñgii i nhok i lép ,0.5
+ Añke a nhiga higa higa ,A ñke a nhiga higa higa ,0.5
+ Kihia ndé hi hi ni ññugup hi mapabe ,Ki hyandi hi hi nnuñgup hi ma pa béé ,0.7777777777777778
+ Pihun bita bien kongwem ,Bihôn bi ta bé ñkoñ wem ,1.0
+ Wonge won ndé mbaha nye ,Woñi won u ntéémbaha nye ,0.8
+ Bi nyogwe bi nsulba ,Bibép bi nyo gwéé bi nsudba ,0.8333333333333334
+ Meni nye mbimbaha mbordyes ,Me ni nye di mbémbbaha mbot yés ,0.8571428571428571
+ Habi yega kumjok ,A bééga kumnjok ,1.0
+ Ngomu binam a njehike ni ,Ñgo mut binam a nje hikéni ,0.6666666666666666
+ Mbemmañ mbos mbembe na okbo ñgebal pa mal ,Mimañ mi bôt mi mbéna ok boñge ba lipamal ,1.0
+ Maenkon i jôl ,Me ñkon i jôl ,0.75
+ Litje beljez litje elini ,Litjébél jés li tjéé lini ,1.0
+ Mempormee ,Me mpot mee ,1.0
+ Njal i gwemme ,Njal i gwéé me ,0.5
+ Bole njañgumba ,Bot njañgumba ,1.0
+ Mwumog a nip babata di misi ,Mut mok a nnibba batat i mis ,0.8571428571428571
+ Kudileen ,Kudi lién ,1.0
+ Di nyege gabee ,Di nyéga bé ,0.6666666666666666
+ Menilu wanda jem di mbehe hadeno ,Me ni liwanda jem di mbéhha dinoo ,0.7142857142857143
+ Untol uha ñwada kiyede ñgomo kumu ,Ntol u nhañ wada kii di ñômôk ñwo ,1.0
+ Murwip anjubul i winda ,Mut wip a njubul i winda ,0.8333333333333334
+ Intenle borba gali nhoob lini li melehlang ,Ntén libodbaga li nhoop lini li mélés lañ ,0.75
+ Hionde hosona ,Hiônde hyosôna ,1.0
+ U ñhôgôda ndakenda kina ,U nhôgda ñgandak i nañ ,0.8
+ A hondol hibe e hosona ,A nhondol hibee hyosôna ,1.0
+ Bo ñge bañwe nama lib ,Boñge ba ññwehna malép ,1.25
+ Kis bijek ,Kiis bijek ,1.0
+ Liduba liye longa i kere njaa ñgô ,Liduba li yé loñge i kédé njaañgô ,0.8571428571428571
+ Sipse mewe bañgapa hopu u basaa ,Sibse me bibañga bi hop u basaa ,0.8571428571428571
+ Munu a ña ngagare ,Mut nu a ñagre ,1.0
+ Kungulio Kungulio,Kuñul yôô kuñul yôô ,1.0
+ Legebe ibe ,Legbe i bee ,1.0
+ Nyango yem ini ,Nyañgô yem ini ,0.6666666666666666
+ Litam lini limbe yey me ,Litam lini li mbéyéy me ,0.6
+ Niigaha manwoñ Balitba niigaha ,Niigaha man woñ balét ba nniigaha ,0.8333333333333334
+ Lus heonde ,Lus hiônde ,0.5
+ Mmutmaoñ a mal soble mkonde me simet ,Mut maoñ a mmal sôble miñkond mi simet ,0.875
+ Menkis basko ,Me ñkis baskô ,1.0
+ Li biñek a mbiñ kembe uwo mwe ,Libeñek a mbeñ kembe i wom wéé ,0.8571428571428571
+ Manjongin mahikuwa ,Manjoñgén ma hikôa ,1.0
+ Unule u gwel bo bol lepe ,Unu lép u gwéé lilôbôl lipe ,1.0
+ Burbong bambirbana ki yaka ,Bôt boñ ba mpidbana kiyaga ,1.0
+ Ambe napa malbôrbe ,A mbéna bamal bôt béé ,1.0
+ Mwak Etiopia ubekil iñgi bamban ,Ñwak Étiôpya u bé kil ñgii bamban ,1.0
+ Manweis a ñkon li bimbe ,Man wés a ñkon libimbe ,0.8
+ Murse ,Mut sé ,1.0
+ Akgolini ndum ,A kôli ni ndôm ,1.0
+ Anjees manwe mp ,A njés man ñwemb ,1.0
+ Kede mwu isi ,Kénde mut isi ,1.0
+ So piem he kwé ma lip ,Sop yem i gwéé malép ,1.2
+ Mwukon a ñke teñge teñge ,Mut kon a ñke teñge teñge ,0.5
+ Tima hongol ,Ti mahoñol ,1.0
+ Yoke liyaga nyen ubeke mok ,Yokel yaga nyen u bike i mok ,0.8571428571428571
+ Ngôi nsandane mbegre ,Ñgôy i nsanda ni mbédgé ,1.0
+ Tungi nkuyu ,Tôñ i ñkôyôp ,1.0
+ Ika iye lehe ,I ka i yé le ,1.0
+ Mbe nle ngele i bumbu ,Me nleñel i bôm ,1.0
+ Mañamintula ,Mañ mi ntula ,1.0
+ Ibagaa himut ,Hibagaa hi mut ,1.0
+ Wee u mpondi gibu woo ,We u mpot ndigi biwôgô ,0.8
+ Mudnunu ambem ni kii ,Mut nunu a mbém ni ki ,0.8333333333333334
+ Anni ngilnganda i gwobol ,A nniñil ñgandak i gwôbôl ,0.8
+ Nson bolan ,Nson mbolan ,0.5
+ Megwe nla ñga tinti ,Me gwéé nlañga tinti ,1.0
+ Lomba nga ,Lôômba ñkaa ,1.0
+ A mut nunu a ye yomok ngandak ,Mut nunu a yé nhyômôk ñgandak ,0.8333333333333334
+ Minlami kembe mi ye bilonga bibijek ,Minla mi kembe mi yé bilonge bi bijek ,0.75
+ Tu ba nyol into yoh maleb ,Tuba nyôl i ntôyôs malép ,1.2
+ Ikere mambor mana mensa bayada ,I kédé mambot mana me nsaba yada ,0.8571428571428571
+ Maa nge a mpombe ba me i moo ,Mañge a mpombba me i moo ,0.8333333333333334
+ Mgond inumisumbu mimatam ,Ñgond i nnum minsumbuu mi matam ,1.0
+ Ma kemem ma wese nga behe ,Maké mem ma biséña behee ,1.0
+ Kee i kwini ,Key i kwéñi ,0.6666666666666666
+ Tebak etukbol ma nke a cho me belim ,Di bak i tuk bol mankéé a tjok me bilim ,0.8
+ Men men lege babo kukubi jo molje len ,Men me nlegba bibuk bi jomol jéé len ,0.875
+ Ambutla hame ndobo ni moo ,A mbôdlaha me ndobo ni moo ,0.6666666666666666
+ Alor nga swem anololme nyoga li nyik ,Alôdñgas wem a nnôlôl me jôga li nyik ,0.875
+ Sogol a nchope nlekom ,Sôgôl a ntjo pen likoñ ,0.8
+ Angkabre ki gwangan gwom ,A ñkabde ki i gwañan gwom ,0.8333333333333334
+ Mgok likah li ndap ,Ñgok likas li ndap ,0.75
+ A nnede hi ñganda khe onde ,A nnédés ñgandak hiônde ,1.25
+ Man a ñgwe hana len a ye mura ,Man a ñgwéé hana len a yé mudaa ,0.375
+ Hiyen hiye hi keni ,Hiyéñ hi yé nye hikeñi ,1.0
+ A huwe banyang ba makabu ,A nhue banyañ ba makabô ,0.6
+ A nleñ likoñ piñ ,A nleñ likoñ piñ ,0.5
+ Nwemel wo mbele u nkwihiba ,Ñwemel womede u ñkwihba ,1.0
+ Hana yakanyen a uñi dihtis ,Hana yaga nyen a ôñi tistis ,0.6666666666666666
+ Membon won minlimi nye ,Mimbon ñwon mi nlémés nye ,1.0
+ Nsomboko yom utabe barbat ,Nsombok yom u ta bé badbat ,0.8333333333333334
+ Hi lo hi nnel nye ,Hilo hi nnél nye ,1.0
+ Man a ñke kwañkwoy ,Man a ñke kwañkôi ,0.25
+ Mbogol yada mbogol juen ,Mbôgôl yada mbôgôl jwem ,1.0
+ Nge ma nge mwesbe loñge jam ,Ñem a ñgwés bé loñge jam ,0.8333333333333334
+ Aloktada e gwea ,A lôgtata i gwéha ,1.0
+ Mwulambi ngehe mabemi ,Mut a mbéñés mabe méé ,1.0
+ Ntolo u nsula ,Ntôdôô u nsuula ,0.6666666666666666
+ Kul inke tega tega ,Kul i ñke tegatega ,0.75
+ Mura a ñgarben lum ,Mudaa a ñadbe nlôm ,0.75
+ Mbude bijek ilole me pamaa kinda ,Me mbude bijek ilole me pamak i ndap ,0.625
+ Kel kunde loñ mbi gdana hiuñwi ,Kel kunde loñ i mbigdana hi ñwii ,0.5714285714285714
+ A nso me hii hii homa ,A nsok me hii homa ,0.6
+ Me nkele bito ru ni hekoba ,Me ñket bitôdô ni hikoba ,0.8
+ Unloha mañgañga ,U nlôôha mañgañga ,1.0
+ Mwush msusuwa a ñgwe a ñki hlebut ,Mut minsusua a ñgwés a ñkihle bôt ,0.7142857142857143
+ Annii me bim ,A nnii me bim ,0.75
+ Bambihil nye molundu ,Ba mbihil nye Môlundu ,0.75
+ Uye bañga mut ,U yé bañga mut ,0.75
+ Tope hekaba me hi gwé ,To pes i kaba me hi gwéé ,0.7142857142857143
+ Usu bañme ,U suu bañ me ,1.0
+ Mempudu hlôlônda jem ,Me mpôdôs liwanda jem ,1.0
+ Agwe hi bandbandi hi nyuu ,A gwéé hibandband hi nyuu ,0.8
+ A nleñle ni mpan ,A nleñ ley ni mpan ,0.6
+ Me nñis ñwom mi maen ,Me ñis ñwom mi maén ,0.4
+ Ponbabijek ,Ponba bijek ,1.0
+ Kumblene imanga ,Kumblene i mañga ,0.6666666666666666
+ Bayen to mbol u u nseelana ,Ba yé ntôñ bôt u u nséélana ,0.7142857142857143
+ Lijeg le kongo li nyobo bijek ,Lijek li kôñgô li ñôbôs bijek ,0.8333333333333334
+ Uyugulaha bañ me yana nkoka ,U yuglaha bañ me yañan koga ,0.6666666666666666
+ Lenganga li suluku ,Liñgañgas li suluk ,0.6666666666666666
+ Baame bongla ,Baa me boñ laa ,1.0
+ Sinyi inwel tole ,Siñgi i ñgwel tôle ,1.0
+ Kending mutu ,Kéndéñ mut ,1.0
+ Le komb masu Le komb choz ,Likomb masu likomb tjôs ,1.5
+ Mehimbil nyo kek ,Me nhimbil nyoo kék ,1.0
+ Banko holme nwo ,Ba ñkohol me ñño ,1.0
+ Ki u ñyangal masoñ ñyangal masoñ,Kii u nnyañgal masoñ nyañgal masoñ ,0.5
+ Ambep me mwenkôndika me yegele ,A mbép me miñkôndge mi yégle ,0.8333333333333334
+ Tinyandôm makol ,Ti nyandôm makol ,1.0
+ Sogol wem a ba nnyor njok mnisoa ,Sôgôl wem a ba nyot njok minsôa ,0.42857142857142855
+ Li nyombe li ,Liyumbi li e ,1.0
+ Me nyoonga i kuu ,Me nnyooñga i kôô ,0.5
+ Ngongong u ,Ñgoñgoñ u ,1.0
+ Mañmul u ñgôr ndoñ,Mañ mut u ññôt ntoñ ,0.8
+ Manwe mwada a bokwe nehe kañ ,Man wem wada a bigwééne hikañ ,1.0
+ Kôôr lembaro ,Kôôt libadô ,1.0
+ Ukolibe pi mutnumpe ,U kôli bé pii mut numpe ,1.0
+ Le kogla li ñkôm ,Likoglak li ñkôm ,1.0
+ Mahidnya ,Me nhit nye ,1.0
+ Womb pelu nguz mpe kôn ,Gwômb bi nluñus mpék kôn ,1.0
+ Ini suluk iye bañgaa ,Ini suluk i yé bañgañgaa ,0.6
+ Hippuma mbene imbeye hemalip ,Hipuma mbene hi mbéyés malép ,0.8
+ Heke ndudu rukila ,Heeke ndudu ki la ,0.75
+ Menlo ngôl ngombi ,Me nlôñôl ñgombi ,1.0
+ Mapa masuglu ,Mapam ma suglu ,1.0
+ Bilha mbot ,Pédha mbot ,1.0
+ Libam li ni li mbom li aloñge ,Libam lini li mbômla loñge ,1.0
+ Me nyie ñ ñhoma le me boñop ,Me nyéñ homa le me boñop ,0.6666666666666666
+ Mbogok mbemba yiñ ,Mimbogok mi mbaéñ ,1.0
+ Manda mantangla ,Mañga ma tañla ,1.0
+ Bambele li bombu li bijek ,Ba mbédés libômb li bijek ,0.8
+ Kanga a yehobe hilam ,Kañga a yé hyobi hilam ,0.8
+ Bas mbomblene mbomb ,Bas i mbômb len i bôm ,1.0
+ Lekali nolbon ,Likaa li nnol bon ,1.0
+ Inyuki ni nnohe bene hee ,Inyuu kii ni nnohbene hyéé ,1.0
+ Nyuu mboñ ya kandikime jonde jonde ,Nyuu i mboñ yaga ndigi me jondejonde ,0.7142857142857143
+ Hea ñkum utewe ekide wom ,Héya ñkum u téé we i kédé wom ,0.875
+ Liye nelita boe hana ,Liyééne li ta bé we hana ,1.0
+ Wen u nsoñgla hamesang i boñge bana ,Wen u nsôñglaha me sañ i boñge bana ,0.5
+ Hihoma lebnunu a nyoma ,I homa lép nunu a nyoña ,0.8333333333333334
+ Nunu mañge a nya ma ,Nunu mañge a nyama ,0.5
+ Bo nge ba ntinde boom boom bo ndo ,Boñge ba ntinde bômbô mbôndô ,1.2
+ Mgwo inyoma lib lagalak ,Ñgwo i nnyo malép laglak ,1.0
+ Le bom li nsumbil kaisa ,Liboñ li nsumbi li kaysa ,1.0
+ Merike nelene me pa me ,Me gi kenek len me pam e ,0.8571428571428571
+ Mbida bitogo mshmasu ,Mbida bitogoo ,1.5
+ Bana bot ba nyuugana bé ,Bana bôt ba nyuugana bé ,0.4
+ Sinba ngal iñgwel bon bako ,Siñmbañga i ñgwel bon ba kôp ,0.8333333333333334
+ Puu nda ñgu ,Huu ñgaañgô ,1.5
+ Sikbikae,Sék bikay ,1.0
+ Mbubne binbot bi nyoni ,Biubne bi mbot bi nyon ,0.8
+ likube li nyoo da loñge nyoo ,Likubé li nnyoda loñge i nyo ,0.8333333333333334
+ Aye sangsangye yi mwa ,A yé sañsañ yé ñgwa ,1.0
+ Lona meheye i bikai ,Lona me héyéy i bikay ,0.6
+ Manjaas a bule we u ñkoni kep king ,Man jas a buule we u ñkon ñkép kiñ ,0.6666666666666666
+ Ba mutbinam a nla uñgusnumpe ,Baa mut binam a nla uñgus numpe ,0.7142857142857143
+ Mañga mba halche inyuu majumi ,Mañge a mbahal tjéé inyuu majô méé ,0.8571428571428571
+ Pago iye sitia mungu ,Pagô i yé sitia môñgô ,0.8
+ Kal nyele mingke ,Kal nye le me ñke ,0.8
+ Dziñgwe nnogu ya ngle bibapodol ,Di ñgwés nok biañle bi bapôdôl ,1.0
+ Pe mmut inkin i ngiikey Pe biibe ,Pek mut a ñkil i ñgii key pek biibe ,0.8888888888888888
+ Nun kilie yak tomlô yon inegi ,Nunki liegak tômblô yoñ i ñégi ,1.0
+ Lege me pondishu ,Légél me pôndi ,0.6666666666666666
+ Mtjobo uge njidil ,Ntjobo u gwéé tidil ,1.0
+ Mentup sa we njaa nlo ,Me ntubsa we njee a nlo ,0.8333333333333334
+ Sobyo ninsoyi ,Sup yoñ i nsôi ,1.0
+ Mbondo nje i ñkosna woñi ,Mbondo njéé i ñkônha woñi ,0.6
+ Hison higwe nye ,Hison hi gwéé nye ,0.75
+ Pena iye bie mingem ,Pééna i yé béé miñem ,1.0
+ Nlom kopa mpotle kogo kogo ,Nlôm kôp a mpot le kwogokwogo ,1.0
+ Ba nchimha nabe longa i kile mikwelu nwap ,Ba ntimbhana bé loñge i kédé miñkwel ñwap ,0.75
+ Unu wom u gwee ñgada o ma ñgada ,Unu wom u gwéé ñgata homa ñgata ,0.7142857142857143
+ Soho loho la me soho uke bañgwe hala ,Soho lo hôla me soho u ke bañ ñgwéé hala ,0.8
+ Chime bumbol pa ni tegi kambikidi ,Ti me bômbôl pan i tégi ha i mbédgé ,1.0
+ Sombi loga hyo mbi nigle nebika penda ,Somb hiloga hyoñ biniglene bi kapénda ,1.1666666666666667
+ A nsukude nye ,A nsugde nye ,0.6666666666666666
+ Bañkada nyengwa ,Ba ñkadal nye ñwaa ,1.0
+ Kopda me nwe me ndap ,Kobda me ñwemel ndap ,1.0
+ Kukoa ini dinu uzlene yak mbombo gwasi ,Kôkôa ini di nnuhlene yak mbombok wés ,0.7142857142857143
+ Mwemelwe m u nkwezwa ,Ñwemel wem u ñkwéhba ,0.75
+ Wangal muu ,Wañal môô ,1.0
+ Ampuheluanda jenijom ,A mpuhe liwanda jéé ni jomb ,1.0
+ Mutnunu ambwa u mbeba nsoni ,Mut nunu a mboñ béba nson ,1.0
+ Mese enkok ,Me nsee ñkok ,1.0
+ Mañmut u ñut hikode ,Mañ u mut u ñôt hikoda ,0.8333333333333334
+ Lev u ño ño ñuwa ndeda i mbe phol ,Lép u ñoñ hyôwa ñgéda u mbep hôl ,1.0
+ Heya tebi iye we njis ,Héya tep i yé we i jis ,0.8571428571428571
+ Mbaga da di tende di ba ,Mbagda diteende dibaa ,2.0
+ Liwanda joñ li ña ñalwe ñgandak ,Liwanda joñ li ñañal we ñgandak ,0.5
+ Uyol ki mimi mpoko ,U nyôl ki me miñkok ,0.8
+ Lonsia ita imbugish ,Loñsia i ta i mbugi ,1.0
+ Hiobi ho me dehi ,Hyobi hyomede hi ,1.3333333333333333
+ Me mbeen sonu nwelwom ,Me mbéé nson i ññwel wom ,0.8333333333333334
+ Mga mbip ,Ñgaa i mbép ,1.0
+ Dokta a ntimebe bibi misom ,Dokta a nti me bee bi minsoñ ,0.7142857142857143
+ A ñkumha me li umgitjobe ,A ñkumha me lép u ñgi tjobi ,0.5714285714285714
+ Mbati ye i ñe besne ,Mbot yéé i ñébés nye ,0.8
+ Sadaline yom ,Sedel yééne yoñ ,1.0
+ Membas madi di rwem ,Me mbas malét wem ,1.0
+ Tingil nwai hyandi ,Tiñil nuga i hyandi ,1.0
+ A nloñheni hii ndabiondo ,A nloñhene hyéé i ndap yondo ,0.8333333333333334
+ Kee imbobol ,Kéé i mbôbôl ,1.0
+ Ndereg mutu ni igabi ,Nledek mut u nnééga bé ,1.0
+ Anglende lunkono ,A nlendel ñkônô ,1.0
+ Kuuul injôb ilom ,Kuur i njôp i lom ,1.0
+ Ae murbimu ,A yé mut bim ,1.0
+ Dibbaro li nyambi itibli ,Libadô li nyamb i téblé ,0.8
+ Mbuda bijek ,Mbuda bijek ,0.5
+ Mba tuye iye loñga li humul ,Mbaa tuye i yé loñge i lihyumul ,0.8571428571428571
+ Bi tjenbi mkwe snee bok sindie ,Bitind bi ñkwés nye bôk tind hyéé ,1.0
+ Uñnitha biz mintonba ,U ñédha bés mintonba ,1.0
+ Soñlulu a gwesoso jegi ,Soñ lulu a gwéé soso jegi ,0.8333333333333334
+ Ingo i ba nsombon nnol i mpihwa ,I ñgôy ba nsômbôl nol i mpigha ,0.7142857142857143
+ Lulambu ,Lôla mbôñ ,1.0
+ A huu na nga dagbjek ,A nhuuna ñgandak bijek ,1.0
+ Ambeha me kwade ,A mbéhha me kwade ,0.75
+ Jinsol ba hamin tonba ,Di nsôlbaha mitonba ,1.3333333333333333
+ Nono muta mbu mabike kike ,Nunu mut a mbuma bé kel kii kel ,1.0
+ Mwôr hindi ,Mut nhindi ,1.0
+ Mut a gwekuna ,Mut a gwéé kuna ,0.5
+ Enyu uhonba na ni gato hol nomna ,Inyuu hônba nan ni gatohol nom nan ,0.8571428571428571
+ Man a nyunglo nge a ñgwo ,Man a nnyuñ loñge a ñgwô ,0.5
+ Mugyong i mbaba me ,Buk yoñ i mbabaa me ,0.8
+ Man a ñkwai ,Man a ñkwaae ,0.3333333333333333
+ Mebe ya ni bingemi nkutu ,Me bé yani i béñge mintuk ,1.0
+ Nuwa ñgond tohiyo nde binu mkeñgele ,Nuga ñgond to hiônde bi nnum keñgle ,0.8571428571428571
+ Baso eto ,Baso we to ,0.6666666666666666
+ Mboom pubinyen a nyigame ,Mbu mpubi nyen a ñéga me ,0.8333333333333334
+ Umbolo suglu keki ,U mbôdôl suglu kel kii ,0.8
+ Ante ngebne bulu ,A ntéñép ni bôlô ,1.0
+ dikwo binka ,Bikwo bi ñkaa ,1.0
+ Edne me mbunji inihali bablinda ,Édne me mbônji ini ha libap li ndap ,0.875
+ Ki u ñga ñgebe neme ,Kii u ñgañgbene me ,1.0
+ Alul makamba ,A nlôl makanba ,1.0
+ Ie enyuu ki i umlimi lambe ,Inyuu kii u nlimil lambe ,1.2
+ li baba li ngo u ñke ngeman li ntombu ,Libabat li ño u ñkéñéé man li ntomb ,0.75
+ Mwotni bikidi gwo mwo we a yemhege ,Mut ni bikidik bi moo wee a yemhege ,0.875
+ Mengo eske i mi chin hi kel sonde ,Me ñgwés ke i mitin hi kel sonde ,0.75
+ Nyuma nyubon ,Nyuu man nyuu bon ,1.0
+ Uñgwe sminjuhale ,U ñgwés minjôha le ,1.0
+ Añu uhra mi mmanisiba Jibi uhura dikora ,A ñudha me man siba di biudha dikoda ,1.0
+ Jolob ima nge ,Tjolôp i mañge ,1.0
+ Ki i u ntoohala ,Kii u ntoo hala ,1.0
+ Ambuhu hame bisu bindera ,A mbugha me bisu bi ndéda ,0.8333333333333334
+ Likala ni koupa ,Likala li kôp ,0.6666666666666666
+ Li kolbitu mli yen sonmoni ,Likol bitôñ li yé nson moni ,1.0
+ Holos nyu holos nem,Hôlôs nyuu hôlôs ñem ,1.0
+ Sulu i nkeda ni bele si ,Suluk i ñkéda ni belesin ,0.8
+ Hi kuu hitin ,Hikuu hi tén ,1.0
+ Wahga wahga na nne wanyi ,Wagha wagha nan me ñwaa nye ,1.0
+ Ambombana i kede ndabye ,A mbôômbana i kédé ndap yéé ,0.8333333333333334
+ Meni ni nyimman ,Me nniñi man ,1.0
+ Nche e unse me zikongo nga ,Ntjep e u nsémbés hikoñgo ñgaa ,0.8333333333333334
+ Kwo md inje mnje ,Tômb i njemje ,1.3333333333333333
+ Mgwayem a nlelel melel ,Ñgwa yem a nlélél me len ,0.8333333333333334
+ Mensom bilolo mwum ,Me nsomb bilôlô i bôm ,1.0
+ Hi hetme yi a yi loñge ,I het me yé a yé loñge ,0.8571428571428571
+ Yolunda biyem u yen ni bakaloo ,Nyôl u ndap yem u yé ni bakalô ,0.75
+ Ba nyosnie mao ma nilisnie ni muga ,Ba nnyus nye maok ma yilis nye nuga ,0.75
+ Flawa inholi nge da bañha ismi ,Flawa i nhôl i ñgéda ba nha is mu ,0.8888888888888888
+ Junlim pala bibel ,Jun li mpala bé bel ,1.0
+ Malet nunu ambi bilboo nge mabae ma mo ,Malét nunu a mbibil boñge mabay ma moo ,0.75
+ Mbe bikene smwao emi i dokta li metet ,Me bikénés ñwaa wem i dokta li Métét ,0.625
+ Ndihindi na be nyo ,Hisénd hi mbéna be nyoo ,0.8
+ Bikoobi bi e biye matibla ,Bikoo bi bi e bi yé matibla ,0.7142857142857143
+ Tjee di ntjeba ,Tjéé di ntjéba ,0.6666666666666666
+ Man a nchabali woki ya ntehe ni timu ,Man a ntjaba liwo kii a ntehe ñkén mut ,0.6666666666666666
+ Meha nlewe bitamle bikola we,Me nhandle we bitamb le bikola we ,0.7142857142857143
+ Tidiyo ntululba bindi ,Tik yôô i ntulul babimbi ,1.0
+ Longa ni kele a yengi mpes mbok ,Loñge ni Kélé a yé ñgim pes mbok ,0.75
+ Gwee bi misi,Gwii bi mis ,0.6666666666666666
+ Saklene boñge bitulubi,Saglene boñge bitôdô bii ,0.75
+ Memba mbichovi ,Me mbamb tjobi ,1.0
+ Ni kabman ,Likap man ,1.0
+ Hubu mga yu u na ngaal ,Huu buñga yoñ u nañal ,1.0
+ Bomba pia ,Bomba pia ,0.5
+ A ñoñwôl ndap i ndi i ñgok,A ñôñôl ndap i ñgii ñgok ,0.5
+ Jibola jingo i mbeega yisi ,Dibôda di ño i mbééga yés ,0.8333333333333334
+ Ambida be ma hi nzi ,A mbida bé mahindi ,1.25
+ Nono mut a nyi pot jaman ,Nunu mut a nyi pot jaman ,0.3333333333333333
+ Kee u mbindil mbom ,Kii u mbindil mbom ,0.5
+ Megwebana nche ujaa mboli ,Me gwéébana ntjep u jañgôlô ,1.0
+ Mke nlikabu mke ntôdô ,Ñkénd likabô ñkénd u tôdô ,1.0
+ Muta nke jeje ,Mut a ñke jeejee ,1.0
+ Mail makel ,Mayél ma kel ,1.0
+ Mne nkos ntini ,Me ñkôs ñkén ,1.0
+ Ntoholu isambwe ,Ntohol wes a ñgwéé ,1.0
+ Jinti mha mapew i mbegri ,Di ntjémha mapep i mbédgé ,0.8
+ Bijek bima leba mas ,Bijek bi mmal le bahbas ,0.8
+ Mensia mbotu ,Me nsiya mbot ,1.0
+ Mintumba mibagha na ambadangu ,Mintumba mi bak hana a mbada ñwo ,0.8571428571428571
+ Membodole uga yon me i bulu ,Me mbôdôl le u gayoñ me i bôlô ,0.75
+ Enyuu ki uñwe yelme ,Inyukii u ññwéhél me ,1.0
+ Bo nge ba himha maliluap ,Boñge ba nhimha malét wap ,1.0
+ Himut a gwendelel ,Hi mut a gwéé njelel ,0.8
+ Lini likali ye mbongo ,Lini lika li yé mbôñgô ,0.8
+ Aho sughi ,A nhôô nsugi ,1.0
+ Hi kien hi mbeha i ñgôo i nhoo loñge ,Hikéñ hi mbéha i ñgok hi nhoo loñge ,0.75
+ Maa nge amba mmatu wa nilibubu ,Mañge a mbañ matôa ni bibubuñ ,1.0
+ Mkungamul gwé bi maapu ,Ñkuñge mut u gwéé bé maap ,1.0
+ Aye yoma ndamda muda ,A yé yoma ndamda mudaa ,0.6
+ Gwo mgwe mgweta ma gwo nba mpo holi ,Gwom gwem gwotama gwon ba mpohol ,1.3333333333333333
+ Helen me mambot me m,Hyélél me mambot mem ,0.75
+ Mut a mbep man ,Mut a mbép man ,0.5
+ Hii ni ambege lme mme mmasu ,Ini a mbégél me mem masôô ,1.0
+ Ahe mbebunu me nmej,A nhembep i ñwemel ,1.0
+ Li nno nuga bikay ,Linoñ nuga bikay ,1.0
+ Aloa ,A lôga ,1.0
+ Muti bañal ,Mut hibañal ,1.0
+ Mbe bañgi te helini nite blak ,Me bak ñgi tehe lini liteblak ,1.0
+ Nsahal ukop ,Nsohol u kôp ,1.0
+ Minle mimpangba na ikidilia ,Minleem mi mpañgbana i kédé liaa ,1.0
+ Enyo ki unsugul i suglu ,Inyuukii u nsugul i suglu ,0.8
+ A nhelel mapep ,A nhyelel mapep ,0.6666666666666666
+ Ta ndeyem i muu ,Tande yem i mbôô ,0.75
+ Kotwo ,Hôt woo ,1.0
+ Bô mutu ,Bôô mut ,1.0
+ Unikbe bañme ,U nnigbe bañ me ,1.0
+ Men u yilna ntonba ,Men u nyilna ntonba ,0.5
+ Huu ha mut i mbayyee ,Huuha mut i mbay yéé ,0.8
+ Ibot boñba ba nsaana bi ,I bôt boñ ba ba nsaana béé ,0.7142857142857143
+ Antet ba ingo ,A ntédba i ñgok ,1.0
+ Lemhe hi lem ,Lemhe hilémb ,1.0
+ Kewa u ni mahala ,Kii we u nlima hala ,0.8
+ Man kembe a ñya ni mbegri ,Man kembe a nya ni mbédgé ,0.3333333333333333
+ Keneha uga te heñe ,Kenek ha u gatehe nye ,1.0
+ Kitam hi muu nye ,Hitam hi mbôô nye ,0.75
+ Maasai manu mbi banjini ,Masay ma nnumb béba njiñ ,1.0
+ Abinondie his mut in jel ,A binond nye hés mut i njel ,0.8571428571428571
+ Litam li komu litam li kada ,Litam li kômôl litam li kaga ,0.3333333333333333
+ Lehele gmud a nhele ingetandudu ,Lihelek mut a nhel i ñgéda ndudu ,0.8571428571428571
+ Mañnul u msola ,Mañ mut u nsola ,0.75
+ Jingo nda jimgu ishôoba lili ,Diñgonda di ñgwés hooba lélé ,1.0
+ Jipuma dike ñe cho di so jinto la ,Dipuma dikeñi tjodisô di ntôla ,1.4
+ Bale isuli,Mbale i sôli ,1.0
+ Otmefotu menso o hewe ,ôt me fôtô me nsoohe we ,1.0
+ Ngomu la u mbe nabega ,Ño mudaa u mbéna béga ,0.8
+ A nye lehis ,A nyén le his ,0.75
+ Muda amban ben son ,Mudaa a mbandbe nson ,1.0
+ Inu yen ,Inyuu yen ,1.0
+ Botba wibba nye helana ,Bôt ba wip ba nyeelana ,1.0
+ Babileb man bayo ñgwale,Ba bilep man ba yoñ gwale ,0.8333333333333334
+ Koba len ni mune ,Kôba len ni mune ,0.5
+ Maa nge nuna gweli siha,Mañge nunu a gwéé liséha ,1.0
+ Kii u li milme ,Kii u nlimil me ,0.5
+ Umba nbe mutni li soloko njomu ,U mbañ bé mut ni lisolok joñ ,1.0
+ Kolo lwom ,Kôlôl wom ,1.0
+ Ke hikaar iñgi kobot ,Kéhi kaat i ñgii kobot ,1.0
+ Libegene joñ liba sko liye lilam,Libeegene joñ li baskô li yé lilam ,0.7142857142857143
+ Njenu ante nge lha yiyine ,Nje nu a nteñgel hay i yeene ,1.0
+ Matamman kaha liyo hii ,Matam ma ñkahal yoyi ,1.0
+ Kiba mjok hi mal mekup ,Hibamnjôk hi mmal me kôp ,1.0
+ Ngaa impotu ,Ñgaa i mpot tôôm ,1.0
+ Mañge a nlumulme ni ndanda ho ,Mañge a nlumul me ni ñgandak hop ,0.5714285714285714
+ Me nnolhillu ninda ,Me nnol hilô ni ndamb ,0.8
+ Nnolchobi agbiiga ñgwas ,Nnol tjobi a bééga ñgwas ,1.0
+ Satan ayinimbogyo su ,Saatan a yé ni mbok yosô ,1.0
+ Kadi minyo i boni ,Kaat yem i yé nyoo i boni ,0.8571428571428571
+ Baa in toba iminche ,Paa i ntôba i mintjep ,1.0
+ Kindil hibe ,Kindil hibee ,0.5
+ Kewa uhi bahala ,Kii we u nhiiba hala ,1.0
+ Kuyelambe u usude ,Kuye lambe u u nsude ,0.8
+ Je umal ,Je u mmal ,0.6666666666666666
+ Menke ihesbi bée ,Me ñke i hes bibee ,1.0
+ Unyongulme,U nnyuñgul me ,1.0
+ Hiun hi gweme ,Hiun hi gwéé me ,0.5
+ Yoblene me ndi gwimu ,Yoblene me ndék wéy mu ,0.6
+ Laki u malje lok i mbulu ,Lakii u mmal je lok i bôlô ,0.5714285714285714
+ Suga nsañ ,Suga i nsañ ,0.6666666666666666
+ Butba mbutba ,Bôt ba mbudba ,1.0
+ Kinje bitun babi ,Kinje bitunba bi ,0.6666666666666666
+ Bikelel gwé alama temle nkukua ,Bikélél gwéé a nlama témb len kôkôa ,1.0
+ Mebikwe bana isondi pos ,Me bikweebana i sôñ dipos ,1.0
+ Usoñga ba ñe mihomok ,U sôñga bañ nye minhyômôk ,1.0
+ Bika di ba ,Bikaat bibaa ,1.5
+ Hää hida hintu ,Hee hida hi ntul ,0.75
+ Bikat bini bimboga ,Bikaat bini bi mbôga ,0.75
+ Ansuha me hikuwa ngwi jinsuha hikuwa ,A nsuhha me hikôa ñgwéé di nsuhha hikôa ,0.875
+ Konmaku u nchinmbahanya ,Kon makôô u ntindbaha nye ,0.8
+ A nyen a nnigi ,A nyén a nnigip ,0.5
+ Me mal msonwe ,Me mmal nson wem ,0.75
+ Matoa a higi i kuu kumbus ,Matôa a higi i kôô u mbus ,0.5714285714285714
+ Kapinda imbañna ,Kapinda i mbañ nañ ,0.75
+ Pobuzme a nwedi yesu ,Pubus me a Ñwet Yésu ,0.8
+ Nono muta gwene ni hibe ,Nunu mut a gwéé nihbe ,1.0
+ Ngoñ i yeme i te hewe ,Ñgôñ i yé me i tehe we ,0.7142857142857143
+ Mensombu katus masis ,Mé nsomb katus masis ,0.75
+ Li bolinje ,Libo li njé ,1.0
+ Jilamga ya hap ni se ,Di lamga yaa hak ni séé...,0.8333333333333334
+ Ba ntañle mañga ni hi ñgwende ,Ba ntañle mañga ni hiñgwende ,0.4
+ Kwi hilene yem ilikuga inimin ,Kwihlene yem i likôga i nnimil ,1.0
+ Mbom hiso hini a kolini bibom ,Mbom hisoo hini a kôli ni bibom ,0.5714285714285714
+ Ngarba inyo i hola bejam ,Ñgadba i nyo i nhôla bé jam ,0.8571428571428571
+ Mutlieb ansambu ,Mut liyep a nsamb ,1.0
+ Mbawi si yunga ,Mbabi sibñgañ ,1.5
+ Boma i balet imal ,Boma i balét i mmal ,0.6
+ Kop inte hendo ni kahal kwai ,Kôp i ntehe ndon i kahal kway ,0.8571428571428571
+ Nge m u mbomema tjil ,Ñem u mbôô me matjél ,1.0
+ Kukunda ,Pôk ndap ,1.0
+ Aumha me tone diumha hi nunihi ,A ñumha me tone di ñumha hinuni hi ,0.875
+ Kee unsisme juu ,Kii u nsis me jôy ,1.0
+ Anchibilbo ni hyangha nji ,A ntibil bôt ni hyañhanjék ,1.0
+ A ñoñda biti a jub ,A ñoñ ndap biték a jôp ,0.6666666666666666
+ Toome matamma kakao ,Tôô me matam ma kakaô ,1.0
+ Maa nga nunu a ñkendbe len ,Mañge nunu a ñkénd bé len ,0.8333333333333334
+ Muta ni hibe nyen ankudulma sora ,Mut a nnihbe nyen a ñkôdôl masoda ,0.8571428571428571
+ Babi jile bisam ,Ba bijéle bés sañ ,1.0
+ Di yomboa ,Di nyoñ ñgoa ,0.6666666666666666
+ Maa nge a ñke ilip ,Mañge a ñke i lép ,0.8
+ Koo huu iye biwakun ,Poo hu i yé béba kon ,1.0
+ Lika a kjo nli nye bale uye bitembe ,Likaak joñ li ñéba le u yé bitembee ,1.0
+ Me nyuuye hilo lombu ma mme momaso ,Me nyugye Hilôlômb mam mem momasô ,1.0
+ Mwudu wim wim u naye ,Mut wim wim u nnay nye ,0.6666666666666666
+ Kii me tagbege a añal me saa ,Kii me tagbege a añal me sañ ,0.14285714285714285
+ Jimba nbene nsoni ,Di mbandbene nson ,1.0
+ A nningis manwe ni mudampe ,A nnéñés man wéé ni mudaa mpe ,0.7142857142857143
+ Ambot bene gwomgwe ,A mbôdbene gwom gwéé ,1.0
+ Meba hi nnoi ,Me bak i noy ,1.0
+ Me gwepombe li tuo ,Me gwéé mpombe litôa ,0.75
+ Malangma mpil i mule chaam ,Malañ ma mpél i môô le tjaam ,0.8571428571428571
+ Mentongo skar yem li gwii ,Me ntôñôs kaat yem ligwéé ,1.0
+ Mpa njel ,Mpaa njel ,1.0
+ Ngandak bibomb i mboñu nle bayana kwe ,Ñgandak bibomb i mboñ le ba yanak we ,0.75
+ Yole iye me begel i bonba gwomba ma hindi ,Hyole i yé me bégél i bon ba gwom ba mahindi ,0.8181818181818182
+ U mpihle ki menda ,U mpihle ki me ndamb ,0.4
+ He u mpeñne liko ,Hee u mpéñgne likoñ ,0.75
+ Ayi i kuma i pa njoo ,A yii i kôma i pañ juu ,0.7142857142857143
+ Ngongol inci nga liki ,Ñgoñol i ntiñha liké ,1.0
+ Lona me bilas inyuu bakin ,Lona me bilas inyuu bakén ,0.2
+ Fem i wip i maljop munu iloñyes ,Fim i wip i mmal jôp munu i loñ yés ,0.6
+ Yehini himpam njanjat ,Hyéé hini hi mpam njanjat ,1.0
+ Malet a mbi yi ñgaha minkop wami sot ,Malét a mbiiñgaha miñkok ñwomisô ,1.4
+ Ki nge da ma tjiñalong ,Kiiñgéda matiñ ma nlôñ ,1.0
+ Mutnunu ambedel me jômdidi koo jifra ,Mut nunu a mbédél me jôm li dikôô di frank ,0.9
+ Mbombeni nnuuni ,Mbom be i nnoñ me ,1.0
+ Bañhilil me loo hino hiku ,Ba nhilil me loo hinoo hi kôô ,0.7142857142857143
+ Muta nkon hilo ,Mut a ñkon hilôñ ,1.0
+ Lilamba ga joñdinti me ñgungje ,Lilambak joñ li nti me ñgôñ je ,0.8571428571428571
+ Liye nge joñ li jam li kô li bi ,Liyéñék joñ li jam li kôli bé ,0.7142857142857143
+ Uyembo jon umpo ,U yé mbôô jon u mpop ,0.8333333333333334
+ Chimemalip men sugu beni ,Ti me malép me nsôgbene ,1.0
+ Gwe gwe uba nandeg ilo le uba nabi yes ,Gwegwe u bana ndék iloole u bana bé hyes ,1.0
+ Mempombe kuu matua u nle liaga keñkeñ ,Me mpombe kôô matôa u let yaga kéññ kéññ ,0.8888888888888888
+ Mañge amban ma ñe ñyamisi ,Mañge a mband manyañ isi ,0.8
+ Njel i nkot bene itinjum ,Njel i ñkodbene i tén jôm ,0.6666666666666666
+ Nlonga anyonol indeda imbe ,Nlôñga a nyônôl i ndéda imbee ,1.0
+ Ntongo mbelilu mbugi ,Ntoñ wem bélél u mbugi ,1.0
+ Banki danyeni ni mutma chan ,Ba ñkéda nye ni mut matjañg ,0.8333333333333334
+ Ma chilma mma bna me ino ,Matjél ma mabna me i ño ,1.0
+ Mgogombunja ,Ñgok mbunja ,1.0
+ Megwe njebha ni burbem ,Me gwéé njébha ni bôt bem ,0.8333333333333334
+ Angli mismatu ,A nlimis matôa ,1.0
+ Bibeb hage mgwo bi sobi nholo loñge ,Bibébha gwem gwobisô bi nhôlôl longe ,1.0
+ Muda a ñgwalman muñlum ,Mudaa a ñgwal man munlôm ,0.8
+ A ñkoba me me nme nje ,A ñkoba me me nje ,0.4
+ Muda anterkwem ,Mudaa a ntét kwem ,1.0
+ Malit a mbehla ha me chi ,Malét a mbéhlaha me tjéé ,0.8
+ Kwege seman ,Kwégés man ,1.0
+ Mañge a nselme li bam maka wu kiyomi ,Mañge a nsél me libam makabô hiomi ,0.8571428571428571
+ Kwa de nise a ñho o ñgandap ,Kwade lisee a nhoo ñgandak ,1.2
+ Mgwo yesi yiné yesi ,Ñgwo yés yééne yés ,1.0
+ Njok yaa ,Njok iaa ,0.5
+ Unga i nyinmalip ,Kuñga i nyin malép ,0.75
+ Liñwe li yoo sme ,Liñwee li nyôôs me ,0.75
+ Tuha tuha nje me ntehe ,Tubha tubha njee me ntehe ,0.8
+ A binnola ndi a biyom hop ,A binôla i ñgéda a biyoñ hop ,0.7142857142857143
+ Mpit a ñkahal nogof ,Mpit a ñkahal nogop ,0.25
+ Künje nyadja ,Kinje nya jam ,1.0
+ Nono mmut a yinsude ,Nunu mut a yé nsude ,0.8
+ Kinjahipu wahi ,Kinje hipôha hi ,1.0
+ Mbudi po inta gbehana me yilio inyumbu ,Mbudi pô i ntagbe hana me nyil yo i njiñ ,0.8
+ Ntel uke len uke leki ,Ntel u kee len u gwelek kii ,0.7142857142857143
+ Chae di mbina hoda nisip ,Tjay di mbéna hôda ni sép ,0.8333333333333334
+ Kagemasi nyingi nkwo ,Kak masin i ñkwo ,1.0
+ Kii u ntede sme mintomba ,Kii u ntédés me mintômba ,0.6
+ Puma ñko ña nsamha na jis ,Puma ñkoñ a nsamhana i jis ,0.8333333333333334
+ Yôgana me maletwe ,Yuugana me malét wem ,0.75
+ Iñkako li u ñhañbe ilo ,Ñkaa kôdi u nhañ bé i loñ ,0.8571428571428571
+ Mabadu ma maliaga fet fet ,Mabadô ma mmal yaga fetfet ,0.8
+ Hii luba hiñkana hi nsamhe po ,Hilôba hi ñkana hi nsamhe i poo ,0.7142857142857143
+ Liye nme bibel li ño ,Lién me bibel li ño ,0.6
+ Kiu we u nhiaa ñga hala ,Kii we u nhyañga hala ,0.8
+ Nunu muta gwenda ndap mahu ,Nunu mut a gwéé ñgandak mahuu ,0.8333333333333334
+ Momo mmansune ,Moo moñ ma nsune ,1.0
+ Mutma mok a ñkuhna ñgo ,Mut mamok a ñkônha ñgoo ,0.8
+ Liwanda jem a ntege baso so hikut maok ,Liwanda jem a ntegba soso hikut maok ,0.5714285714285714
+ Kon unsoo mut inu a kahal kumni nye ,Kon u nsoo mut inyuu a kahal pumb ni nyemb ,0.6
+ Kindle iye hee ,Kindle i yé hee ,0.75
+ Li logo bli yenge mi yigil ,Lilogop li yé ñgim yigil ,1.2
+ Ngôwe kwe sle mejo ,Ñgo wek kwes le me jo ,1.0
+ A nhoi nswom ,A nhoy nson ,0.6666666666666666
+ Li boge li hoble li tabe iloñge ,Libôgôk li hop li li ta bé loñge ,0.875
+ Tinyedjua jada mugwo mkwisi ,Ti nye jôga jada mu gwom gwés ,0.8571428571428571
+ Kwaya gmut ,Kwayak mut ,1.0
+ A biyéñ hama nyangu kaji ,A biéñgha manyañ nuga yéé ,0.8
+ Mutnunu amba mbeñganda ,Mut nunu a mbambe ñgandak ,1.0
+ Weha ilibadu ,Wéha i libadô ,1.0
+ Bibolol bi mañ ,Bibôlôl bi mañ ,0.6666666666666666
+ Kog inu yogi,Kôp i nnuup i yogi ,0.8
+ Boloye inte gesbut ,Bôlô yéé i ntégés bôt ,1.0
+ Me biyo nga isuglu ,Me biyôña i suglu ,0.75
+ Atma wabadu atma hongo ,At mabadô at mahoñol ,1.0
+ Ngoge li sevi ,Ñgok lisébi ,1.5
+ Nto nwoñ uye ye kiki gwébana ,Ntoñ won u yé nye kikii gweebana ,1.0
+ Maa nge a nyi nyikisli wanda jiliso ,Mañge a nnyiñgis liwanda jéé lisoñ ,1.0
+ Hi ba myool hi nnoñkumba ,Hibamnyôgôl hi nnoñ kuumba ,1.25
+ Ubuha bañgweye ,U buhha bañ ñgwo yem ,1.0
+ Bigami nsa ngayon iye len ije kose ,Biga minsañgaa yon i yé len i je kose ,0.8888888888888888
+ Nunki bingeki bingele ,Nun ki béñge ki béñge le ,1.0
+ Ngoñ i gweme nol ngo ,Ñgôñ i gwéé me nol ñgôñ ,0.6666666666666666
+ Ade mbu ,Ade mbôñ ,0.5
+ A nseha me loo jinséha mi ñkoknis ,A nsééaha me loo di nsééaha miñkok ñwés ,0.75
+ Kwae abjaa,Kwayap jam ,1.0
+ Mutnunu a hemtom ,Mut nunu a nhem toñ ,0.8
+ Nono mañge a gwiboña ,Nunu mañge a gwéé boña ,0.6
+ Unwel ki ,U ñgwel kii ,1.0
+ Bisop a nlomble ne para imo ,Bisop a nlômblene pada i Môm ,0.6666666666666666
+ Ma tuwa mungma nhuu u me ndanda,Matôa moñ ma nhôô me ñgandak ,1.0
+ Nasuobhe ube i tiyo ,Masôbhe u béé i ti yoñ ,0.8333333333333334
+ Kebuli mbaba ,Kép libadô ,1.0
+ Liegli mutmao liloo hi hika ,Lieek li mut maok li nloo hihéga ,1.0
+ Hini hino ,Hini hinoo ,0.5
+ Membu kus mbegeye ,Me mbugus mbegee yem ,1.0
+ Unikilisong joñe ,U nnigil lésoñ joñ e ,1.0
+ Mla basko untu wiki ,Nla baskô u ntubi ,1.0
+ A nsundul me minsinga mi bitam ,A nsundul me minsiñga mi bitamb ,0.3333333333333333
+ Ima nge nunu anno hula ba nno hula ,I mañge nunu a nnôlha ba nôlha ,0.8571428571428571
+ He u ndeme ,Hee u ntéé me ,0.75
+ Ukomba mme mbus ,U kôm bañ me mbus ,1.0
+ Mano mna kaat ,Manoñ ma kaat ,1.0
+ Antel wene inyiina ,A ntelbene i ñgii nañ ,1.0
+ Surman ilenga ,Sudman i nleñ ñgaa ,1.0
+ Tsimu nho wa ye ,Ti me hooba yem ,1.0
+ Baa nsugi ,Baa nsugi ,0.5
+ Tambawo ña ñkuyu ,Tamba woñ a ñkôyôp ,1.0
+ Jintikha bañgo me ni lisi ,Di ntégha bañgomén bés ,1.25
+ Boñge bayi ndenge ,Boñge ba yé i ndeñgee ,0.8
+ Li sahaliengoni ,Lisas li ñgond ,1.0
+ Mutan logo kumbuja ,Mut a nlogop ñguda ,1.0
+ Tadawes nungi ,Tada wés nu ñgii ,1.0
+ Tadebsi ,Telep sim ,1.0
+ Membaa gene i ñuge me kene kumbwii ,Me mbaagene inyule me kenek ñgwéé ,1.0
+ Maa nge a ñkomol kikse ,Mañge a ñkomol kégse ,0.75
+ Mwoda nunu a yndam ,Mudaa nunu a yé nlam ,0.6
+ Jomli nhohla ,Jomb li nhohla ,1.0
+ Mañmud u mbabba hyanga ,Mañ mut u mbabba hyañgaa ,0.6
+ Kil inlom njel ,Kil i nlôm njel ,0.75
+ Mbitehe nuga i kooi bakchoo ,Me bitehe nuga i kôybak tjô ,0.6666666666666666
+ Ba nsomna di noma u ,Ba nsomna dinoo i maô ,0.6
+ Hulul me bak ,Hulul me bak ,0.3333333333333333
+ Liyavlilom ,Liyap li lom ,1.0
+ Ngandiyom i nhom li li mtii mbayo ,Ñgand yoñ i nhoñ nlémlém kii mbay yoñ ,0.875
+ Agwine me libiti ,A gwééne me libit ,0.75
+ Kuna mekar nyo no isi ,Kuuna me kaat nyono isi ,1.0
+ Be inlama ti mahana ,Bee i nlama tima hana ,1.0
+ Umbondol ,U mbondol ,1.0
+ Ye ngdhu mondo matuwa ma mondo ,Bieñg bi mondo matôa ma mondo ,0.6666666666666666
+ Kogo likondo ,Kogo likondo ,0.5
+ Nisonjô he Nisonjô no ,Lison njôghe lison njonok ,1.0
+ Sihe sae ,Sihe say ,0.5
+ likube li nneñgandak ,Likubé li nne ñgandak ,0.75
+ A ñyandle me maso ,A nnyandle me masoñ ,0.5
+ A nhoi ni nyemt inlom ,A nhoy ni nyemb nlôm ,0.6
+ Dokta a nho me faya i poo ,Dokta a nhoo me faya i poo ,0.2857142857142857
+ Wa igweme ,Waa i gwéé me ,1.0
+ Dihe labi mulbi nnaam ,Bihela bi mut binam ,1.0
+ Anto holako môo bisel wuboñge ,A ntôlha kômôl bisel bi boñge ,0.8333333333333334
+ Batule ba mbokna nge ,Batôle ba mbogna ñwii ,0.75
+ Mñenke inje mbe ,Me ñke i njembe ,1.0
+ Uye u mbo mtji ,U yé u mboñ kii ,0.8
+ Pasto a nsop le nebut ili ,Pastô a nsôblene bôt i lép ,0.8333333333333334
+ Ba ngomna mañni ,Ba ñomna mañwin ,0.6666666666666666
+ Maa nwe melma ,Mañwemel ma ,1.5
+ Litoa li nsoobe i ndobo ,Litôa li nsôôbe i ndobo ,0.6
+ Mlege bakali mutwip ,Liegbak li mut wip ,1.0
+ Libege rigjong li ololi nunda le u mbina je ,Libegek joñ li ôlô li nnunda le u mbéna je ,0.7
+ Mutma tiblanu anse helano ,Mut matibla nu a nsehlana ,1.0
+ Ma kele mayekon uboñge ,Makele ma yé kon u boñge ,1.0
+ Maa nge ahe me lume me lihe li ka haljô ,Mañge a nhemel ñwemel lihep li kahal jôp ,1.125
+ Lo insa ninchoe ,Lôgisañ i ntjôô nye ,1.0
+ Sugul me pos ni malip ,Sugul me pôs ni malép ,0.4
+ Punga mel nyen a yemunu ndavyo ,Puñgamel nyen a yé munu i ndap yoñ ,0.875
+ Nge mnuso mgolme ,Ñem u nsôñgôl me ,1.0
+ Man sonda anti kubaha matua imakanda ,Man sônda a ntégbaha matôa i makanda ,0.8571428571428571
+ Menla mabat bato me mwéhnto holwe ,Me nlama badba too me ñgwés ntohol wem ,0.875
+ Membembla hali wanda jemalip ,Me mbémblaha liwanda jem malép ,1.0
+ A nyagbe ne me ,A nnyagbene me ,1.0
+ Me nnoo gnie me atu ,Me nnoñok nye me at ,0.6
+ Mgoho wie mintubi ,Ñgohop yem i ntubi ,1.0
+ Metama me nge i wom ,Metama me ñke i wom ,0.4
+ Mintea mimbas ,Mintéak mi mbas ,1.0
+ Mgoyi i nho ñop ndanda ,Ñgôy i nhoñop ñgandak ,1.0
+ Handbene yem le yi yuwa ,Handbene yem le Yéhôva ,0.5
+ Babchai jima kondo ,Bap tjay di makondo ,1.0
+ Lambu u mkoba isi ,Nlamb u ñkôba isi ,0.75
+ Mekke hii ingi minnaga ,Me kéhi i ñgii minaga ,1.0
+ Hibañ njije ,Hibañ bijek ,0.5
+ Ma malam ni maabe mantunu iti so ,Mam malam ni mabe ma ntulul i tison ,0.75
+ Ufala bañni hala ,U fala bañ me hala ,1.0
+ Bikaad bima nge suglu bi ,Bikaat bi mañge suglu bi ,0.8
+ Anse ngele bis bilonge bima ,A nséñél bés biloñge bi mam ,1.0
+ Ntoñwe mkumbi ni nhe hewo ,Ntoñ wem u mbiine hee wo ,1.0
+ Ansagal dikar gobi su ,A nsagal bikaat gwobisô ,1.0
+ Koti hii ,Kot hyéé ,1.0
+ Nlal lenlal ndanji lenndanji,Nlal le nlal ndandi le ndandi ,0.8333333333333334
+ A mege lmeñmo ,A mmégél me ñño ,0.75
+ Mtos u muda ,Ntos u mudaa ,0.6666666666666666
+ Ma lip ma nto i kele kele ,Malép ma ntoy kelekele ,1.5
+ Unsoglana kime misi ,U nsôglene ki me mis ,1.0
+ Kola uye mele ,Kola u yé me len ,0.8
+ Gombi nyoni mgombi mmo ,Ñgombi nyo ni ñgombi moo ,1.0
+ Liti na glinlo i yombanchi ,Litinak li nloo i yom ba nti ,0.8571428571428571
+ Nse ñuta we i piyema momasuk ,Nseñ u ta bé i péyéé mam momasô ,0.875
+ Hi puma himbene hiye machivla ,Hipuma hi mbene hi yé matibla ,1.0
+ Dini jamdi tabele li tinga ,Lini jam li ta bé le li téña ,0.875
+ Kos bikai ,Kôs bikay ,1.0
+ Awea isal bolu ba nchinye ,A gwéa i sal bôlô ba nti nye ,0.875
+ Ma jo a ñkebel me ñkono ñgondi ,Majô a ñkébél me ñkônô ñgond ,0.8333333333333334
+ Ba mbombani toñmoni ni ndap yosu ,Ba mbôômba ni toñ moni ni ndap yosô ,0.625
+ Hi kuwe hi mut ,Hikuube hi mut ,1.0
+ Sombol me lii rakala ,Sômbôl me lira kala ,0.75
+ Ma moma siha ngo ,Mam moñ ma nsiiha ño ,1.0
+ Bibe nelbi wambini ,Bibénél bi wom bini ,1.0
+ Tomluu i ntohla me mmo i muu ,Tômblô i ntohla me mmoo i bôô ,0.42857142857142855
+ Sabe insoodol nye ,Sabe i nsôdôl nye ,0.75
+ Hi tege tege hi mut ,Hitéégétéégé hi mut ,1.3333333333333333
+ Nono muda ambu buli isu ,Nunu mudaa a mpubul i su ,1.0
+ Na nintika loñge ,Nañ i ntéga loñge ,1.0
+ Mgand ibe mi ,Ñgand i bémi ,1.0
+ Kena mut iloos ,Kena mut i lôs ,0.5
+ Nyonga ntololbe i buu ,Nyuñga i ntôlôl me i bôm ,0.8333333333333334
+ Mañmi po bo mintibi jo gali minsoñ ,Mañ mi popo mi ntibil jôga li minsoñ ,1.0
+ Tomi te we mbigri ,Tôm i téé we mbédgé ,0.8
+ He lom a nnumul ,Hee lom a ñumul ,0.5
+ Hee umse me lmoni mwo ,Hee u nsémél moni ñwoñ ,0.8
+ Man a nla matibla kunda yada ni manya ,Man a nlama tibla kunda yada ni manyañ ,0.375
+ Ambumbangwe ,A mbuumba ñgwéé ,1.0
+ Mwen chi mbatov inlelem u hiembi ,Me ntiimba tôp nlélém u hyémbi ,0.8333333333333334
+ Mudanunu ama bosba lumba na ,Mudaa nunu a ma bos balôm bana ,1.0
+ Me nho gôlô nwe lip ,Me nhôgôl ñwel lép ,1.0
+ Ibala u leñk pos ije i ntom ,Ibale u nleñ pôs i hyéé i ntôm ,0.75
+ Ambe me sungo ,A mbémés ñgwo ,1.0
+ Ambalene me misi ,A mbaalene me mis ,0.75
+ Mee nkalwe leko ,Me ñkal we le kop ,1.0
+ Madel a nhembu me unda ,Malét a nhémb ñwemel u ndap ,0.8333333333333334
+ Se nye biznuga ,Séñél béss nuga ,1.0
+ Yongo i ñke mbeñe ,Yôñgôô i ñke mbeñel ,0.5
+ Malil a nye besbo nge lip ,Malét a nyébés boñge lép ,1.0
+ Njel insa ngla ,Njel i nsañla ,0.6666666666666666
+ Kar i ñoma i ñku mahop ,Kaat i ñôma i ñkuu mahop ,0.6666666666666666
+ Dzihene di mpamme nda mda munu i jot ,Dihéné di mpam me ñgandak munu i jot ,0.625
+ Me ye uye aye diye niye baye ,Me yé u yé a yé di yé ni yé ba yé ,0.9166666666666666
+ Kombe nye mede ,Kombe nyemede ,1.0
+ Daw i mwoma ,Ndap i ñôña ,0.6666666666666666
+ Ibooglimbe ,Libok li mbep ,1.0
+ Malep ma nsôble ,Malép ma nsôble ,0.6666666666666666
+ Si me ñgobi me biñba su ,Ti me ñgobi me béñgba su ,0.5
+ Boñge ba nit mba hame ndee makondo ,Boñge ba ñédbaha me ndey makondo ,0.8333333333333334
+ Unsetha man bonbis ba nsetha ,U nsédha man bon bés ba nsédha ,0.8571428571428571
+ Biniigana biten biniigana inyu u wanda ,Biniigana bi tén biniigana inyuu wanda ,0.8333333333333334
+ Dziñkwelel mu i jamjo ,Di ñkwélél mu i jam joñ ,0.6666666666666666
+ Kaglibur ite me i kede wom ,Kaglibut i téé me i kédé wom ,0.7142857142857143
+ Membo ndugi hana ni mkwelo we ,Me mboñ ndugi hana ni ñkwel wem ,0.5714285714285714
+ Kinge yes i biye ya inyembi ,Kiñe yés i biéya i nyemb yéé ,0.8571428571428571
+ Membat le u yi hee ,Me mbat le u yé hee ,0.6666666666666666
+ Ndes li bubul ,Ndes libôbôl ,1.0
+ Besi i nhé ñga ndaqmda mba ,Besi i nhee ñgandak ndamba ,0.8
+ Liha juyi ,Yiha jôy ,1.0
+ Kikdi muti ,Kigdi mut ,1.0
+ Basa besi nsonjibi mo ,Ba nsaa bés nson di biboñ ,1.0
+ Ike li bii jina li hañdi ,I kel libii dina li nhañ béé ,0.8571428571428571
+ Ba hemle ba ntibége siyavimi ,Bahémle ba nti bégés yap hi ñwii ,1.0
+ Maloñ mo masu mante heli bakjo ,Maloñ momasô ma ntehe libak joñ ,0.8333333333333334
+ Ampar bito nyom i nye glentu ,A mpak bitôñ yom i nyégle ntu ,0.8571428571428571
+ Lana me malip majogo ,Lana me malép ma jogop ,0.6
+ Makabu mantulha behisi basa,Makabô ma ntôl ha bé hisi basaa ,1.0
+ Inyuu ki unibisomoni ,Inyukii u nnip isoñ moni ,1.0
+ Mutnono matabe bute,Mut nunu a ta bé bun ,1.0
+ Linusle jezli gwé gwombi mtô ,Linuhle jés li gwéé gwom bi mintuk ,1.0
+ Nwitole ,Ñwii tôle ,1.0
+ Uye u sok sai u yenma nyung i kegi ,U yé u sôk say u yén manyun i kegi ,0.7
+ Lilok jesnyo noli heles bañmi ,Lilok jés nyono li hélés bañ béé ,0.8571428571428571
+ Baan sege ne me mañge nunu nusege negye ,Ba nségne me mañge nunu nségnege ,0.8333333333333334
+ Basaba ya nna ñgandak ,Basaa ba nyanna ñgandak ,1.0
+ A ñkon kogolo ,A ñkon koglo ,0.3333333333333333
+ Mutbuga wo nunu a nyi salni wo we umpe ,Mut buga woo nunu a nyi sal ni woo wéé umpe ,0.7272727272727273
+ Ansehe ga me mbordyem i ndiyi ni mgul ,A nségha me mbot yem i ñgii nyôl ,0.875
+ Kwoñi man ,Kôñi man ,1.0
+ Uyebekel u njô bitemek ,U nyi bé kel u njôp bitémék ,0.8571428571428571
+ Tole a ñkevel nkono ,Tôle a ñkebel ñkônô ,0.75
+ Lamba inkuuwa ,Lambe i ñkwiyba ,1.0
+ Aligale a ñkule bi me moni ,A nliga le a ñkôle bé me moni ,0.75
+ Kitna nkong ,Kidna ñkoñ ,1.0
+ Lite li son li luu waba juu,Litéé li sôñ li nlôôha ba juu ,0.5714285714285714
+ Maligama nyeba mnulok nyesi ,Maliga ma nyéba munu loñ yés ,1.0
+ Ngoño inchi nhaliki ,Ñgoñoo i ntiñha liké ,1.0
+ Lini li bañga liye ntolok ,Lini libañga li yé ntolok ,0.8
+ Likondo li nkoyob minsuwa u likondo ,Likondô li ñkôyôp minsôa ñôô likondo ,0.8333333333333334
+ Memmele ni ya bolu ñgengtan ,Me mmélél nye bôlô i ñgeñ tan ,1.0
+ Anjal bani ,A njalba ni ,1.0
+ Lije li ndgoy ,Lihéé li ñgôy ,0.6666666666666666
+ Borbama si mbañkahal ni aplana ,Bôt ba masiñ ba ñkahal ni ablana ,0.8571428571428571
+ Unengel hi ni hyay uunul hi ,U nnéñél hini hyay u unul hi ,0.8571428571428571
+ Libeende boden son ,Libénde bôt nson ,1.0
+ Tjime dok men suu nesupu ,Ti me tôk me nsôôene sup ,1.0
+ Elel metodo i i juu ,Helel me tôdô i i juu ,0.6666666666666666
+ Mbigda nyembe mut ,Mbigda nyemb mut ,0.6666666666666666
+ Ampuhul ingi malip ,A mpuhul i ñgii malép ,1.0
+ Bini gana gwoñbi nsuu bis ,Biniigana gwoñ bi nsôô bés ,1.0
+ Membe nye inyule a mpot mbale ,Me mbéñél nye inyule a mpot mbale ,0.42857142857142855
+ Lilela liye soso bolu ,Liléla li yé soso bôlô ,0.8
+ Hine hi ñgonda hi nsii i pnganda ,Hini hiñgonda hi nsiip ñgandak ,1.2
+ Baakba meha ,Bagba me ha ,1.0
+ Sanga njil ,Sañal njel ,1.0
+ Beswe diibi kwikihiga ñwomu nsi ,Bés we di bikwégha ñwom ñwés ,1.0
+ Sôn kondo ,Sôñ kondoñ ,1.0
+ Tjemudbi begez ,Ti mut bibégés ,1.0
+ Ba mbogla na boni mo ,Ba mboglana bo ni bo ,0.8
+ Bilimbika halmal mbaa yem ,Bilém bi ñkahal mal i mbay yem ,1.0
+ Mkada unjen ,ñkadak u njel ,1.0
+ Hyo wehi nkoma hii nke bisese ni ,Hyobi hi ñkôma hi ñke biséséni ,1.1666666666666667
+ Makabume mmanpa mnito ,Makabô mém ma mpam minto ,1.0
+ Minton ba mintu mbunya i chison ,Mintonba mi ntumb nye i tison ,0.8333333333333334
+ Baanhali sewin lamchobi ,Ba nha lisébi nlamb tjobi ,1.0
+ Menlega bi me hop wee,Me nleege bé me hop wéé ,0.6666666666666666
+ Kwado zumbus ,Pôdôs ñgôs ,1.0
+ Unloka ndanda wa añ ,U nlôga ñgandak añ ,1.0
+ Mahele li nyungi i wemb ,Me nhélél inyuu ñgi yi wem ,1.0
+ Mgomin ambu mgane ,Ñgomin a mbôk ñgand ,1.0
+ Matamma nkaha yoyi ,Matam ma ñkahal yoi ,1.0
+ Mbeigwal bon basambo ,Me bigwal bon basambok ,0.75
+ Hoyos me mbege ,Hôyôs me mbegee ,0.6666666666666666
+ Yo mwoglitu ye ,Liômôk li tuye ,1.0
+ Kogole a nlo me gamentem ni mbus ,Kogle a nlo mek me ntémb ni mbus ,0.5
+ Bo tela mwop ,Bo tel a ñwo ,0.75
+ Loko dibuugula mbondo mao ,Lok di bugla mbôndô maok ,1.0
+ Kwa dewo woñ aho ,Kwade woñ a nhoo ,1.0
+ Muda a nhyo da ninson ,Mudaa a nhyôônda ni nson ,0.8
+ Mutnisombi anta kabe hane ,Mut nsômbi a ntagbe hana ,1.0
+ Mbot ba mbege zilolom hikel ,Bôt ba mbégés Hilôlômb hii kel ,0.8333333333333334
+ Sogol a nsi membom ,Sôgôl a nsii me mbom ,0.8
+ Li sobali matos ,Lisoba li matôs ,1.0
+ Ambum bana ki,A mbôômbana kii ,1.0
+ Nôdaha me koga yon ba nôdaha koga ,Nôôdaha me koga yoñ ba nnôôdaha koga ,0.5714285714285714
+ A nsokha ,A nsôgha ,0.5
+ Mwoni ba nni basol nebikae ,Moni ba nnip a sôlne i bikay ,0.8571428571428571
+ Tabele me mmañga ,Table me mañga ,0.6666666666666666
+ Ki anunme ,Kii a nnun me ,1.0
+ Me ngwel kun ilop ,Me ñgwel kun i lop ,0.6
+ Bijek biliba bañ ,Bijek bi léba bañ ,0.75
+ Majo anto mbi ,Majô a ntôp mbéé ,1.0
+ Hingonda hinsebee makabu ,Hiñgonda hi nsebee makabô ,1.0
+ Uwen u lihga me nwo mwap min lihga ,Wen u nligha me ñwom ñwap mi nligha ,0.875
+ Avyoñ a nyo di nyagandikile njoo ,Avioñ a nnyodi yaga ndigi len juu ,0.8571428571428571
+ Menjos bot ba wip ,Me njôs bôt ba wip ,0.8
+ Bilimbim kwe lmelen ,Bilim bi ñkwél me len ,1.0
+ Ta anol mkwaha ,Ta a nnol ñkwaha ,0.75
+ Nge nge ya añwet juu ,Ñgeñgeya a ñwek juu ,1.25
+ Menyon mkuu u nyon ,Me nyon ñkuu u nyon ,0.8
+ Ma sebi ma ntibil li bimbe ,Masébi ma ntibil libimbe ,1.0
+ Li nnokok joñdi te bi ,Linogok joñ li téé béé ,1.0
+ Nisendna jemlini ,Lisendne jem lini ,1.0
+ Nono muta gwemaya ,Nunu mut a gwéé maya ,1.0
+ Malet a nho tu ñgoy ,Malét a nhot ñgôy ,1.0
+ Nyangu a ñwañhyo nde inni a ñwañkupu ,Nyañgô a ñwañ hiônde ini a ñwañ kôp ,0.75
+ Unloñ me maw ,U nloñ me maôô ,0.75
+ Mudhi bañ ,Mut hibañ ,1.0
+ Mgwen u mga mgu u mbugi ,Ñgwén u ñgañgô u mbugi ,0.8
+ Mboñgambi ala sukude mindangu ,Mbo ñgambi a nla sugde mindañ ,1.0
+ Ambap me jot ,A mbap me jot ,0.75
+ Lilalino lolchomi ,Lila li nôlôl tjôbi ,1.0
+ Teheki amu mba ni matum mandap ,Tehe kii a mbuumba ni matôm ma ndap ,0.875
+ Yonos li podol ,Yônôs lipôdôl ,1.5
+ Pedambot ,Péda mbot ,1.0
+ Mende u ñgwa u kosi,Me nje ñgwok u kôsi ,0.8
+ Mepite he nye bihumul we,Me bitehe nye bihumul gwéé ,0.6
+ Njel itabe pwomoni ,Njel i ta bé i poo moni ,0.8571428571428571
+ Ni tode li bisu ,Litode li bisu ,1.0
+ Li suhulmi nsaa miba gwel nson ,Lisuhul minsaa mi bagwelnson ,1.5
+ Iisunyen ambot bana mwo ,I su nyen a mbodbana môô ,1.0
+ Man me ayi man basa ,Man mee a yé man basaa ,0.6666666666666666
+ Me nye hel nsonwe mlipan ,Me nyehel nson wem lipan ,0.8
+ Bani ni nyiman i logta ,Ba nniñi man i lokta ,0.8
+ Time hikôo hisilin ,Ti me hikôô hi siliñ ,1.0
+ Njenje njet hi mañge,Hinjedjet hi mañge ,0.6666666666666666
+ U mpôwe kime ,U mpôôbe ki me ,0.75
+ Muda a nsoñlom ,Mudaa a nsôñ nlôm ,0.75
+ Nwinuwoñ u nlegla ,Ñwin woñ u nlegla ,0.75
+ Boonge ba msolbane ,Boñge ba nsolbana ,0.6666666666666666
+ Balala a yilonga i yobi ,Balala a yé loñge i hyobi ,0.5
+ Kop inchoo bemme ,Kôp i ntjoobe me ,1.0
+ Jimbeg hene hi nlunomb i ndap yéi ,Di mbéghene Hilôlômb i ndap yéé ,0.8333333333333334
+ Li tine li bijek lini ,Litine li bijek lini ,0.75
+ Muda a ñke bilum ,Mudaa a ñkébél nlôm ,0.75
+ Bihyomul gwé bitabe bilam ,Bihyumul gwéé bi tabé bilam ,1.0
+ Belenda ,Pele ndap ,1.0
+ Mbotiba hoki baño mdene inu ni hati,Bôt bahogi ba ñômbbene inyuu lihat ,1.1666666666666667
+ Ampumha ni ,A mpumha me ,1.0
+ Menu ngulko di kodya ,Me nnuñul kôp dikôô diaa ,1.0
+ Nyampa u ñwoñga ,Nyam paa u ñwo ñgaa ,0.8
+ Mega lele weman jus ,Me galélél we man tjôs ,1.0
+ Bilonga bibijek bi yidi sman ,Biloñge bi bijek bi nnyédés man ,0.8333333333333334
+ Membeye gane ya lisaga hii som ,Me mbeegene nye lisege hi sôñ ,1.0
+ Mbeñge woma kundu ,Me ññé wom makondo ,1.0
+ Ngoi i mbeñ balibo ,Ñgôy i mbéñba liboo ,0.75
+ Dzi mpahla na diu unches ,Di mpahlana diun tjés ,1.25
+ A nyue maok ,A nnyue maok ,0.6666666666666666
+ Jigwe bijiakon bina imbaa yis ,Di gwéé bidiakon bina i mbay yés ,0.8571428571428571
+ Mganda yee bitik Ingit bahani ,Ñgandak yéé biték i nhédbaha nye ,1.0
+ Boñbi hoo ,Boñ bihôô ,1.0
+ Boñge bañkal manle tetee ,Boñge ba ñkal man le tetee ,0.8333333333333334
+ Kii mutnunu a nye gebhala ,Kii mut nunu a nnyegep hala ,0.6666666666666666
+ Nundle me bitu ronjal i gweme ,Nundle me bitôdô njal i gwéé me ,0.5714285714285714
+ Min kôn min hoonda ni likai ,Miñkôñ mi nhônda ni bikay ,1.0
+ Man a ñkon hikoo ,Man a ñkon hikoa ,0.25
+ Bijoñgwe bi mpubla ha nye ,Bijôñ gwéé bi mpublaha nye ,1.0
+ Mlowo ña nlôo hwani ni yayak ,Nlô woñ a nlôôha ni minyayak ,0.8333333333333334
+ Kodi bikensi ,Kôdi bikey ,1.0
+ Mutan loa ,Mut a nloa ,1.0
+ Kama jala ,Kañaa jala ,1.0
+ Mutamband hi noo yada ,Mut a mband hinoo hyada ,1.0
+ Mehi he nye wo ,Me nhihe nye woo ,0.75
+ Ngedambi nja nga lita bilo nge iki ,Ñgéda mbéñ jañga li ta bé loñge i kil ,1.0
+ Bilambe bi mbayjoo,Bilambe bi mbay juu ,0.5
+ Gwombi nloha jie munu ,Gwom bi nlôôha die munu ,1.0
+ Mpo sloo ,Mpôs loo ,1.0
+ Bibeba bibi jek bi ñko go nye libu ,Bibéba bi bijek bi ñkogoo nye libum ,0.8571428571428571
+ Nnop a mbemha beshana li nkigla ,Nop a mbémha bés hana len kegla ,0.8571428571428571
+ Ni tibla kdje li makele ,Litiblak jéé li makele ,1.0
+ Abag anuile nina ,A bak a nnui len i nañ ,1.0
+ Handa mblin ,Ha ndamb lién ,1.0
+ Li sege li mkuba ,Lisege li ñkôga ,1.0
+ Bisonda binkep mkongo soo ,Bisônda bi ñkép ñkoñ wosô ,1.0
+ Nsumbol bi baha omye mtumba ,Me nsômbôl béébaha pom yem ntômba ,1.0
+ Nje a gwé njo munu i hop u nu ,Njee a gwéé njom munu i hop unu ,0.625
+ Bamba wana yugeda ba jok ,Ba mbaabana ñgéda ba jok ,0.8
+ Baa besbambi mlana mambot,Baa bés ba mbémblana mambot ,0.6
+ Hiayi hi e ,Hyay hi e ,0.6666666666666666
+ He a lemna itun ,Hee a nlemna i tun ,0.8
+ Mbavi e yon impoha bi ,Mbabi e yoñ i mpôha bé ,0.8333333333333334
+ Kwob inchogol me ,Kôp i ntjobol me ,1.0
+ Loa iye i pola buta ,Loa i yé i pôla bôt ,0.6666666666666666
+ Ba kweng a malme bobla muu indap ,Bakweñ a mmal me bobla môô i ndap ,0.875
+ Mnyolwoñ u nsonop ,Nyôl woñ u nsoo nop ,0.8
+ He ubi nnoyoy ,Hee u binôyôy ,1.0
+ Kenengin,Kéne ñgén ,1.0
+ Loko me nyono ,Lo kop me nyono ,0.75
