@@ -9,3 +9,4 @@ __pycache__/
 scratch.ipynb
 *.zip
 token_frequency/by_language
+*.log
