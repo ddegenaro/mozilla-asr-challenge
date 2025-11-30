@@ -14,6 +14,7 @@ from utils.clean_transcript import clean
 from peft import PeftModel
 from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
+import gc
 
 def evaluate(model, data, processor, proxy_lang):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -167,6 +168,8 @@ def main(config):
                 if i > 0:
                     ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
             best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
+            del model
+            gc.collect()
             model = get_model(config, model_dir, lang)
             if config["lora"]:
                 if config["unfreeze_token_embeddings"]:
@@ -184,7 +187,7 @@ def main(config):
             else:
                 model = tv.apply_to(model, scaling_coef=best_lambda)
         else:
-            model = model = get_model(config, model_dir, lang)
+            model = get_model(config, model_dir, lang)
 
         predictions, labels, wers = evaluate(model, data, processor, proxy_lang)
         predictions = [clean(p) for p in predictions]
@@ -204,7 +207,8 @@ def main(config):
         if not os.path.exists(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}"):
             os.makedirs(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}", exist_ok=True)
         model.save_pretrained(f"results/{config['whisper_model'].split('/')[1]}/final_models/{lang}")
-
+        del model
+        gc.collect()
     df = pd.DataFrame(overall_rows, columns=["language", "wer"])
     df.to_csv(f"results/{config['whisper_model'].split('/')[1]}/summary.csv", index=False)
 
