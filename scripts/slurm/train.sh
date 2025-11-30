@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name="mozilla_asr"
 #SBATCH --nodes=1
-#SBATCH --partition=spot
+#SBATCH --partition=base
 #SBATCH --output=logs/"%x.o%j"               
 #SBATCH --error=logs/"%x.e%j" 
 #SBATCH --gres=gpu:1

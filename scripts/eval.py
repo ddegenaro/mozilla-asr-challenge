@@ -101,7 +101,7 @@ def main(config):
                     {
                         "name": "scaling_coef",
                         "type": "range",
-                        "bounds": [0.0, 1.0],  # Lower and upper bounds
+                        "bounds": [0.0, 0.5],  # Lower and upper bounds
                         "value_type": "float",
                         "log_scale": False,  # Sample on a log scale
                     },
@@ -156,13 +156,13 @@ def main(config):
                                                                   combination_type="linear" # do we want to change this?
                                                                   )
                     model.set_adapter("merged")
-                    _, _, wers = evaluate(model, data, processor, proxy_lang)
-                    avg_wer = np.mean(wers)
+                    preds, labs, wers = evaluate(model, data, processor, proxy_lang)
+                    avg_wer = wer(labs, preds)
                     hyperparameter_results[coef] = avg_wer
                 else:
                     model = tv.apply_to(model, scaling_coef=coef)
-                    _, _, wers = evaluate(model, data, processor, proxy_lang)
-                    avg_wer = np.mean(wers)
+                    preds, labs, wers = evaluate(model, data, processor, proxy_lang)
+                    avg_wer = wer(labs,preds)
                     hyperparameter_results[coef] = avg_wer
                 if i > 0:
                     ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
@@ -189,7 +189,7 @@ def main(config):
         predictions, labels, wers = evaluate(model, data, processor, proxy_lang)
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
-        overall_rows.append([lang, np.mean(wers)])
+        overall_rows.append([lang, wer(labels, predictions)])
         print(lang, np.mean(wers))
         rows = []
         for i, p in enumerate(predictions):
