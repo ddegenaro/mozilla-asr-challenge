@@ -102,7 +102,7 @@ def main(config):
                     {
                         "name": "scaling_coef",
                         "type": "range",
-                        "bounds": [0.0, 0.5],  # Lower and upper bounds
+                        "bounds": [0.0, 1.0],  # Lower and upper bounds
                         "value_type": "float",
                         "log_scale": False,  # Sample on a log scale
                     },
