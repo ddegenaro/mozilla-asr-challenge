@@ -13,7 +13,7 @@ import gc
 from scripts.get_data import get_data
 import librosa
 
-def generate(model, data, processor, proxy_lang, lora: bool = False):
+def generate(model, data, processor, proxy_lang):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_dtype = next(model.parameters()).dtype
     model.to(device).eval()
@@ -63,7 +63,8 @@ def main(config):
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         # todo change to test filepath where the data is. 
-        data = get_data(split="dev", langs=[lang]).df.audio_paths       
+        data = get_data(split="dev", langs=[lang])
+        data = data.make_paths([lang] * len(data.df.audio_file.to_list()), data.df.audio_file.to_list())
         model = get_model(config, model_dir, lang)
 
         predictions, filepaths = generate(model, data, processor, proxy_lang)
@@ -81,4 +82,4 @@ if __name__ == "__main__":
     with open("config.json", "r") as f:
         config = json.load(f)
         f.close()
-    main()
+    main(config)
