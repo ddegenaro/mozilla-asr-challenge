@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 import json
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, BitsAndBytesConfig
 from tqdm import tqdm
@@ -22,7 +21,7 @@ def generate(model, data, processor, proxy_lang):
     predictions = []
     filepaths = []
     with torch.no_grad():
-        for filepath in data:      
+        for filepath in tqdm(data):      
             audio = librosa.load(filepath, offset=0, duration=30, mono=True, sr=16_000)[0]
             inputs = processor(audio=[audio], sampling_rate=16_000, return_tensors='pt')
             input_features = inputs.input_features[0].to(dtype=input_dtype)      
@@ -58,8 +57,7 @@ def get_model(config, model_dir, lang):
 def main(config):
 
     model_dir = "final_models"
-    print("lora:", config["lora"])
-    for lang in ALL_TARGETS:                
+    for lang in tqdm(ALL_TARGETS):                
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
         # todo change to test filepath where the data is. 
