@@ -10,3 +10,4 @@ scratch.ipynb
 *.zip
 token_frequency/by_language
 *.log
+mdc_asr_shared_task_test_data/audios/
