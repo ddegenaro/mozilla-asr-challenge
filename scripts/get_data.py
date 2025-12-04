@@ -9,7 +9,7 @@ import librosa
 from transformers import WhisperProcessor
 
 from utils.clean_transcript import clean
-from utils.lang_maps import ROOT, LANGUAGES, HR_ROOT, HR_MAP, ALL_TARGETS
+from utils.lang_maps import ROOT, LANGUAGES, HR_ROOT, HR_MAP, ALL_TARGETS, TEST_ROOT
 
 class SpeechDataset(Dataset):
 
@@ -63,24 +63,31 @@ class SpeechDataset(Dataset):
             librosa.load(audio_path, offset=0, duration=30, mono=True, sr=16_000)[0]
             for audio_path in audio_paths
         ]
-        transcriptions = [clean(t) for t in rows['transcription']]
-
         inputs = self.processor(audio=audios, sampling_rate=16_000, return_tensors='pt')
         input_features = inputs.input_features[0].to(dtype=torch.float16 if self.config['lora'] else torch.float32)
-        labels = self.processor.tokenizer(transcriptions, max_length=200, truncation=True)
-        labels = {
-            'input_ids': labels['input_ids'][0],
-            'attention_mask': labels['attention_mask'][0]
-        }
+        
+        if self.split in ('train', 'dev'):
+            transcriptions = [clean(t) for t in rows['transcription']]
+            labels = self.processor.tokenizer(transcriptions, max_length=200, truncation=True)
+            labels = {
+                'input_ids': labels['input_ids'][0],
+                'attention_mask': labels['attention_mask'][0]
+            }
 
-        return {
-            'meta': rows,
-            'audio_paths': audio_paths,
-            'audios': audios,
-            'input_features': input_features,
-            'labels': labels,
-            'transcriptions': transcriptions
-        }
+            return {
+                'meta': rows,
+                'audio_paths': audio_paths,
+                'audios': audios,
+                'input_features': input_features,
+                'labels': labels,
+                'transcriptions': transcriptions
+            }
+        else:
+            return {
+                'audio_paths': audio_paths,
+                'audios': audios,
+                'input_features': input_features
+            }
 
     def make_paths(
         self,
@@ -88,17 +95,50 @@ class SpeechDataset(Dataset):
         audio_files: list[str]
     ) -> list[str]:
         audio_paths = []
-        for lang, audio_file in zip(langs, audio_files):
-            if lang in LANGUAGES:
+        
+        if self.split in ('train', 'dev'):
+            for lang, audio_file in zip(langs, audio_files):
+                if lang in LANGUAGES:
+                    audio_paths.append(
+                        os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}', "audios", audio_file)
+                    )
+                else:
+                    audio_paths.append(
+                        os.path.join(HR_ROOT, lang, "clips", audio_file)
+                    )
+        else:
+            for audio_file in audio_files:
                 audio_paths.append(
-                    os.path.join(ROOT, f'sps-corpus-1.0-2025-09-05-{lang}', "audios", audio_file)
-                )
-            else:
-                audio_paths.append(
-                    os.path.join(HR_ROOT, lang, "clips", audio_file)
+                    os.path.join(TEST_ROOT, "audios", audio_file)
                 )
         return audio_paths
+    
 
+
+def get_test(
+    langs: Union[str, Iterable[str]] = None,
+    df_only: bool = False
+):
+    
+    audios = []
+    
+    for x in os.listdir(os.path.join(TEST_ROOT, 'audios')):
+        lang = x[19:22]
+        if lang == 'el-':
+            lang = 'el-CY'
+        if lang in langs:
+            audios.append(x)
+    
+    df = pd.DataFrame(
+        {
+            'audio_file': audios
+        }
+    )
+    
+    if df_only:
+        return df
+    
+    return SpeechDataset('test', langs, df)
 
 
 def get_data(
@@ -121,12 +161,16 @@ def get_data(
         DataLoader: _A dataset that supports PyTorch `Dataset` functionality (or pre-wrapped in a `DataLoader`)._
     """
 
-    assert split in ('train', 'dev'), f'Unknown split: {split}, must be train or dev.'
+    assert split in ('train', 'dev', 'test'), f'Unknown split: {split}, must be train or dev.'
 
     if type(langs) == str:
         langs = [langs]
     elif langs is None:
         langs = ALL_TARGETS
+        
+    if split == 'test':
+        
+        return get_test(langs, clean, log, df_only)
 
     dfs = []
 

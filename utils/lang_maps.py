@@ -8,6 +8,10 @@ HR_ROOT: str = os.path.join(
     '/home', 'drd92', 'mozilla-asr-challenge', 'cv-corpus-23.0-2025-09-05'
 )
 
+TEST_ROOT: str = os.path.join(
+    '/home', 'drd92', 'mozilla-asr-challenge', 'mdc_asr_shared_task_test_data'
+)
+
 LANGUAGES: set[str] = {
     'bxk',   # Bukusu (Bantu, Zone J)
     'cgg',   # Chiga (Bantu, Zone J)
