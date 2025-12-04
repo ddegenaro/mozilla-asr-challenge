@@ -46,7 +46,9 @@ class SpeechDataset(Dataset):
             dict: _The keys are `meta`, `audios` (absolute paths to audio files) and `transcriptions`._
         """
 
-        rows = pd.DataFrame(self.df.loc[index]).transpose()
+        rows = pd.DataFrame(self.df.loc[index])
+        if self.split != 'test' or len(rows) == 1:
+            rows = rows.transpose()
 
         audio_files = rows['audio_file']
         
@@ -170,7 +172,7 @@ def get_data(
         
     if split == 'test':
         
-        return get_test(langs, clean, log, df_only)
+        return get_test(langs, df_only)
 
     dfs = []
 
