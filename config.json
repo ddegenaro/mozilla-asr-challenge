@@ -1,8 +1,8 @@
 {
-    "whisper_model": "openai/whisper-large-v3",
+    "whisper_model": "openai/whisper-tiny",
     "train_high_resource": true,
     "language": "aln",
-    "lora": true,
+    "lora": false,
     "lora_rank": 8,
     "epochs": 30.0,
     "batch_size": 4,

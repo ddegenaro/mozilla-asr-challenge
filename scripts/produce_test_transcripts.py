@@ -1,7 +1,7 @@
 import pandas as pd
+from tqdm import tqdm
 import json
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, BitsAndBytesConfig
-from tqdm import tqdm
 from torch.utils.data import DataLoader
 from utils.whisper_data_collator import WhisperDataCollator
 from utils.lang_maps import ALL_TARGETS
@@ -24,8 +24,9 @@ def generate(model, data, processor, proxy_lang):
         for filepath in tqdm(data):      
             audio = librosa.load(filepath, offset=0, duration=30, mono=True, sr=16_000)[0]
             inputs = processor(audio=[audio], sampling_rate=16_000, return_tensors='pt')
-            input_features = inputs.input_features[0].to(dtype=input_dtype)      
-            # Generate output token IDs
+            input_features = inputs.input_features.to(model.device)      
+            
+           # Generate output token IDs
             predicted_ids = model.generate(
                 input_features,
                 forced_decoder_ids=forced_decoder_ids,
@@ -58,13 +59,16 @@ def main(config):
 
     model_dir = "final_models"
     for lang in tqdm(ALL_TARGETS):                
+        print(lang)
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
-        # todo change to test filepath where the data is. 
+        # todo chwange to test filepath where the data is. 
+        print("loading data filepaths")
         data = get_data(split="dev", langs=[lang])
         data = data.make_paths([lang] * len(data.df.audio_file.to_list()), data.df.audio_file.to_list())
+        print("loaded data")
         model = get_model(config, model_dir, lang)
-
+        print("retrieved model")
         predictions, filepaths = generate(model, data, processor, proxy_lang)
         predictions = [clean(p) for p in predictions]
         rows = []
