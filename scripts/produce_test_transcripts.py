@@ -24,7 +24,8 @@ def generate(model, data, processor, proxy_lang):
         for filepath in tqdm(data):      
             audio = librosa.load(filepath, offset=0, duration=30, mono=True, sr=16_000)[0]
             inputs = processor(audio=[audio], sampling_rate=16_000, return_tensors='pt')
-            input_features = inputs.input_features.to(model.device)      
+            input_features = inputs.input_features.to(model.device)
+            input_features = input_features.to(dtype=input_dtype)      
             
            # Generate output token IDs
             predicted_ids = model.generate(
@@ -49,23 +50,24 @@ def get_model(config, model_dir, lang):
             bnb_4bit_compute_dtype=torch.float16
         )
         model = WhisperForConditionalGeneration.from_pretrained(config["whisper_model"], quantization_config=bnb_config)
-        model = PeftModel.from_pretrained(model, model_dir)        
+        model = PeftModel.from_pretrained(model, f"{model_dir}/{lang}")        
         model.print_trainable_parameters()
     else:
         model = WhisperForConditionalGeneration.from_pretrained(f"{model_dir}/{lang}")
     return model 
 
 def main(config):
-
+    audio_folder = "/home/drd92/mozilla-asr-challenge/mdc_asr_shared_task_test_data/audios/"
     model_dir = "final_models"
     for lang in tqdm(ALL_TARGETS):                
         print(lang)
         proxy_lang = config["proxy_langs"][lang]
         processor = WhisperProcessor.from_pretrained(config["whisper_model"], language=proxy_lang, task="transcribe")
-        # todo chwange to test filepath where the data is. 
+         
         print("loading data filepaths")
-        data = get_data(split="dev", langs=[lang])
-        data = data.make_paths([lang] * len(data.df.audio_file.to_list()), data.df.audio_file.to_list())
+        
+        data = pd.read_csv(f"mdc_asr_shared_task_test_data/small-model/{lang}.tsv" , delimiter="\t").audio_file.to_list()
+        data = [audio_folder + d for d in data]
         print("loaded data")
         model = get_model(config, model_dir, lang)
         print("retrieved model")
@@ -73,9 +75,9 @@ def main(config):
         predictions = [clean(p) for p in predictions]
         rows = []
         for i, p in enumerate(predictions):
-            rows.append([filepaths[i], p])
-        lang_df = pd.DataFrame(rows, columns=["audio_filename", "prediction"])
-        lang_df.to_csv(f"test/{lang}.csv", index=False)
+            rows.append([filepaths[i].split("/")[-1], p])
+        lang_df = pd.DataFrame(rows, columns=["audio_file", "sentence"])
+        lang_df.to_csv(f"test_whisper-large/{lang}.tsv", index=False, sep="\t")
         del model
         gc.collect()
 

@@ -17,6 +17,6 @@ python3.11 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
 python3.11 --version
-export WANDB_API_KEY='7eb373ebc11ddf9cefc6b415e3c9b40a4c9768b3'
+export WANDB_API_KEY=<API_KEY>
 export WANDB_PROJECT="mozilla_asr"
 python3.11 ./scripts/trainer.py
