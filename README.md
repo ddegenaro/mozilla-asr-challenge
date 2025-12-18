@@ -3,6 +3,8 @@ This is the code for the Georgetown Submission to the [Mozilla Shared Task on Sp
 
 ## Getting data
 
+NOTE: You must download Mozilla Common Voice data yourself, as it is not to be redistributed.
+
 ```python
 
 from get_data import get_data
