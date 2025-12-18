@@ -1,5 +1,5 @@
 {
-    "whisper_model": "openai/whisper-tiny",
+    "whisper_model": "openai/whisper-large-v3",
     "train_high_resource": true,
     "language": "aln",
     "lora": false,
