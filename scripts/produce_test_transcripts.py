@@ -22,8 +22,12 @@ def generate(model, data, processor, proxy_lang):
     filepaths = []
     with torch.no_grad():
         for filepath in tqdm(data):      
-            audio = librosa.load(filepath, offset=0, duration=30, mono=True, sr=16_000)[0]
-            inputs = processor(audio=[audio], sampling_rate=16_000, return_tensors='pt')
+            audio = librosa.load(data[i]["audio_paths"][0], offset=0, mono=True, sr=16_000)[0]
+            # chunk duration 30 seconds
+            chunk_duration = 30
+            chunk_samples = int(chunk_duration * 16_000)
+            chunks = [audio[i:i + chunk_samples] for i in range(0, len(audio), chunk_samples)]
+            inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
             input_features = inputs.input_features.to(model.device)
             input_features = input_features.to(dtype=input_dtype)      
             
