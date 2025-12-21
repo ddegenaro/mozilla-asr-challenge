@@ -14,28 +14,38 @@ from utils.clean_transcript import clean
 from peft import PeftModel
 from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
+import librosa
 import gc
 
-def evaluate(model, data, processor, proxy_lang):
+def evaluate(model, data, processor, proxy_lang, config):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_dtype = next(model.parameters()).dtype
     model.to("cuda").eval()
     collator = WhisperDataCollator(processor=processor, decoder_start_token_id=model.config.decoder_start_token_id)
-    test_dataloader = DataLoader(data, batch_size=16, collate_fn=collator)
+    # test_dataloader = DataLoader(data, batch_size=16, collate_fn=collator)
     forced_decoder_ids = processor.get_decoder_prompt_ids(language=proxy_lang, task="transcribe")
     predictions = []
     labels = []
     with torch.no_grad():
-        for batch in tqdm(test_dataloader):            
-            inputs = batch["input_features"].to(dtype=input_dtype).to(device)
+        for datum in tqdm(data):  
+            audio = librosa.load(datum["audio_paths"], offset=0, mono=True, sr=16_000)
+            # chunk duration 30 seconds
+            chunk_duration = 30
+            chunk_samples = int(chunk_duration * 16_000)
+            chunks = [audio[i:i + chunk_samples] for i in range(0, len(audio), chunk_samples)]
+            inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
+            input_features = inputs.input_features[0].to(dtype=torch.float16 if config['lora'] else torch.float32)  
+            input_features = input_features.to(dtype=input_dtype).to(device)
             # Generate output token IDs
             predicted_ids = model.generate(
-                inputs,
+                input_features,
                 forced_decoder_ids=forced_decoder_ids,
                 max_new_tokens=200
             )
             transcriptions = processor.batch_decode(predicted_ids, skip_special_tokens=True)
-            labs = [np.where(l != -100, l, processor.tokenizer.pad_token_id) for l in batch["labels"]] 
+            print(transcriptions)
+            transcriptions = [" ".join(transcriptions)]
+            labs = [np.where(l != -100, l, processor.tokenizer.pad_token_id) for l in datum["labels"]] 
             labs = processor.batch_decode(labs, skip_special_tokens=True)
             predictions += transcriptions
             labels += labs
@@ -82,7 +92,8 @@ def main(config):
     if not os.path.exists(hyperparameter_output):
         os.makedirs(hyperparameter_output, exist_ok=True)
 
-    for lang in ALL_TARGETS:        
+    for lang in ALL_TARGETS:   
+        print("language: ", lang)     
         data = get_data(
             split=split,
             langs=None if lang == "all" else [lang],
@@ -157,12 +168,14 @@ def main(config):
                                                                   combination_type="linear" # do we want to change this?
                                                                   )
                     model.set_adapter("merged")
-                    preds, labs, wers = evaluate(model, data, processor, proxy_lang)
+                    preds, labs, wers = evaluate(model, data, processor, proxy_lang, config)
                     avg_wer = wer(labs, preds)
                     hyperparameter_results[coef] = avg_wer
+                    if i == 0:
+                        print("run w no support: ", avg_wer)
                 else:
                     model = tv.apply_to(model, scaling_coef=coef)
-                    preds, labs, wers = evaluate(model, data, processor, proxy_lang)
+                    preds, labs, wers = evaluate(model, data, processor, proxy_lang, config)
                     avg_wer = wer(labs,preds)
                     hyperparameter_results[coef] = avg_wer
                 if i > 0:
@@ -189,7 +202,7 @@ def main(config):
         else:
             model = get_model(config, model_dir, lang)
 
-        predictions, labels, wers = evaluate(model, data, processor, proxy_lang)
+        predictions, labels, wers = evaluate(model, data, processor, proxy_lang, config)
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
         overall_rows.append([lang, wer(labels, predictions)])
