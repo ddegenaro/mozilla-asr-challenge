@@ -27,14 +27,14 @@ def evaluate(model, data, processor, proxy_lang, config):
     predictions = []
     labels = []
     with torch.no_grad():
-        for datum in tqdm(data):  
-            audio = librosa.load(datum["audio_paths"], offset=0, mono=True, sr=16_000)
+        for i in tqdm(range(len(data))):  
+            audio = librosa.load(data[i]["audio_paths"][0], offset=0, mono=True, sr=16_000)[0]
             # chunk duration 30 seconds
             chunk_duration = 30
             chunk_samples = int(chunk_duration * 16_000)
             chunks = [audio[i:i + chunk_samples] for i in range(0, len(audio), chunk_samples)]
             inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
-            input_features = inputs.input_features[0].to(dtype=torch.float16 if config['lora'] else torch.float32)  
+            input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
             input_features = input_features.to(dtype=input_dtype).to(device)
             # Generate output token IDs
             predicted_ids = model.generate(
@@ -43,10 +43,8 @@ def evaluate(model, data, processor, proxy_lang, config):
                 max_new_tokens=200
             )
             transcriptions = processor.batch_decode(predicted_ids, skip_special_tokens=True)
-            print(transcriptions)
             transcriptions = [" ".join(transcriptions)]
-            labs = [np.where(l != -100, l, processor.tokenizer.pad_token_id) for l in datum["labels"]] 
-            labs = processor.batch_decode(labs, skip_special_tokens=True)
+            labs = data[i]["transcriptions"]
             predictions += transcriptions
             labels += labs
     wers= [wer(l, p) for (l, p) in zip(labels, predictions)]
