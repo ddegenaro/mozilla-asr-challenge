@@ -16,7 +16,6 @@ from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
 import librosa
 import gc
-
 def evaluate(model, data, processor, proxy_lang, config):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_dtype = next(model.parameters()).dtype
@@ -36,6 +35,7 @@ def evaluate(model, data, processor, proxy_lang, config):
             inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
             input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
             input_features = input_features.to(dtype=input_dtype).to(device)
+            
             # Generate output token IDs
             predicted_ids = model.generate(
                 input_features,
@@ -169,13 +169,14 @@ def main(config):
                     preds, labs, wers = evaluate(model, data, processor, proxy_lang, config)
                     avg_wer = wer(labs, preds)
                     hyperparameter_results[coef] = avg_wer
-                    if i == 0:
-                        print("run w no support: ", avg_wer)
                 else:
                     model = tv.apply_to(model, scaling_coef=coef)
                     preds, labs, wers = evaluate(model, data, processor, proxy_lang, config)
                     avg_wer = wer(labs,preds)
                     hyperparameter_results[coef] = avg_wer
+                if i == 0:
+                    print("coef=0", avg_wer)
+                    
                 if i > 0:
                     ax_client.complete_trial(trial_index=trial_index, raw_data={"wer": avg_wer})
             best_lambda = min(hyperparameter_results, key=hyperparameter_results.get)
@@ -204,7 +205,7 @@ def main(config):
         predictions = [clean(p) for p in predictions]
         labels = [clean(l) for l in labels]
         overall_rows.append([lang, wer(labels, predictions)])
-        print(lang, np.mean(wers))
+        print(lang, wer(labels, predictions))
         rows = []
         for i, p in enumerate(predictions):
             rows.append([p, labels[i], wers[i]])
