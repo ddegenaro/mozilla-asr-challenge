@@ -16,7 +16,7 @@ from utils.task_vectors import TaskVector
 from ax.service.ax_client import AxClient, ObjectiveProperties
 import librosa
 import gc
-def evaluate(model, data, processor, proxy_lang, config):
+def evaluate(model, data, processor, proxy_lang, config, chunk_audio: bool=False):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_dtype = next(model.parameters()).dtype
     model.to("cuda").eval()
@@ -27,31 +27,44 @@ def evaluate(model, data, processor, proxy_lang, config):
     labels = []
     with torch.no_grad():
         for i in tqdm(range(len(data))):  
-            audio = librosa.load(data[i]["audio_paths"][0], offset=0, mono=True, sr=16_000)[0]
-            # chunk duration 30 seconds
-            chunk_duration = 30
-            chunk_samples = int(chunk_duration * 16_000)
-            chunks = [audio[i:i + chunk_samples] for i in range(0, len(audio), chunk_samples)]
-            inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
-            input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
-            input_features = input_features.to(dtype=input_dtype).to(device)
-            transcriptions = []
-            for chunk in chunks: 
-                inputs = processor(audio=[chunk], sampling_rate=16_000, return_tensors='pt')
+            if chunk_audio:
+                audio = librosa.load(data[i]["audio_paths"][0], offset=0, mono=True, sr=16_000)[0]
+                # chunk duration 30 seconds
+                chunk_duration = 30
+                chunk_samples = int(chunk_duration * 16_000)
+                chunks = [audio[i:i + chunk_samples] for i in range(0, len(audio), chunk_samples)]
+                inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
                 input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
                 input_features = input_features.to(dtype=input_dtype).to(device)
-                max_new_tokens = 200
-                if len(chunk) < chunk_samples:
-                    max_new_tokens = int((len(chunk) / 16_000) * 7)
-                if max_new_tokens > 0:
-                    # Generate output token IDs
-                    predicted_ids = model.generate(
-                        input_features,
-                        forced_decoder_ids=forced_decoder_ids,
-                        max_new_tokens=max_new_tokens
-                    )
-                    trans = processor.batch_decode(predicted_ids, skip_special_tokens=True)
-                    transcriptions.append(trans[0])
+                transcriptions = []
+                for chunk in chunks: 
+                    inputs = processor(audio=[chunk], sampling_rate=16_000, return_tensors='pt')
+                    input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
+                    input_features = input_features.to(dtype=input_dtype).to(device)
+                    max_new_tokens = 200
+                    if len(chunk) < chunk_samples:
+                        max_new_tokens = int((len(chunk) / 16_000) * 7)
+                    if max_new_tokens > 0:
+                        # Generate output token IDs
+                        predicted_ids = model.generate(
+                            input_features,
+                            forced_decoder_ids=forced_decoder_ids,
+                            max_new_tokens=max_new_tokens
+                        )
+                        trans = processor.batch_decode(predicted_ids, skip_special_tokens=True)
+                        transcriptions.append(trans[0])
+            else:
+                audio = librosa.load(data[i]["audio_paths"][0], offset=0, duration=30, mono=True, sr=16_000)[0]
+                inputs = processor(audio=[audio], sampling_rate=16_000, return_tensors='pt')
+                input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
+                input_features = input_features.to(dtype=input_dtype).to(device)
+                predicted_ids = model.generate(
+                    input_features,
+                    forced_decoder_ids=forced_decoder_ids,
+                    max_new_tokens=200
+                )
+                trans = processor.batch_decode(predicted_ids, skip_special_tokens=True)
+                transcriptions.append(trans[0])
             labs = data[i]["transcriptions"]
             predictions += [" ".join(transcriptions)]
             labels += labs
@@ -119,7 +132,7 @@ def main(config):
                     {
                         "name": "scaling_coef",
                         "type": "range",
-                        "bounds": [0.0, 0.5],  # Lower and upper bounds
+                        "bounds": [0.0, 1.0],  # Lower and upper bounds
                         "value_type": "float",
                         "log_scale": False,  # Sample on a log scale
                     },
