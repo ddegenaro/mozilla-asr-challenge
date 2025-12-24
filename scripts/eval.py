@@ -35,21 +35,25 @@ def evaluate(model, data, processor, proxy_lang, config):
             inputs = processor(audio=chunks, sampling_rate=16_000, return_tensors='pt')
             input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
             input_features = input_features.to(dtype=input_dtype).to(device)
-            for i, chunk in enumerate(i, chunks):
+            transcriptions = []
+            for chunk in chunks: 
+                inputs = processor(audio=[chunk], sampling_rate=16_000, return_tensors='pt')
+                input_features = inputs.input_features.to(dtype=torch.float16 if config['lora'] else torch.float32)  
+                input_features = input_features.to(dtype=input_dtype).to(device)
                 max_new_tokens = 200
-                if len(chunk) < 30 * 16_000:
-                    max_new_tokens = int((len(chunk) / 16_000) * 6)
-                transcriptions = []
-                # Generate output token IDs
-                predicted_ids = model.generate(
-                    [input_features[i]],
-                    forced_decoder_ids=forced_decoder_ids,
-                    max_new_tokens=max_new_tokens
-                )
-                trans = processor.batch_decode(predicted_ids, skip_special_tokens=True)
-                transcriptions.append(" ".join(trans[0]))
+                if len(chunk) < chunk_samples:
+                    max_new_tokens = int((len(chunk) / 16_000) * 7)
+                if max_new_tokens > 0:
+                    # Generate output token IDs
+                    predicted_ids = model.generate(
+                        input_features,
+                        forced_decoder_ids=forced_decoder_ids,
+                        max_new_tokens=max_new_tokens
+                    )
+                    trans = processor.batch_decode(predicted_ids, skip_special_tokens=True)
+                    transcriptions.append(trans[0])
             labs = data[i]["transcriptions"]
-            predictions += transcriptions
+            predictions += [" ".join(transcriptions)]
             labels += labs
     wers= [wer(l, p) for (l, p) in zip(labels, predictions)]
     model.to("cpu")
@@ -115,7 +119,7 @@ def main(config):
                     {
                         "name": "scaling_coef",
                         "type": "range",
-                        "bounds": [0.0, 1.0],  # Lower and upper bounds
+                        "bounds": [0.0, 0.5],  # Lower and upper bounds
                         "value_type": "float",
                         "log_scale": False,  # Sample on a log scale
                     },
