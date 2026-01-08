@@ -1,6 +1,11 @@
 # Georgetown Submission to the Mozilla Shared Task on Spontaneous Speech
 This is the code for the Georgetown Submission to the [Mozilla Shared Task on Spontaneous Speech](https://community.mozilladatacollective.com/shared-task-mozilla-common-voice-spontaneous-speech-asr/)
 
+We use LoRA layers and task vectors to perform task arithmetic on the target models in order to incoporate information from genetically related langauges into the final models to bolster ASR performance. We find that this consistently improves performance as seen in whisper-tiny below:
+![task arithmetic from support langauges imrpoves performance](results/whisper-tiny.png "Whisper-Tiny")
+
+
+
 ## Getting data
 
 NOTE: You must download Mozilla Common Voice data yourself, as it is not to be redistributed.
@@ -53,6 +58,9 @@ Slurm script for HPC:
 ```bash
 sbatch scripts/slurm/test.sh
 ```
+
+## Results Exploration
+We include the notebooks we used for analyzing the final data and generating the images for our paper. However they would need to be modified to point to any results generated from the `eval.py` script in order to be used on new inferences.
 
 run locally using `scripts/produce_test_transcripts.py`
 ## Authors
