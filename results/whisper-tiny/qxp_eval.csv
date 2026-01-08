@@ -14,7 +14,7 @@ Huk p'unchay purishaspa hina laqakapuni ,Huk punchay purishaspahina laq'aqapuni,
 Puna runakunaqa mikhunankupaq wachiwan p'isqakunataq hap'iqkanku ,Puna runakunaqa mikhunankupaq wach'iwan p'isaqakunata hap'iq kanku ,0.5714285714285714
 Paraqa chayakushallanmi ,Paraqa chayakushallanmi,0.0
 Ch'uspayta apamuway ,Ch'uspayta apamuway ,0.0
-Urqu paqchaqa uqukunapi mikhun ,Urqu paquchaqa urqukunapi mikhun ,0.5
+Urqu paqchaqa uqukunap mikhun ,Urqu paquchaqa urqukunapi mikhun ,0.5
 Maqra kunan tawa chakimanta latay ,Magda kunan tawa chakimanta lat'ay ,0.4
 Paypisqanta munakurasun kinpasapuranki hina quyayta waqarin ,Paypis qanta munakurasunkin pasapuranki hina khuyayta waqaran ,0.8571428571428571
 Maypitaq chay hina awasqa tarikuqankiy ,Maypitaq chayhina awasqata rikurqanki ,1.0
@@ -28,10 +28,10 @@ Wakaqa kaqllapin mikushan ,Wakaqa kaqllapin mikhushan,0.3333333333333333
 Chay t'ampa chukchaykitan rutuchikamuy ,Chay t'ampa chukchaykita rutuchikamuy,0.25
 P'antataqa qurakunalla kaqllataq kukataqa ,T'antataqa qurinakunalla kaqllataq kukataqa ,0.5
 May llaqtayuqtaq kankiri ,May llaqtayuqtaq kankiri ,0.0
-Chichiruta wayk'uspaqa wiriranta ñawpaqmantaña k'umunayki ,Chicharuta wayk'uspaqa wiranta ñawpaqmantaña ch'umanayki ,0.6
+Chichiruta wayk'uspaqa wiranta ñawpaqmantaña k'umunayki ,Chicharuta wayk'uspaqa wiranta ñawpaqmantaña ch'umanayki ,0.4
 Taki karqani ,Takiq karqani ,0.5
 Q'ala wasi pirqakuna urmayku ,Q'ala wasi pirqakuna urmaykun ,0.25
-Hipay huk uwaqaychana wasita hatarichiyta munun ,Ipay huk waqaychana wasita hatarichiyta munan ,0.5
+Ipay huk waqaychana wasita hatarichiyta munin ,Ipay huk waqaychana wasita hatarichiyta munan ,0.16666666666666666
 Panay sapa p'unchay tikukunata chayakchu ,Panay sapa p'unchay t'ikakunata ch'akchun ,0.4
 Huk uqanichi ullusapa sach'api kasharqan ,Huk uqi michi k'ullusapa sach'api kasharqan ,0.5
 Wayk'uq warmi aychata qhipachikun ,Wayk'uq warmi aychata qhipachikun ,0.0
@@ -53,20 +53,20 @@ Kanchu allinichunayki ,Kaychu allin ichhunayki ,1.0
 Chay yachay wasisumaq ruwasqa ,Chay yachay wasi sumaq ruwasqa ,0.4
 Allintam naqha tutaqa paraykusqa ,Allintan naqha tutaqa paraykusqa,0.25
 Hispaymi atipamushawan ,Hisp'aymi atipamushawan,0.5
-Ñawpaq ñaninki ,Ñawpaqña ninkiman riki ,1.0
+Ñawpaq ña ninkiman riki ,Ñawpaqña ninkiman riki ,0.6666666666666666
 Han p'ana pisarata ham kanchis ,Hamk'anapi sarata hamk'anchis ,1.6666666666666667
-Titiqaqa quchaqa layraq uta urqu qhipanpi kashan ,Titiqaqaquchaqa laycacota urquq qhepanpin kashan,1.2
+Titiqaqa quchaqa layraq utapurqu qhipanpi kashan ,Titiqaqaquchaqa laycacota urquq qhepanpin kashan,1.0
 Mana paschá tukumusaqki sapa layq ,Manapaschá tukumusaqchu sapallayqa ,1.6666666666666667
 Waqaychasqa warayqa thutasqa ukhuripun ,Waqaychasqa warayqa thutasqa ukhuripun ,0.0
 warqusqa p'achaq sachayakakuyuchin ,Warkusqa p'achaqa sach'ata kuyuchin ,1.0
-Kay qamanman nuqaq qillqasqaychu,Kayqa manan nuqaq qillqasqaychu ,0.5
+Kay qaman nannuqaq qillqasqaychu,Kayqa manan nuqaq qillqasqaychu ,0.75
 Killantinmi pawqa tampupi kamurani ,Killantinmi pawkartambopi kamurani,0.6666666666666666
 Mikhuna rantiqmi llaqtam risa ,Mikhuna rantiqmi llaqtata risaq ,0.5
 Aman parlamkichuqa yaparispi llullakuspa ima ,Aman parlankichuqa yaparispa llullakuspa ima ,0.4
 Chaypi kawata atinmi paran ,Chaypiqa watantinmi paran ,1.0
 Imay yurikakunpas ,Imayari kakunpas,1.0
 Mana chiya apaykuwankiman ,Manachu yapaykuwankiman ,1.5
-saqkikusqayqa kaqlla kashasqa ,Saqikusqayqa kaqlla kashasqa ,0.3333333333333333
+saqikusqayqa kaqlla kashasqa ,Saqikusqayqa kaqlla kashasqa ,0.3333333333333333
 Nuqa huraqniypaq waqaykuyninta chaskin ,Nuqa kuraqniypaq waqhakuyninta chaskini ,0.75
 Allquchaymi mana kanchu ,Allquchaymi mana kanchu,0.0
 Manachu tumpsillus kinuwa manpaq wawanwan ,Manachu don Celestino Wamanpaq wawanwan ,0.6
@@ -100,13 +100,13 @@ Huk tusuqqasapa llamkipakapun ,Huk tusuqqa sapallan qhipakapun ,0.75
 Mamaypaq p'unchin sansayuq ,Mamaypaq q'unchan sansayuq ,0.3333333333333333
 Wik'uña phawarikuspi chakinta p'akikusqa ,Wik'uña phawarikuspa chakinta p'akikusqa ,0.25
 Paqarinmi mamayta watukusaq,Paqarinmi mamayta watukusaq ,0.0
-Hayk'umuy kay ukhuman,Haykumuy kay ukhuman ,0.3333333333333333
+Hayk'umuy kay ukhuman ,Haykumuy kay ukhuman ,0.3333333333333333
 Pay raymipi munay p'achayuq tusun ,Pay raymipi munay p'achayuq tusun ,0.0
 Ichay ch'isi huñunakuyman rirqanki ,Icha ch'isi huñunakuyman rirqanki ,0.25
 Nuqaqqa aswan musuqmi ,Nuqaqqa aswan musuqmi,0.0
 Allinpunin waturikuwanki ,Allimpuni waturikuwanki ,0.5
 Kinu wañutuq runaqa ñut'unapi llamk'an ,Kinuwa ñutuq runaqa ñutunapi llamk'an ,0.6
-Rapiyarimankata kirpayta muni ,Javier mankata kirpayta munan ,0.75
+Rapiyarimankata qirpayta muni ,Javier mankata kirpayta munan ,1.0
 Imatam qapanaykiri ruwashan ,Imatataq panaykiri ruwashan ,0.6666666666666666
 Papakunaqa hatun t'ikayu,Papakunaqa hatun t'ikayuq ,0.3333333333333333
 Anta kallaqatapipas ñawpaqqa askha muñu wiñaq ,Antaqalla qhatapipas ñawpaqqa ashka muña wiñaq,0.6666666666666666
@@ -114,17 +114,17 @@ Imayna phullutan sipas munan ,Imayna phullutan sipas munan ,0.0
 Austina niwan aqa tukurakapunsi ,Agustina niwan aqha tukurakapunsi,0.5
 Pipaq qichay punchutari awishanki ,Pipaqtaq chay punchutari awashanki ,0.75
 Warmiqa ch'ampata aysan ,Warmiqa ch'ampata aysan ,0.0
-Qullqi huk unapin llamk'ashani allinta chaypiqa hunt'achimuwanku ,Qullqi hurqunapin llamk'ashani allinta chaypiqa hunt'achimuwanku ,0.3333333333333333
+Qullqi hurquy hurquy huqchachaypiqa hunt'achimuwanku ,Qullqi hurqunapin llamk'ashani allinta chaypiqa hunt'achimuwanku ,0.6666666666666666
 Yuspaakapusunki kayta llay ,Dius pagarapusunki taytallay,1.0
-Hayk'aqllapisqan suwachikuqankichu ,Hayk'aqllapas qan suwachikurqankichu ,1.0
+Hayk'anllapisqan suwachikuqankichu ,Hayk'aqllapas qan suwachikurqankichu ,1.0
 Llullakuqqan millay runan,Llullakuqqa millay runan,0.3333333333333333
 Ñawinchiswanmi qhawaychis siminchis wantaq parinchis ,Ñawinchiswanmi qhawanchis siminchiswantaq parlanchis,1.0
 Payqa papata aysayta munarqan ,Payqa papata aysayta munarqan ,0.0
 Qhawanchis hinaqa nuqanchistapis kikillantaq hawawanchis,Qhawanchis hinaqa nuqanchistapis kikillanta qhawawanchis ,0.4
 Unan tutamantaqa manan huk puyupisqarqanchu ,Kunan tutamantaqa mana huk phuyupis karqanchu ,0.6666666666666666
-Ama rimapayawaychu ch'aqrachikunkimantaq ,Ama rimapayawaychu ch'aqllachikunkimantaq ,0.3333333333333333
+Ama rimapayawaychu chaya chikunkimantaq ,Ama rimapayawaychu ch'aqllachikunkimantaq ,0.6666666666666666
 Mayqinmi aswan puka yawakchu wisas t'ikachu ,Mayqinmi aswan puka yawarchu rosas t'ikachu ,0.3333333333333333
-Wawaq uyanta qikwipan awina ,Wawaq uyanta wiswiwan hawina ,0.5
+Wawaq uyanta qikwiwan hawina ,Wawaq uyanta wiswiwan hawina ,0.25
 Kay mikhuykunataqa yuchayniyuq runa llamikun ,Kay mikhuykunataqa yachayniyuq runalla mikhun ,0.6
 Chayraq lluqchimuq kirunchikunaqa yuraqmi ,Chayraq lluqsimuq kirunchiskunaqa yuraqmi ,0.5
 Uñunakuypi puñupayan ,Wayqiy huñunakuypi puñupayan,0.6666666666666666
@@ -133,7 +133,7 @@ Llaqtantin runa sayarisunchis,Llaqtantin runa sayarisunchis,0.0
 Chaqraypiqa wasi masi puran ruwaysinakunku ,Chakraypiqa wasi masi puran ruwaysinakunku,0.2
 Takikuspa tusunku ,Takikuspa tusunku ,0.0
 Chay wallpata qatirpariy ,Chay wallpata qatirpariy ,0.0
-Chaqra chayachuq purisaq ,Chakra ch'aqchuq purisaq ,0.6666666666666666
+Chakra chayakuq purisaq ,Chakra ch'aqchuq purisaq ,0.3333333333333333
 Kay hallqa tantakusqaywan huk hayt'anata rantikusaq ,Kay qullqi tantakusqaywan huk hayt'anata rantikusaq ,0.16666666666666666
 Yachay wasi umalliqta waqamunanchis ,Yachay wasi umalliqta waqhamunanchis ,0.25
 Chay mallkiqa raku sapiyuq kasqa ,Chay mallkiqa rakhu saphiyuq kasqa ,0.4
@@ -143,7 +143,7 @@ Pikunapaqmi kay suchikuna ,Pikunapaqmi kay suchikuna ,0.0
 Nuqanchis rikuq taytachu,Ñuqanchis rikuq taytacha ,0.6666666666666666
 Uywakuna k'iriqa manan allinchu ,Uywakuna k'iriyqa manan allinchu ,0.25
 Añasqa hallpapakun kuruchukunata mikhuspa kawsan ,Añasqa hallp'a ukhu kuruchakunata mikhuspa kawsan ,0.5
-Nuqa manan wasayta qhakuykuyta atinichu ,Nuqa mana wasayta qhaqukuyta atinichu ,0.4
+Nuqa manan wasayta qhakukuyta atinichu ,Nuqa mana wasayta qhaqukuyta atinichu ,0.4
 Tapi llakiykunata apamun ,David llaqiykunata apamun ,0.6666666666666666
 Ña k'ayllañan mikhuyta tukuyuruni ,Ñak'ayllaña mikhuyta tukuyuruni,0.6666666666666666
 Hakuyan siraysimuwanki chaqayta liqata,Hakuya siraysimuwanki chaqay talegata,0.75
@@ -154,10 +154,10 @@ Tutasqa sarata mikhun ,Khuchi thuqasqa sarata mikhun ,0.5
 Sayk'uymi mayumanta unu astamuyqa ,Sayk'uymi mayumanta unu astamuyqa ,0.0
 Llipi huñunakunanchis sasachakuykunamanta pallanapaq ,Llipi Huñunakunanchis sasachakuykunamanta parlanapaq,0.5
 Chayamusqayta wasipi willakuychi,Chayamusqayta wasipi willakuychis ,0.3333333333333333
-Hatun papataqa wayk'upaq allinanchis ,Hatun papataqa wayk'upaq akllananchis ,0.25
+Hatun papataqa wayk'upaq allananchis ,Hatun papataqa wayk'upaq akllananchis ,0.25
 Yaqa chawpi wiñaypiña tarikun ,Yaqa chaupi wiñaypiña tarikun ,0.25
 Llamaq willmanta rutunanchis ,Llamaq willmanta rutunanchis ,0.0
-Payqa qullqi huñunapaq waqhamuanchis ,Payqa qullqi huñunapaq waqhamuwanchis ,0.25
+Payqa qullqa huñunapaq waqhamuanchis ,Payqa qullqi huñunapaq waqhamuwanchis ,0.5
 Papaypaq kawankimanchu chay saraykita ,Papayqaq quwankimanchu chay saraykita ,0.5
 Tiyanakuna yachay wasipi thantayanku ,Tiyanakuna yachay wasipi thantayanku ,0.0
 Ña runa yachanña,Kushqaña purinku chayqa ña runa yachanña,0.6666666666666666
@@ -185,7 +185,7 @@ Hayk'aqtaq punumanta kutimunki ,Hayk'aqtaq Punumanta kutimunki ,0.33333333333333
 parpuyllatanña ruwasunman chaycha allinqa kanman,Tarpuyllataña ruwasunman chaycha allinqa kanman,0.2
 Haku tusuqta qhawarakamusunchis,Haku tusuqta qhawarakamusunchis,0.0
 Ima umalliqpaq sutin ,Iman umalliqpaq sutin ,0.3333333333333333
-Wayna purataq qayanchis chayqa rapillacha puriramusunchis ,Wayna purataq kashanchis chayqa ratullachá puriramusunchis,0.3333333333333333
+Wayna purataq qayanchis chayqa ratillacha puriramusunchis ,Wayna purataq kashanchis chayqa ratullachá puriramusunchis,0.3333333333333333
 Imakunapan llaqtayki raymipu ruwanku ,Imakunatan llaqtayki raymipi ruwanku ,0.5
 P'imputan wayk'unqa,T'inputan wayk'unqa,0.5
 Sumaqta waypi apantin hina kawsakunchis ,Sumaqta wayqi panantin hina kausakunchis,0.6
@@ -236,7 +236,7 @@ Hayk'a runtutan rantimusas ,Hayk'a runtutan rantimusaq ,0.3333333333333333
 Wasillatapis pichar kushaya hina kasha maykitaqa ,Wasillatapis picharqushayya hina kashanaykitaqa,1.0
 Pitaq yanaparqasunkichisri ,Pitaq yanaparqasunkichisri ,0.0
 Manan waychikqa kanchu,Manan wayqiyqa kanchu,0.3333333333333333
-Atuq pasaqta llaqywakun waypata rikuykun hina ,Atuq pasaqta llaqwakun wallpata rikuykun hina,0.3333333333333333
+Atuq pasaqta llaqywakun wallpata rikuykun hina ,Atuq pasaqta llaqwakun wallpata rikuykun hina,0.16666666666666666
 Q'ipiykitaqa churiyman saki yakamuyanki ,Q'ipiykitaqa churiyman saqiyakamullanki,0.6666666666666666
 Kay matiqa ruq phankasqa ,Kay matiqa ruphan kasqa,0.5
 T'antataqa rakimusaq llusis pataman ,T'antataqa rakimusaq Rosaspataman,0.6666666666666666
@@ -247,9 +247,9 @@ Kunatutaqa kasamunqapascha,Kunan tutaqa qasamunqapaschá,1.0
 Pinkuraq kaq ,Pin kuraq kaq ,0.6666666666666666
 Amaraq pasapuchu kapulita pachikusqayki,Amaraq pasapuychu kapulita apachikusqayki,0.5
 Maypitaq qurpa chakurqankichisri ,Maypitaq qurpachakurqankichisri ,1.0
-Hatuniaqtakunapimaman sumaq pachupunchayan ,Hatun llaqtakunapi manan sumaqtachu p'unchayan ,1.0
+Hatun llaqtakunapimaman sumaqtachu p'unchayan ,Hatun llaqtakunapi manan sumaqtachu p'unchayan ,0.4
 Payqipa mamanta chiqniku ,Pay qhipa mamanta chiqnikun,0.75
-Lisaqa Lima taripun ,Luisaqa Limatas ripun,1.0
+Lisaqa Limata ripun ,Luisaqa Limatas ripun,0.6666666666666666
 Chumpita allinta mat'iy ,Chumpyta allinta mat'iy,0.3333333333333333
 Niway ima q'ikan qumi ,Niway ima t'ikan q'umir ,0.5
 Ama yachahinata chaqwanwichu waykallay ,Ama ya chayhinata ch'aqwamuychu wayqillay,0.8
@@ -264,11 +264,11 @@ Mayman tarakcha inkakunaqa chaytukuy rumita apamuranku ,Maymantaraqcha inkakunaq
 Askha qullqiy kamaykipaq qullqichay ,Askha qullqiyuq kanaykipaq qullqichay,0.5
 Ama yahinallachu tiyarayay ,Amaya hinallachu tiyarayay,0.6666666666666666
 Nuqaykuqa haqay q'achipampapin apasaqku,Nuqaykuqa haqay q'achu pampapin t'akasaqku,0.6
-Pinpi yurata rin ,Pin Piurata rin ,0.6666666666666666
-Mana yanapa waqtiykiqa mana cha ruwayta tukuymanchu karqa ,Mana yanapawaktiykiqa manachá ruwayta tukuymanchu karqan,0.8333333333333334
+Pimpi urata rin ,Pin Piurata rin ,0.6666666666666666
+Mana yanapawaqtiykiqa mana cha ruwayta tukuymanchu karqa ,Mana yanapawaktiykiqa manachá ruwayta tukuymanchu karqan,0.6666666666666666
 Ama chahinaqa kaychu palla kushallaraykun ,Ama chayhinaqa kaychu parlakushallaraykun,0.75
 Ñanllapuytaqa qallarimushasqakuña,Ñan yapuytaqa qallariramushasqakuña,1.0
-Ña irqichaqa sayari pa kushanña,Ña irqichaqa sayaripakushanña,1.0
+Ña irqichaqa sayari pa kushanña ,Ña irqichaqa sayaripakushanña,1.0
 Gapina wakata aysamuy ,Gavino wakata aysamuy,0.3333333333333333
 P'achaymi t'aqsakunay kashan ,P'achaymi t'aqsakunay kashan,0.0
 Puka punchuykita miranapaq apamuy ,Puka punchuykita siranapaq apamuy,0.25
@@ -298,7 +298,7 @@ Paqlaspa hina qalluyta k'uturukuni ,Parlaspa hina qalluyta k'uturukuni,0.25
 Rikunkichu haqay ñanpi uywakunata ,Rikunkichu haqay ñanpi uywakunata ,0.0
 Chaqay muk'ita intipi ch'akichiy ,Chaqay mut'ita intipi ch'akichiy ,0.25
 Chayllapachu munanki wiraqucha ,Chayllatachu munanki wiraqucha ,0.3333333333333333
-Nuqaña uywakusqayki uqpi yay ,Nuqaña uywakusqayki urpillay ,0.6666666666666666
+Nuqaña uywakusqayki uypay ,Nuqaña uywakusqayki urpillay ,0.3333333333333333
 Paqarin yachatukuran pusun papa allaytaqa,Paqarinñachá tukurampusun papa allaytaqa,0.75
 Ama pasaqta asichiwaychu ,Ama pasaqta asichiwaychu,0.0
 Qanqa alliwan kanki ,Qanqa allin warmin kanki,0.5
@@ -310,7 +310,7 @@ Manachu tarimusqapas ,Manachu tarimusqapas ,0.0
 Allawawankunantin hamunkichis,Q'ala wawakunantin hamunkichis,0.6666666666666666
 Qanwanmi rimayta munani ,Qanwanmi rimayta munani,0.0
 Wik'uña chakuypinpas yarqani,Wik'uña chaquypin kasharqani,0.6666666666666666
-Unquq runakunaqa ñañayanku ,Unquq runakunaqa ñañuyanku,0.3333333333333333
+Unquq runakunaqa ñañullanku ,Unquq runakunaqa ñañuyanku,0.3333333333333333
 Ñacha askhataña rumita huñuramunki ,Ñachu askhataña rumita huñuramunki ,0.25
 Chay waka payayan ,Chay waka payayan,0.0
 Nuqa wiñaycha uyqapas payqa kashanman ,Nuqa wiñaicha yaqapas payqa kashanman,0.4
@@ -318,14 +318,14 @@ Wakakuna ch awanapaq chakinta mañiyanayki ,Wakakuna ch'awanapaq chakinta maniya
 Hatunmi kitiqaqa quchaqa ukhutaqtammi ,Hatunmi titiqaqa quchaqa ukhutaq kanpis,0.6
 Kay p'ukuykuna pasa qhapaqrayan ,Kay p'ukuykuna pasaq qhaphralla,0.5
 Suwakuna muyupayan umay wasinta ,Suwakuna muyupayan umalliq wasinta,0.25
-allqun midita kanita yanan ,Chay allqu Nidiata kaniyta yanan ,0.8
+Allqun midita kanita yanan ,Chay allqu Nidiata kaniyta yanan ,0.8
 Machasqas imaynata rimayusqani ,Machasqas imaymanata rimayusqani,0.3333333333333333
 Imatan maskhashanki wiraqucha ,Imatan maskhashanki wiraqucha ,0.0
-Qayna kinaykita saqisharanki chaytawan aparikapullayña ,Qayna qinaykita saqisharanki chaytawan aparikapullayña,0.2
-Wawakuna yachay wasipikusqanmi pisiyanku ,Wawakuna yachay wasipi kuskanman pisiyanku,0.4
+Qayna kinaykita sakis saranki chaytawan aparikapullayña ,Qayna qinaykita saqisharanki chaytawan aparikapullayña,0.6
+Wawakuna yachay wasipi kusqanmi pisiyanku ,Wawakuna yachay wasipi kuskanman pisiyanku,0.2
 Isqay runa chawpi p'unchayta chayakamunku ,Iskay runa chawpi p'unchayta chayaykamunku,0.4
-Kayna quchantakama wasinmanchin payta munarqan ,Qayna quchantakama wasinman chimpayta munarqani ,0.8
-Irman raymipi huk takiyta atisqa ,Irma raymipi huk takiyta takisqa ,0.4
+Qayna quchantakama wasinmanchin payta munarqan ,Qayna quchantakama wasinman chimpayta munarqani ,0.6
+Irman raymipi huk takiyta takisqa ,Irma raymipi huk takiyta takisqa ,0.2
 Wasipi runakunata yupay ,Wasipi runakunata yupay ,0.0
 Allaqhanquq hallp'api mikhunanta waqaychan ,Allaq allqu hallp'api mikhunanta waqaychan ,0.4
 Usqhayta unuta uhaspa nuqa hik'ipani,Usqhayta unuta uhaspa nuqa hik'ipani ,0.0
@@ -337,10 +337,10 @@ Mayu unu qasayan ,Mayu unu qasayan ,0.0
 Manuel misinta allin llamanta munan ,Manuel misinta allinyananta munan ,0.5
 Ama chañachisqaykita qunqankichu,Ama chay yachasqaykita qunqankichu,0.5
 Paypa llaqtakamayuqta ayniyta munarqun ,Payqa llaqta kamayuqta ayniyta munarqan ,0.8
-Pakaq q'uchukunapi imas tiyaranku chay sapalla puriqtaqa hapipanku,Pakaq k'uchukunapi imas tiyaranku chaysi sapalla puriqtaqa hapipanku,0.25
+Q'uchukunapi imas tiyaranku chay sapalla puriqtaqa hapipanku,Pakaq k'uchukunapi imas tiyaranku chaysi sapalla puriqtaqa hapipanku,0.375
 Waynakunaqa allquman tukuspas tawa chakimanta purisqaku ,Waynakunaqa allquman tukuspas tawa chakimanta purisqaku ,0.0
 Rit'ikuna wanuyanku ,Rit'ikuna unuyanku ,0.5
-hurpiqa iskay waran kayuq watapipa tariyqan ,Jorgeqa iskay waranqayuq watapi paqarirqan ,1.0
+hurpi waran kayuq watapipa tariyqan ,Jorgeqa iskay waranqayuq watapi paqarirqan ,1.0
 Ama qunqankichu taytaykipaq mikhuna illaytaqa ,Ama qunqankichu taytaykipaq mikhuna ilaytaqa ,0.2
 Qawankimanchu papaypaq chay saraykita ,Quwanqimanchu papaypaq chay saraykita ,0.25
 Millaymi tukuy runa kayllanpi q'aminakuyqa ,Millaymi tukuy runa qayllanpi k'aminakuyqa ,0.4
@@ -348,9 +348,9 @@ Kunurqa mana hanayta atiranchu ,Kunturqa mana halayta atiranchu ,0.5
 Mirian kukata akullinapaq qawan ,Mirian kukata akullinapaq quwan ,0.25
 Kunan p'unchaymi sarata chulluchisun paqarinpaq ,Kunan p'unchaymi sarata chulluchisun paqarinpaq ,0.0
 Llamk'as kaypi yaraqaymanta kani ,Llamk'asqaypi yaraqaymanta kani ,0.6666666666666666
-Sifirina yachay wasipich aqwayta munan ,Sifirinu yachay wasipi chaqwayta munan ,0.6
+Sihirina yachay wasipich aqwayta munan ,Sifirinu yachay wasipi chaqwayta munan ,0.6
 Paqarin wachukunata kichasaq papa tarpunapaq ,Paqarin wachukunata kichasaq papa tarpunapaq ,0.0
-Amantani llaqtapiqa allin awaq runakuna kan,Amantaní llaqtapiqa allin awaq runakuna kan ,0.16666666666666666
+Amantanin llaqtapiqa allin awaq runakuna kan,Amantaní llaqtapiqa allin awaq runakuna kan ,0.16666666666666666
 Manan rumiwan ch'aqayqa allinchu rimanpiq chayachinkiman ,Manan rumiwan ch'aqiyqa allinchu pimanpis chayachinkiman ,0.3333333333333333
 Llallichikuq waqaspa wasinta ripun ,Llallichikuq waqaspa wasinta ripun ,0.0
 Punkuta wisq'ay ,Punkuta wisq'ay,0.0
@@ -367,14 +367,14 @@ Rumi qunapi askhakinata qhunan ,Julia rumi qhunapi askha kinuwata qhunan ,0.8333
 Manan sutiykita lluyariyta atinichu,Manan sutiykita yuyariyta atinichu ,0.25
 Siwara hak'u ruwayqa pisi qullqañapaqmi ,Siwara hak'u ruwayqa pisi qullqillapaqmi ,0.2
 Papa tarpusqa munayta t'ikaykun ,Papa tarpusqa munayta t'ikaykun ,0.0
-Wayk'ukuna wasi qqasñuyan ,Wayk'ukuna wasi q'usñiyan ,0.3333333333333333
+Waykukuna wasi qqqaqñuyan ,Wayk'ukuna wasi q'usñiyan ,0.6666666666666666
 Chirikamun hina qaparakuni ,Chirikamun hina qatarakuni,0.3333333333333333
 Chaqra llamk'anapaq waynakunata mink'amusun ,Chakra llamk'anapaq waynakunata mink'amusun ,0.25
 Q'aytukuna thutayanku ,Q'aytukuna thutayanku ,0.0
 Chay p'achakunata p'acha ch'akina patapi churay ,Chay p'achakunata p'acha ch'akina patapi churay ,0.0
 Chikchitaq chayarimushasqa,Chikchitaq chayarimushasqa ,0.0
 Luis punkuta kichariway ,Luis punkuta kichariway ,0.0
-Punapiri Manachu parashasqa ,Punapiri manachu parashasqa ,0.3333333333333333
+Punapiri Manachu parasasqa ,Punapiri manachu parashasqa ,0.6666666666666666
 Juan ñañayman chimpayta munasqa ,Juan ñañayman chimpayta munasqa ,0.0
 Churin k'amiq hamun ,Churin k'amiq hamun ,0.0
 Runakunaqa machu yaqmi kanchis,Runakunaqa machuyaqmi kanchis ,0.6666666666666666
@@ -384,16 +384,16 @@ Wawaqa chinkakuyta munasqa ,Wawaqa chinkakuyta munasqa ,0.0
 Yachay wasiykiman usqayta puriy ,Yachay wasiykiman usqayta puriy ,0.0
 Pikunawanmi qayna p'unchay chaqraykichispi llamk'arqanchis ,Pikunawanmi qayna p'unchay chakraykichispi llamk'arqanchis ,0.2
 Kay atipanakuypi phaway ,Kay atipanakuypi phaway ,0.0
-Qhasa q'anmi q'achuta yuraqyachin ,Qasa q'umir q'achuta yurakyachin ,0.75
+Qhasa q'umirq'achu tay yuraqyachin ,Qasa q'umir q'achuta yurakyachin ,1.0
 Warmikunataqa mana chaqllananachu ,Warmikunataqa mana ch'aqlanachu ,0.3333333333333333
 Unqusqa kanki hinaqa allinmi hunt'iyqa ,Unqusqa kanki hinaqa allinmi hump'iyqa ,0.2
 Yana sunqayuq waynaqa mana hamunchu ,Yana sunkhayuq waynaqa mana hamunchu ,0.2
-Ivan mayt'unta mañayta munan ,Ivan mayt'unta mañayta munan ,0.0
+Iywan mayt'unta mañayta munan ,Ivan mayt'unta mañayta munan ,0.25
 Waka mana mikhuspa tulluyan ,Waka mana mikhuspa tulluyan ,0.0
 Payqa sinchiyasiq runa ,Payqa sinchi asiq runa ,0.5
 Kawsayninchispi allinyasun ,Kawsayninchispi allinyasun ,0.0
 Kunan p'unchay askha p'achakunata p'aqsasun ,Kunan p'unchay askha p'achakunata t'aqsasun ,0.2
-Wakata mayt'uy urumachinapaq ,Wakata mayt'uy urmachinapaq ,0.3333333333333333
+Wakata mayt'uy uruchinapaq ,Wakata mayt'uy urmachinapaq ,0.3333333333333333
 Phuyuparanapaq yanaykamushan ,Phuyu parananpaq yanayaykamushan ,1.0
 Lluykita hatun yachiy ,Llipin Aylluykita hatunyachiy ,1.0
 Unuqa sawan rumiyan ,Unu qasawan rumiyan ,0.6666666666666666
@@ -405,7 +405,7 @@ Awichiqa hatun yuraq sunqayuq ,Awichuyqa hatun yuraq sunkhayuq ,0.5
 Paymi t'aqasqa wasipi tiyan ,Paymi t'aqasqa wasipi tiyan ,0.0
 Wawakuna puñunapatapi pukllanku ,Wawakuna puñuna patapi pukllanku ,0.5
 Ñawi hampiqa ñawiyman sut'uchikuna ,Ñawi hampiqa ñawiman sut'uchikuna ,0.25
-Wach'iyuq qawasinta ripusqa ,Wach'iyuqqa wasinta ripusqa ,0.6666666666666666
+Wach'iyuqqa wasinta ripusqa ,Wach'iyuqqa wasinta ripusqa ,0.0
 Ayanuna paypaq taytanqa ,Allin runan paypaq taytanqa,0.5
 Qusqu llaqtapi askha yuyaychaq runakuna kan ,Qusqu llaqtapiqa askha yuyaychaq runakuna kan ,0.16666666666666666
 Anchaqa wallpachikuta phawachiq ,Ankaqa wallpa chiwchita phawachiq ,0.75
@@ -418,7 +418,7 @@ Kay awasqaqa paqucha uywamantam ,Kay awasqaqa paqucha millwamantam ,0.25
 Mana makiman uchuta haywanachu ,Mana makiman uchuta haywanachu ,0.0
 Waqaychasqa pachata taksayan ,Waqaychasqa p'achaqa taksayan ,0.3333333333333333
 Ama phiñichichu allqata kanirusunkimantaq ,Ama phiñachiychu allquta kanirusunkimantaq ,0.5
-Ima kusikuyña kaqtinpas ch'allarikunayki ,Ima kusikuyña kaqtinpas ch'allarikunayki ,0.0
+Ima kusikuyña kaqtinpas challarikunayki ,Ima kusikuyña kaqtinpas ch'allarikunayki ,0.25
 Phataq sarata rantimunki ,Phataq saratan rantimunki ,0.3333333333333333
 Kay runakunata supaypan chaqnikuni ,Qilla runaqunata supaytan chiqnikuni ,1.0
 Mamaypaq wasinqa ancha chaniyuq ,Mamaypaq wasinqa ancha chaniyuq ,0.0
@@ -441,7 +441,7 @@ Kay papata wasiman q'ipirkuy ,Kay papata wasiman q'ipirquy ,0.25
 Hatuna kaqtapiqa apiqapuwanña sapa p'unchi hak'u mikhuy ,Hatun llaqtapiqa amirqapuwanña sapa p'unchaw hak'u mikhuy ,0.5714285714285714
 Sapa p'unchay k'achuta rutunchis ,Sapa p'unchay q'achuta rutunchis ,0.25
 piwantaq tiyapurqan ,Piwantaq tiyapurqan ,0.5
-Kutimunkichu hayk'aqllapis munasqa ayllunchisman ,Kutimunkichu hayk'aqllapis munasqa ayllunchisman ,0.0
+Kutimunkichu hayk'apis munasqa ayllunchisman ,Kutimunkichu hayk'aqllapis munasqa ayllunchisman ,0.25
 Ankayta aylluyman apasaq kusikunankupaq ,Ankayta aylluyman apasaq kusikunankupaq ,0.0
 Anquyqa mana hawapi puñuyta munanchu ,Allquyqa mana hawapi puñuyta munanchu ,0.2
 Chayamushanña papa hallumaña pacha ,Chayamushanña papa hallmaña pacha ,0.25
@@ -486,7 +486,7 @@ Pitaq takishanri ,Pitaq takishanri ,0.0
 Maypin allin mikhukunata tariyman ,Maypin allin mikhuykunata tariyman ,0.25
 Karu llaqtamanchu pasapuranki ,Karu llaqtamanchu pasapuranki ,0.0
 Kay urqumanta q'ala rikukun ,Kay urqumanta k'ala rikukun ,0.25
-allquqa silla puñushan sach'aqllan thunpi ,Allqu qasilla puñushan sach'aq llanthumpi ,0.8
+allquqa silla puñushan sach'aqllan thupi ,Allqu qasilla puñushan sach'aq llanthumpi ,0.8
 Machu llaqtinchisqa chuchanchisqa yuraqman tukupun ,Machuyaqtinchisqa chuqchanchisqa yuraqman tukupun ,0.75
 Uquspa hina pasaqllata thukaykapuwan ,Uhuspa hina pasaqllata thuqayqapuwan ,0.5
 Manataqmi risisqay runapis ni wasi masiykunapas qhawariwankuchu ,Manataqmi riqsisqay runapis ni wasi masiykunapas qhawariwankuchu ,0.14285714285714285
@@ -507,7 +507,7 @@ Musuwata chaskiyman haku,Musuq wata chaskiyman haku ,0.5
 Wirawan qhillichasqa ,Wirawan qhillichasqa ,0.0
 Payqa waqcha wawa chaymi apamuyta munani ,Payqa wakcha wawa chaymi apamuyta munani ,0.16666666666666666
 ichuq raphinka yawriman riqchakun ,Ichhuq raphinqa yawriman rikch'akun ,0.75
-Papa hasp'iqmi risunchis allanata aparqamuy ,Papa hasp'iqmi risunchis allanata aparqamuy ,0.0
+Papaqaspiqmi risunchis allanata aparqamuy ,Papa hasp'iqmi risunchis allanata aparqamuy ,0.4
 quchapi huk wañusqa sallqa kuy tuyushasqa ,Quchapi huk wañusqa sallqa quwi tuyushasqa ,0.3333333333333333
 Manachu huk allq qhatuymantasuwakushasqa ,Manachu huk allqu qhatuymanta suwakushasqa ,0.6
 Chay achiwata apamuy wawa llantakunanpaq ,Chay achiwata apamuy wawa llanthukunanpaq ,0.2
@@ -519,21 +519,21 @@ Qharipura rimanakushanku,Qharipura rimanakushanku ,0.0
 Sach'asa ch'api puriyqa sumaqmi umata qasichin ,Sacha-sachapi puriyqa sumaqmi umata qasichin ,0.4
 Imakunatataq wasi kanchapiri tarpunki ruwasis imatachu ,Imakunatataq wasi kanchapiri tarpunki Rusas imatachu ,0.16666666666666666
 Urku qipapi munmi qurachakuna wiñan ,Urqu qhipapi munay qurachakuna wiñan ,0.6
-Manalli quri ch'ayaq warmi ,Magali quri ch'uyaq warmin ,0.75
+Maqalli quri ch'ayaq warmi ,Magali quri ch'uyaq warmin ,0.75
 Paykunaqa sumaqmi kanku imapipi yanapakunku ,Paykunaqa sumaqmi kanku imapipis yanapakunkun ,0.4
 Chay atuqqa runaq kayllanpi tiyaq ,Chay atuqqa runaq qayllampi tiyaq ,0.2
 Chay ujata ñak'arkapuy ñishuta purin uraymanñataq wichaymanñataq hina ,Chay uhata ñak'arqapuy nishuta purin uraymanñataq wichaymanñataq hina ,0.375
 Rakuq q'aytuwan sirayta munanki hinaqa yawriwanmi siranayki ,Rakhu q'aytuwan sirayta munanki hinaqa yawriwanmi siranayki ,0.14285714285714285
-Tusuq ripusaq karu llaqtata kaypiqa tusuyman hinaqa imataraqcha mana ninkumanchu ,Tusuq ripusaq karu llaqtata kaypiqa tusuyman hinaqa imataraqcha mana ninkumanchu ,0.0
+Tusuq ripusaq karullaqtata kaypiqa tusuyman hinaqa imataraqcha mana ninkumanchu ,Tusuq ripusaq karu llaqtata kaypiqa tusuyman hinaqa imataraqcha mana ninkumanchu ,0.2
 Wasi punkuykitaqa icha nanahinataq wasi masiykikuna phiñakunqa ,Wasi punkuykitaqa pichanallaykipuni manahinataq wasimasiykikuna phiñakunqa ,0.6666666666666666
-Wist'u chakiyuq runaqa mana yaphawayta atinchu ,Wist'u chakiyuq runaqa manaña phawayta atinchu ,0.3333333333333333
+Wist'u chakiyuq runaqa mana ña phawayta atinchu ,Wist'u chakiyuq runaqa manaña phawayta atinchu ,0.3333333333333333
 Yana uyayuq uhaqa ancha lluyayniyuqmi ,Yana uyayuq uhaqa ancha yuyayniyuqmi ,0.2
 Chayraykukunaqa unqushan ,Chayrayku kunanqa unqushan ,0.6666666666666666
 Haqay uqkutaqa chiqchiyushanmi,Haqay urqutaqa chikchiyushanmi,0.6666666666666666
 Manan haqay runaqa kay llaqtamantachu,Manan haqay runaqa kay llaqtamantachu,0.0
-Paqarinña papaallaq karu suñis kunanqa awaparaq kallcharusun ,Paqarinña papa allaqqa risunchis kunanqa hawastaraq kallcharusun,0.5714285714285714
+Paqarinña papaallaq karu suñchis kunanqa awastaraq kallchararusun ,Paqarinña papa allaqqa risunchis kunanqa hawastaraq kallcharusun,0.7142857142857143
 Qayna wataqa maskapatapin llamk'apa kamurani ,Qayna wataqa Markapatapin llamk'apakamurani,0.75
-Uychaqa yanapaschá qapuliiykiqa kashan ,Ichaqa hayapaschá kapuliykiqa kashan,0.75
+Uychaqa yanapaschá qapuliykiqa kashan ,Ichaqa hayapaschá kapuliykiqa kashan,0.75
 Yana pariwanayki raykuqa mañayusqaykiya qullqita ,Yanapariwanaykiraykuqa mañayusqaykiya qullqita,1.0
 Upushaykitaq imaykitaqa,Qupushaykitáq qinaykitaqá,1.0
 Unutaqa qañirichisaqchu icha kanpas ,Unutaqa q'uñirichisaqchu icha kanpas ,0.25
@@ -550,7 +550,7 @@ Llamakunataqa k'aspimiqllawan kay wispaqama wayk'una ,Lawakunataqa k'aspi wislla
 Munaycha rikukuyta munasqa warmukunaqa chukchanta ñakch'akunku ,Munaycha rikukuyta munaspa warmikunaqa chukchanta ñaqch'akunku ,0.5
 Sachamanta uq uqpi hallarparin ,Sach'amanta huk urpi hallarparin ,0.75
 Taypiqa llipin qari wawakuna wayqinpin kanchis ,Kaypiqa llipin qhari wawakuna wayqintin kanchis ,0.5
-Ninawanqa manas huk yanachu ,Ninawanqa manas pukllanachu ,0.6666666666666666
+Ninawanqa manas huk yanachu,Ninawanqa manas pukllanachu ,0.6666666666666666
 Chay quwiyki kirunwan kanuqkawan ,Chay quwiyki kirunwan kanirquwan ,0.25
 Wayk'uqhay apunapiqa ishayñupiq chaninmi urin ,Wayq'u hallp'akunapiqa isañupis chaninmi urin ,0.6
 Maytaq tutay llariq puchkaqaykiri ,Maytaq tuta illariq p'uskasqaykiri ,0.75
