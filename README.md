@@ -63,7 +63,24 @@ sbatch scripts/slurm/test.sh
 We include the notebooks we used for analyzing the final data and generating the images for our paper. However they would need to be modified to point to any results generated from the `eval.py` script in order to be used on new inferences.
 
 run locally using `scripts/produce_test_transcripts.py`
+
+
 ## Authors
-[Dan DeGenaro](mailto:drd92@georgetown.edu)
-[Emma Rafkin](mailto:epr41@georgetown.edu)
-[Xiulin Yang](mailto:xy236@georgetown.edu)
+- [Emma Rafkin](mailto:epr41@georgetown.edu)
+- [Dan DeGenaro](mailto:drd92@georgetown.edu)
+- [Xiulin Yang](mailto:xy236@georgetown.edu)
+
+### Citation
+
+This work is under review but the preprint can be found [here](https://arxiv.org/abs/2601.07038). 
+```bibtex
+@misc{rafkin2026taskarithmeticsupportlanguages,
+      title={Task Arithmetic with Support Languages for Low-Resource ASR}, 
+      author={Emma Rafkin and Dan DeGenaro and Xiulin Yang},
+      year={2026},
+      eprint={2601.07038},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2601.07038}, 
+}
+```
